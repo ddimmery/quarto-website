@@ -1,11 +1,12 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Drew Dimmery"
   description: "Personal website of Drew Dimmery"
-  site-url: "https://ddimmery.com"
-  repo-url: "https://github.com/ddimmery/quarto-website"
+  site-url: ddimmery.com
+  repo-url: https://github.com/ddimmery/quarto-website
   google-analytics: "G-Y7YLFF5F90"
   open-graph: true
   favicon: favicon.png
@@ -34,4 +35,3 @@ format:
     html-math-method: katex
     include-in-header:
       - includes.html
-

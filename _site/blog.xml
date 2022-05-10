@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Drew Dimmery</title>
-<link>https://ddimmery.com/blog.html</link>
-<atom:link href="https://ddimmery.com/blog.xml" rel="self" type="application/rss+xml"/>
+<link>ddimmery.com/blog.html</link>
+<atom:link href="ddimmery.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website of Drew Dimmery</description>
 <generator>quarto-0.9.377</generator>
 <lastBuildDate>Mon, 09 May 2022 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Using SoftBlock to Design an Experiment</title>
-  <link>https://ddimmery.com/posts/softblock-demo/index.html</link>
+  <link>ddimmery.com/posts/softblock-demo/index.html</link>
   <description><![CDATA[ 
 
 
@@ -518,7 +518,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb24-10">    <span class="fu" style="color: #4758AB;">theme_minimal</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://ddimmery.com/posts/softblock-demo/index_files/figure-html/power_plot-1.png" class="preview-image img-fluid" width="672"></p>
+<p><img src="ddimmery.com/posts/softblock-demo/index_files/figure-html/power_plot-1.png" class="preview-image img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -600,7 +600,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb29-11">    <span class="fu" style="color: #4758AB;">theme_minimal</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://ddimmery.com/posts/softblock-demo/index_files/figure-html/plot_fx-1.png" class="img-fluid" width="672"></p>
+<p><img src="ddimmery.com/posts/softblock-demo/index_files/figure-html/plot_fx-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -719,7 +719,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb37-6"><span class="fu" style="color: #4758AB;">theme_minimal</span>()</span></code></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="https://ddimmery.com/posts/softblock-demo/index_files/figure-html/hte_plot-1.png" class="img-fluid" width="672"></p>
+<p><img src="ddimmery.com/posts/softblock-demo/index_files/figure-html/hte_plot-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 
@@ -731,7 +731,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
   author = {Drew Dimmery},
   title = {Using {SoftBlock} to {Design} an {Experiment}},
   date = {2022-05-10},
-  url = {https://ddimmery.com/posts/softblock-demo},
+  url = {ddimmery.com/posts/softblock-demo},
   langid = {en},
   abstract = {This is a demo of using SoftBlock for experimental design
     for a notional randomization of precincts in North Carolina. To
@@ -742,11 +742,11 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 }
 </code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2022" class="csl-entry quarto-appendix-citeas">
 Drew Dimmery. 2022. <span>“Using SoftBlock to Design an
-Experiment.”</span> May 10, 2022. <a href="https://ddimmery.com/posts/softblock-demo">https://ddimmery.com/posts/softblock-demo</a>.
+Experiment.”</span> May 10, 2022. <a href="https://ddimmery.com/posts/softblock-demo">ddimmery.com/posts/softblock-demo</a>.
 </div></div></section></div> ]]></description>
   <category>experimental-design</category>
   <category>demo</category>
-  <guid>https://ddimmery.com/posts/softblock-demo/index.html</guid>
+  <guid>ddimmery.com/posts/softblock-demo/index.html</guid>
   <pubDate>Mon, 09 May 2022 22:00:00 GMT</pubDate>
 </item>
 </channel>
