@@ -16,7 +16,7 @@ I’m most interested in methodological research useful for the study of social 
 :::
 
 ::: {.column-margin}
-![](headshot.jpeg){.rounded}
+![](headshot.jpeg){.rounded .preview-image}
 :::
 
 

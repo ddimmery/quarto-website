@@ -283,7 +283,8 @@ power_qb = unlist(purrr::map(effects, estimate_power_for_effect))
 
 ## Power Comparison
 
-```{r power_plot}
+
+```{r power_plot, out.extra='.preview-image'}
 ggplot(
     tibble(
         effects=c(effects, effects, effects),
