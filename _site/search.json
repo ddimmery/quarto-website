@@ -1,108 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Drew Dimmery",
-    "section": "",
-    "text": "I am the scientific coordinator at the Data Science Research Network at the University of Vienna.\nI previously worked on the Adaptive Experimentation team at Facebook (now Meta) Core Data Science in New York.\nMy research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and thinking about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference (e.g. through improved weighting estimators).\nI’m most interested in methodological research useful for the study of social phenomena."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Research Interests\n\nCausal Inference\nMachine Learning\nData Science\nExperimental Design\n\n\n\nEducation\n\n\nNew York University\nPhD in Political Methodology\nAdvisors: Cyrus Samii, Neal Beck, Josh Tucker\n\n\nNew York, NY\nGranted May 2016\n\n\n\nDissertation: Essays on Causal Inference and Machine Learning with Application to Nonprofits\nWinner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology\n\n\n\nUNC Chapel Hill\nB.A. in International and Area Studies with distinction\n\n\nChapel Hill, NC\nGranted June 2010\n\n\n\n\nExperience\n\n\nUniversity of Vienna\n\n\nScientific Coordinator\n\n\nApril 2021 - present\n\n\n\nSupervisor: Philipp Grohs\n\n\n\nFacebook Core Data Science\n\n\nResearch Scientist\n\n\nSept 2016 - March 2021\n\n\n\nPart of Eytan Bakshy’s Adaptive Experimentation team\nDeveloped statistical, machine learning and experimental methodology\nRan adaptive and contextual field experiments with a variety of product teams\nIntegrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization (Ax) - released at F8 2019)\nDeveloped scalable methods for robust observational causal inference as the technical lead of our “CausalML” initiative\n\n\n\nPrinceton University\n\n\nPre-doctoral fellow\n\n\nSeptember 2015 - May 2016\n\n\n\nSupervised by Kosuke Imai\n\n\n\nFacebook Core Data Science\n\n\nSummer Intern\n\n\nSummer 2015\n\n\n\nStatistical and Decision Science Team\nSupervised by Eytan Bakshy\n\n\n\nTeaching\n\nFacebook\n\n\nInternal datacamp class on designing and analyzing experiments\n\n\n2017-2019\n\n\n\n\nNYU Undergraduate\n\n\nTA for Power and Politics in America (under Jonathan Nagler)\n\n\nFall 2014\n\n\n\n\nTA for Games, Strategy and Politics (under Steven Brams)\n\n\nFall 2013\n\n\n\n\nNYU Graduate\n\n\nTA for Quantitative Methods II (under Nathaniel Beck)\n\n\nSpring 2015\n\n\n\n\nTA for Quantitative Methods II (under Cyrus Samii)\n\n\nSpring 2014\n\n\n\n\nHigh Performance Computing Talk for NYU Datalab\n\n\nFebruary 2014\n\n\n\n\nIntroduction to R for NYU Datalab\n\n\nJanuary 2013"
-  },
-  {
-    "objectID": "listing.html",
-    "href": "listing.html",
-    "title": "Posts",
-    "section": "",
-    "text": "code\n\n\nanalysis\n\n\n\n\nThis is a short description of what goes on here.\n\n\n\n\n\n\nMay 22, 2021\n\n\nDrew Dimmery\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About",
-    "section": "Experience",
-    "text": "Experience\nUniversity of Vienna | Scientific Coordinator | April 2021 - present\nFacebook Core Data Science | Research Scientist | Sept 2016 - March 2021"
-  },
-  {
-    "objectID": "about.html#research-interests",
-    "href": "about.html#research-interests",
-    "title": "About",
-    "section": "Research Interests",
-    "text": "Research Interests\n\nEducation\nNew York University | New York, NY PhD in Political Methodology | Granted May 2016 Advisors: Cyrus Samii, Neal Beck, Josh Tucker\nUNC Chapel Hill | Chapel Hill, NC B.A in International Studies | Granted June 2010\n\n\nExperience\nUniversity of Vienna | Scientific Coordinator | April 2021 - present\nFacebook Core Data Science | Research Scientist | Sept 2016 - March 2021"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\nNew York University | New York, NY PhD in Political Methodology | Granted May 2016 Advisors: Cyrus Samii, Neal Beck, Josh Tucker\nUNC Chapel Hill | Chapel Hill, NC B.A in International Studies | Granted June 2010"
-  },
-  {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "2021\nDavid Arbour, Drew Dimmery, and Arjun Sondhi. (2021) \"Permutation Weighting.\" ICML\n        \n        Preprint\n     \n        \n        Published\n    \nDavid Arbour, Drew Dimmery, and Anup Rao. (2021) \"Efficient Balanced Treatment Assignments for Experimentation.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \nMy Phan, David Arbour, Drew Dimmery, and Anup Rao. (2021) \"None.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2020\nArjun Sondhi, David Arbour, and Drew Dimmery. (2020) \"Balanced off-policy evaluation in general action spaces.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2019\nDrew Dimmery, Eytan Bakshy, and Jasjeet Sekhon. (2019) \"Shrinkage Estimators in Online Experiments.\" KDD\n        \n        Preprint\n     \n        \n        Published\n    \n2016\nDrew Dimmery and Andrew Peterson. (2016) \"Shining the Light on Dark Money: Political Spending by Nonprofits.\" RSF: The Russell Sage Foundation Journal of the Social Sciences\n        \n        Published\n    \n2012\nC.T Kullenberg, S.R. Mishra, Drew Dimmery, and the NOMAD Collaboration. (2012) \"A search for single photon events in neutrino interactions.\" Physics Letters B\n        \n        Published\n    \nWorking Papers / Non-archival\n2022\nDavid Arbour, Drew Dimmery, Tung Mai, and Anup Rao. (2022) \"Online Balanced Experimental Design.\"\n        \n        Preprint\n    \n2021\nMolly Offer-Westort and Drew Dimmery. (2021) \"Experimentation for Homogenous Policy Change.\"\n        \n        Preprint\n    \nYan Leng and Drew Dimmery. (2021) \"Calibration of Heterogeneous Treatment Effects in Random Experiments.\"\n        \n        Preprint\n    \n2019\nHongzi Mao, Shannon Chen, Drew Dimmery, Shaun Singh, Drew Blaisdell, Yuandong Tian, Mohammad Alizadeh, and Eytan Bakshy. (2019) \"Real-world Video Adaptation with Reinforcement Learning.\" ICML Workshop - RL4RealLife\n        \n        Preprint\n    \nSam Daulton, Shaun Singh, Vashist Avadhanula, Drew Dimmery, and Eytan Bakshy. (2019) \"Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints.\" NeurIPS Workshop - Safety and Robustness in Decision Making\n        \n        Preprint"
-  },
-  {
-    "objectID": "research.html#working-papers",
-    "href": "research.html#working-papers",
-    "title": "Research",
-    "section": "Working Papers",
-    "text": "Working Papers\n\n\nDavid Arbour, Drew Dimmery, Anup Rao, and Tung Mai. (2022) \"This is a paper title.\"\n        \n        Preprint\n     \n        \n        Github"
-  },
-  {
-    "objectID": "posts/test-post/index.html",
-    "href": "posts/test-post/index.html",
-    "title": "Example Post With Code",
-    "section": "",
-    "text": "Reusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{dimmery2022,\n  author = {Drew Dimmery},\n  title = {Using {SoftBlock} to {Design} an {Experiment}},\n  date = {2022-05-10},\n  url = {localhost/posts/test-post},\n  langid = {en},\n  abstract = {This is a demo of using SoftBlock for experimental design\n    for a notional randomization of precincts in North Carolina. To\n    optimize power, we focus on ensuring very similar patterns of prior\n    voting patterns in treatment and in control. This demo walks through\n    all the necessary steps for this process and shows how to perform\n    estimation of average and heterogeneous effects.}\n}\nFor attribution, please cite this work as:\nDrew Dimmery. 2022. “Using SoftBlock to Design an\nExperiment.” May 10, 2022. localhost/posts/test-post."
-  },
-  {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "Blog",
-    "section": "",
-    "text": "experimental-design\n\n\ndemo\n\n\n\n\nIn this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.\n\n\n\n\n\n\nMay 10, 2022\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "software.html#rdd",
-    "href": "software.html#rdd",
-    "title": "Software",
-    "section": "RDD",
-    "text": "RDD"
-  },
-  {
-    "objectID": "research.html#working-papers-non-archival",
-    "href": "research.html#working-papers-non-archival",
-    "title": "Research",
-    "section": "Working Papers / Non-archival",
-    "text": "Working Papers / Non-archival\n\n\n2022\n\n\nDavid Arbour, Drew Dimmery, Tung Mai, and Anup Rao. (2022) \"Online Balanced Experimental Design.\"\n        \n        Preprint\n    \n\n\n2021\n\n\nMolly Offer-Westort and Drew Dimmery. (2021) \"Experimentation for Homogenous Policy Change.\"\n        \n        Preprint\n    \nYan Leng and Drew Dimmery. (2021) \"Calibration of Heterogeneous Treatment Effects in Random Experiments.\"\n        \n        Preprint\n    \n\n\n2019\n\n\nHongzi Mao, Shannon Chen, Drew Dimmery, Shaun Singh, Drew Blaisdell, Yuandong Tian, Mohammad Alizadeh, and Eytan Bakshy. (2019) \"Real-world Video Adaptation with Reinforcement Learning.\" ICML Workshop - RL4RealLife\n        \n        Preprint\n    \nSam Daulton, Shaun Singh, Vashist Avadhanula, Drew Dimmery, and Eytan Bakshy. (2019) \"Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints.\" NeurIPS Workshop - Safety and Robustness in Decision Making\n        \n        Preprint"
-  },
-  {
-    "objectID": "software.html#regweight",
-    "href": "software.html#regweight",
-    "title": "Software",
-    "section": "regweight",
-    "text": "regweight"
-  },
-  {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
-    "section": "",
-    "text": "tidyhte provides tidy semantics for estimation of heterogeneous treatment effects through the use of Kennedy’s (n.d.) doubly-robust learner.\nThe goal of tidyhte is to use a sort of “recipe” design. This should (hopefully) make it extremely easy to scale an analysis of HTE from the common single-outcome / single-moderator case to many outcomes and many moderators. The configuration of tidyhte should make it extremely easy to perform the same analysis across many outcomes and for a wide-array of moderators. It’s written to be fairly easy to extend to different models and to add additional diagnostics and ways to output information from a set of HTE estimates.\n\n        \n        Website\n     \n        \n        Github\n    \nregweight\nThe goal of regweight is to make it easy to diagnose a model using Aronow and Samii (2015) regression weights.\nIn short, these weights show which observations are most influential for determining the observed value of a coefficient in a linear regression. If the linear regression is aiming to estimate causal effects, this implies that the OLS estimand may differ from the average treatment effect. These linear regression weights provide, in some sense, the most precise estimate available given a conditioning set (and a linear model). These weights are in expectation the conditional variance of the variable of interest (given the other covariates in the model).\n\n        \n        Website\n     \n        \n        Github\n     \n        \n        Package\n    \nrdd\nOutdated! Users should switch to actively maintained and updated RD tools.\nProvides the tools to undertake estimation in Regression Discontinuity Designs. Both sharp and fuzzy designs are supported. Estimation is accomplished using local linear regression. A provided function will utilize Imbens-Kalyanaraman optimal bandwidth calculation. A function is also included to test the assumption of no-sorting effects.\n\n        \n        Github\n     \n        \n        Package"
-  },
-  {
-    "objectID": "posts/softblock-demo/index.html",
-    "href": "posts/softblock-demo/index.html",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "",
-    "text": "Attaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nLinking to GEOS 3.10.2, GDAL 3.4.3, PROJ 9.0.0; sf_use_s2() is TRUE\n\n\nLoading required package: distances\n\n\nPlease cite the `quickblock` package as:\n\n\n   Higgins, Michael J., Fredrik Savje and Jasjeet S. Sekhon (2016),\n\n\n   \"Improving massive experiments with threshold blocking\",\n\n\n   Proceedings of the National Academy of Sciences 113:27, 7369--7376.\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\nLoading required package: Matrix\n\n\nLoaded glmnet 4.1-4\n\n\n\nAttaching package: 'igraph'\n\n\nThe following objects are masked from 'package:purrr':\n\n    compose, simplify\n\n\nThe following object is masked from 'package:distances':\n\n    distances\n\n\nThe following objects are masked from 'package:dplyr':\n\n    as_data_frame, groups, union\n\n\nThe following objects are masked from 'package:stats':\n\n    decompose, spectrum\n\n\nThe following object is masked from 'package:base':\n\n    union\n\n\n\nAttaching package: 'FNN'\n\n\nThe following object is masked from 'package:igraph':\n\n    knn\n\n\nhash-2.2.6.2 provided by Decision Patterns"
+    "text": "2021\nDavid Arbour, Drew Dimmery, and Arjun Sondhi. (2021) \"Permutation Weighting.\" ICML\n        \n        Preprint\n     \n        \n        Published\n    \nDavid Arbour, Drew Dimmery, and Anup Rao. (2021) \"Efficient Balanced Treatment Assignments for Experimentation.\" AISTATS\n        \n        Preprint\n     \n        \n        Github\n     \n        \n        Published\n    \nMy Phan, David Arbour, Drew Dimmery, and Anup Rao. (2021) \"None.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2020\nArjun Sondhi, David Arbour, and Drew Dimmery. (2020) \"Balanced off-policy evaluation in general action spaces.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2019\nDrew Dimmery, Eytan Bakshy, and Jasjeet Sekhon. (2019) \"Shrinkage Estimators in Online Experiments.\" KDD\n        \n        Preprint\n     \n        \n        Published\n    \n2016\nDrew Dimmery and Andrew Peterson. (2016) \"Shining the Light on Dark Money: Political Spending by Nonprofits.\" RSF: The Russell Sage Foundation Journal of the Social Sciences\n        \n        Published\n    \n2012\nC.T Kullenberg, S.R. Mishra, Drew Dimmery, and the NOMAD Collaboration. (2012) \"A search for single photon events in neutrino interactions.\" Physics Letters B\n        \n        Published\n    \nWorking Papers / Non-archival\n2022\nDavid Arbour, Drew Dimmery, Tung Mai, and Anup Rao. (2022) \"Online Balanced Experimental Design.\"\n        \n        Preprint\n    \n2021\nMolly Offer-Westort and Drew Dimmery. (2021) \"Experimentation for Homogenous Policy Change.\"\n        \n        Preprint\n    \nYan Leng and Drew Dimmery. (2021) \"Calibration of Heterogeneous Treatment Effects in Random Experiments.\"\n        \n        Preprint\n    \n2019\nHongzi Mao, Shannon Chen, Drew Dimmery, Shaun Singh, Drew Blaisdell, Yuandong Tian, Mohammad Alizadeh, and Eytan Bakshy. (2019) \"Real-world Video Adaptation with Reinforcement Learning.\" ICML Workshop - RL4RealLife\n        \n        Preprint\n    \nSam Daulton, Shaun Singh, Vashist Avadhanula, Drew Dimmery, and Eytan Bakshy. (2019) \"Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints.\" NeurIPS Workshop - Safety and Robustness in Decision Making\n        \n        Preprint"
   },
   {
     "objectID": "posts/softblock-demo/index.html#description",
@@ -138,34 +40,6 @@
     "title": "Using SoftBlock to Design an Experiment",
     "section": "Add some geographic features",
     "text": "Add some geographic features\n\n\nCode\ndf_joined$geometry %>%\n    st_centroid() %>%\n    st_transform(\"+init=epsg:4326\") %>%\n    st_coordinates() -> latlong\n\n\nWarning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is\ndeprecated. It might return a CRS with a non-EPSG compliant axis order.\n\n\nCode\ndf_joined$longitude = latlong[, 'X']\ndf_joined$latitude = latlong[, 'Y']\narea = df_joined$geometry %>% st_transform(\"+init=epsg:4326\") %>% st_area()\ndf_joined$area_km2 = units::drop_units(area) / 1e6 # convert m^2 to km^2\ndf_joined <- df_joined %>% mutate(vote_density_pres = total_vote_pres / area_km2)"
-  },
-  {
-    "objectID": "posts/softblock-demo/index.html#softblock",
-    "href": "posts/softblock-demo/index.html#softblock",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "Softblock",
-    "text": "Softblock\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% assign_softblock(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n)) %>%\nrename(treatment_sb=treatment)-> df_joined\nsoftblock_weights <- attr(df_joined, \"laplacian\")\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 0.646909 secs"
-  },
-  {
-    "objectID": "posts/softblock-demo/index.html#greedy-nearest-neighbors",
-    "href": "posts/softblock-demo/index.html#greedy-nearest-neighbors",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "Greedy nearest neighbors",
-    "text": "Greedy nearest neighbors\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% assign_greedy_neighbors(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n)) %>%\nrename(treatment_nn=treatment)-> df_joined\nnn_weights <- attr(df_joined, \"laplacian\")\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 1.446549 secs"
-  },
-  {
-    "objectID": "posts/softblock-demo/index.html#quickblock",
-    "href": "posts/softblock-demo/index.html#quickblock",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "QuickBlock",
-    "text": "QuickBlock\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% dplyr::select(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n) -> df_qb\nqb_blocks = quickblock(as.data.frame(df_qb), size_constraint = 6L)\ndf_joined$treatment_qb = as.integer(as.character(assign_treatment(qb_blocks, treatments=c('0', '1'))))\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 0.0202949 secs"
-  },
-  {
-    "objectID": "posts/softblock-demo/index.html#matched-pairs",
-    "href": "posts/softblock-demo/index.html#matched-pairs",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "Matched Pairs",
-    "text": "Matched Pairs\n\n\nCode\n# This is extremely slow.\n# start_time = lubridate::now()\n# df_joined %>% assign_matched_pairs(c(\n#     longitude, latitude, area_km2, vote_density_pres, # geographic\n#     total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n#     total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n#     total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n#     total_vote_house, dem_share_house, gop_share_house # 2020 house\n# )) %>%\n# rename(treatment_mp=treatment)-> df_joined\n# mp_weights <- attr(df_joined, \"laplacian\")\n# end_time = lubridate::now()\n# print(end_time - start_time)"
   },
   {
     "objectID": "posts/softblock-demo/index.html#simulate-each-design",
@@ -210,17 +84,38 @@
     "text": "Estimate HTEs\n\nSoftblockGreedy NeighborsQuickBlock\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_sb', .outcome='outcome_sb') %>% rename(hte_sb=hte) -> df_joined\nsummary(df_joined$hte_sb)\n\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n0.004826 0.007942 0.008456 0.008152 0.008457 0.011642 \n\n\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_nn', .outcome='outcome_nn') %>% rename(hte_nn=hte) -> df_joined\nsummary(df_joined$hte_nn)\n\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n-0.001538  0.007977  0.007977  0.008131  0.008466  0.032650 \n\n\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_qb', .outcome='outcome_qb') %>% rename(hte_qb=hte) -> df_joined\nsummary(df_joined$hte_qb)\n\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n-0.020464  0.005829  0.007149  0.007272  0.009363  0.027874"
   },
   {
-    "objectID": "posts/softblock-demo/index.html#plot-distributions",
-    "href": "posts/softblock-demo/index.html#plot-distributions",
-    "title": "Using SoftBlock to Design an Experiment",
-    "section": "Plot distributions",
-    "text": "Plot distributions\n\n\nCode\nggplot(df_joined, aes()) +\ngeom_histogram(aes(x=hte_sb, fill='SoftBlock'), bins=10, alpha=0.4) +\ngeom_histogram(aes(x=hte_nn, fill='Greedy Neighbors'), bins=10, alpha=0.4) +\ngeom_histogram(aes(x=hte_qb, fill='QuickBlock'), bins=10, alpha=0.4) +\nscale_x_continuous(\"Effect (pp)\", labels=scales::percent) +\ntheme_minimal()"
-  },
-  {
     "objectID": "posts/softblock-demo/index.html#plot-hte-distributions",
     "href": "posts/softblock-demo/index.html#plot-hte-distributions",
     "title": "Using SoftBlock to Design an Experiment",
     "section": "Plot HTE distributions",
     "text": "Plot HTE distributions\n\n\nCode\nggplot(df_joined, aes()) +\ngeom_histogram(aes(x=hte_sb, fill='SoftBlock'), bins=50, alpha=0.4) +\ngeom_histogram(aes(x=hte_nn, fill='Greedy Neighbors'), bins=50, alpha=0.4) +\ngeom_histogram(aes(x=hte_qb, fill='QuickBlock'), bins=50, alpha=0.4) +\nscale_x_continuous(\"Effect (pp)\", labels=scales::percent) +\ntheme_minimal()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Drew Dimmery",
+    "section": "",
+    "text": "I am the scientific coordinator at the Data Science Research Network at the University of Vienna.\nI previously worked on the Adaptive Experimentation team at Facebook (now Meta) Core Data Science in New York.\nMy research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and thinking about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference (e.g. through improved weighting estimators).\nI’m most interested in methodological research useful for the study of social phenomena."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Research Interests\n\nCausal Inference\nMachine Learning\nData Science\nExperimental Design\n\n\n\nEducation\n\n\nNew York University\nPhD in Political Methodology\nAdvisors: Cyrus Samii, Neal Beck, Josh Tucker\n\n\nNew York, NY\nGranted May 2016\n\n\n\nDissertation: Essays on Causal Inference and Machine Learning with Application to Nonprofits\nWinner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology\n\n\n\nUNC Chapel Hill\nB.A. in International and Area Studies with distinction\n\n\nChapel Hill, NC\nGranted June 2010\n\n\n\n\nExperience\n\n\nUniversity of Vienna\n\n\nScientific Coordinator\n\n\nApril 2021 - present\n\n\n\nSupervisor: Philipp Grohs\n\n\n\nFacebook Core Data Science\n\n\nResearch Scientist\n\n\nSept 2016 - March 2021\n\n\n\nPart of Eytan Bakshy’s Adaptive Experimentation team\nDeveloped statistical, machine learning and experimental methodology\nRan adaptive and contextual field experiments with a variety of product teams\nIntegrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization (Ax) - released at F8 2019)\nDeveloped scalable methods for robust observational causal inference as the technical lead of our “CausalML” initiative\n\n\n\nPrinceton University\n\n\nPre-doctoral fellow\n\n\nSeptember 2015 - May 2016\n\n\n\nSupervised by Kosuke Imai\n\n\n\nFacebook Core Data Science\n\n\nSummer Intern\n\n\nSummer 2015\n\n\n\nStatistical and Decision Science Team\nSupervised by Eytan Bakshy\n\n\n\nTeaching\n\nFacebook\n\n\nInternal datacamp class on designing and analyzing experiments\n\n\n2017-2019\n\n\n\n\nNYU Undergraduate\n\n\nTA for Power and Politics in America (under Jonathan Nagler)\n\n\nFall 2014\n\n\n\n\nTA for Games, Strategy and Politics (under Steven Brams)\n\n\nFall 2013\n\n\n\n\nNYU Graduate\n\n\nTA for Quantitative Methods II (under Nathaniel Beck)\n\n\nSpring 2015\n\n\n\n\nTA for Quantitative Methods II (under Cyrus Samii)\n\n\nSpring 2014\n\n\n\n\nHigh Performance Computing Talk for NYU Datalab\n\n\nFebruary 2014\n\n\n\n\nIntroduction to R for NYU Datalab\n\n\nJanuary 2013"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "tidyhte provides tidy semantics for estimation of heterogeneous treatment effects through the use of Kennedy’s (n.d.) doubly-robust learner.\nThe goal of tidyhte is to use a sort of “recipe” design. This should (hopefully) make it extremely easy to scale an analysis of HTE from the common single-outcome / single-moderator case to many outcomes and many moderators. The configuration of tidyhte should make it extremely easy to perform the same analysis across many outcomes and for a wide-array of moderators. It’s written to be fairly easy to extend to different models and to add additional diagnostics and ways to output information from a set of HTE estimates.\n\n        \n        Website\n     \n        \n        Github\n    \nregweight\nThe goal of regweight is to make it easy to diagnose a model using Aronow and Samii (2015) regression weights.\nIn short, these weights show which observations are most influential for determining the observed value of a coefficient in a linear regression. If the linear regression is aiming to estimate causal effects, this implies that the OLS estimand may differ from the average treatment effect. These linear regression weights provide, in some sense, the most precise estimate available given a conditioning set (and a linear model). These weights are in expectation the conditional variance of the variable of interest (given the other covariates in the model).\n\n        \n        Website\n     \n        \n        Github\n     \n        \n        Package\n    \nrdd\nOutdated! Users should switch to actively maintained and updated RD tools.\nProvides the tools to undertake estimation in Regression Discontinuity Designs. Both sharp and fuzzy designs are supported. Estimation is accomplished using local linear regression. A provided function will utilize Imbens-Kalyanaraman optimal bandwidth calculation. A function is also included to test the assumption of no-sorting effects.\n\n        \n        Github\n     \n        \n        Package"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "experimental-design\n\n\ndemo\n\n\n\n\nIn this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.\n\n\n\n\n\n\nMay 10, 2022\n\n\n\n\n\n\nNo matching items"
   }
 ]
