@@ -44,57 +44,52 @@ Granted June 2010
 ::: {}
 **University of Vienna**  
 :::
-::: {.text-center}
-Scientific Coordinator
-:::
 ::: {.text-end}
 April 2021 - present
 :::
 :::
+*Scientific Coordinator*
+
 - Supervisor: Philipp Grohs
 
 ::: {.d-flex .justify-content-between}
 ::: {}
 **Facebook Core Data Science**  
 :::
-::: {.text-center}
-Research Scientist
-:::
 ::: {.text-end}
 Sept 2016 - March 2021
 :::
 :::
+*Research Scientist*
+
 - Part of Eytan Bakshy's Adaptive Experimentation team
 - Developed statistical, machine learning and experimental methodology
 - Ran adaptive and contextual field experiments with a variety of product teams
 - Integrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization ([Ax](https://ax.dev/)) - [released at F8 2019](https://developers.facebook.com/videos/2019/product-optimization-with-adaptive-experimentation/))
 - Developed scalable methods for robust observational causal inference as the technical lead of our "CausalML" initiative
 
-
 ::: {.d-flex .justify-content-between}
 ::: {}
 **Princeton University**  
-:::
-::: {.text-center}
-Pre-doctoral fellow
 :::
 ::: {.text-end}
 September 2015 - May 2016
 :::
 :::
+*Pre-doctoral fellow*
+
 - Supervised by Kosuke Imai
 
 ::: {.d-flex .justify-content-between}
 ::: {}
 **Facebook Core Data Science**  
 :::
-::: {.text-center}
-Summer Intern
-:::
 ::: {.text-end}
 Summer 2015
 :::
 :::
+*Summer Intern*
+
 - Statistical and Decision Science Team
 - Supervised by Eytan Bakshy
 
