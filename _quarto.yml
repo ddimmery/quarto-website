@@ -12,6 +12,9 @@ website:
   twitter-card: 
     creator: "@drewdim"
     site: "@drewdim"
+    image-width: 1200
+    image-height: 1200
+    card-style: "summary"
   navbar:
     background: dark
     foreground: light

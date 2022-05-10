@@ -1,5 +1,6 @@
 ---
 title: "Drew Dimmery"
+description: "Causal Inference + Data Science + Social Science"
 format:
     html:
         page-layout: full
@@ -10,7 +11,7 @@ I am the scientific coordinator at the Data Science Research Network at the Univ
 
 I previously worked on the Adaptive Experimentation team at Facebook (now Meta) Core Data Science in New York.
 
-My research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and I think hard about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference (e.g. through improved weighting estimators).
+My research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and I think hard about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference.
 
 I’m most interested in methodological research useful for the study of social phenomena.
 :::
