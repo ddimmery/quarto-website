@@ -15,7 +15,7 @@ from IPython.display import display, Markdown, HTML
 
 def button(url, str, icon):
     icon_base = icon[:2]
-    return f"""<a class="btn btn-outline-dark btn-sm", href="{url}">
+    return f"""<a class="btn btn-outline-dark btn-sm", href="{url}" target="_blank" rel="noopener noreferrer">
         <i class="{icon_base} {icon}" role='img' aria-label='{str}'></i>
         {str}
     </a>"""

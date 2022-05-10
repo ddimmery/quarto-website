@@ -12,10 +12,10 @@ The goal of tidyhte is to use a sort of “recipe” design. This should (hopefu
 
 
 ```{=html}
-<a class="btn btn-outline-dark btn-sm", href="https://ddimmery.github.io/tidyhte/">
+<a class="btn btn-outline-dark btn-sm", href="https://ddimmery.github.io/tidyhte/" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-info" role='img' aria-label='Website'></i>
         Website
-    </a> <a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/tidyhte">
+    </a> <a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/tidyhte" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-github" role='img' aria-label='Github'></i>
         Github
     </a>
@@ -27,13 +27,13 @@ In short, these weights show which observations are most influential for determi
 
 
 ```{=html}
-<a class="btn btn-outline-dark btn-sm", href="https://ddimmery.github.io/regweight/">
+<a class="btn btn-outline-dark btn-sm", href="https://ddimmery.github.io/regweight/" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-info" role='img' aria-label='Website'></i>
         Website
-    </a> <a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/regweight">
+    </a> <a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/regweight" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-github" role='img' aria-label='Github'></i>
         Github
-    </a> <a class="btn btn-outline-dark btn-sm", href="https://cran.r-project.org/package=regweight">
+    </a> <a class="btn btn-outline-dark btn-sm", href="https://cran.r-project.org/package=regweight" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-box-seam" role='img' aria-label='Package'></i>
         Package
     </a>
@@ -45,10 +45,10 @@ Provides the tools to undertake estimation in Regression Discontinuity Designs. 
 
 
 ```{=html}
-<a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/rdd">
+<a class="btn btn-outline-dark btn-sm", href="https://github.com/ddimmery/rdd" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-github" role='img' aria-label='Github'></i>
         Github
-    </a> <a class="btn btn-outline-dark btn-sm", href="https://cran.r-project.org/package=rdd">
+    </a> <a class="btn btn-outline-dark btn-sm", href="https://cran.r-project.org/package=rdd" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-box-seam" role='img' aria-label='Package'></i>
         Package
     </a>
