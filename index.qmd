@@ -6,23 +6,25 @@ format:
         page-layout: full
 ---
 
+::: {.column-page-inset}
 ::: {.column-page-inset-left}
 I am the scientific coordinator at the Data Science Research Network at the University of Vienna.
 
-I previously worked on the Adaptive Experimentation team at Facebook (now Meta) Core Data Science in New York.
+I previously worked on the Adaptive Experimentation team at Facebook Core Data Science in New York.
 
 My research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and I think hard about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference.
 
 I’m most interested in methodological research useful for the study of social phenomena.
 :::
 
-::: {.column-margin}
+<div class="column-margin column-container">
 ![](headshot.jpg){.rounded .preview-image}
+</div>
 :::
 
+{{< pagebreak >}}
 
-
-::: {.column-body .text-center}
+::: {.column-page-inset .text-center}
 ```{=html}
 <a class="btn btn-outline-dark", href="https://twitter.com/DrewDim">
     <i class="bi bi-twitter" role='img' aria-label='Twitter'></i>

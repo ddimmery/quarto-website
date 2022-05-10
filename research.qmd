@@ -53,12 +53,16 @@ for _, data in yaml_data.items():
     if working_paper:
         if year_str not in pub_strs["wps"]:
             pub_strs["wps"][year_str] = []
-        pub_strs["wps"][year_str].append("<li>" + pub_str + "<br>" + " ".join(buttons) + "</li>")
+        pub_strs["wps"][year_str].append(
+            "<li class='list-group-item'>" + pub_str + "<br>" + " ".join(buttons) + "</li>"
+        )
     else:
         if year_str not in pub_strs["pubs"]:
             pub_strs["pubs"][year_str] = []
         buttons.append(button(pub_url, "Published", "ai-archive"))
-        pub_strs["pubs"][year_str].append("<li>" + pub_str + "<br>" + " ".join(buttons) + "</li>")
+        pub_strs["pubs"][year_str].append(
+            "<li class='list-group-item'>" + pub_str + "<br>" + " ".join(buttons) + "</li>"
+        )
 
 from IPython.display import display, Markdown, HTML
 ```
@@ -71,7 +75,9 @@ from IPython.display import display, Markdown, HTML
 #| output: asis
 for year in sorted(pub_strs["pubs"].keys(), reverse=True):
     display(Markdown(f"### {year}" + "{#" + f"published-{year}" + "}"))
-    display(HTML("<ul>" + '\n'.join(pub_strs["pubs"][year]) + "</ul>"))
+    display(HTML(
+        "<ul class='list-group list-group-flush'>" + '\n'.join(pub_strs["pubs"][year]) + "</ul>"
+    ))
 ```
 
 ## Working Papers / Non-archival
@@ -82,5 +88,7 @@ for year in sorted(pub_strs["pubs"].keys(), reverse=True):
 #| output: asis
 for year in sorted(pub_strs["wps"].keys(), reverse=True):
     display(Markdown(f"### {year}" + "{#" + f"not-published-{year}" + "}"))
-    display(HTML("<ul>" + '\n'.join(pub_strs["wps"][year]) + "</ul>"))
+    display(HTML(
+        "<ul class='list-group list-group-flush'>" + '\n'.join(pub_strs["wps"][year]) + "</ul>"
+    ))
 ```
