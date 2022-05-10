@@ -4,6 +4,9 @@ description: "Causal Inference + Data Science + Social Science"
 format:
     html:
         page-layout: full
+website:
+    twitter-card:
+        image: "social_card.jpg"
 ---
 
 ::: {.column-page-inset}
