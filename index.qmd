@@ -4,8 +4,6 @@ description: "Causal Inference + Data Science + Social Science"
 format:
     html:
         page-layout: full
-website:
-    twitter-card:
         image: "social_card.jpg"
 ---
 
@@ -21,7 +19,7 @@ I’m most interested in methodological research useful for the study of social 
 :::
 
 <div class="column-margin column-container">
-![](headshot.jpg){.rounded .preview-image}
+![](headshot.jpg){.rounded}
 </div>
 :::
 
