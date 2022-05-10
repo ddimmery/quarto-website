@@ -8,6 +8,7 @@ website:
   repo-url: https://github.com/ddimmery/quarto-website
   google-analytics: "G-Y7YLFF5F90"
   open-graph: true
+  favicon: favicon.png
   twitter-card: 
     creator: "@drewdim"
     site: "@drewdim"
