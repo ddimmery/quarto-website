@@ -108,7 +108,7 @@ softblock:
   published_url: https://proceedings.mlr.press/v130/arbour21a.html
   github: https://github.com/ddimmery/softblock
 gen_exp:
-  title: 
+  title: Designing Transportable Experiments Under S-admissability
   authors:
     - My Phan
     - David Arbour
