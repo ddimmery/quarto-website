@@ -1,10 +1,15 @@
 ---
 title: "Drew Dimmery"
-description: "Causal Inference + Data Science + Social Science"
+description: "Methods in Causal Inference, Data Science and Social Science"
 format:
     html:
         page-layout: full
         image: "social_card.jpg"
+website:
+    twitter-card:
+        image: "social_card.jpg"
+resources:
+    - "social_card.jpg"
 ---
 
 ::: {.column-page-inset}
