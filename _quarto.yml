@@ -5,7 +5,7 @@ project:
 website:
   title: "Drew Dimmery"
   description: "Personal website of Drew Dimmery"
-  site-url: ddimmery.com
+  site-url: https://ddimmery.com
   repo-url: https://github.com/ddimmery/quarto-website
   google-analytics: "G-Y7YLFF5F90"
   open-graph: true

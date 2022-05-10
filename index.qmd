@@ -2,7 +2,7 @@
 title: "Drew Dimmery"
 description: "Methods in Causal Inference, Data Science and Social Science"
 page-layout: full
-image: social-card.jpg
+image: /social-card.jpg
 resources:
     - "social-card.jpg"
 ---

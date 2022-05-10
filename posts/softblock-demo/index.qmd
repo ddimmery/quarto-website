@@ -7,9 +7,8 @@ date: "2022-05-10"
 categories:
   - experimental-design
   - demo
-format:
-    html:
-        code-fold: true
+code-fold: true
+image: /posts/softblock-demo/three-designs.jpg
 ---
 
 
@@ -282,7 +281,7 @@ power_qb = unlist(purrr::map(effects, estimate_power_for_effect))
 ## Power Comparison
 
 
-```{r power_plot, out.extra='.preview-image'}
+```{r power_plot}
 ggplot(
     tibble(
         effects=c(effects, effects, effects),

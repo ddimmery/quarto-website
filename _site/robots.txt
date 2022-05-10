@@ -1,1 +1,1 @@
-Sitemap: ddimmery.com/sitemap.xml
+Sitemap: https://ddimmery.com/sitemap.xml
