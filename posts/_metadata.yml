@@ -1,7 +1,7 @@
 # options apply to all posts in this folder
 
 # freeze computational output
-freeze: true
+freeze: auto
 
 # Make a big title block
 title-block-banner: true

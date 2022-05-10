@@ -17,18 +17,18 @@ I’m most interested in methodological research useful for the study of social 
 :::
 
 ::: {.column-margin}
-![](headshot.jpeg){.rounded .preview-image}
+![](headshot.jpg){.rounded .preview-image}
 :::
 
 
 
 ::: {.column-body .text-center}
 ```{=html}
-<a class="btn btn-outline-dark", href="http://twitter.com/DrewDim">
+<a class="btn btn-outline-dark", href="https://twitter.com/DrewDim">
     <i class="bi bi-twitter" role='img' aria-label='Twitter'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="http://github.com/ddimmery">
+<a class="btn btn-outline-dark", href="https://github.com/ddimmery">
     <i class="bi bi-github" role='img' aria-label='Github'></i>
 </a>
 

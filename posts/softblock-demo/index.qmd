@@ -41,7 +41,7 @@ Thus, the steps in this design will be:
 4. Simulate the power of hypothesis tests under the proposed design.
 5. Fake some outcome data and analyze it for average and heterogeneous treatment effects.
 
-# Implementation of methods {.tabset}
+# Implementation of methods
 
 ## Description
 
@@ -86,7 +86,6 @@ spec = cols(
   X16 = col_skip()
 )
 results <- readr::read_tsv(zip_file, col_types=spec)
-DT::datatable(results %>% sample_n(size=100), rownames = FALSE, options=list(scrollX=TRUE, autoWidth = TRUE))
 ```
 
 ### Shapefiles
@@ -98,7 +97,6 @@ download.file(url, temp)
 unzip(zipfile = temp, exdir = temp2)
 nc_SHP_file <- list.files(temp2, pattern = ".shp$",full.names=TRUE)
 shapes <- sf::read_sf(nc_SHP_file)
-DT::datatable(shapes %>% sample_n(size=100) %>% dplyr::select(-geometry), rownames = FALSE, options=list(scrollX=TRUE, autoWidth = TRUE))
 ```
 
 ## Aggregate Data and Join
