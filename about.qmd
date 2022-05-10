@@ -1,0 +1,168 @@
+---
+title: "About"
+---
+
+I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna.
+
+### Research Interests
+
+- Causal Inference
+- Machine Learning
+- Data Science
+- Experimental Design
+
+### Education
+
+::: {.d-flex .justify-content-between}
+::: {}
+**New York University**  
+PhD in Political Methodology  
+Advisors: Cyrus Samii, Neal Beck, Josh Tucker
+:::
+::: {.text-end}
+New York, NY  
+Granted May 2016
+:::
+:::
+- Dissertation: *Essays on Causal Inference and Machine Learning with Application to Nonprofits*
+- Winner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology
+
+::: {.d-flex .justify-content-between}
+::: {}
+**UNC Chapel Hill**  
+B.A. in International and Area Studies with distinction
+:::
+::: {.text-end}
+Chapel Hill, NC  
+Granted June 2010
+:::
+:::
+
+### Experience
+
+::: {.d-flex .justify-content-between}
+::: {}
+**University of Vienna**  
+:::
+::: {.text-center}
+Scientific Coordinator
+:::
+::: {.text-end}
+April 2021 - present
+:::
+:::
+- Supervisor: Philipp Grohs
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Facebook Core Data Science**  
+:::
+::: {.text-center}
+Research Scientist
+:::
+::: {.text-end}
+Sept 2016 - March 2021
+:::
+:::
+- Part of Eytan Bakshy's Adaptive Experimentation team
+- Developed statistical, machine learning and experimental methodology
+- Ran adaptive and contextual field experiments with a variety of product teams
+- Integrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization ([Ax](https://ax.dev/)) - [released at F8 2019](https://developers.facebook.com/videos/2019/product-optimization-with-adaptive-experimentation/))
+- Developed scalable methods for robust observational causal inference as the technical lead of our "CausalML" initiative
+
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Princeton University**  
+:::
+::: {.text-center}
+Pre-doctoral fellow
+:::
+::: {.text-end}
+September 2015 - May 2016
+:::
+:::
+- Supervised by Kosuke Imai
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Facebook Core Data Science**  
+:::
+::: {.text-center}
+Summer Intern
+:::
+::: {.text-end}
+Summer 2015
+:::
+:::
+- Statistical and Decision Science Team
+- Supervised by Eytan Bakshy
+
+### Teaching
+
+#### Facebook
+::: {.d-flex .justify-content-between}
+::: {}
+Internal datacamp class on designing and analyzing experiments 
+:::
+::: {.text-end}
+2017-2019
+:::
+:::
+
+#### NYU Undergraduate
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Power and Politics in America (under Jonathan Nagler)
+:::
+::: {.text-end}
+Fall 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Games, Strategy and Politics (under Steven Brams)
+:::
+::: {.text-end}
+Fall 2013
+:::
+:::
+
+#### NYU Graduate
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Quantitative Methods II (under Nathaniel Beck)
+:::
+::: {.text-end}
+Spring 2015
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+TA for Quantitative Methods II (under Cyrus Samii)
+:::
+::: {.text-end}
+Spring 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+High Performance Computing Talk for NYU Datalab
+:::
+::: {.text-end}
+February 2014
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Introduction to R for NYU Datalab
+:::
+::: {.text-end}
+January 2013
+:::
+:::

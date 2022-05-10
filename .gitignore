@@ -1,0 +1,4 @@
+/.quarto/
+*.RData
+*.rdb
+*.rdx

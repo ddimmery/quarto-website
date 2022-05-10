@@ -1,0 +1,14 @@
+{
+  "hash": "7a9877e166d6e788fe4a392072a96bfa",
+  "result": {
+    "markdown": "---\ntitle: \"Example Post With Code\"\ndescription: \"This is a short description of what goes on here.\"\nabstract: >\n  This is a longer abstract which I will copy a few times to get some actual text.\n  This is a longer abstract which I will copy a few times to get some actual text.\n  This is a longer abstract which I will copy a few times to get some actual text.\n  This is a longer abstract which I will copy a few times to get some actual text.\nauthor: \"Drew Dimmery\"\ndate: \"5/22/2021\"\ncategories:\n  - code\n  - analysis\n---\n\n\n# Header\n\nTesting this stuff.\n\nA second paragraph.\n\nA bit of a list:\n\n- Item 1\n- Item 2\n\n## Math\n\n\n$$\\pi = 3.14\\dots$$\n\n\n## Code\n\nThis will be formatted but not printed.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Not Printed!\")\n```\n:::\n\n\nThis will actually be executed and printed.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Printed!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"Printed!\"\n```\n:::\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": null
+  }
+}

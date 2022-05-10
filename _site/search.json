@@ -1,0 +1,226 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Drew Dimmery",
+    "section": "",
+    "text": "I am the scientific coordinator at the Data Science Research Network at the University of Vienna.\nI previously worked on the Adaptive Experimentation team at Facebook (now Meta) Core Data Science in New York.\nMy research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and thinking about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference (e.g. through improved weighting estimators).\nI’m most interested in methodological research useful for the study of social phenomena."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Research Interests\n\nCausal Inference\nMachine Learning\nData Science\nExperimental Design\n\n\n\nEducation\n\n\nNew York University\nPhD in Political Methodology\nAdvisors: Cyrus Samii, Neal Beck, Josh Tucker\n\n\nNew York, NY\nGranted May 2016\n\n\n\nDissertation: Essays on Causal Inference and Machine Learning with Application to Nonprofits\nWinner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology\n\n\n\nUNC Chapel Hill\nB.A. in International and Area Studies with distinction\n\n\nChapel Hill, NC\nGranted June 2010\n\n\n\n\nExperience\n\n\nUniversity of Vienna\n\n\nScientific Coordinator\n\n\nApril 2021 - present\n\n\n\nSupervisor: Philipp Grohs\n\n\n\nFacebook Core Data Science\n\n\nResearch Scientist\n\n\nSept 2016 - March 2021\n\n\n\nPart of Eytan Bakshy’s Adaptive Experimentation team\nDeveloped statistical, machine learning and experimental methodology\nRan adaptive and contextual field experiments with a variety of product teams\nIntegrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization (Ax) - released at F8 2019)\nDeveloped scalable methods for robust observational causal inference as the technical lead of our “CausalML” initiative\n\n\n\nPrinceton University\n\n\nPre-doctoral fellow\n\n\nSeptember 2015 - May 2016\n\n\n\nSupervised by Kosuke Imai\n\n\n\nFacebook Core Data Science\n\n\nSummer Intern\n\n\nSummer 2015\n\n\n\nStatistical and Decision Science Team\nSupervised by Eytan Bakshy\n\n\n\nTeaching\n\nFacebook\n\n\nInternal datacamp class on designing and analyzing experiments\n\n\n2017-2019\n\n\n\n\nNYU Undergraduate\n\n\nTA for Power and Politics in America (under Jonathan Nagler)\n\n\nFall 2014\n\n\n\n\nTA for Games, Strategy and Politics (under Steven Brams)\n\n\nFall 2013\n\n\n\n\nNYU Graduate\n\n\nTA for Quantitative Methods II (under Nathaniel Beck)\n\n\nSpring 2015\n\n\n\n\nTA for Quantitative Methods II (under Cyrus Samii)\n\n\nSpring 2014\n\n\n\n\nHigh Performance Computing Talk for NYU Datalab\n\n\nFebruary 2014\n\n\n\n\nIntroduction to R for NYU Datalab\n\n\nJanuary 2013"
+  },
+  {
+    "objectID": "listing.html",
+    "href": "listing.html",
+    "title": "Posts",
+    "section": "",
+    "text": "code\n\n\nanalysis\n\n\n\n\nThis is a short description of what goes on here.\n\n\n\n\n\n\nMay 22, 2021\n\n\nDrew Dimmery\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About",
+    "section": "Experience",
+    "text": "Experience\nUniversity of Vienna | Scientific Coordinator | April 2021 - present\nFacebook Core Data Science | Research Scientist | Sept 2016 - March 2021"
+  },
+  {
+    "objectID": "about.html#research-interests",
+    "href": "about.html#research-interests",
+    "title": "About",
+    "section": "Research Interests",
+    "text": "Research Interests\n\nEducation\nNew York University | New York, NY PhD in Political Methodology | Granted May 2016 Advisors: Cyrus Samii, Neal Beck, Josh Tucker\nUNC Chapel Hill | Chapel Hill, NC B.A in International Studies | Granted June 2010\n\n\nExperience\nUniversity of Vienna | Scientific Coordinator | April 2021 - present\nFacebook Core Data Science | Research Scientist | Sept 2016 - March 2021"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nNew York University | New York, NY PhD in Political Methodology | Granted May 2016 Advisors: Cyrus Samii, Neal Beck, Josh Tucker\nUNC Chapel Hill | Chapel Hill, NC B.A in International Studies | Granted June 2010"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "2021\nDavid Arbour, Drew Dimmery, and Arjun Sondhi. (2021) \"Permutation Weighting.\" ICML\n        \n        Preprint\n     \n        \n        Published\n    \nDavid Arbour, Drew Dimmery, and Anup Rao. (2021) \"Efficient Balanced Treatment Assignments for Experimentation.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \nMy Phan, David Arbour, Drew Dimmery, and Anup Rao. (2021) \"None.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2020\nArjun Sondhi, David Arbour, and Drew Dimmery. (2020) \"Balanced off-policy evaluation in general action spaces.\" AISTATS\n        \n        Preprint\n     \n        \n        Published\n    \n2019\nDrew Dimmery, Eytan Bakshy, and Jasjeet Sekhon. (2019) \"Shrinkage Estimators in Online Experiments.\" KDD\n        \n        Preprint\n     \n        \n        Published\n    \n2016\nDrew Dimmery and Andrew Peterson. (2016) \"Shining the Light on Dark Money: Political Spending by Nonprofits.\" RSF: The Russell Sage Foundation Journal of the Social Sciences\n        \n        Published\n    \n2012\nC.T Kullenberg, S.R. Mishra, Drew Dimmery, and the NOMAD Collaboration. (2012) \"A search for single photon events in neutrino interactions.\" Physics Letters B\n        \n        Published\n    \nWorking Papers / Non-archival\n2022\nDavid Arbour, Drew Dimmery, Tung Mai, and Anup Rao. (2022) \"Online Balanced Experimental Design.\"\n        \n        Preprint\n    \n2021\nMolly Offer-Westort and Drew Dimmery. (2021) \"Experimentation for Homogenous Policy Change.\"\n        \n        Preprint\n    \nYan Leng and Drew Dimmery. (2021) \"Calibration of Heterogeneous Treatment Effects in Random Experiments.\"\n        \n        Preprint\n    \n2019\nHongzi Mao, Shannon Chen, Drew Dimmery, Shaun Singh, Drew Blaisdell, Yuandong Tian, Mohammad Alizadeh, and Eytan Bakshy. (2019) \"Real-world Video Adaptation with Reinforcement Learning.\" ICML Workshop - RL4RealLife\n        \n        Preprint\n    \nSam Daulton, Shaun Singh, Vashist Avadhanula, Drew Dimmery, and Eytan Bakshy. (2019) \"Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints.\" NeurIPS Workshop - Safety and Robustness in Decision Making\n        \n        Preprint"
+  },
+  {
+    "objectID": "research.html#working-papers",
+    "href": "research.html#working-papers",
+    "title": "Research",
+    "section": "Working Papers",
+    "text": "Working Papers\n\n\nDavid Arbour, Drew Dimmery, Anup Rao, and Tung Mai. (2022) \"This is a paper title.\"\n        \n        Preprint\n     \n        \n        Github"
+  },
+  {
+    "objectID": "posts/test-post/index.html",
+    "href": "posts/test-post/index.html",
+    "title": "Example Post With Code",
+    "section": "",
+    "text": "Reusehttps://creativecommons.org/licenses/by/4.0/CitationBibTeX citation:@online{dimmery2022,\n  author = {Drew Dimmery},\n  title = {Using {SoftBlock} to {Design} an {Experiment}},\n  date = {2022-05-10},\n  url = {localhost/posts/test-post},\n  langid = {en},\n  abstract = {This is a demo of using SoftBlock for experimental design\n    for a notional randomization of precincts in North Carolina. To\n    optimize power, we focus on ensuring very similar patterns of prior\n    voting patterns in treatment and in control. This demo walks through\n    all the necessary steps for this process and shows how to perform\n    estimation of average and heterogeneous effects.}\n}\nFor attribution, please cite this work as:\nDrew Dimmery. 2022. “Using SoftBlock to Design an\nExperiment.” May 10, 2022. localhost/posts/test-post."
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "experimental-design\n\n\ndemo\n\n\n\n\nIn this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.\n\n\n\n\n\n\nMay 10, 2022\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "software.html#rdd",
+    "href": "software.html#rdd",
+    "title": "Software",
+    "section": "RDD",
+    "text": "RDD"
+  },
+  {
+    "objectID": "research.html#working-papers-non-archival",
+    "href": "research.html#working-papers-non-archival",
+    "title": "Research",
+    "section": "Working Papers / Non-archival",
+    "text": "Working Papers / Non-archival\n\n\n2022\n\n\nDavid Arbour, Drew Dimmery, Tung Mai, and Anup Rao. (2022) \"Online Balanced Experimental Design.\"\n        \n        Preprint\n    \n\n\n2021\n\n\nMolly Offer-Westort and Drew Dimmery. (2021) \"Experimentation for Homogenous Policy Change.\"\n        \n        Preprint\n    \nYan Leng and Drew Dimmery. (2021) \"Calibration of Heterogeneous Treatment Effects in Random Experiments.\"\n        \n        Preprint\n    \n\n\n2019\n\n\nHongzi Mao, Shannon Chen, Drew Dimmery, Shaun Singh, Drew Blaisdell, Yuandong Tian, Mohammad Alizadeh, and Eytan Bakshy. (2019) \"Real-world Video Adaptation with Reinforcement Learning.\" ICML Workshop - RL4RealLife\n        \n        Preprint\n    \nSam Daulton, Shaun Singh, Vashist Avadhanula, Drew Dimmery, and Eytan Bakshy. (2019) \"Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints.\" NeurIPS Workshop - Safety and Robustness in Decision Making\n        \n        Preprint"
+  },
+  {
+    "objectID": "software.html#regweight",
+    "href": "software.html#regweight",
+    "title": "Software",
+    "section": "regweight",
+    "text": "regweight"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
+    "section": "",
+    "text": "tidyhte provides tidy semantics for estimation of heterogeneous treatment effects through the use of Kennedy’s (n.d.) doubly-robust learner.\nThe goal of tidyhte is to use a sort of “recipe” design. This should (hopefully) make it extremely easy to scale an analysis of HTE from the common single-outcome / single-moderator case to many outcomes and many moderators. The configuration of tidyhte should make it extremely easy to perform the same analysis across many outcomes and for a wide-array of moderators. It’s written to be fairly easy to extend to different models and to add additional diagnostics and ways to output information from a set of HTE estimates.\n\n        \n        Website\n     \n        \n        Github\n    \nregweight\nThe goal of regweight is to make it easy to diagnose a model using Aronow and Samii (2015) regression weights.\nIn short, these weights show which observations are most influential for determining the observed value of a coefficient in a linear regression. If the linear regression is aiming to estimate causal effects, this implies that the OLS estimand may differ from the average treatment effect. These linear regression weights provide, in some sense, the most precise estimate available given a conditioning set (and a linear model). These weights are in expectation the conditional variance of the variable of interest (given the other covariates in the model).\n\n        \n        Website\n     \n        \n        Github\n     \n        \n        Package\n    \nrdd\nOutdated! Users should switch to actively maintained and updated RD tools.\nProvides the tools to undertake estimation in Regression Discontinuity Designs. Both sharp and fuzzy designs are supported. Estimation is accomplished using local linear regression. A provided function will utilize Imbens-Kalyanaraman optimal bandwidth calculation. A function is also included to test the assumption of no-sorting effects.\n\n        \n        Github\n     \n        \n        Package"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html",
+    "href": "posts/softblock-demo/index.html",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "",
+    "text": "Attaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\n\nLinking to GEOS 3.10.2, GDAL 3.4.3, PROJ 9.0.0; sf_use_s2() is TRUE\n\n\nLoading required package: distances\n\n\nPlease cite the `quickblock` package as:\n\n\n   Higgins, Michael J., Fredrik Savje and Jasjeet S. Sekhon (2016),\n\n\n   \"Improving massive experiments with threshold blocking\",\n\n\n   Proceedings of the National Academy of Sciences 113:27, 7369--7376.\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\nLoading required package: Matrix\n\n\nLoaded glmnet 4.1-4\n\n\n\nAttaching package: 'igraph'\n\n\nThe following objects are masked from 'package:purrr':\n\n    compose, simplify\n\n\nThe following object is masked from 'package:distances':\n\n    distances\n\n\nThe following objects are masked from 'package:dplyr':\n\n    as_data_frame, groups, union\n\n\nThe following objects are masked from 'package:stats':\n\n    decompose, spectrum\n\n\nThe following object is masked from 'package:base':\n\n    union\n\n\n\nAttaching package: 'FNN'\n\n\nThe following object is masked from 'package:igraph':\n\n    knn\n\n\nhash-2.2.6.2 provided by Decision Patterns"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#description",
+    "href": "posts/softblock-demo/index.html#description",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Description",
+    "text": "Description\nThe relevant API is a function with tidyverse semantics called assign_softblock (or assign_greedy_neighbors). These functions accept a vector of columns to be used in the design. The SoftBlock version additionally accepts two arguments, .s2 for the bandwidth of the RBF kernel to use in the construction of a similarity matrix as well as .neighbors which indicates the number of nearest neighbors to include in the graph on which to construct the spanning tree. These parameters don’t generally need to be modified."
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#source-code",
+    "href": "posts/softblock-demo/index.html#source-code",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Source Code",
+    "text": "Source Code\n\n\nSee source code\n\n\n\nCode\nwriteLines(readLines(\"https://raw.githubusercontent.com/ddimmery/softblock/master/r_implementation.R\"))\n\n\nlibrary(Matrix)\nlibrary(igraph)\nlibrary(FNN)\nlibrary(hash)\n\nassign_greedily <- function(graph) {\n    adj_mat = igraph::as_adjacency_matrix(graph, type=\"both\", sparse=TRUE) != 0\n    N = nrow(adj_mat)\n    root_id = make.keys(sample(N, 1))\n\n    a = rbinom(1, 1, 0.5)\n    visited = hash()\n\n    random_order = make.keys(sample(N))\n    unvisited = hash(random_order, random_order)\n\n    colors = hash()\n    stack = hash()\n\n    stack[[root_id]] <- a\n    tentative_color = rbinom(N, 1, 0.5)\n    while ((!is.empty(unvisited)) || (!is.empty(stack))) {\n        if (is.empty(stack)) {\n            cur_node = keys(unvisited)[1]\n            del(cur_node, unvisited)\n            color = tentative_color[as.integer(cur_node)]\n        } else {\n            cur_node = keys(stack)[1]\n            color = stack[[cur_node]]\n            del(cur_node, stack)\n            del(cur_node, unvisited)\n        }\n        visited[[cur_node]] = cur_node\n        colors[[cur_node]] = color\n        children = make.keys(which(adj_mat[as.integer(cur_node), ]))\n        for (child in children) {\n            if(has.key(child, unvisited)) {\n                stack[[child]] = 1 - color\n            }\n        }\n    }\n    values(colors, keys=1:N)\n}\n\n\nassign_softblock <- function(.data, cols, .s2=2, .neighbors=6) {\n    expr <- rlang::enquo(cols)\n    pos <- tidyselect::eval_select(expr, data = .data)\n    df_cov <- rlang::set_names(.data[pos], names(pos))\n    cov_mat = scale(model.matrix(~.+0, df_cov))\n    N = nrow(cov_mat)\n    st = lubridate::now()\n    knn = FNN::get.knn(cov_mat, k=.neighbors)\n    st = lubridate::now()\n    knn.adj = Matrix::sparseMatrix(i=rep(1:N, .neighbors), j=c(knn$nn.index), x=exp(-c(knn$nn.dist) / .s2))\n    knn.graph <- graph_from_adjacency_matrix(knn.adj, mode=\"plus\", weighted=TRUE, diag=FALSE)\n    E(knn.graph)$weight <- (-1 * E(knn.graph)$weight)\n    st = lubridate::now()\n    mst.graph = igraph::mst(knn.graph)\n    E(mst.graph)$weight <- (-1 * E(mst.graph)$weight)\n    st = lubridate::now()\n    assignments <- assign_greedily(mst.graph)\n    .data$treatment <- assignments\n    attr(.data, \"laplacian\") <- igraph::laplacian_matrix(mst.graph, normalize=TRUE, sparse=TRUE)\n    .data\n}\n\nassign_greedy_neighbors <- function(.data, cols) {\n    expr <- rlang::enquo(cols)\n    pos <- tidyselect::eval_select(expr, data = .data)\n    df_cov <- rlang::set_names(.data[pos], names(pos))\n    cov_mat = scale(model.matrix(~.+0, df_cov))\n    N = nrow(cov_mat)\n    knn = FNN::get.knn(cov_mat, k=1)\n    knn.adj = Matrix::sparseMatrix(i=1:N, j=c(knn$nn.index), x=c(knn$nn.dist))\n    knn.graph <- graph_from_adjacency_matrix(knn.adj, mode=\"plus\", weighted=TRUE, diag=FALSE)\n    assignments <- assign_greedily(knn.graph)\n    .data$treatment <- assignments\n    attr(.data, \"laplacian\") <- igraph::laplacian_matrix(knn.graph, normalize=TRUE, sparse=TRUE)\n    .data\n}\n\nassign_matched_pairs <- function(.data, cols, .s2=2, .neighbors=6) {\n    expr <- rlang::enquo(cols)\n    pos <- tidyselect::eval_select(expr, data = .data)\n    df_cov <- rlang::set_names(.data[pos], names(pos))\n    cov_mat = scale(model.matrix(~.+0, df_cov))\n    N = nrow(cov_mat)\n    knn = FNN::get.knn(cov_mat, k=.neighbors)\n    knn.adj = Matrix::sparseMatrix(i=rep(1:N, .neighbors), j=c(knn$nn.index), x=exp(-c(knn$nn.dist) / .s2))\n    knn.graph <- graph_from_adjacency_matrix(knn.adj, mode=\"plus\", weighted=TRUE, diag=FALSE)\n    E(knn.graph)$weight <- (-1 * E(knn.graph)$weight)\n    mwm.graph = igraph::max_bipartite_match(knn.graph)\n    E(mwm.graph)$weight <- (-1 * E(mwm.graph)$weight)\n    assignments <- assign_greedily(mwm.graph)\n    .data$treatment <- assignments\n    attr(.data, \"laplacian\") <- igraph::laplacian_matrix(mwm.graph, normalize=TRUE, sparse=TRUE)\n    .data\n}\n\n# library(tibble)\n# data = tibble(\n#     x1=runif(10),\n#     x2=runif(10),\n#     x3=rbinom(10, 1, 0.5)\n# )\n# library(dplyr)\n# library(tidyr)\n# library(ggplot2)\n# data %>% assign_softblock(c(x1, x2)) -> newdata\n\n# ggplot(newdata, aes(x=x1, y=x2, color=factor(treatment), shape=factor(x3))) + geom_point() + theme_minimal()\n\n# newdata %>%\n#     attr(\"laplacian\") %>%\n#     ifelse(lower.tri(.), ., 0) %>%\n#     as_tibble() -> adj_df\n# names(adj_df) <- paste0(1:ncol(adj_df))\n\n# adj_df %>%\n#     group_by(id_1=as.character(row_number())) %>%\n#     gather(id_2, weight, -id_1) %>%\n#     filter(weight != 0)  %>%\n#     mutate(id_2=as.character(id_2), id=paste(id_1, id_2, sep='-')) -> adj_df\n\n# locs = newdata %>% mutate(id=as.character(row_number())) %>% select(id, x1, x2, x3)\n\n# edges=bind_rows(\n# adj_df  %>% inner_join(locs, by=c('id_1'='id')),\n# adj_df  %>% inner_join(locs, by=c('id_2'='id'))\n# ) %>% arrange(id) %>% ungroup()\n\n# pp = ggplot(newdata, aes(x=x1, y=x2)) +\n# geom_line(aes(group=id, size=1), data=edges, color='grey') +\n# geom_point(aes(color=factor(treatment), shape=factor(x3), size=2), alpha=.9) +\n# scale_size_continuous(range=c(1, 3)) +\n# theme_minimal() + theme(legend.position='none')\n\n# print(pp)"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#get-precinct-data",
+    "href": "posts/softblock-demo/index.html#get-precinct-data",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Get Precinct data",
+    "text": "Get Precinct data\n\nResults Data\n\n\nCode\nurl <- \"http://dl.ncsbe.gov/ENRS/2020_11_03/results_pct_20201103.zip\"\nzip_file <- tempfile(fileext = \".zip\")\ndownload.file(url, zip_file, mode = \"wb\")\nspec = cols(\n  County = col_character(),\n  `Election Date` = col_character(),\n  Precinct = col_character(),\n  `Contest Group ID` = col_double(),\n  `Contest Type` = col_character(),\n  `Contest Name` = col_character(),\n  Choice = col_character(),\n  `Choice Party` = col_character(),\n  `Vote For` = col_double(),\n  `Election Day` = col_double(),\n  `One Stop` = col_double(),\n  `Absentee by Mail` = col_double(),\n  Provisional = col_double(),\n  `Total Votes` = col_double(),\n  `Real Precinct` = col_character(),\n  X16 = col_skip()\n)\nresults <- readr::read_tsv(zip_file, col_types=spec)\n\n\nNew names:\n• `` -> `...16`\n\n\nWarning: The following named parsers don't match the column names: X16\n\n\nCode\nDT::datatable(results %>% sample_n(size=100), rownames = FALSE, options=list(scrollX=TRUE, autoWidth = TRUE))\n\n\n\n\n\n\n\n\n\nShapefiles\n\n\nCode\nurl = \"https://s3.amazonaws.com/dl.ncsbe.gov/ShapeFiles/Precinct/SBE_PRECINCTS_20201018.zip\"\ntemp <- tempfile()\ntemp2 <- tempfile()\ndownload.file(url, temp)\nunzip(zipfile = temp, exdir = temp2)\nnc_SHP_file <- list.files(temp2, pattern = \".shp$\",full.names=TRUE)\nshapes <- sf::read_sf(nc_SHP_file)\nDT::datatable(shapes %>% sample_n(size=100) %>% dplyr::select(-geometry), rownames = FALSE, options=list(scrollX=TRUE, autoWidth = TRUE))"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#aggregate-data-and-join",
+    "href": "posts/softblock-demo/index.html#aggregate-data-and-join",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Aggregate Data and Join",
+    "text": "Aggregate Data and Join\n\n\nCode\nresults %>%\n    filter(`Real Precinct` == 'Y') %>%\n    group_by(County, Precinct) %>%\n    summarize(\n        total_vote_pres=sum(`Total Votes`[`Contest Name` == 'US PRESIDENT'], na.rm=TRUE),\n        dem_share_pres=sum(`Total Votes`[`Contest Name` == 'US PRESIDENT' & `Choice Party` == 'DEM'], na.rm=TRUE)/total_vote_pres,\n        gop_share_pres=sum(`Total Votes`[`Contest Name` == 'US PRESIDENT' & `Choice Party` == 'REP'], na.rm=TRUE)/total_vote_pres,\n        total_vote_senate=sum(`Total Votes`[`Contest Name` == 'US SENATE'], na.rm=TRUE),\n        dem_share_senate=sum(`Total Votes`[`Contest Name` == 'US SENATE' & `Choice Party` == 'DEM'], na.rm=TRUE)/total_vote_senate,\n        gop_share_senate=sum(`Total Votes`[`Contest Name` == 'US SENATE' & `Choice Party` == 'REP'], na.rm=TRUE)/total_vote_senate,\n        total_vote_gov=sum(`Total Votes`[`Contest Name` == 'NC GOVERNOR'], na.rm=TRUE),\n        dem_share_gov=sum(`Total Votes`[`Contest Name` == 'NC GOVERNOR' & `Choice Party` == 'DEM'], na.rm=TRUE)/total_vote_gov,\n        gop_share_gov=sum(`Total Votes`[`Contest Name` == 'NC GOVERNOR' & `Choice Party` == 'REP'], na.rm=TRUE)/total_vote_gov,\n        total_vote_house=sum(`Total Votes`[grepl('US HOUSE OF REPRESENTATIVES DISTRICT', `Contest Name`)], na.rm=TRUE),\n        dem_share_house=sum(`Total Votes`[grepl('US HOUSE OF REPRESENTATIVES DISTRICT', `Contest Name`) & `Choice Party` == 'DEM'], na.rm=TRUE)/total_vote_house,\n        gop_share_house=sum(`Total Votes`[grepl('US HOUSE OF REPRESENTATIVES DISTRICT', `Contest Name`) & `Choice Party` == 'REP'], na.rm=TRUE)/total_vote_house\n    ) %>% ungroup() -> results_agg\n\n\n`summarise()` has grouped output by 'County'. You can override using the\n`.groups` argument.\n\n\nCode\ninner_join(results_agg, shapes, by=c('County'='county_nam', 'Precinct'='prec_id')) -> df_joined\nDT::datatable(df_joined %>% sample_n(size=100) %>% dplyr::select(-geometry), rownames = FALSE, options=list(scrollX=TRUE, autoWidth = TRUE))"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#add-some-geographic-features",
+    "href": "posts/softblock-demo/index.html#add-some-geographic-features",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Add some geographic features",
+    "text": "Add some geographic features\n\n\nCode\ndf_joined$geometry %>%\n    st_centroid() %>%\n    st_transform(\"+init=epsg:4326\") %>%\n    st_coordinates() -> latlong\n\n\nWarning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is\ndeprecated. It might return a CRS with a non-EPSG compliant axis order.\n\n\nCode\ndf_joined$longitude = latlong[, 'X']\ndf_joined$latitude = latlong[, 'Y']\narea = df_joined$geometry %>% st_transform(\"+init=epsg:4326\") %>% st_area()\ndf_joined$area_km2 = units::drop_units(area) / 1e6 # convert m^2 to km^2\ndf_joined <- df_joined %>% mutate(vote_density_pres = total_vote_pres / area_km2)"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#softblock",
+    "href": "posts/softblock-demo/index.html#softblock",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Softblock",
+    "text": "Softblock\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% assign_softblock(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n)) %>%\nrename(treatment_sb=treatment)-> df_joined\nsoftblock_weights <- attr(df_joined, \"laplacian\")\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 0.646909 secs"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#greedy-nearest-neighbors",
+    "href": "posts/softblock-demo/index.html#greedy-nearest-neighbors",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Greedy nearest neighbors",
+    "text": "Greedy nearest neighbors\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% assign_greedy_neighbors(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n)) %>%\nrename(treatment_nn=treatment)-> df_joined\nnn_weights <- attr(df_joined, \"laplacian\")\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 1.446549 secs"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#quickblock",
+    "href": "posts/softblock-demo/index.html#quickblock",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "QuickBlock",
+    "text": "QuickBlock\n\n\nCode\nstart_time = lubridate::now()\ndf_joined %>% dplyr::select(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n) -> df_qb\nqb_blocks = quickblock(as.data.frame(df_qb), size_constraint = 6L)\ndf_joined$treatment_qb = as.integer(as.character(assign_treatment(qb_blocks, treatments=c('0', '1'))))\nend_time = lubridate::now()\nprint(end_time - start_time)\n\n\nTime difference of 0.0202949 secs"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#matched-pairs",
+    "href": "posts/softblock-demo/index.html#matched-pairs",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Matched Pairs",
+    "text": "Matched Pairs\n\n\nCode\n# This is extremely slow.\n# start_time = lubridate::now()\n# df_joined %>% assign_matched_pairs(c(\n#     longitude, latitude, area_km2, vote_density_pres, # geographic\n#     total_vote_pres, dem_share_pres, gop_share_pres, # 2020 presidential\n#     total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n#     total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n#     total_vote_house, dem_share_house, gop_share_house # 2020 house\n# )) %>%\n# rename(treatment_mp=treatment)-> df_joined\n# mp_weights <- attr(df_joined, \"laplacian\")\n# end_time = lubridate::now()\n# print(end_time - start_time)"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#simulate-each-design",
+    "href": "posts/softblock-demo/index.html#simulate-each-design",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Simulate each design",
+    "text": "Simulate each design\n\nSoftblockGreedy NeighborsQuickBlock\n\n\n\n\nCode\nsimulate_power = create_power_simulator(softblock_weights, df_joined$treatment_sb, df_joined$dem_share_pres)\nestimate_power_for_effect = function(effect) mean(replicate(25, simulate_power(effect=effect)))\neffects = seq(0, 0.05, length=25)\npower_sb = unlist(purrr::map(effects, estimate_power_for_effect))\n\n\n\n\n\n\nCode\nsimulate_power = create_power_simulator(nn_weights, df_joined$treatment_nn, df_joined$dem_share_pres)\nestimate_power_for_effect = function(effect) mean(replicate(25, simulate_power(effect=effect)))\npower_nn = unlist(purrr::map(effects, estimate_power_for_effect))\n\n\n\n\n\n\nCode\nsimulate_power = create_power_simulator_qb(qb_blocks, df_joined$treatment_qb, df_joined$dem_share_pres)\nestimate_power_for_effect = function(effect) mean(replicate(25, simulate_power(effect=effect)))\neffects = seq(0, 0.05, length=25)\npower_qb = unlist(purrr::map(effects, estimate_power_for_effect))"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#power-comparison",
+    "href": "posts/softblock-demo/index.html#power-comparison",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Power Comparison",
+    "text": "Power Comparison\n\n\nCode\nggplot(\n    tibble(\n        effects=c(effects, effects, effects),\n        power=c(power_sb, power_nn, power_qb),\n        design=c(rep('SoftBlock', length(power_sb)), rep('Greedy Neighbors', length(power_sb)), rep('QuickBlock', length(power_sb)))\n    ), aes(effects, power, color=design)) + geom_line() +\n    scale_x_continuous('Effect (pp)', labels=scales::percent) +\n    scale_y_continuous(\"Power\", labels=scales::percent) +\n    scale_color_discrete(\"Design\") +\n    theme_minimal()"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#average-effects",
+    "href": "posts/softblock-demo/index.html#average-effects",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Average Effects",
+    "text": "Average Effects\nThe effect estimates here use the appropriate design-based estimators for each design.\nFirst, I’m going to generate a fake outcome to use. I’ll leave the average effect near zero (0.5pp), but individual effects are random draws from around that vale, but with heterogeneous effects based on democratic vote share in 2020 (i.e. positive effects in democratic precincts and vice versa).\n\n\nCode\ndf_joined$outcome = df_joined$dem_share_pres\ndf_joined$ite = with(df_joined, 0.005 + 0.005 * (plogis((dem_share_pres - median(dem_share_pres)) / sd(dem_share_pres))))\ndf_joined$outcome_sb = with(df_joined, outcome + treatment_sb * ite)\ndf_joined$outcome_nn = with(df_joined, outcome + treatment_nn * ite)\ndf_joined$outcome_qb = with(df_joined, outcome + treatment_qb * ite)\n\n\n\nSoftblockGreedy NeighborsQuickBlock\n\n\n\n\nCode\nestimate_effect = function(W, A, Y) {\n    dL = diag(W)\n    Dinv = (2 * A - 1) / dL\n    x_mat = cbind(A, 1)\n    xlx = t(x_mat) %*% W %*% x_mat\n    bread = MASS::ginv(as.matrix(xlx))\n    coefs = bread %*% t(x_mat) %*% W %*% Y\n    r = diag(drop((Y - (x_mat %*% coefs)) ^ 2))\n    meat = t(x_mat) %*% (W %*% r %*% W) %*% x_mat\n    vcv = bread %*% meat %*% bread\n    list(estimate=coefs[1], std.error=sqrt(vcv[1,1]))\n}\nsb_est = estimate_effect(softblock_weights, df_joined$treatment_sb, df_joined$outcome_sb)\n\n\n\n\n\n\nCode\nnn_est = estimate_effect(nn_weights, df_joined$treatment_nn, df_joined$outcome_nn)\n\n\n\n\n\n\nCode\nresult = quickblock::blocking_estimator(df_joined$outcome_qb, qb_blocks, df_joined$treatment_qb)\nqb_est = list(estimate=result$effects[2,1], std.error=sqrt(result$effect_variances[2,1]))"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#plot-average-effects",
+    "href": "posts/softblock-demo/index.html#plot-average-effects",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Plot Average Effects",
+    "text": "Plot Average Effects\n\n\nCode\ntibble(\n    estimate=c(sb_est$estimate, nn_est$estimate, qb_est$estimate),\n    std.error=c(sb_est$std.error, nn_est$std.error, qb_est$std.error),\n    design=c(\"SoftBlock\", \"Greedy Neighbors\", \"QuickBlock\")\n) %>%\nggplot(aes(x=design, y=estimate, ymin=estimate-1.96*std.error, ymax=estimate+1.96*std.error)) +\n    geom_pointrange() +\n    scale_x_discrete(\"Design\") +\n    scale_y_continuous(\"ATE (pp)\", labels=scales::percent) +\n    coord_flip() +\n    theme_minimal()"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#heterogeneous-effects",
+    "href": "posts/softblock-demo/index.html#heterogeneous-effects",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Heterogeneous Effects",
+    "text": "Heterogeneous Effects\nThese effects will be estimated using DR-learner of Kennedy (2020). For simplicity, I will estimate nuisance functions using glmnet.\n\n\nCode\npredict.hte.split = function(x, a, y, s, predict.s=4) {\n    s.pi = (predict.s) %% 4 + 1\n    s.mu = (predict.s + 1) %% 4 + 1\n    s.dr = (predict.s + 2) %% 4 + 1\n    pihat <- predict(cv.glmnet(x[s==s.pi,],a[s==s.pi], family=\"binomial\", nfolds=10), newx=x, type=\"response\", s=\"lambda.min\")\n    mu0hat <- predict(cv.glmnet(x[a==0 & s==s.mu,],y[a==0 & s==s.mu], nfolds=10), newx=x, type=\"response\", s=\"lambda.min\")\n    mu1hat <- predict(cv.glmnet(x[a==1 & s==s.mu,],y[a==1 & s==s.mu], nfolds=10),newx=x, type=\"response\", s=\"lambda.min\")\n    pseudo <- ((a-pihat)/(pihat*(1-pihat)))*(y-a*mu1hat-(1-a)*mu0hat) + mu1hat - mu0hat\n    drl <- predict(cv.glmnet(x[s==s.dr,],pseudo[s==s.dr]),newx=x[s==predict.s, ], s=\"lambda.min\")\n    drl\n}\npredict.hte.crossfit = function(x, a, y) {\n    N = length(a)\n    s = sample(1:4, N, replace=TRUE)\n    hte = rep(NA_real_, N)\n    for (split in 1:4) {\n        hte[s==split] = predict.hte.split(x, a, y, s, predict.s=split)\n    }\n    hte\n}\ncalculate_hte <- function(.data, cols, .treatment='treatment', .outcome='outcome') {\n    expr <- rlang::enquo(cols)\n    pos <- tidyselect::eval_select(expr, data = .data)\n    df_cov <- rlang::set_names(.data[pos], names(pos))\n    cov_mat = scale(model.matrix(~.+0, df_cov))\n    .data$hte = predict.hte.crossfit(cov_mat, .data[[.treatment]], .data[[.outcome]])\n    .data\n}"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#estimate-htes",
+    "href": "posts/softblock-demo/index.html#estimate-htes",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Estimate HTEs",
+    "text": "Estimate HTEs\n\nSoftblockGreedy NeighborsQuickBlock\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_sb', .outcome='outcome_sb') %>% rename(hte_sb=hte) -> df_joined\nsummary(df_joined$hte_sb)\n\n\n    Min.  1st Qu.   Median     Mean  3rd Qu.     Max. \n0.004826 0.007942 0.008456 0.008152 0.008457 0.011642 \n\n\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_nn', .outcome='outcome_nn') %>% rename(hte_nn=hte) -> df_joined\nsummary(df_joined$hte_nn)\n\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n-0.001538  0.007977  0.007977  0.008131  0.008466  0.032650 \n\n\n\n\n\n\nCode\ndf_joined %>% calculate_hte(c(\n    longitude, latitude, area_km2, vote_density_pres, # geographic\n    total_vote_pres, # 2020 presidential\n    total_vote_senate, dem_share_senate, gop_share_senate, # 2020 senate\n    total_vote_gov, dem_share_gov, gop_share_gov, # 2020 governor\n    total_vote_house, dem_share_house, gop_share_house # 2020 house\n), .treatment='treatment_qb', .outcome='outcome_qb') %>% rename(hte_qb=hte) -> df_joined\nsummary(df_joined$hte_qb)\n\n\n     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. \n-0.020464  0.005829  0.007149  0.007272  0.009363  0.027874"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#plot-distributions",
+    "href": "posts/softblock-demo/index.html#plot-distributions",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Plot distributions",
+    "text": "Plot distributions\n\n\nCode\nggplot(df_joined, aes()) +\ngeom_histogram(aes(x=hte_sb, fill='SoftBlock'), bins=10, alpha=0.4) +\ngeom_histogram(aes(x=hte_nn, fill='Greedy Neighbors'), bins=10, alpha=0.4) +\ngeom_histogram(aes(x=hte_qb, fill='QuickBlock'), bins=10, alpha=0.4) +\nscale_x_continuous(\"Effect (pp)\", labels=scales::percent) +\ntheme_minimal()"
+  },
+  {
+    "objectID": "posts/softblock-demo/index.html#plot-hte-distributions",
+    "href": "posts/softblock-demo/index.html#plot-hte-distributions",
+    "title": "Using SoftBlock to Design an Experiment",
+    "section": "Plot HTE distributions",
+    "text": "Plot HTE distributions\n\n\nCode\nggplot(df_joined, aes()) +\ngeom_histogram(aes(x=hte_sb, fill='SoftBlock'), bins=50, alpha=0.4) +\ngeom_histogram(aes(x=hte_nn, fill='Greedy Neighbors'), bins=50, alpha=0.4) +\ngeom_histogram(aes(x=hte_qb, fill='QuickBlock'), bins=50, alpha=0.4) +\nscale_x_continuous(\"Effect (pp)\", labels=scales::percent) +\ntheme_minimal()"
+  }
+]

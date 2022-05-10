@@ -1,0 +1,35 @@
+project:
+  type: website
+
+website:
+  title: "Drew Dimmery"
+  description: "Personal website of Drew Dimmery"
+  site-url: https://ddimmery.com
+  repo-url: https://github.com/ddimmery/quarto-website
+  google-analytics: "G-Y7YLFF5F90"
+  open-graph: true
+  twitter-card: 
+    creator: "@drewdim"
+    site: "@drewdim"
+  navbar:
+    background: dark
+    foreground: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+      - href: research.qmd
+      - href: software.qmd
+      - href: blog.qmd
+
+format:
+  html:
+    theme: journal
+    css: styles.css
+    toc: true
+    toc-depth: 5
+    toc-title: "Contents"
+    html-math-method: katex
+    include-in-header:
+      - includes.html
+

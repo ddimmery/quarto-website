@@ -1,0 +1,37 @@
+---
+title: "Software"
+echo: false
+jupyter: python3
+section-divs: false
+keep-md: true
+---
+
+```{python}
+#| label: "software"
+#| id: "software"
+#| output: asis
+import yaml
+from IPython.display import display, Markdown, HTML
+
+def button(url, str, icon):
+    icon_base = icon[:2]
+    return f"""<a class="btn btn-outline-dark btn-sm", href="{url}">
+        <i class="{icon_base} {icon}" role='img' aria-label='{str}'></i>
+        {str}
+    </a>"""
+
+yaml_data = yaml.safe_load(open("software.yaml"))
+
+for data in yaml_data[::-1]:
+    display(Markdown("## `" + data["title"] + "` {#" + data["title"] + "}"))
+    display(Markdown(data["description"]))
+    buttons = []
+    if "website" in data:
+        buttons.append(button(data['website'], "Website", "bi-info"))
+    if "github" in data:
+        buttons.append(button(data['github'], "Github", "bi-github"))
+    if "package" in data:
+        buttons.append(button(data['package'], "Package", "bi-box-seam"))
+
+    display(HTML(" ".join(buttons)))
+```
