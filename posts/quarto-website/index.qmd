@@ -1,8 +1,8 @@
 ---
 title: "Quarto for an Academic Website"
 description: |
-    I continue my long search for a system that will allow me to generate a nicely formatted
-    website with publication list based on adding publications to a single source of truth
+    I continue my long search for a way to generate a nicely formatted
+    website with publication list based on adding publication information to a single source of truth
     without re-remembering how all the formatting works each time.
 date: "2022-05-11"
 categories:
