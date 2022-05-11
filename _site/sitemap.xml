@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ddimmery.com/research.html</loc>
-    <lastmod>2022-05-10T22:30:24.428Z</lastmod>
+    <lastmod>2022-05-11T13:32:50.095Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/posts/softblock-demo/index.html</loc>
-    <lastmod>2022-05-10T22:30:25.544Z</lastmod>
+    <lastmod>2022-05-11T13:32:51.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ddimmery.com/posts/quarto-website/index.html</loc>
+    <lastmod>2022-05-11T13:32:52.039Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/index.html</loc>
-    <lastmod>2022-05-10T22:30:25.920Z</lastmod>
+    <lastmod>2022-05-11T13:32:52.539Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/about.html</loc>
-    <lastmod>2022-05-10T22:30:26.241Z</lastmod>
+    <lastmod>2022-05-11T13:32:52.908Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/software.html</loc>
-    <lastmod>2022-05-10T22:30:28.244Z</lastmod>
+    <lastmod>2022-05-11T13:32:54.904Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/blog.html</loc>
-    <lastmod>2022-05-10T22:30:28.543Z</lastmod>
+    <lastmod>2022-05-11T13:33:00.000Z</lastmod>
   </url>
 </urlset>

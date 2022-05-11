@@ -3,10 +3,12 @@ title: "Research"
 echo: false
 jupyter: python3
 section-divs: false
+keep-md: true
 ---
 
 ```{python}
 import yaml
+from IPython.display import display, Markdown, HTML
 
 def readable_list(_s):
   if len(_s) < 3:
@@ -63,8 +65,6 @@ for _, data in yaml_data.items():
         pub_strs["pubs"][year_str].append(
             "<li class='list-group-item'>" + pub_str + "<br>" + " ".join(buttons) + "</li>"
         )
-
-from IPython.display import display, Markdown, HTML
 ```
 
 ## Published
