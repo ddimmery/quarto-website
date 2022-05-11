@@ -30,7 +30,7 @@ keep-md: true
         <i class="ai ai-archive" role='img' aria-label='Published'></i>
         Published
     </a></li>
-<li class='list-group-item'>My Phan, David Arbour, Drew Dimmery, and Anup Rao. (2021) "Designing Transportable Experiments Under S-admissability." <em>AISTATS</em><br><a class="btn btn-outline-dark btn-sm", href="https://arxiv.org/abs/2009.03860" target="_blank" rel="noopener noreferrer">
+<li class='list-group-item'>My Phan, David Arbour, <strong>Drew Dimmery</strong>, and Anup Rao. (2021) "Designing Transportable Experiments Under S-admissability." <em>AISTATS</em><br><a class="btn btn-outline-dark btn-sm", href="https://arxiv.org/abs/2009.03860" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-file-earmark-pdf" role='img' aria-label='Preprint'></i>
         Preprint
     </a> <a class="btn btn-outline-dark btn-sm", href="https://proceedings.mlr.press/v130/phan21a.html" target="_blank" rel="noopener noreferrer">

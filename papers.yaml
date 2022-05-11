@@ -112,7 +112,7 @@ gen_exp:
   authors:
     - My Phan
     - David Arbour
-    - Drew Dimmery
+    - me
     - Anup Rao
   year: 2021
   venue: AISTATS
