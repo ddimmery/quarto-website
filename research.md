@@ -94,6 +94,10 @@ keep-md: true
 <ul class='list-group list-group-flush'><li class='list-group-item'>David Arbour, <strong>Drew Dimmery</strong>, Tung Mai, and Anup Rao. (2022) "Online Balanced Experimental Design."<br><a class="btn btn-outline-dark btn-sm", href="https://arxiv.org/abs/2203.02025" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-file-earmark-pdf" role='img' aria-label='Preprint'></i>
         Preprint
+    </a></li>
+<li class='list-group-item'>Han Wu, Sarah Tan, Weiwei Li, Mia Garrard, Adam Obeng, <strong>Drew Dimmery</strong>, Shaun Singh, Hanson Wang, Daniel Jiang, and Eytan Bakshy. (2022) "Distilling Heterogeneity: From Explanations of Heterogeneous Treatment Effect Models to Interpretable Policies."<br><a class="btn btn-outline-dark btn-sm", href="https://arxiv.org/abs/2111.03267" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-file-earmark-pdf" role='img' aria-label='Preprint'></i>
+        Preprint
     </a></li></ul>
 ```
 

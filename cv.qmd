@@ -1,8 +1,7 @@
----
-title: "Curriculum Vitae"
-format: pdf
----
-
 {{< include about.qmd >}}
 
 {{< include research.md >}}
+
+---
+title: "Curriculum Vitae"
+---

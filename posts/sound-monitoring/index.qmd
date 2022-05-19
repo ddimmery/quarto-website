@@ -1,0 +1,20 @@
+---
+title: "Monitoring Sound Levels"
+description: |
+    Sometimes you have to learn basic principles of
+    sound engineering in order to prove that you're a good
+    neighbor.
+date: "2022-05-18"
+categories:
+  - data science
+  - misc
+code-fold: true
+image: /posts/quarto-website/tobias-meme.jpg
+draft: true
+---
+
+# Prelude
+
+Austria cares about keeping things peaceful and quiet. In Vienna there's a law that quiet hours must be kept between 10pm and 6am every day, and the residents take this extremely seriously. As almost anyone from Vienna and they'll invariably have at least a story or two of their having the police called for a noise disturbance complaint.
+
+Approximately one day after we moved into our apartment, our neighbor complained to our property manager about the fact that we were too loud. For some additional context, our neighbor's window looks out just below our terrace.

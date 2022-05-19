@@ -119,3 +119,18 @@ gen_exp:
   github: https://github.com/myphan9/Designing_Transportable_Experiments
   preprint: https://arxiv.org/abs/2009.03860
   published_url: https://proceedings.mlr.press/v130/phan21a.html
+interp_hte:
+  title: "Distilling Heterogeneity: From Explanations of Heterogeneous Treatment Effect Models to Interpretable Policies"
+  authors:
+    - Han Wu
+    - Sarah Tan
+    - Weiwei Li
+    - Mia Garrard
+    - Adam Obeng
+    - me
+    - Shaun Singh
+    - Hanson Wang
+    - Daniel Jiang
+    - Eytan Bakshy
+  year: 2022
+  preprint: https://arxiv.org/abs/2111.03267
