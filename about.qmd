@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna.
+I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna. Starting in January of 2024, I will be the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/news/detail/content/the-hertie-schools-data-science-lab-to-welcome-new-faculty-members-asya-magazinnik-and-drew-dimmery) at the [Hertie School](https://www.hertie-school.org/en/).
 
 ### Research Interests
 
