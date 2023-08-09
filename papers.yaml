@@ -137,3 +137,109 @@ interp_hte:
   year: 2022
   preprint: https://arxiv.org/abs/2111.03267
   published_url: https://dl.acm.org/doi/10.1145/3534678.3539175
+chronofeed:
+  title: "How do social media feed algorithms affect attitudes and behavior in an election campaign?"
+  authors:
+    - Andrew Guess
+    - Neil Malhotra
+    - Jennifer Pan
+    - Pablo Barberá
+    - Hunt Alcott
+    - Taylor Brown
+    - Adriana Crespo-Tenorio
+    - me
+    - Deen Freelon
+    - Matthew Gentzkow
+    - Sandra González-Bailón
+    - Edward Kennedy
+    - Young Mie Kim
+    - David Lazer
+    - Devra Moehler
+    - Brendan Nyhan
+    - Carlos Velasco Rivera
+    - Jaime Settle
+    - Daniel Thomas
+    - Emily Thorson
+    - Rebekah Tromble
+    - Arjun Wilkins
+    - Magdalena Wojcieszak
+    - Beixian Xiong
+    - Chad Kiewet de Jong
+    - Annie Franco
+    - Winter Mason
+    - Natalie Jomini Stroud
+    - Joshua Tucker
+  year: 2023
+  venue: Science
+  published_url: https://doi.org/10.1126/science.abp9364
+reshares:
+  title: "Reshares on social media amplify political news but do not detectably affect beliefs or opinions"
+  authors:
+    - Andrew Guess
+    - Neil Malhotra
+    - Jennifer Pan
+    - Pablo Barberá
+    - Hunt Alcott
+    - Taylor Brown
+    - Adriana Crespo-Tenorio
+    - me
+    - Deen Freelon
+    - Matthew Gentzkow
+    - Sandra González-Bailón
+    - Edward Kennedy
+    - Young Mie Kim
+    - David Lazer
+    - Devra Moehler
+    - Brendan Nyhan
+    - Carlos Velasco Rivera
+    - Jaime Settle
+    - Daniel Thomas
+    - Emily Thorson
+    - Rebekah Tromble
+    - Arjun Wilkins
+    - Magdalena Wojcieszak
+    - Beixian Xiong
+    - Chad Kiewet de Jong
+    - Annie Franco
+    - Winter Mason
+    - Natalie Jomini Stroud
+    - Joshua Tucker
+  year: 2023
+  venue: Science
+  published_url: https://doi.org/10.1126/science.add8424
+likeminded:
+  title: "Reshares on social media amplify political news but do not detectably affect beliefs or opinions"
+  authors:
+    - Brendan Nyhan
+    - Jaime Settle
+    - Emily Thorson
+    - Magdalena Wojcieszak
+    - Pablo Barberá
+    - Annie Chen
+    - Hunt Alcott
+    - Taylor Brown
+    - Adriana Crespo-Tenorio
+    - me
+    - Deen Freelon
+    - Matthew Gentzkow
+    - Sandra González-Bailón
+    - Andrew Guess
+    - Edward Kennedy
+    - Young Mie Kim
+    - David Lazer
+    - Neil Malhotra
+    - Devra Moehler
+    - Jennifer Pan
+    - Daniel Thomas
+    - Rebekah Tromble
+    - Carlos Velasco Rivera
+    - Arjun Wilkins
+    - Beixian Xiong
+    - Chad Kiewet de Jong
+    - Annie Franco
+    - Winter Mason
+    - Natalie Jomini Stroud
+    - Joshua Tucker
+  year: 2023
+  venue: Nature
+  published_url: https://doi.org/10.1038/s41586-023-06297-w
