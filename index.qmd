@@ -1,21 +1,21 @@
 ---
-title: "Drew Dimmery"
-description: "Methods in Causal Inference, Data Science and Social Science"
+title: "Andrew Mitchell"
+description: "Urban Soundscape Engineering and Analysis"
 page-layout: full
 image: /social-card.jpg
 resources:
     - "social-card.jpg"
+sidebar: false
 ---
 
 ::: {.column-page-inset}
 ::: {.column-page-inset-left}
-I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna. Starting in January of 2024, I will be the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/news/detail/content/the-hertie-schools-data-science-lab-to-welcome-new-faculty-members-asya-magazinnik-and-drew-dimmery) at the [Hertie School](https://www.hertie-school.org/en/).
+I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of complex sounds. 
 
-I previously worked on the Adaptive Experimentation team at Facebook Core Data Science in New York.
+I was awarded two PhD- and one Post-doctoral Enrichment Awards from The Alan Turing Institute and spent a month in early 2022 as a visiting research fellow at Stockholm University. My ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, Soundscapy, Deep Learning Techniques for noise Annoyance detection (DeLTA), the Catalogue of Soundscape Interventions (CSI), and the Soundscape Attributes Translation Project (SATP).
 
-My research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and I think hard about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference.
+I am also the host of The Rest is Just Noise, a monthly podcast exploring the relationship between sound and our cities. Each episode, along with my co-hosts and colleagues Dr Francesco Aletta and Dr Tin Oberman, I speak with researchers and experts from a wide range of backgrounds about their work in urban sounds and sound perception.
 
-I’m most interested in methodological research useful for the study of social phenomena.
 :::
 
 <div class="column-margin column-container">
@@ -23,31 +23,33 @@ I’m most interested in methodological research useful for the study of social 
 </div>
 :::
 
+<div id='buzzsprout-large-player'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1438372.js?container_id=buzzsprout-large-player&player=large'></script>
+
 {{< pagebreak >}}
 
 ::: {.column-page-inset .text-center}
 ```{=html}
-<a class="btn btn-outline-dark", href="https://twitter.com/DrewDim" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="https://twitter.com/AcousticsMan" target="_blank" rel="noopener noreferrer">
     <i class="bi bi-twitter" role='img' aria-label='Twitter'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="https://github.com/ddimmery" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="https://github.com/MitchellAcoustics" target="_blank" rel="noopener noreferrer">
     <i class="bi bi-github" role='img' aria-label='Github'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/drew-dimmery/" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/andrew-mitchell-acoustics/" target="_blank" rel="noopener noreferrer">
     <i class="bi bi-linkedin" role='img' aria-label='LinkedIn'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="https://scholar.google.com/citations?user=qMfnm48AAAAJ" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="https://scholar.google.com/citations?user=xydj7cEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
     <i class="ai ai-google-scholar" role='img' aria-label='Google Scholar'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="https://arxiv.org/a/dimmery_d_1.html" target="_blank" rel="noopener noreferrer">
+<!-- <a class="btn btn-outline-dark", href="https://arxiv.org/a/dimmery_d_1.html" target="_blank" rel="noopener noreferrer">
     <i class="ai ai-arxiv" role='img' aria-label='arXiv'></i>
-</a>
+</a> -->
 
-<a class="btn btn-outline-dark", href="mailto:pddimmery@gmail.com" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="mailto:andrew.mitchell.18@ucl.ac.uk" target="_blank" rel="noopener noreferrer">
     <i class="ai bi-envelope" role='img' aria-label='email'></i>
 </a>
 ```

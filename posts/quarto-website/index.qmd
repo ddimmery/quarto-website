@@ -10,6 +10,7 @@ categories:
 engine: markdown
 code-fold: true
 image: /posts/quarto-website/tobias-meme.jpg
+sidebar: false
 ---
 
 # Intro

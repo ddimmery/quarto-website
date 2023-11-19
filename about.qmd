@@ -1,97 +1,115 @@
 ---
 title: "About"
+sidebar: false
 ---
 
-I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna. Starting in January of 2024, I will be the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/news/detail/content/the-hertie-schools-data-science-lab-to-welcome-new-faculty-members-asya-magazinnik-and-drew-dimmery) at the [Hertie School](https://www.hertie-school.org/en/).
+I am currently a Senior Research Fellow at the Institute for Environmental Design & Engineering at University College London. 
 
 ### Research Interests
 
-- Causal Inference
+- Soundscape Engineering
 - Machine Learning
 - Data Science
-- Experimental Design
+- Environmental Acoustics
+- Psychoacoustics
 
 ### Education
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**New York University**  
-PhD in Political Methodology  
-Advisors: Cyrus Samii, Neal Beck, Josh Tucker
+**University College London**   
+PhD in Environmental Acoustics and Machine Learning     
+Supervisor: Prof Jian Kang      
+Co-Superverisor: Dr. Phil Symonds   
 :::
 ::: {.text-end}
-New York, NY  
-Granted May 2016
+London, UK  
+Granted September 2022  
 :::
 :::
-- Dissertation: *Essays on Causal Inference and Machine Learning with Application to Nonprofits*
-- Winner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology
+- Dissertation: *Predictive Modelling of Complex Urban Soundscapes: Enabling an Engineering Approach to Soundscape Design*
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**UNC Chapel Hill**  
-B.A. in International and Area Studies with distinction
+**Cardiff University**  
+BSc. (Hons) in Physics & Music  
 :::
 ::: {.text-end}
-Chapel Hill, NC  
-Granted June 2010
+Cardiff, Wales, UK      
+Granted August 2015
 :::
 :::
+- Dissertation: *The Physics of the Trombone Mouthpiece*
 
 ### Experience
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**University of Vienna**  
+**University College London**
 :::
 ::: {.text-end}
-April 2021 - present
+October 2023 - present
 :::
 :::
-*Scientific Coordinator*
+*Senior Research Fellow in Soundscape Modelling*
 
-- Supervisor: Philipp Grohs
+- Supervisor: Prof Jian Kang
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**Facebook Core Data Science**  
+**University College London**, Institute for Environmental Design & Engineering
 :::
 ::: {.text-end}
-Sept 2016 - March 2021
+June 2022 - Oct 2023
 :::
 :::
-*Research Scientist*
+*Research Fellow in Soundscape Modelling*
 
-- Part of Eytan Bakshy's Adaptive Experimentation team
-- Developed statistical, machine learning and experimental methodology
-- Ran adaptive and contextual field experiments with a variety of product teams
-- Integrated advanced methodologies into a toolkit for scalable and automatic experimentation intended for optimization ([Ax](https://ax.dev/)) - [released at F8 2019](https://developers.facebook.com/videos/2019/product-optimization-with-adaptive-experimentation/))
-- Developed scalable methods for robust observational causal inference as the technical lead of our "CausalML" initiative
+- Supervisor: Prof Jian Kang
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**Princeton University**  
+**Hoare Lea, LLC**, London, UK
 :::
 ::: {.text-end}
-September 2015 - May 2016
+June 2019 - March 2021
 :::
 :::
-*Pre-doctoral fellow*
+*Acoustics Engineer / Soundscape Consultant*
 
-- Supervised by Kosuke Imai
+- Academic/industry collaboration to design an IoT-based soundscape assessment tool
 
 ::: {.d-flex .justify-content-between}
 ::: {}
-**Facebook Core Data Science**  
+**Newson Brown Acoustics**, Santa Monica, CA  
 :::
 ::: {.text-end}
-Summer 2015
+June 2016 - September 2018
 :::
 :::
-*Summer Intern*
+*Acoustical Consultant*
 
-- Statistical and Decision Science Team
-- Supervised by Eytan Bakshy
+- Architectural acoustics, room acoustics modelling, & noise control
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Hayes McKenzie Partnership**, Machynlleth, Wales
+:::
+::: {.text-end}
+July 2015 - April 2016
+:::
+:::
+*Junior Acoustics Consultant*
+
+::: {.d-flex .justify-content-between}
+::: {}
+**Busch Gardens Williamsburg**, Williamsburg, VA
+:::
+::: {.text-end}
+Summer 2012
+:::
+:::
+*Bass Trombonist*
 
 ### Teaching
 

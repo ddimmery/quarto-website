@@ -1,2 +1,4 @@
 jupyter
 pyyaml
+bib2yaml
+soundscapy

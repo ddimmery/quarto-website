@@ -2,8 +2,17 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/across-acoustics/index.html",
+      "/posts/visa-process/index.html",
       "/posts/quarto-website/index.html",
-      "/posts/softblock-demo/index.html"
+      "/posts/pandemic-sensory-archive/index.html",
+      "/posts/phd-upgrade-done/index.html"
+    ]
+  },
+  {
+    "listing": "/research/papers.html",
+    "items": [
+      "/research/papers/how-to-analyse-jasa/index.html"
     ]
   }
 ]

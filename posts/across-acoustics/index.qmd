@@ -1,0 +1,15 @@
+---
+title: "Appearance on Across Acoustics"
+description: I recently appeared on the official podcast of the Acoustical Society of America to talk about [my paper](../../research/papers/how-to-analyse-jasa/index.qmd) which was published in JASA Express Letters last year.
+date: "2023-04-14"
+categories:
+  - podcast
+engine: markdown
+image: /posts/across-acoustics/across-acoustics-logo.jpg
+sidebar: false
+citation: false
+---
+
+I recently appeared on the official podcast of the Acoustical Society of America to talk about [my paper](../../research/papers/how-to-analyse-jasa/index.qmd) which was published in JASA Express Letters last year.
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/36J5RFBkugv5T8XmCtGD3i?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

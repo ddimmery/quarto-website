@@ -14,13 +14,13 @@ smooth-scroll: true
 
 # Default author
 author:
-  - name: Drew Dimmery
-    url: https://ddimmery.com
-    affiliation: Data Science @ University of Vienna
-    affiliation-url: https://datascience.univie.ac.at/
+  - name: Andrew Mitchell
+    # url: https://ddimmery.com
+    affiliation: IEDE @ University College London
+    affiliation-url: https://www.ucl.ac.uk/bartlett/environmental-design/
 
 # citation
-citation: true
+citation: false
 
 # Enable CC licence appendix
 license: "CC BY"

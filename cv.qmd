@@ -1,7 +1,8 @@
 {{< include about.qmd >}}
 
-{{< include research.md >}}
+{{< include research/list-of-pubs.md >}}
 
 ---
 title: "Curriculum Vitae"
+sidebar: false
 ---

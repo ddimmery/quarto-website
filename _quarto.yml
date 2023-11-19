@@ -3,31 +3,53 @@ project:
   output-dir: _site
 
 website:
-  title: "Drew Dimmery"
-  description: "Personal website of Drew Dimmery"
-  site-url: https://ddimmery.com
-  repo-url: https://github.com/ddimmery/quarto-website
-  google-analytics: "G-Y7YLFF5F90"
+  title: "Andrew Mitchell"
+  description: "Personal website of Andrew Mitchell"
+  # site-url: https://ddimmery.com
+  repo-url: https://github.com/MitchellAcoustics/quarto-website
+  # google-analytics: "G-Y7YLFF5F90"
   open-graph: true
   favicon: favicon.png
   twitter-card: 
-    creator: "@drewdim"
-    site: "@drewdim"
+    creator: "@acousticsman"
+    site: "@acousticsman"
     card-style: "summary_large_image"
   navbar:
-    background: dark
-    foreground: light
+    # background: dark
+    # foreground: light
     left:
-      - href: index.qmd
-        text: Home
-      - href: about.qmd
-      - href: research.qmd
-      - href: software.qmd
-      - href: blog.qmd
+      - text: "Home"
+        file: index.qmd
+      - text: "About"
+        file: about.qmd
+      - sidebar:research
+      - text: "Software"
+        file: software.qmd
+      - text: "Blog"
+        file: blog.qmd
+
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/MitchellAcoustics/quarto-website
+          - text: Report a bug
+            url: https://github.com/MitchellAcoustics/quarto-website/issues
+
+  sidebar:
+    - id: research
+      title: "Research"
+      contents:
+        - text: "Papers"
+          file: research/papers.qmd
+        - text: "List of Publications"
+          file: research/list-of-pubs.qmd
 
 format:
   html:
-    theme: journal
+    theme: 
+      light: flatly
+      dark: darkly
     css: styles.css
     toc: true
     toc-depth: 4

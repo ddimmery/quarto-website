@@ -1,0 +1,26 @@
+# options apply to all posts in this folder
+
+# freeze computational output
+freeze: auto
+
+# Make a big title block
+title-block-banner: true
+
+# long dates
+date-format: long
+
+# smooth scroll
+smooth-scroll: true
+
+# Default author
+author:
+  - name: Andrew Mitchell
+    # url: https://ddimmery.com
+    affiliation: IEDE @ University College London
+    affiliation-url: https://www.ucl.ac.uk/bartlett/environmental-design/
+
+# citation
+citation: true
+
+# Enable CC licence appendix
+license: "CC BY"

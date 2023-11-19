@@ -2,3 +2,4 @@
 *.RData
 *.rdb
 *.rdx
+/.venv/

@@ -1,0 +1,10 @@
+---
+title: "Papers"
+listing:
+  contents: papers
+  sort: "date desc"
+  type: default
+  grid-columns: 2
+  categories: true
+  feed: true
+---

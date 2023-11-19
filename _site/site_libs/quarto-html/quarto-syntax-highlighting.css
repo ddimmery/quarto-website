@@ -35,16 +35,40 @@
   --quarto-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+pre > code.sourceCode > span {
+  color: #000000;
+  font-style: inherit;
+}
+
+code span {
+  color: #000000;
+  font-style: inherit;
+}
+
+code.sourceCode > span {
+  color: #000000;
+  font-style: inherit;
+}
+
+div.sourceCode,
+div.sourceCode pre.sourceCode {
+  color: #000000;
+  font-style: inherit;
+}
+
 code span.ot {
   color: #8f5902;
+  font-style: inherit;
 }
 
 code span.at {
   color: #c4a000;
+  font-style: inherit;
 }
 
 code span.ss {
   color: #4e9a06;
+  font-style: inherit;
 }
 
 code span.an {
@@ -55,37 +79,49 @@ code span.an {
 
 code span.fu {
   color: #000000;
+  font-style: inherit;
 }
 
 code span.st {
   color: #4e9a06;
+  font-style: inherit;
 }
 
 code span.cf {
   color: #204a87;
   font-weight: bold;
+  font-style: inherit;
 }
 
 code span.op {
   color: #ce5c00;
   font-weight: bold;
+  font-style: inherit;
 }
 
 code span.er {
   color: #a40000;
   font-weight: bold;
+  font-style: inherit;
 }
 
 code span.bn {
   color: #0000cf;
+  font-style: inherit;
 }
 
 code span.al {
   color: #ef2929;
+  font-style: inherit;
 }
 
 code span.va {
   color: #000000;
+  font-style: inherit;
+}
+
+code span.ex {
+  font-style: inherit;
 }
 
 code span.pp {
@@ -101,6 +137,7 @@ code span.in {
 
 code span.vs {
   color: #4e9a06;
+  font-style: inherit;
 }
 
 code span.wa {
@@ -115,16 +152,23 @@ code span.do {
   font-style: italic;
 }
 
+code span.im {
+  font-style: inherit;
+}
+
 code span.ch {
   color: #4e9a06;
+  font-style: inherit;
 }
 
 code span.dt {
   color: #204a87;
+  font-style: inherit;
 }
 
 code span.fl {
   color: #0000cf;
+  font-style: inherit;
 }
 
 code span.co {
@@ -140,19 +184,23 @@ code span.cv {
 
 code span.cn {
   color: #000000;
+  font-style: inherit;
 }
 
 code span.sc {
   color: #000000;
+  font-style: inherit;
 }
 
 code span.dv {
   color: #0000cf;
+  font-style: inherit;
 }
 
 code span.kw {
   color: #204a87;
   font-weight: bold;
+  font-style: inherit;
 }
 
 .prevent-inlining {

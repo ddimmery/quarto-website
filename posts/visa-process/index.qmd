@@ -1,0 +1,60 @@
+---
+title: "Navigating the UK Graduate Visa Process: A PhD Graduate's Experience"
+date: "2023-02-01"
+categories:
+  - website
+engine: markdown
+code-fold: true
+---
+
+I recently finished my PhD (yay!) and went through the process of applying for a UK Graduate Visa. Although I had a job offer lined up, I chose the Graduate Visa route instead of a standard Work Visa. In this blog post, I'll explain my motivations for this decision and give an overview of the process.
+
+::: {.callout-warning}
+Disclaimer: I am not an immigration lawyer or an expert on visa processes. I'm merely trying to relay my personal experience and help people going through the process get a detailed look at what the timelines are like. None of this should be construed as legal advice.
+:::
+
+The UK Graduate Visa is a type of visa that allows international students who have completed a degree programme in the UK to stay in the country for a longer period after graduation. The visa provides the opportunity to work and settle in the UK. When I completed my Bachelor's at Cardiff University in 2015, there were limited options to remain in the country and limited benefits for having graduated from a UK university.
+
+Thankfully this has changed somewhat with the introduction of the Graduate Visa.
+
+At the time, the best option was the standard Tier 2 Skilled Worker visa. By applying for this visa from a student visa, my employer and I were able to bypass some standard work checks and I was exempt from salary requirements. However, when I was granted this visa in 2015, it was only valid for a year. When I was offered a new job with a different company, I was required to apply for a new work visa, this time subject to all the requirements.
+
+This became a problem when the new job did not meet the increased salary requirements and my visa application was denied. Despite having lived in the UK for four years, earned a BSc in Physics & Music, and being actively recruited for the job, I was forced to leave the country and return to the US.
+
+---
+
+When I completed my PhD and was offered a Research Fellowship at UCL, I had to decide between applying for a Skilled Worker visa or a Graduate visa. Given my previous experience with work visas, I chose the Graduate visa. Unlike the Skilled Worker visa, the Graduate visa allows PhD graduates to remain in the UK with minimal restrictions for three years, without having to reapply each time they take on a new contract or change jobs.
+
+However, there were some challenges I faced when applying for the Graduate visa. Firstly, I had to pay for the visa myself, as my prospective employer would not cover the cost for the Graduate visa since I was no longer guaranteed to work for them. Secondly, the timeline for applying for the visa was difficult; you cannot apply for the visa until you have completed everything and been awarded your degree - this means passing the viva, submitting corrections, and having those corrections approved by your examiners. From thesis submission to completion can take anywhere from 3 months to a year and a half. And this is all assuming you submit on time!
+
+Despite these challenges, my experience with the Graduate visa application was relatively smooth, and it was a more straightforward process compared to the Student visa or the Work visa. Although there was still some stress and uncertainty, I didn't encounter any major issues and I was able to successfully obtain the visa.
+
+## My Graduate Visa timeline
+
+::: {.callout-note}
+Some parts of this process may be specific to UCL, however the general outline should be universal. The fact that UCL lists your official completion date as the 28th of whatever month you fulfilled all of the requirements is probably specific to UCL, but there may be similar policies at other unis. I think it's important to be aware of this sort of thing (which no one ever tells you about) especially if you're working to potentially tight timelines.
+:::
+
+To help give a concrete example for people of what this timeline looks like, I've laid out the exact dates for each step of my process. My Student Visa was set to expire in January of the next year, so I planned out the timeline preparing for lots of delays and issues to make sure my right to stay and work wouldn't be in jeopardy.
+
+ * [June 06] - Thesis submission
+ * [Sept 08] - Viva
+ * [Sept 09] - Receive report and corrections from examiners
+ * [Sept 26] - Submit my corrections to examiners
+ * [Sept 30] - Examiners confirm their acceptance via email to me and formally inform UCL. (I had very responsive examiners and minimal corrections so this was quite fast)
+ * [Sept 30] - UCL sends email confirming they received the notification from examiners and instructed my to upload an electronic copy of the thesis.
+ * [Oct 03] - UCL sends confirmation of results email. This confirms all of the details of my degree: Name, programme, start date, end date, etc. **Importantly, the official date of the award is the 28th of the month you fulfill all of the requirements (i.e. upload the electronic copy).** For me, even though I uploaded on the 30th, they back dated it to the 28th of September. If I had finished everything on the 1st October, my official award date would have been 28th October. 
+
+::: {.callout-warning}
+Very important note: you cannot submit your visa application until the University informs the Home Office you have completed your degree. This is not the same as them sending your certificate to you. This is a separate process and should be automatically done directly from the University to the Home Office.
+:::
+
+ * [Oct 19] - Confirmation that UCL has informed the Home Office about my degree. Now I can submit the visa application. I think if my official date had been delayed to October 28th, I wouldn't have been able to submit my visa application until after that date. 
+ * [Oct 19] - Submit visa application and pay application fees and immigration health surcharge.
+ * [Nov 22] - Visa granted.
+
+If you were fully funded (100% tuition and stipend) during your PhD, you will need to provide evidence from your funder that they consent to your Graduate Visa application. The reason for this requirement is unclear, but it is important to note. If you were not fully funded, you may not need to provide this consent, but it is still a good idea to be prepared in case it is required. To ease my worries, my supervisor, who was the principal investigator on my funding grant, and I drafted a letter addressing this issue. Although the Home Office did not mention it, it is always better to be safe than sorry.
+
+This information is intended to give you an idea of what the application process looks like. Please note that the experience may vary from person to person. For example, my submission, viva, and correction process was quick and straightforward, which may not be the case for everyone.
+
+In conclusion, the UK Graduate Visa provides an attractive option for international PhD graduates looking to stay in the UK and further their careers. While there may be some challenges in the application process, especially for those who were fully funded during their PhD studies, the benefits of not having to reapply for a work visa every time you change jobs and the freedom to change careers make it a worthwhile option to consider. Overall, my experience with the Graduate Visa application was positive and I hope this article provides some helpful insight for those who may be considering it in the future.

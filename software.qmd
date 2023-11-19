@@ -3,6 +3,10 @@ title: "Software"
 echo: false
 jupyter: python3
 section-divs: false
+keep-md: false
+execute: 
+  include: true
+sidebar: false
 ---
 
 ```{python}
@@ -23,6 +27,10 @@ yaml_data = yaml.safe_load(open("software.yaml"))
 
 for data in yaml_data[::-1]:
     display(Markdown("## `" + data["title"] + "` {#" + data["title"] + "}"))
+
+    if "logo" in data:
+        display(HTML(f"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='200'>"))
+
     display(Markdown(data["description"]))
     buttons = []
     if "website" in data:
