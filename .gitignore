@@ -3,3 +3,4 @@
 *.rdb
 *.rdx
 /.venv/
+/_site/
