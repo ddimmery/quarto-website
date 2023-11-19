@@ -1,0 +1,12 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
+			"installTinyTex": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.11"
+			}
+	}
+}
