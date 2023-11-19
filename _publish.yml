@@ -1,6 +1,0 @@
-- source: project
-  gh-pages:
-    branch: gh-pages
-    repo: MitchellAcoustics/quarto-website
-    user: MitchellAcoustics
-    email: andrew.mitchell.18@ucl.ac.uk
