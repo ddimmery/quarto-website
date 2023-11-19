@@ -16,3 +16,7 @@ In the UK, halfway through the PhD we undergo a process known as the 'upgrade'. 
 On a side note, because this year is wild, I received the email letting me know I passed my PhD upgrade while kneeling in the Black Lives Matter demonstration in Parliament Square. It can be difficult to process the emotions of outrage and frustration simultaneously with relief and hope. I don't have anything more profound to say on that, except that shit's crazy but life trudges on. I'll be back out at the protests this weekend.
 
 It also means I had to finally settle on a decent thesis title, I landed on **Machine Learning and Regression Modelling of Dynamic Urban Soundscapes: A multilevel approach**.
+
+```{=html}
+<a class="btn btn-outline-dark btn-sm", href="/posts/phd-upgrade-done/AMitchell Upgrade Report_final.pdf">Download Report</a>
+```

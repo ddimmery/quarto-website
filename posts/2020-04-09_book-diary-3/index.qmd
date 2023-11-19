@@ -1,0 +1,40 @@
+---
+layout: post
+title: Book Diary 3 - Foundation
+categories: 
+  - book diary
+  - personal
+description:  >
+    *Foundation* by Isaac Asimov
+noindex: true
+image: foundation.jpg
+date: "2020-04-09"
+---
+
+I’ve been on a bit of a classic science fiction trend for the last six months or so, only broken up by some classic Americana apocalyptica with *It Can’t Happen Here* by Sinclair Lewis (I’ll get to its write up at some point!). [*Foundation*](https://smile.amazon.co.uk/Foundation-1-3-Isaac-Asimov/dp/0586010807/ref=smi_www_rco2_go_smi_g8682124849?_encoding=UTF8&%2AVersion%2A=1&%2Aentries%2A=0&ie=UTF8) is actually the first Asimov book I remember reading, and it is fantastic (it should be, it won the Hugo award for Best All-time Series)!
+
+---
+
+Made up of five interrelated short stories, Foundation tells the story of a man named Hari Seldon, who invented a new field of science call Psycho-history. The primary conceit of psycho-history is that, using mathematics, and the principles of statistical mechanics of large interacting systems, Seldon can predict the future of human societies. Inspired by concepts from physics, wherein the behaviour of individual particles cannot be predicted but by looking on a macro-enough scale, we can make probabilistic statements about the behaviour of large systems of particles, Asimov has applied these same principles to the prediction of human behaviour.
+
+Repeated over and over again is Seldon’s mantra that single humans both cannot be predicted and cannot change the course of the system, instead the human society, as a system, is driven by its complex internal interactions, toward a series of probabilities. By solving these equations and modelling these interactions, Seldon predicts that the galactic Empire in which he lives will soon collapse. Because of the principles of his psycho-history, he knows he can do nothing to stop this, but he can help to speed of the process of recovery. Without his intervention, he predicts it would take 30,000 for the Empire to recover from barbarism, but if he can find a way to preserve some of the existing scientific knowledge, this could be reduced to 1,000 years. To do this, he creates the eponymous Foundation based on two planets at opposite ends of the galaxy to create an Encyclopedia to preserve science. What follows are the stories of the Foundation following the collapse of the Empire and the inevitable successes of Seldon’s predictions and eventual mistakes.
+
+---
+
+I think this story, and the concept of psychohistory particular intrigue me now because of the nature of my research. I and our research group are essentially trying to build statistical models of human perception. Like Seldon, we generally accept that it is impossible to predict the perception of a single person, but once a large enough scale is considered, statistical probabilities take over. Also like Seldon, we believe a key point to be that the subjects should not be aware of the study, lest they adjust their behaviour (although we haven’t solved this issue).
+
+As we move further and further into the Algorithm age, with more complex system models which consider increasingly complex interacting factors, I think psychohistory will be on many researcher’s minds. Not as an aspiration, since I don’t think any serious scientist would buy that, but as potential source of learning. Science fiction has always allowed thinkers and scientists to view their work in new ways, and to consider the consequences of the advances they may make.
+
+I hope we can all be inspired and cautioned by great thinkers such as Isaac Asimov.
+
+---
+
+I’ve also finished *Foundation and Empire*, the sequel, and I’m currently working my way through *Prelude to Foundation*, which I’m very excited about as it goes more in depth about the development of psychohistory.
+
+During my science fiction stint I also read the *Dune* series by Frank Herbert, so hopefully I’ll write that one up soon too.
+
+**For further ‘reading’** on the age of algorithms:
+
+ * [Sleepwalkers](https://www.wired.com/story/rethinking-relationship-artificial-intelligence/) podcast
+ * [*Hello World: How to Be Human in the Age of the Machine*](http://www.hannahfry.co.uk/helloworld) by Hannah Fry
+ 

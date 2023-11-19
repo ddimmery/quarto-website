@@ -1,0 +1,40 @@
+---
+layout: post
+title: Book Diary 2 - Bad Science
+categories: 
+  - book diary
+  - personal
+description:  >
+    A review of Ben Goldacre's Bad Science
+image: bad-science.jpg
+noindex: true
+date: "2019-05-11"
+---
+
+While I generally enjoyed the book, and I wholeheartedly support Goldacre’s goal and overall point, I was a bit disappointed by this book. I was initially inspired to pick it up by a friend recommending his book [*Bad Pharma*](https://www.goodreads.com/book/show/15795155-bad-pharma).
+
+I had hoped that Bad Science would move away from his focus on medicine and turn instead to addressing mistakes and malpractice in science more generally. To my (only slight) disappointment, Goldacre hasn’t strayed far from his usual territory of medical frauds, mistakes, and hucksters.
+
+My personal disappointment notwithstanding, this is in the end a well-written, well-researched, entertaining, and educational trawl through the depths of homeopaths and their overly diluted morals.
+
+---
+
+As always, I enjoy the insertion of personal details about the author, reminding me that there’s an actual person writing the words and that I’m allowed to both relate to and associate myself with the man behind the page, and to question and criticize him. Specific to this author was his mention of renting a small flat in Kentish Town on a junior medic’s salary – which I read while sat in a cafe next to my (smaller) flat in Kentish Town rented on a doctoral student’s stipend. While I suspect, with his multiple bestseller books, recognitions, and awards, Goldacre no longer rents a small flat in Kentish Town, it’d be nice to imagine having a friendly chat with him in the cafe.
+
+I felt the chapter ‘Pill Solves Complex Societal Problem’ was the most impactful. Here, Goldacre expands his discussion about the mechanics of poorly done science to address the media response to it and, more importantly, the potential motivations behind it. See this quote from page 154:
+
+> But above all we should pay tribute to the genius of this huge fish-oil project, and every other nutritionist who has gotten their pills into the media, and into schools, because more than anything else, they have sold children, at the most impressionable time of their lives, one very compelling message: **that you need to take pills to lead a healthy normal life, and that a pill can even make up for failings elsewhere**.
+
+What I can absolutely get behind is the view Goldacre reiterates over and over in the last few chapters: the blame for the dissemination of bad, misleading, or malicious science is not down to the bad actions of individual malevolent or ignorant scientists, but instead falls on the head of the system of media which not only allows this bad science to be spread, but encourages its spread. The individual scientists should absolutely be punished if wrong-doing is discovered, and bad practices should be stamped out, but the media system which publicises this work has a journalistic responsibility to look critically at everything it publishes. In general, it is more productive and more correct to lay the blame for societal issues at the feet of systems, not individuals.
+
+> You’ll notice, I hope, that I’m more interested in the cultural impact of nonsense – the medicalisation of everyday life, the undermining of sense – and in general **I blame systems more than particular people**. […] I do not blame individual journalists (for the most part) but I do blame whole systems of editors, and the people who buy newspapers with values to profess to despise.
+
+---
+
+As I’ve said, I thoroughly enjoyed *Bad Science* and I applaud Goldacre’s writing and his ability to distill the important aspects of scientific research into a wide-ranging and engaging discussion, but I hope he someday chooses to move beyond medicine and discuss ‘science’ more fully. As he notes in his afterword,
+
+> …in the 1950s science reporting was about engineering and inventions, but by the 1990s everything had changed. Science coverage now tends to come from the world of medicine, and the stories are of what will kill you, or save you.
+
+People have forgotten that science can be about more than medicine and about more than our constant human obsession with death and illness, and I’d like to see more authors remind us of that.
+
+**Further reading**: [https://en.m.wikipedia.org/wiki/List_of_animals_with_fraudulent_diplomas](https://en.m.wikipedia.org/wiki/List_of_animals_with_fraudulent_diplomas)

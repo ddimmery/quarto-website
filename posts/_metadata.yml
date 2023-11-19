@@ -5,6 +5,7 @@ freeze: auto
 
 # Make a big title block
 title-block-banner: true
+sidebar: false
 
 # long dates
 date-format: long

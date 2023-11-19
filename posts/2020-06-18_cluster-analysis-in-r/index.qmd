@@ -1,0 +1,230 @@
+---
+layout: post
+title: Clustering analysis in R, with `factoextra` and `NbClust`
+categories: 
+  - soundscape
+  - PhD
+  - machine learning
+description:  >
+  I recently gave a small talk on some packages I like using for doing clustering analysis in R. Here's a brief introduction to some features of factoextra and NbClust 
+noindex: true
+date: "2020-06-18"
+citation: true
+format:
+  html:
+    code-fold: true
+execute: 
+  error: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Clustering Analysis Libraries
+
+`factoextra`: 
+
+ * [https://www.rdocumentation.org/packages/factoextra/versions/1.0.3](https://www.rdocumentation.org/packages/factoextra/versions/1.0.3)
+
+`NbClust`: 
+
+ * [https://www.rdocumentation.org/packages/NbClust/versions/3.0](https://www.rdocumentation.org/packages/NbClust/versions/3.0)
+ * [https://www.jstatsoft.org/article/view/v061i06/v61i06.pdf](https://www.jstatsoft.org/article/view/v061i06/v61i06.pdf)
+
+
+
+There are many libraries and functions in R for performing clustering analysis, so why look at these 2? Well, they solve two important challenges with clustering: visualisation and determining the optimal number of clusters.
+
+In general, cluster analysis is an unsupervised machine learning task, meaning we don't predefine a target output for the learning. For clustering, this mainly means that we don't know what the categories will be before we start the analysis. We also don't know how many clusters are present. 
+
+Many indices have been created to help with determining the optimal number of clusters, however these each have their own advantages and disadvantages and often give conflicting results. We'll demonstrate this by looking at the results from three popular graphical methods: elbow plot, silhouette, and gap statistic. 
+
+## Dataset
+
+We'll be looking at data from the [Soundscape Indices (SSID) Database](https://www.mdpi.com/2076-3417/10/7/2397). This dataset contains data in-situ perceptual assessments of urban soundscapes, paired with acoustic and environmental data. For this set, we'll be looking at the perceptual data only.
+
+To collect the data, random members of the public were approached while in urban public spaces and asked to take a survey about how they perceive the sound environment. A section of the questions ask specifically about the perceived dominance of sound sources in the space. Sound sources are categorized as Traffic noise, Other noise, Human sounds, Natural sounds, and are rated from 1 [not at all] to 5 [dominates completely].
+
+The data was collected across 27 locations in the UK, Italy, Spain, the Netherlands, and China. The goal here is to investigate whether these locations can be categorized based on their composition of sound sources.
+
+```{r load data, message=FALSE, warning=FALSE, echo=TRUE}
+library(readxl)
+library(dplyr)  # Data processing and piping
+
+# Clustering libraries
+library(factoextra) # Clustering and visualisation
+library(NbClust)    # Optimal Number of Clusters
+library(RCurl)      # For downloading data from Zenodo
+
+temp.file <- paste0(tempfile(), ".xlsx")
+download.file("https://zenodo.org/record/5705908/files/SSID%20Lockdown%20Database%20VL0.2.2.xlsx", temp.file, mode="wb")
+ssid.data <- read_excel(temp.file)
+
+vars <- c("Traffic", "Other", "Natural", "Human")
+# vars <- c("pleasant", "chaotic", "vibrant", "uneventful", "calm", "annoying", "eventful", "monotonous")
+
+# Cutdown the dataset
+ssid.data <- ssid.data[c("GroupID", "SessionID", "LocationID", vars)]
+
+# ssid.data <- subset(ssid.data, Lockdown != 1)
+
+# Set GroupID, SessionID, Location as factor type
+ssid.data <- ssid.data %>% mutate_at(vars(GroupID, SessionID, LocationID),
+                                     funs(as.factor))
+ssid.data <- ssid.data %>% mutate_at(vars(vars),
+                                     funs(as.numeric))
+
+# Calculate the mean response for each GroupID
+ssid.data <- ssid.data %>% 
+    group_by(GroupID) %>%
+    summarize(
+              Traffic = mean(Traffic, na.rm=TRUE),
+              Other = mean(Other, na.rm=TRUE),
+              Natural = mean(Natural, na.rm=TRUE),
+              Human = mean(Human, na.rm=TRUE),
+              # pleasant = mean(pleasant, na.rm = TRUE),
+              # chaotic = mean(chaotic, na.rm = TRUE),
+              # vibrant = mean(vibrant, na.rm = TRUE),
+              # uneventful = mean(uneventful, na.rm = TRUE),
+              # calm = mean(calm, na.rm = TRUE),
+              # annoying = mean(annoying, na.rm = TRUE),
+              # eventful = mean(eventful, na.rm = TRUE),
+              # monotonous = mean(monotonous, na.rm = TRUE),
+              LocationID = LocationID[1])
+
+# analysis.data$LocationID <- unique(ssid.data[c('GroupID', 'LocationID')])['LocationID']
+ssid.data <- na.omit(ssid.data)
+
+knitr::kable(head(ssid.data))
+
+```
+
+Our locations are:
+```{r, echo=TRUE}
+print(levels(ssid.data$LocationID))
+```
+
+## Calculate the mean value for each Location
+**Note:** If the data use different scales, they should always be standardised before clustering. In this case, all of the data are on the same scale, so we don't need to worry.
+
+
+```{r, echo=TRUE}
+means <- aggregate(ssid.data[c(vars)], by=list(ssid.data$LocationID), FUN=mean, na.rm=TRUE)
+means <- data.frame(means[, -1], row.names = means[, 1])
+
+knitr::kable(means)
+
+```
+
+
+## Clustering Analysis
+
+### Some standard, single indices
+
+Elbow plot (within-sum-of-squares), Silhouette, Gap statistic
+
+```{r, echo=TRUE}
+set.seed(123)
+fviz_nbclust(means, hcut, method="wss", ggtheme = theme_bw())
+fviz_nbclust(means, hcut, method="silhouette", ggtheme = theme_bw())
+fviz_nbclust(means, hcut, method="gap_stat", ggtheme=theme_bw())
+```
+
+As we can see, it can be less than obvious how to interpret some of these - where exactly is the 'elbow' in the elbow plot? Silhouette pretty clearly says k = 2, but the Gap stat gives k = 1, which isn't very useful. How do we know which is right?
+
+### 30 indices using NbClust
+NbClust 
+
+```{r, echo=TRUE}
+indices = c("kl", "ch", "ccc", "cindex", "db", "silhouette", "duda", "pseudot2", "ratkowsky", "ptbiserial", "gap", "mcclain", "gamma", "gplus", "tau","sdindex", "sdbw")
+res <- NbClust(data = means, distance='euclidean', min.nc = 2, max.nc=9, method="ward.D2", index = "alllong")
+knitr::kable(res)
+fviz_nbclust(res)
+```
+
+```{r, echo=TRUE}
+k = 2
+k.fit <- kmeans(means, k)
+knitr::kable(k.fit)
+fviz_cluster(k.fit, means, repel=TRUE, ggtheme = theme_bw())
+```
+
+
+```{r, echo=TRUE}
+res.pca <- prcomp(means, scale=TRUE)
+facto_summarize(res.pca, "var")
+fviz_contrib(res.pca, "var")
+```
+
+```{r, echo=F}
+cluster.means <- aggregate(means[c('Traffic', 'Human', 'Other', 'Natural')], by=list(k.fit$cluster), FUN=mean)
+# Plot means of the clusters
+library(ggplot2)
+library(RColorBrewer)
+plotting <- data.matrix(cluster.means[c('Traffic', 'Human', 'Natural', 'Other')])
+plotting <- rbind(plotting, 
+                  c(mean(ssid.data$Traffic, na.rm=T),
+                    mean(ssid.data$Human, na.rm=T), 
+                    mean(ssid.data$Natural, na.rm=T), 
+                    mean(ssid.data$Other, na.rm=T)))
+
+short.cluster.names <- c("Mixed", "Natural.dom")
+rownames(plotting) <- c(short.cluster.names, 'All')
+
+# 2. Create the plot
+coul <- brewer.pal(4, 'Set1')
+barplot(t(plotting), beside = TRUE, 
+        ylim = c(0, 5), 
+        xlab='Sound Source Profile (SSP)', ylab='Sound Source Rating', 
+        col=coul, axis.lty='solid')
+legend('top', rownames(t(plotting)), cex=0.75, fill=coul, title='Sound Source Type')
+```
+
+```{r, echo=TRUE}
+fit <- eclust(means, "kmeans", k=k)
+```
+
+```{r, echo=TRUE}
+h.fit <- eclust(means, "hclust", k=k, stand = T, hc_method = "ward.D2")
+fviz_dend(h.fit, labels_track_height = 2.5, horiz=TRUE, rect = TRUE, cex = 0.5)
+```
+
+## Methods I haven't really tested out thoroughly
+
+```{r, echo=TRUE}
+fviz_pca_biplot(res.pca, repel=T,ggtheme = theme_bw())
+```
+
+### `fviz_silhouette()`
+
+Silhouette (Si) analysis is a cluster validation approach that measures how well an observation is clustered and it estimates the average distance between clusters. 
+
+**Details**
+
+ * Observations with a large silhouette Si (almost 1) are very well clustered
+ * A small Si (around 0) means that the observation lies between two clusters
+ * Observations with a negative Si are probably placed in the wrong cluster
+
+```{r, echo=TRUE}
+fviz_silhouette(h.fit)
+```
+
+### `get_clust_tendency`
+
+Before applying cluster methods, the first step is to assess whether the data is clusterable, a process defined as the **assessing of clustering tendency**. `get_clust_tendency()` assesses clustering tendency using Hopkins' statistic and a visual approach. 
+
+**Details**
+
+**Hopkins Statistic:** If the value of Hopkins statistic is close to 1 (far above 0.5), then we can conclude that the dataset is significantly clusterable.
+
+```{r}
+get_clust_tendency(means, k)
+```
+
+
+
+
+
+
+
