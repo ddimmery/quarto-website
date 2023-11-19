@@ -15,7 +15,7 @@ smooth-scroll: true
 # Default author
 author:
   - name: Andrew Mitchell
-    # url: https://ddimmery.com
+    url: https://mitchellacoustics.github.io/quarto-website/
     affiliation: IEDE @ University College London
     affiliation-url: https://www.ucl.ac.uk/bartlett/environmental-design/
 
