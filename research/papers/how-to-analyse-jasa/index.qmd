@@ -67,7 +67,7 @@ citation:
   url: https://pubs.aip.org/asa/jel/article/2/3/037201/2845750
 
 sidebar: false
-
+keep-tex: true
 ---
 
 # Introduction {#sec-introduction}

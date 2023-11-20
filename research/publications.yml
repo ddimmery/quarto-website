@@ -8,8 +8,7 @@
     settings, by exploring associations between soundscapes and wellbeing via a questionnaire
     campaign.
   author: Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Erfanian, Mercede
-    and Lionello, Matteo and Kachlicka, Magdalena and Kang, Jian, Andrew Mitchell
-    OR Data Study Group Team
+    and Lionello, Matteo and Kachlicka, Magdalena and Kang, Jian
   doi: 10.1016/s0140-6736(19)32814-4
   groups: Thesis
   issn: 0140-6736
@@ -47,7 +46,7 @@
     depending on the urban context and discusses the implications for the limits of
     urban noise reduction.
   author: Francesco Aletta and Tin Oberman and Andrew Mitchell and Huan Tong and Jian
-    Kang, Andrew Mitchell OR Data Study Group Team
+    Kang
   doi: 10.1515/noise-2020-0011
   file: :Aletta2020Assessing - Assessing the Changing Urban Sound Environment during
     the COVID 19 Lockdown Period Using Short Term Acoustic Measurements.pdf:PDF
@@ -87,7 +86,7 @@
     context can influence soundscape perception in public spaces and suggests that
     such country-specific factors should be considered when designing urban soundscapes.
   author: Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Erfanian, Mercede
-    and Kang, Jian, Andrew Mitchell OR Data Study Group Team
+    and Kang, Jian
   doi: 10.1121/10.0020842
   eprint: https://pubs.aip.org/asa/jasa/article-pdf/154/3/1710/18127938/1710_1_10.0020842.pdf
   file: :Aletta2023Soundscape - Soundscape Experience of Public Spaces in Different
@@ -103,9 +102,18 @@
   url: https://doi.org/10.1121/10.0020842
   volume: '154'
   year: '2023'
+- ENTRYTYPE: inproceedings
+  ID: Mitchell2023Soundscapy
+  address: Chiba, Greater Tokyo
+  author: Andrew Mitchell,
+  booktitle: INTER-NOISE 2023 Conference
+  month: August
+  note: (accepted)
+  title: 'Soundscapy: A python package for soundscape assessment and analysis'
+  year: '2023'
 - ENTRYTYPE: techreport
-  ID: DSGT2023Data
-  author: Data Study Group Team
+  ID: DataStudyGroupTeam2023Data
+  author: Data Study Group Team and Andrew Mitchell
   copyright: Creative Commons Attribution 4.0 International
   doi: 10.5281/ZENODO.10090651
   file: :DSGT2023Data - Data Study Group Final Report_ IEDE Acoustics Group, University
@@ -145,8 +153,7 @@
     foundation for urban sound-related problems, leading to a robust impact on urban
     policy-making in terms of soundscape prediction, design, and standardization.
     2
-  author: Erfanian, Mercede and Mitchell, Andrew and Kang, Jian, Andrew Mitchell OR
-    Data Study Group Team
+  author: Erfanian, Mercede and Mitchell, Andrew and Kang, Jian
   booktitle: The 6th European Conference on Psychology & the behavioral Sciences (ECP2019)
   keywords: SSID
   mendeley-tags: SSID
@@ -182,8 +189,7 @@
     a link between physiological manifestations of soundscape and the perceptual attributes,
     the others failed to validate this link. Additionally, the majority of the study
     findings were limited to one or two physiological responses.
-  author: Mercede Erfanian and Andrew J. Mitchell and Jian Kang and Francesco Aletta,
-    Andrew Mitchell OR Data Study Group Team
+  author: Mercede Erfanian and Andrew J. Mitchell and Jian Kang and Francesco Aletta
   doi: 10.3390/ijerph16193533
   file: :Erfanian2019Psychophysiological - The Psychophysiological Implications of
     Soundscape_ a Systematic Review of Empirical Literature and a Research Agenda.pdf:PDF
@@ -200,8 +206,7 @@
   year: '2019'
 - ENTRYTYPE: article
   ID: Erfanian2021Psychological
-  author: Erfanian, Mercede and Mitchell, Andrew and Aletta, Francesco and Kang, Jian,
-    Andrew Mitchell OR Data Study Group Team
+  author: Erfanian, Mercede and Mitchell, Andrew and Aletta, Francesco and Kang, Jian
   doi: 10.1016/j.jenvp.2021.101660
   file: :Erfanian2021Psychological - Psychological Well Being and Demographic Factors
     Can Mediate Soundscape Pleasantness and Eventfulness_ a Large Sample Study.pdf:PDF
@@ -217,8 +222,7 @@
 - ENTRYTYPE: inproceedings
   ID: HarvieClark2023Integrating
   address: Turin, Italy
-  author: Jack Harvie-Clark and Rebecca Romeo Pitone and Luis Pereira and Andrew Mitchell,
-    Andrew Mitchell OR Data Study Group Team
+  author: Jack Harvie-Clark and Rebecca Romeo Pitone and Luis Pereira and Andrew Mitchell
   booktitle: Forum Acusticum 2023
   eprint: https://www.researchgate.net/profile/Luis-Pereira-81/publication/374478294_Integrating_acoustics_engineering_and_soundscape_design_for_an_urban_park_a_case_study/links/651fe48bfc5c2a0c3bb90956/Integrating-acoustics-engineering-and-soundscape-design-for-an-urban-park-a-case-study.pdf
   file: :HarvieClark2023Integrating - Integrating Acoustics Engineering and Soundscape
@@ -253,8 +257,7 @@
     with expert expectations and can explain previous findings from the literature
     on soundscape augmentation.
   author: Hou, Yuanbo and Ren, Qiaoqiao and Zhang, Huizhong and Mitchell, Andrew and
-    Aletta, Francesco and Kang, Jian and Botteldooren, Dick, Andrew Mitchell OR Data
-    Study Group Team
+    Aletta, Francesco and Kang, Jian and Botteldooren, Dick
   doi: 10.1121/10.0022408
   eprint: https://pubs.aip.org/asa/jasa/article-pdf/154/5/3145/18212278/3145_1_10.0022408.pdf
   file: :Hou2023AI - AI Based Soundscape Analysis_ Jointly Identifying Sound Sources
@@ -273,7 +276,7 @@
   ID: Hou2023Exploring
   address: Turin
   author: Yuanbo Hou and Andrew Mitchell and Qiaoqiao Ren and Francesco Aletta and
-    Jian Kang and Dick Botteldooren, Andrew Mitchell OR Data Study Group Team
+    Jian Kang and Dick Botteldooren
   booktitle: Forum Acusticum 2023
   month: September
   title: Exploring annoyance in a soundscape context by joint prediction of sound
@@ -283,8 +286,7 @@
   ID: Hou2023Joint
   address: Dublin
   author: Yuanbo Hou and Siyang Song and Cheg Luo and Andrew Mitchell and Qiaoqiao
-    Ren and Jian Kang and Wenwu Want and Dick Botteldooren, Andrew Mitchell OR Data
-    Study Group Team
+    Ren and Jian Kang and Wenwu Want and Dick Botteldooren
   booktitle: 24th INTERSPEECH Conference
   month: August
   title: Joint prediction of audio event and annoyance rating in an urban soundscape
@@ -293,7 +295,7 @@
 - ENTRYTYPE: article
   ID: Hou2024Cooperative
   author: Hou, Yuanbo and Kang, Bo and Mitchell, Andrew and Wang, Wenwu and Kang,
-    Jian and Botteldooren, Dick, Andrew Mitchell OR Data Study Group Team
+    Jian and Botteldooren, Dick
   doi: 10.1109/TASLP.2023.3323135
   file: :Hou2024Cooperative - Cooperative Scene Event Modelling for Acoustic Scene
     Classification.pdf:PDF
@@ -325,8 +327,7 @@
     of public spaces and the increase of the noise management impact.'
   address: Aachen
   author: Kang, Jian and Aletta, Francesco and Oberman, Tin and Erfanian, Mercede
-    and Kachlicka, Magdalena and Lionello, Matteo and Mitchell, Andrew, Andrew Mitchell
-    OR Data Study Group Team
+    and Kachlicka, Magdalena and Lionello, Matteo and Mitchell, Andrew
   booktitle: Proceedings of the 23rd International Congress on Acoustics
   doi: 10.18154/RWTH-CONV-239249
   file: :Kang2019Towards - Towards Soundscape Indices.pdf:PDF
@@ -348,7 +349,7 @@
   ID: Kang2023development
   address: Prague
   author: Jian Kang and Francesco Aletta and Tin Oberman and Andrew Mitchell and Mercede
-    Erfanian, Andrew Mitchell OR Data Study Group Team
+    Erfanian
   booktitle: The 29th International Congress on Sound and Vibration
   month: July
   organization: International Institute of Acoustics and Vibration (IIAV)
@@ -358,7 +359,7 @@
   ID: Kang2023Subjective
   address: Turin
   author: Jian Kang and Francesco Aletta and Tin Oberman and Andrew Mitchell and Mercede
-    Erfanian, Andrew Mitchell OR Data Study Group Team
+    Erfanian
   booktitle: Forum Acusticum 2023
   month: September
   title: Subjective evaluation of environmental sounds in context - Towards Soundscape
@@ -368,7 +369,7 @@
   ID: Kang2023Supportive
   author: Jian Kang and Francesco Aletta and Tin Oberman and Andrew Mitchell and Mercede
     Erfanian and Huan Tong and Simone Torresin and Chunyang Xu and Tingting Yang and
-    Xiaochao Chen, Andrew Mitchell OR Data Study Group Team
+    Xiaochao Chen
   doi: 10.1016/j.scitotenv.2022.158868
   journal: Science of The Total Environment
   month: jan
@@ -403,8 +404,7 @@
     data. The results suggest that the corrected values account for the non-equidistant
     interpretation of the Likert metrics, thereby allowing mathematical operations
     to be viable when applied to the data.'
-  author: Lionello, Matteo and Aletta, Francesco and Mitchell, Andrew and Kang, Jian,
-    Andrew Mitchell OR Data Study Group Team
+  author: Lionello, Matteo and Aletta, Francesco and Mitchell, Andrew and Kang, Jian
   doi: 10.3389/fpsyg.2020.602831
   file: :Lionello2021Introducing - Introducing a Method for Intervals Correction on
     Multiple Likert Scales_ a Case Study on an Urban Soundscape Data Collection Instrument.pdf:PDF
@@ -420,8 +420,7 @@
 - ENTRYTYPE: inproceedings
   ID: MaAlsinaPages2020Urban
   author: Ma Alsina-Pagès, Rosa and Orga, Ferran and Freixes, Marc and Mallol, Roger
-    and Aletta, Francesco and Mitchell, Andrew and Kang, Jian and Foraster, Maria,
-    Andrew Mitchell OR Data Study Group Team
+    and Aletta, Francesco and Mitchell, Andrew and Kang, Jian and Foraster, Maria
   booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
   file: :MaAlsinaPages2020Urban - Urban Environment Soundscape Evaluation_ Milan Case
     Study of Noise Events Perceptions by Citizens.pdf:PDF
@@ -433,27 +432,19 @@
   url: https://www.researchgate.net/profile/Francesco_Aletta/publication/345314432_Urban_environment_soundscape_evaluation_Milan_case_study_of_noise_events_perceptions_by_citizens/links/5fa32d4ba6fdcc062414f711/Urban-environment-soundscape-evaluation-Milan-case-study-of-noise-events-perceptions-by-citizens.pdf
   volume: '261'
   year: '2020'
-- ENTRYTYPE: inproceedings
-  ID: Mitchell2019Making
-  abstract: The core objectives of smart city design are to increase quality of life,
-    enhance efficiency, and move towards the sustainability of cities. While this
-    will involve increased integration of new and...
-  address: San Diego
-  author: Mitchell, Andrew and Aletta, Francesco and Oberman, Tin and Erfanian, Mercede
-    and Kachlicka, Magdalena and Lionello, Matteo and Kang, Jian, Andrew Mitchell
-    OR Data Study Group Team
-  booktitle: 178th Meeting of the Acoustical Society of America
-  doi: 10.1121/1.5136970
-  groups: Thesis
-  issn: 0001-4966
-  keywords: SSID
-  month: December
-  number: '4'
-  pages: 2873–2873
-  publisher: Acoustical Society of America (ASA)
-  title: Making cities smarter with new soundscape indices
-  volume: '146'
-  year: '2019'
+- ENTRYTYPE: phdthesis
+  ID: Mitchell2022Predictive
+  author: Andrew Mitchell
+  doi: 10.13140/RG.2.2.15590.50245
+  eprint: https://discovery.ucl.ac.uk/id/eprint/10156562
+  language: en
+  month: September
+  school: University College London
+  title: 'Predictive Modelling of Complex Urban Soundscapes: Enabling an engineering
+    approach to soundscape design'
+  type: PhD Thesis
+  url: https://discovery.ucl.ac.uk/id/eprint/10156562
+  year: '2022'
 - ENTRYTYPE: inproceedings
   ID: Mitchell2019spectral
   abstract: The field of soundscape studies considers sound environments as perceived,
@@ -475,7 +466,7 @@
     is developed which predicts the perceptual attributes of urban soundscapes based
     on the spectral slopes of the acoustic time series.
   address: San Diego
-  author: Mitchell, Andrew and Kang, Jian, Andrew Mitchell OR Data Study Group Team
+  author: Mitchell, Andrew and Kang, Jian
   booktitle: 178th Meeting of the Acoustical Society of America
   doi: 10.1121/1.5136681
   groups: J2_SSID-Protocol, Thesis
@@ -488,6 +479,26 @@
   qualityassured: qualityAssured
   title: The spectral structure of acoustic time series can predict the perceptual
     assessment of urban soundscapes
+  volume: '146'
+  year: '2019'
+- ENTRYTYPE: inproceedings
+  ID: Mitchell2019Making
+  abstract: The core objectives of smart city design are to increase quality of life,
+    enhance efficiency, and move towards the sustainability of cities. While this
+    will involve increased integration of new and...
+  address: San Diego
+  author: Mitchell, Andrew and Aletta, Francesco and Oberman, Tin and Erfanian, Mercede
+    and Kachlicka, Magdalena and Lionello, Matteo and Kang, Jian
+  booktitle: 178th Meeting of the Acoustical Society of America
+  doi: 10.1121/1.5136970
+  groups: Thesis
+  issn: 0001-4966
+  keywords: SSID
+  month: December
+  number: '4'
+  pages: 2873–2873
+  publisher: Acoustical Society of America (ASA)
+  title: Making cities smarter with new soundscape indices
   volume: '146'
   year: '2019'
 - ENTRYTYPE: article
@@ -504,8 +515,7 @@
     collected under this protocol will form a large-scale, international soundscape
     database.'
   author: Mitchell, Andrew and Oberman, Tin and Aletta, Francesco and Erfanian, Mercede
-    and Kachlicka, Magdalena and Lionello, Matteo and Kang, Jian, Andrew Mitchell
-    OR Data Study Group Team
+    and Kachlicka, Magdalena and Lionello, Matteo and Kang, Jian
   doi: 10.3390/app10072397
   file: :Mitchell2020Soundscape - The Soundscape Indices (SSID) protocol - A method
     for urban soundscape.pdf:PDF
@@ -526,8 +536,7 @@
 - ENTRYTYPE: inproceedings
   ID: Mitchell2021Development
   address: Seattle
-  author: Mitchell, Andrew and Oberman, Tin and Aletta, Francesco and Kang, Jian,
-    Andrew Mitchell OR Data Study Group Team
+  author: Mitchell, Andrew and Oberman, Tin and Aletta, Francesco and Kang, Jian
   booktitle: 181st Meeting of the Acoustical Society of America
   doi: 10.1121/10.0008334
   eprint: https://doi.org/10.1121/10.0008334
@@ -542,8 +551,7 @@
 - ENTRYTYPE: article
   ID: Mitchell2021Investigating
   author: Andrew Mitchell and Tin Oberman and Francesco Aletta and Magdalena Kachlicka
-    and Matteo Lionello and Mercede Erfanian and Jian Kang, Andrew Mitchell OR Data
-    Study Group Team
+    and Matteo Lionello and Mercede Erfanian and Jian Kang
   doi: 10.1121/10.0008928
   groups: Thesis
   journal: The Journal of the Acoustical Society of America
@@ -559,7 +567,7 @@
 - ENTRYTYPE: misc
   ID: Mitchell2022DeLTA
   author: Mitchell, Andrew and Erfanian, Mercede and Soelitsyo, Christopher and Oberman,
-    Tin and Aletta, Francesco, Andrew Mitchell OR Data Study Group Team
+    Tin and Aletta, Francesco
   copyright: Creative Commons Attribution 4.0 International
   doi: 10.5281/ZENODO.7158056
   keywords: soundscape, sound sources, environmental sound recognition
@@ -569,8 +577,7 @@
 - ENTRYTYPE: article
   ID: Mitchell2022Effects
   author: Andrew Mitchell and Mercede Erfanian and Christopher Soelistyo and Tin Oberman
-    and Jian Kang and Robert Aldridge and Jing-Hao Xue and Francesco Aletta, Andrew
-    Mitchell OR Data Study Group Team
+    and Jian Kang and Robert Aldridge and Jing-Hao Xue and Francesco Aletta
   doi: 10.3390/ijerph192214872
   journal: International Journal of Environmental Research and Public Health
   month: nov
@@ -583,8 +590,7 @@
   year: '2022'
 - ENTRYTYPE: article
   ID: Mitchell2022How
-  author: Mitchell, Andrew and Aletta, Francesco and Kang, Jian, Andrew Mitchell OR
-    Data Study Group Team
+  author: Mitchell, Andrew and Aletta, Francesco and Kang, Jian
   doi: 10.1121/10.0009794
   eprint: https://doi.org/10.1121/10.0009794
   groups: Thesis
@@ -595,24 +601,11 @@
   title: How to analyse and represent quantitative soundscape data
   volume: '2'
   year: '2022'
-- ENTRYTYPE: phdthesis
-  ID: Mitchell2022Predictive
-  author: Andrew Mitchell, Andrew Mitchell OR Data Study Group Team
-  doi: 10.13140/RG.2.2.15590.50245
-  eprint: https://discovery.ucl.ac.uk/id/eprint/10156562
-  language: en
-  month: September
-  school: University College London
-  title: 'Predictive Modelling of Complex Urban Soundscapes: Enabling an engineering
-    approach to soundscape design'
-  type: PhD Thesis
-  url: https://discovery.ucl.ac.uk/id/eprint/10156562
-  year: '2022'
 - ENTRYTYPE: inproceedings
   ID: Mitchell2023conceptual
   address: Chiba, Greater Tokyo
   author: Andrew Mitchell and Francesco Aletta and Tin Oberman and Mercede Erfanian
-    and Jian Kang, Andrew Mitchell OR Data Study Group Team
+    and Jian Kang
   booktitle: INTER-NOISE 2023 Conference
   file: :Mitchell2023conceptual - A Conceptual Framework for the Practical Use of
     Predictive Models and Soundscape Indices_ Goals, Constraints, and Applications.pdf:PDF
@@ -627,7 +620,7 @@
   author: Andrew Mitchell and Emmeline Brown and Ratneel Deo and Yuanbo Hou and Jasper
     Kirton-Wingate and Jinhua Liang and Alisa Sheinkman and Christopher Soelistyo
     and Hari Sood and Arin Wongprommoon and Kaiyue Xing and Wingyan Yip and Francesco
-    Aletta, Andrew Mitchell OR Data Study Group Team
+    Aletta
   doi: 10.1121/10.0018787
   journal: The Journal of the Acoustical Society of America
   month: mar
@@ -641,27 +634,16 @@
 - ENTRYTYPE: inproceedings
   ID: Mitchell2023How
   address: Turin
-  author: Andrew Mitchell and Francesco Aletta and Tin Oberman and Jian Kang, Andrew
-    Mitchell OR Data Study Group Team
+  author: Andrew Mitchell and Francesco Aletta and Tin Oberman and Jian Kang
   booktitle: Forum Acusticum 2023
   month: September
   title: How do we define soundscape?
   year: '2023'
 - ENTRYTYPE: inproceedings
-  ID: Mitchell2023Soundscapy
-  address: Chiba, Greater Tokyo
-  author: Andrew Mitchell, Andrew Mitchell OR Data Study Group Team
-  booktitle: INTER-NOISE 2023 Conference
-  month: August
-  note: (accepted)
-  title: 'Soundscapy: A python package for soundscape assessment and analysis'
-  year: '2023'
-- ENTRYTYPE: inproceedings
   ID: Moshona2022What
   author: Moshona, Cleopatra Christina and Aletta, Francesco and Henze, Helen and
     Chen, Xiaochao and Mitchell, Andrew and Oberman, Tin and Tong, Huan and Fiebig,
-    André and Kang, Jian and Schulte-Fortkamp, Brigitte, Andrew Mitchell OR Data Study
-    Group Team
+    André and Kang, Jian and Schulte-Fortkamp, Brigitte
   booktitle: 51st International Congress and Exposition on Noise Control Engineering
     (INTER-NOISE 2022)
   title: What is a soundscape intervention? Exploring definitions and identifi-cation
@@ -686,8 +668,7 @@
     source type, and is ultimately not dependent on sound level.
   article-number: '5779'
   author: Orga, Ferran and Mitchell, Andrew and Freixes, Marc and Aletta, Francesco
-    and Alsina-Pagès, Rosa Ma and Foraster, Maria, Andrew Mitchell OR Data Study Group
-    Team
+    and Alsina-Pagès, Rosa Ma and Foraster, Maria
   doi: 10.3390/su13115779
   file: :Orga2021Multilevel - Multilevel Annoyance Modelling of Short Environmental
     Sound Recordings.pdf:PDF
@@ -705,8 +686,7 @@
 - ENTRYTYPE: article
   ID: Papadakis2023City
   author: Papadakis, Nikolaos M. and Aletta, Francesco and Kang, Jian and Oberman,
-    Tin and Mitchell, Andrew and Aroni, Ioanna and Stavroulakis, Georgios E., Andrew
-    Mitchell OR Data Study Group Team
+    Tin and Mitchell, Andrew and Aroni, Ioanna and Stavroulakis, Georgios E.
   doi: 10.1016/j.apacoust.2023.109659
   file: :Papadakis2023City - City, Town, Village_ Potential Differences in Residents
     Soundscape Perception Using ISO_TS 12913 2_2018.pdf:PDF
@@ -733,7 +713,7 @@
     The results show that during the COVID-19 lockdown the number of noise complaints
     increased by 48
   author: Huan Tong and Francesco Aletta and Andrew Mitchell and Tin Oberman and Jian
-    Kang, Andrew Mitchell OR Data Study Group Team
+    Kang
   doi: 10.1016/j.scitotenv.2021.147213
   file: :Tong2021Increases - Increases in Noise Complaints during the COVID 19 Lockdown
     in Spring 2020_ a Case Study in Greater London, UK.pdf:PDF
@@ -751,8 +731,7 @@
 - ENTRYTYPE: article
   ID: Vida2023Soundscape
   author: Vida, Jerónimo and Antonio Almagro, José and García-Quesada, Rafael and
-    Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Kang, Jian, Andrew
-    Mitchell OR Data Study Group Team
+    Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Kang, Jian
   doi: 10.1016/j.apacoust.2023.109516
   file: :Vida2023Soundscape - Soundscape Attributes in Spanish_ a Comparison with
     the English Version of the Protocol Proposed in Method a of the ISO_TS 12913–2.pdf:PDF
@@ -768,8 +747,7 @@
 - ENTRYTYPE: article
   ID: VidaManzano2021sound
   author: Vida Manzano, Jerónimo and Almagro Pastor, José Antonio and García Quesada,
-    Rafael and Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Kang, Jian,
-    Andrew Mitchell OR Data Study Group Team
+    Rafael and Aletta, Francesco and Oberman, Tin and Mitchell, Andrew and Kang, Jian
   doi: 10.1515/noise-2021-0002
   file: :VidaManzano2021sound - The _sound of Silence_ in Granada during the COVID
     19 Lockdown.pdf:PDF
