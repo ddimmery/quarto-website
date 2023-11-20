@@ -5,7 +5,7 @@ project:
 website:
   title: "Andrew Mitchell"
   description: "Personal website of Andrew Mitchell"
-  site-url: https://MitchellAcoustics.github.io/quarto-website/
+  site-url: https://drandrewmitchell.com/
   repo-url: https://github.com/MitchellAcoustics/quarto-website
   # google-analytics: "G-Y7YLFF5F90"
   open-graph: true

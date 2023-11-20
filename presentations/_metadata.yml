@@ -7,7 +7,7 @@ freeze: auto
 # Default author
 author:
   - name: Andrew Mitchell
-    url: https://mitchellacoustics.github.io/quarto-website/
+    url: https://drandrewmitchell.com/
     orcid: 0000-0003-0978-5046
     affiliation: IEDE @ University College London
     affiliation-url: https://www.ucl.ac.uk/bartlett/environmental-design/
