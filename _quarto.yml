@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site
 
+bibliography: FellowshipRefs.bib
+
 website:
   title: "Andrew Mitchell"
   description: "Personal website of Andrew Mitchell"
@@ -42,6 +44,8 @@ website:
       contents:
         - text: "Papers with Code"
           file: research/papers.qmd
+        - text: "Presentations"
+          file: research/presentations.qmd
         - text: "List of Publications"
           file: research/list-of-pubs.qmd
 

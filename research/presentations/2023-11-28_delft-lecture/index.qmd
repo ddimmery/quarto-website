@@ -1,0 +1,109 @@
+---
+title: New Methods and Proposals for Evaluating Soundscape Designs and Interventions
+draft: true
+format: 
+  clean-revealjs:
+    smaller: true
+    scrollable: true
+    transition: 'slide'
+    # show-notes: separate-page
+    pdf-separate-fragments: true
+    # width: 1512
+    # height: 982
+# draft: true
+---
+
+## Introduction - what is (a) soundscape?
+
+Soundscape is normatively defined by @ISO12913Part1 as:
+
+**an acoustic environment as perceived or experienced and/or understood by a person or people, in context**
+
+It is important to make sure we are all talking about the same thing when we call something a soundscape
+
+---
+
+## Three key definitions
+
+:::: {.columns}
+::: {.column width="30%" .fragment}
+| **ISO12913-1^[@ISO12913Part1] - Soundscape**
+| The acoustic environment as perceived or experienced, by a person or people, in context.
+:::
+
+::: {.column width="30%" .fragment}
+| **ISO12913-1^[@ISO12913Part1] - Acoustic Environment**
+| Sound at the receiver from all sound sources as modified by the environment^[Note: Acoustic environment can be actual or simulated, outdoor or indoor, as experienced or in memory]
+:::
+
+::: {.column width="40%" .fragment}
+| **Soundscape Ecology^[@Pijanowski2011Soundscape]**
+| All sounds, those of biophony, geophony, and anthrophony, emanating from a landscape to create unique acoustical patterns across a variety of spatial and temporal scales
+:::
+::::
+
+::: {.notes}
+Acoustic Environment - In contrast, the soundscape considers the acoustic environment, but also considers the impact of non-acoustic elements, such as the listener’s context and the visual setting, and how these interact with the acoustic environment to influence the listener’s perception. This approach brought the definition closer to Schafer’s original idea where a soundscape consists of culturally conditioned elements, as perceived by him.
+:::
+
+---
+
+## Distal, Proximal, and Perceptual
+
+:::: {.fragments .r-stack}
+::: {.center .fragment .fade-out fragment-index=1}
+Many of these conceptions of soundscape can actually be organized into different **types of soundscapes:**
+
+**Distal, Proximal and Perceptual Soundscapes** as defined by @Grinfeder2022What
+:::
+
+
+::: {.fragment .fade-left width="110%" fragment-index=1}
+![Soundscape functional block diagram. Reproduced from @Lorenzi2023Human](./soundscape-fbd-lorenzi.png)
+:::
+::::
+
+::: {.notes}
+Distal – Soundscape Ecology/Pijanowski: Encompassing all sources across a variety of spatial and temporal scales in a space. There is only a single distal soundscape, but it only exists as a theoretical construct
+“In the same way that a landscape event cannot be assimilated to a singular signal, the distal soundscape cannot be represented by the acoustic information at any single receiver.” 
+
+Proximal – ISO Acoustic Environment. Whereas the distal soundscape is theoretical, singular for a space, and cannot be measured, proximal soundscapes can be measured and a unique proximal soundscape exists for every potential receiver. 
+
+Perceptual – ISO Soundscape
+“The individual subjective interpretation of a proximal soundscape”
+Just because we can’t measure the perceptual soundscape of animals, doesn’t mean it doesn’t exist. Is that enough of a reason to entirely exclude it (and with it the entire field of soundscape ecology) from the definition of soundscape?
+:::
+
+---
+
+## An overall definition of soundscape:
+
+::: {.center}
+**A soundscape is the acoustic environment of *a place, setting, or community*, whose character is the result of the interaction with non-auditory and/or contextual factors.**
+:::
+
+---
+
+- Soundscape design is a growing field of research
+- Many studies have been conducted to evaluate the effectiveness of soundscape designs and interventions
+- However, there is no consensus on the best methods for evaluating soundscape designs and interventions
+- This presentation will discuss some of the methods that have been used to evaluate soundscape designs and interventions, and propose some new methods for evaluating soundscape designs and interventions
+
+## Defining 'soundscape'
+
+- The term 'soundscape' was coined by R. Murray Schafer in 1977
+
+
+### ISO 12913-1:2014
+
+> acoustic environment as perceived or experienced and/or understood by a person or people, in context
+
+---
+
+### The Grinfeder Soundscape Framework
+
+- Distal, Proximal, and Perceptual Soundscape
+
+---
+
+## References

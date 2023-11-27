@@ -1,0 +1,13 @@
+---
+title: "Free and open-source software for soundscape visualization and binaural analysis"
+subtitle: "Poster presentation given at the Urban Sound Symposium 2023, Barcelona"
+date: "2023-04-21"
+categories:
+    - conference
+engine: markdown
+image: 2023_USS_Soundscapy-poster.png
+sidebar: false
+citation: false
+---
+
+![](2023_USS_Soundscapy-poster.png)

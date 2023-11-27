@@ -1,0 +1,10 @@
+---
+title: "Presentations"
+listing:
+  contents: presentations
+  sort: "date desc"
+  type: default
+  grid-columns: 2
+  categories: true
+  feed: true
+---
