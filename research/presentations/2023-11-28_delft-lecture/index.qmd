@@ -10,7 +10,7 @@ format:
     pdf-separate-fragments: true
     # width: 1512
     # height: 982
-# draft: true
+draft: true
 ---
 
 ## Introduction - what is (a) soundscape?

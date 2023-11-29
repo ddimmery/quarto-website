@@ -42,9 +42,9 @@ website:
     - id: research
       title: "Research"
       contents:
-        - text: "Papers with Code"
+        - text: "Open Source Papers"
           file: research/papers.qmd
-        - text: "Presentations"
+        - text: "Talks"
           file: research/presentations.qmd
         - text: "List of Publications"
           file: research/list-of-pubs.qmd
