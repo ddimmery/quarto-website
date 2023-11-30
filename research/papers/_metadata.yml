@@ -23,5 +23,15 @@ author:
 # citation
 citation: true
 
+# references
+bibliography: FellowshipRefs.bib
+
 # Enable CC licence appendix
 license: "CC BY"
+
+format: 
+  html:
+    anchor-sections: true
+    number-sections: true
+    toc: true
+    toc-expand: true

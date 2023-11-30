@@ -1,19 +1,33 @@
 ---
-title: New Methods and Proposals for Evaluating Soundscape Designs and Interventions
-draft: true
-format: 
-  clean-revealjs:
-    smaller: true
-    scrollable: true
-    transition: 'slide'
-    # show-notes: separate-page
-    pdf-separate-fragments: true
-    # width: 1512
-    # height: 982
-draft: true
+title: |
+  TU Delft Pi-Lab Talk: Soundscape Designs
+date: "29-11-2023"
+sidebar: false
+categories: 
+  - lecture
+format:
+  html:
+    page-layout: full
+image: Delft-header.png
+description: Invited Lecture delivered at the [IDE Co-Lab at TU Delft](https://kind.io.tudelft.nl/design-and-ai/event/pi-lab-talk-soundscape-designs-2/)
+abstract: |
+  This talk will cover the latest work on soundscape monitoring, assessment, and prediction. this will focus on [soundscape circumplex analysis methods](https://pubs.aip.org/asa/jel/article/2/3/037201/2845750), a [framework for practical soundscape engineering](https://www.researchgate.net/publication/375516282_A_conceptual_framework_for_the_practical_use_of_predictive_models_and_Soundscape_Indices_Goals_constraints_and_applications) and interventions. In the talk, Dr. Mitchell will discuss the application of soundscape principles for the design and monitoring of hospital environments and the creation of open-source software for soundscape analysis ([Soundscapy](https://soundscapy.readthedocs.io/en/latest/))
+
+citation:
+  type: speech
+  genre: Invited Lecture
+  title: New Methods and Proposals for Evaluating Soundscape Designs and Interventions
+  event: Pi-Lab Talks
+  event-place: TU Delft, Netherlands
+
 ---
 
-## Introduction - what is (a) soundscape?
+## New Methods and Proposals for Evaluating Soundscape Designs and Interventions
+
+{{< pdf ./2023-11-30_Delft-Overall-Talk.pdf width=100% height=600 >}}
+
+
+<!-- ## Introduction - what is (a) soundscape?
 
 Soundscape is normatively defined by @ISO12913Part1 as:
 
@@ -106,4 +120,4 @@ Just because we can’t measure the perceptual soundscape of animals, doesn’t 
 
 ---
 
-## References
+## References -->

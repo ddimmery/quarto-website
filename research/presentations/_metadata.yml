@@ -3,6 +3,7 @@
 # freeze computational output
 freeze: auto
 
+citation: true
 
 # Default author
 author:

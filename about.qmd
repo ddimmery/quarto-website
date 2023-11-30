@@ -111,7 +111,7 @@ Summer 2012
 :::
 *Bass Trombonist*
 
-### Teaching
+<!-- ### Teaching
 
 #### Facebook
 ::: {.d-flex .justify-content-between}
@@ -178,4 +178,4 @@ Introduction to R for NYU Datalab
 ::: {.text-end}
 January 2013
 :::
-:::
+::: -->

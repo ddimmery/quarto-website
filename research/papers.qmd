@@ -1,5 +1,5 @@
 ---
-title: "Papers with Code"
+title: "Open Source Papers (with code)"
 listing:
   contents: papers
   sort: "date desc"
