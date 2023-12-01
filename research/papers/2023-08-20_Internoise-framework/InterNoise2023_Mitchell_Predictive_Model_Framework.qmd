@@ -1,6 +1,6 @@
 ---
 title: |
-    A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraings, and applications
+    A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications
 description: |
   Presented at Inter-noise 2023, Chiba, Greater Tokyo.
 categories: 
