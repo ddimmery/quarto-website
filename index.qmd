@@ -1,27 +1,26 @@
 ---
 title: "Andrew Mitchell"
 description: "Urban Soundscape Engineering and Analysis"
-page-layout: full
 image: /social-card.jpg
+about: 
+    id: hero-heading
+    template: jolla
 resources:
     - "social-card.jpg"
 sidebar: false
 ---
 
-::: {.column-page-inset}
-::: {.column-page-inset-left}
+::: {#hero-heading .text-center}
 I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of complex sounds. 
+
+:::
+
+---
 
 I was awarded two PhD- and one Post-doctoral Enrichment Awards from The Alan Turing Institute and spent a month in early 2022 as a visiting research fellow at Stockholm University. My ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, Soundscapy, Deep Learning Techniques for noise Annoyance detection (DeLTA), the Catalogue of Soundscape Interventions (CSI), and the Soundscape Attributes Translation Project (SATP).
 
 I am also the host of The Rest is Just Noise, a monthly podcast exploring the relationship between sound and our cities. Each episode, along with my co-hosts and colleagues Dr Francesco Aletta and Dr Tin Oberman, I speak with researchers and experts from a wide range of backgrounds about their work in urban sounds and sound perception.
 
-:::
-
-<div class="column-margin column-container">
-![](headshot.jpg){.rounded}
-</div>
-:::
 
 <div id='buzzsprout-large-player'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1438372.js?container_id=buzzsprout-large-player&player=large'></script>
 

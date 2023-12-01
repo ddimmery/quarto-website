@@ -248,11 +248,12 @@ There has been some discussion regarding the interdependence of the PAs and the 
 
 Soundscape studies have been steadily growing as a research field over the past three decades. Their relevance for the planning and design of urban spaces is now generally acknowledged by both the academic and practitioners' communities. Yet, for their contribution in shaping better environments to be meaningful, it is necessary to agree on common methodological approaches and techniques to analyse and present standardised soundscape data. Therefore, the general goal of this work is to consider some of the questions that may still have been left unanswered by the ISO 12913 series when it comes to optimal ways to analyse and represent soundscape data coming from the ISO standardised protocols. As a result, we propose a method for presenting the results of standardised assessments as a distribution of soundscape perception within the circumplex space. This method provides an opportunity to conduct a nuanced discussion of soundscape perception which considers the variety of individual responses. The tools for generating these circumplex visualisations are made openly available as well. This shift is part of a move towards a more holistic approach to urban noise and to integrating the soundscape approach into urban design and regulations. 
 
-# Data and Code Availability
+# Data and Code Availability {.unnumbered .appendix}
 
 The data used in this study are openly available as v0.2.3 of the International Soundscape Database (ISD) at [https://zenodo.org/record/5578572](https://zenodo.org/record/5578572). A library of python functions for producing the type of plots presented (using the seaborn plotting library [@Waskom2021]) and an interactive Jupyter notebook which provides a tutorial for using this code, working with the ISD data, and recreating the figures of this paper has been made available as part of the ISD.
 
-# Acknowledgements
+# Acknowledgements {.unnumbered .appendix}
 
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation program (grant agreement No. 740696, project title: Soundscape Indices - SSID). We would like to acknowledge Matteo Lionello for the helpful discussions, and (in alphabetical order) Mercede Erfanian, Magdalena Kachlicka, and Tin Oberman for the helpful discussions and the data collection support.
 
+# References {.unnumbered}

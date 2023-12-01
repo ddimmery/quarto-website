@@ -375,8 +375,6 @@ The authors would like to thank Zhongzhe Li for conducting binaural recordings a
 
 On-site study data were collected and managed using REDCap electronic data capture tools hosted at University College London (UCL).
 
-{{< page_break >}}
-
 ## Appendix A: Online survey questionnaire {.appendix .unnumbered}
 
 |        |                                                                                               |

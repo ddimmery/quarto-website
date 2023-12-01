@@ -80,10 +80,6 @@
 
 \usepackage{gensymb}
 \makeatletter
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -119,18 +115,10 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \journal{JASA-EL}
 \ifLuaTeX
@@ -201,10 +189,7 @@ this approach can be used and developed.
     ISO12913
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, boxrule=0pt, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, enhanced, breakable]}{\end{tcolorbox}}\fi
-
-\hypertarget{sec-introduction}{%
-\section{Introduction}\label{sec-introduction}}
+    \section{Introduction}\label{sec-introduction}
 
 Methods for collecting data on how people experience acoustic
 environments have been at the forefront of the debate in soundscape
@@ -289,8 +274,7 @@ holistic and advanced method of representing soundscapes as a
 probabilistic distribution of perceptions within the circumplex and
 provide a toolbox for others to use.
 
-\hypertarget{sec-current}{%
-\section{The current ISO 12917 framework}\label{sec-current}}
+\section{The current ISO 12917 framework}\label{sec-current}
 
 Although different methods are proposed for data collection in ISO12913
 Part 2 \citep{ISO12913_2}, in the context of this study we focus on the
@@ -313,9 +297,8 @@ circumplex. As will be made clear throughout, the circumplex model has
 several aspects which make it useful for representing the soundscape
 perception of a space as a whole.
 
-\hypertarget{coordinate-transformation-into-the-two-primary-dimensions}{%
 \subsection{Coordinate transformation into the two primary
-dimensions}\label{coordinate-transformation-into-the-two-primary-dimensions}}
+dimensions}\label{coordinate-transformation-into-the-two-primary-dimensions}
 
 To facilitate the analysis of the PA responses, the Likert scale
 responses are coded from 1 (Strongly disagree) to 5 (Strongly agree) as
@@ -331,17 +314,17 @@ information from all 8 PA dimensions onto a more easily understandable
 and analysable two dimensions. The ISO coordinates are thus calculated
 by:
 
-\begin{equation}\protect\hypertarget{eq-pleasant}{}{
+\begin{equation}\phantomsection\label{eq-pleasant}{
 \begin{split}
     ISO Pleasant = [(pleasant - annoying) + \cos 45\degree * (calm - chaotic) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
-}\label{eq-pleasant}\end{equation}
+}\end{equation}
 
-\begin{equation}\protect\hypertarget{eq-eventful}{}{
+\begin{equation}\phantomsection\label{eq-eventful}{
 \begin{split}
     ISO Eventful = [(eventful - uneventful) + \cos 45\degree * (chaotic - calm) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
-}\label{eq-eventful}\end{equation}
+}\end{equation}
 
 where the PAs are arranged around the circumplex as shown in
 Figure~\ref{fig-radar}. The \(\cos 45\degree\) term operates to project
@@ -361,7 +344,9 @@ and finally calm soundscapes are both uneventful and pleasant.
 
 \begin{figure}
 
-{\centering \includegraphics{figures/Figure1.jpg}
+\centering{
+
+\includegraphics{figures/Figure1.jpg}
 
 }
 
@@ -371,11 +356,10 @@ ratings on the Likert scales (1 to 5). Right: Scatter plot of the same
 assessments on the soundscape circumplex, transformed according to ISO
 12913 Part 3.}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{summarising-the-soundscape-assessment-of-a-location}{%
 \subsection{Summarising the soundscape assessment of a
-location}\label{summarising-the-soundscape-assessment-of-a-location}}
+location}\label{summarising-the-soundscape-assessment-of-a-location}
 
 While the assessment methods available are able to record the soundscape
 perception of a single individual, and that person's perception is valid
@@ -402,8 +386,7 @@ scatter plot. Thus the standard suggests that 1) the projection method
 equations are not applied to individual responses and 2) only the median
 assessment of a location should be plotted.
 
-\hypertarget{limitations-of-the-iso}{%
-\subsection{Limitations of the ISO}\label{limitations-of-the-iso}}
+\subsection{Limitations of the ISO}\label{limitations-of-the-iso}
 
 How these methods should be applied to represent the soundscape of a
 location has not been adequately discussed in previous literature, nor
@@ -477,10 +460,9 @@ there is no guarantee that the sample of people engaged in the soundwalk
 is representative of the users of the space (in fact it is likely they
 would not be).
 
-\hypertarget{the-way-forward-pleasant-eventful-coordinates-and-probabilistic-soundscape-representation}{%
 \section{The Way Forward: Pleasant-Eventful Coordinates and
 Probabilistic Soundscape
-Representation}\label{the-way-forward-pleasant-eventful-coordinates-and-probabilistic-soundscape-representation}}
+Representation}\label{the-way-forward-pleasant-eventful-coordinates-and-probabilistic-soundscape-representation}
 
 Given the identified issues with the recommended methods for statistical
 analysis and their shortcomings in representing the variation in
@@ -519,86 +501,60 @@ in Figure~\ref{fig-circ-1}.
 
 \begin{minipage}[t]{0.47\linewidth}
 
-{\centering 
-
-\raisebox{-\height}{
+\centering{
 
 \includegraphics{index_files/figure-pdf/fig-circ-output-1.pdf}
 
 }
 
-}
-
 \subcaption{\label{fig-circ-1}Example distribution of the soundscape
 perception of an urban park}
+
 \end{minipage}%
 %
 \begin{minipage}[t]{0.03\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 %
 \begin{minipage}[t]{0.50\linewidth}
 
-{\centering 
-
-\raisebox{-\height}{
+\centering{
 
 \includegraphics{index_files/figure-pdf/fig-circ-output-2.pdf}
 
 }
 
-}
-
 \subcaption{\label{fig-circ-2}Median perception contour and scatter plot
 of individual assessments}
+
 \end{minipage}%
 \newline
 \begin{minipage}[t]{0.50\linewidth}
 
-{\centering 
-
-\raisebox{-\height}{
+\centering{
 
 \includegraphics{index_files/figure-pdf/fig-circ-output-3.pdf}
 
 }
 
-}
-
 \subcaption{\label{fig-circ-3}Comparison of the soundscapes of three
 urban spaces}
+
 \end{minipage}%
 %
 \begin{minipage}[t]{0.03\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 %
 \begin{minipage}[t]{0.47\linewidth}
 
-{\centering 
-
-\raisebox{-\height}{
+\centering{
 
 \includegraphics{index_files/figure-pdf/fig-circ-output-4.pdf}
 
 }
 
-}
-
 \subcaption{\label{fig-circ-4}Soundscape perception as a function of
 sound level}
+
 \end{minipage}%
 
 \caption{\label{fig-circ}A demonstration of some use cases of
@@ -616,7 +572,7 @@ comparison across the full ISD for soundscape perception at
 environmental, and contextual data can reveal new and complex
 relationships with the soundscape perception.}
 
-\end{figure}
+\end{figure}%
 
 Once these individual responses are plotted, we then overlay a heatmap
 of the bivariate distribution (with isodensity curves for each decile)
@@ -737,9 +693,8 @@ between acoustic features and annoyance (or pleasantness) without
 considering eventfulness are perhaps missing the most direct effect of
 the acoustic features.
 
-\hypertarget{making-use-of-the-soundscape-circumplex}{%
 \section{Making Use of the Soundscape
-Circumplex}\label{making-use-of-the-soundscape-circumplex}}
+Circumplex}\label{making-use-of-the-soundscape-circumplex}
 
 There are various potential methods for integrating the probabilistic
 soundscape approach into a design and intervention setting. Representing
@@ -821,9 +776,8 @@ comparing differences in individual responses and appropriate methods of
 summarising small sample data should be explored (such as the univariate
 scatterplots described in \citet{Weissgerber2015Bar}).
 
-\hypertarget{limitations-of-the-circumplex-and-quantitative-analysis}{%
 \subsection{Limitations of the circumplex and quantitative
-analysis}\label{limitations-of-the-circumplex-and-quantitative-analysis}}
+analysis}\label{limitations-of-the-circumplex-and-quantitative-analysis}
 
 The method presented here is a solution for representing the soundscape
 of a space, which requires considering the perception of many people,
@@ -869,8 +823,7 @@ translations of soundscape descriptors into other languages
 \citep{Aletta2020Soundscape} as long as the dimensional relationships of
 the circumplex are maintained.
 
-\hypertarget{conclusions}{%
-\section{Conclusions}\label{conclusions}}
+\section{Conclusions}\label{conclusions}
 
 Soundscape studies have been steadily growing as a research field over
 the past three decades. Their relevance for the planning and design of
@@ -891,8 +844,7 @@ circumplex visualisations are made openly available as well. This shift
 is part of a move towards a more holistic approach to urban noise and to
 integrating the soundscape approach into urban design and regulations.
 
-\hypertarget{data-and-code-availability}{%
-\section{Data and Code Availability}\label{data-and-code-availability}}
+\section{Data and Code Availability}\label{data-and-code-availability}
 
 The data used in this study are openly available as v0.2.3 of the
 International Soundscape Database (ISD) at
@@ -903,8 +855,7 @@ provides a tutorial for using this code, working with the ISD data, and
 recreating the figures of this paper has been made available as part of
 the ISD.
 
-\hypertarget{acknowledgements}{%
-\section{Acknowledgements}\label{acknowledgements}}
+\section{Acknowledgements}\label{acknowledgements}
 
 This project has received funding from the European Research Council
 (ERC) under the European Union's Horizon 2020 research and innovation

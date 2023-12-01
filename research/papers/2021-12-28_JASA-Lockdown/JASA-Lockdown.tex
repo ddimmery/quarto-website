@@ -83,10 +83,6 @@
 \usepackage{nth}
 \usepackage{booktabs}
 \makeatletter
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -122,18 +118,14 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
 \makeatother
 \journal{J. Acoust. Soc. Am.}
 \ifLuaTeX
@@ -241,10 +233,7 @@ processing \sep Urban development \sep
     Regression analysis
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[breakable, boxrule=0pt, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners, enhanced, frame hidden]}{\end{tcolorbox}}\fi
-
-\hypertarget{sec-intro}{%
-\section{Introduction}\label{sec-intro}}
+    \section{Introduction}\label{sec-intro}
 
 The global emergency caused by the COVID-19 pandemic in early 2020
 required national lockdown measures across the world, primarily
@@ -376,8 +365,7 @@ needed for a soundscape prediction model based on comprehensive acoustic
 on-site measurements to be used for assessing locations with low social
 presence or in situations where conducting surveys is impractical (RQ3)?
 
-\hypertarget{materials-and-methods}{%
-\section{Materials and methods}\label{materials-and-methods}}
+\section{Materials and methods}\label{materials-and-methods}
 
 This study was conducted via initial onsite data collection campaigns in
 Central London and Venice in 2019 before the outbreak of COVID-19 as
@@ -430,9 +418,8 @@ for the on-line listening experiment and is conducted in adherence to
 the ethical requirements of the Declaration of Helsinki
 \citep{WMA2013World}.
 
-\hypertarget{onsite-data-questionnaires-binaural-measurements-and-recordings}{%
 \subsection{Onsite data: Questionnaires, binaural measurements, and
-recordings}\label{onsite-data-questionnaires-binaural-measurements-and-recordings}}
+recordings}\label{onsite-data-questionnaires-binaural-measurements-and-recordings}
 
 The initial onsite data collection featured both questionnaire data
 collected from the general public and acoustic measurements, conducted
@@ -468,8 +455,7 @@ between the \nth{6} and the 25th of April 2020 in both cities, this time
 excluding the questionnaire. An additional 571 binaural recordings were
 collected on-site in 2020.
 
-\hypertarget{data-collection}{%
-\subsubsection{Data collection}\label{data-collection}}
+\subsubsection{Data collection}\label{data-collection}
 
 The 2019 data collection was performed across all the locations using
 the protocol based on the Method A of the \citet{ISO12913Part2}, as
@@ -512,8 +498,7 @@ These recordings are indexed by a GroupID such that the recording for
 each group is matched up to each of the corresponding respondents and
 their individual survey responses.
 
-\hypertarget{data-cleaning}{%
-\subsubsection{Data cleaning}\label{data-cleaning}}
+\subsubsection{Data cleaning}\label{data-cleaning}
 
 The cleaning of the samples was conducted using the ArtemiS SUITE 11.
 The researcher discarded or cropped whole recordings, or its parts
@@ -551,9 +536,8 @@ featuring the address, overall psychoacoustic characteristics of the
 location, typical use of each location, and pictures taken during the
 survey sessions.
 
-\hypertarget{sec-psychoacousticAnalysis}{%
 \subsubsection{Psychoacoustic
-analyses}\label{sec-psychoacousticAnalysis}}
+analyses}\label{sec-psychoacousticAnalysis}
 
 The binaural recordings were analyzed in ArtemiS SUITE 11 to calculate
 the suite of 11 acoustic and psychoacoustic features given in
@@ -574,17 +558,16 @@ applied to real-world sounds \citep{Orga2021Multilevel}. The maximum
 value from the left and right channels of the binaural recording are
 used, as suggested in \citet{ISO12913Part3}.
 
-\hypertarget{tbl-psychoacoustics}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3176}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2235}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1176}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3412}}@{}}
-\caption{\label{tbl-psychoacoustics}Psychoacoustic features considered
-for inclusion in the predictive models. All metrics are calculated for
-the full length of the recording (\(\sim30s\)). As recommended by
-\citet{ISO2017Acoustics} and \citet{ISO12913Part2}, the 5th percentile
-of Loudness is used rather than the average.}\tabularnewline
+\caption{Psychoacoustic features considered for inclusion in the
+predictive models. All metrics are calculated for the full length of the
+recording (\(\sim30s\)). As recommended by \citet{ISO2017Acoustics} and
+\citet{ISO12913Part2}, the 5th percentile of Loudness is used rather
+than the average.}\label{tbl-psychoacoustics}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Feature}
@@ -645,7 +628,6 @@ Fluctuation Strength (\(FS\)); while \(L_{Ceq}-L_{Aeq}\), Impulsiveness
 \(L_{Ceq}-L_{Aeq}\), \(L_{A10}-L_{A90}\), \(FS\), and \(PA\) show low
 correlations; \(I\) and \(S\) show no correlation.
 
-\hypertarget{tbl-corr}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.1124}}
   >{\centering\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0651}}
@@ -660,11 +642,10 @@ correlations; \(I\) and \(S\) show no correlation.
   >{\centering\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.0888}}
   >{\centering\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.1361}}
   >{\centering\arraybackslash}p{(\columnwidth - 24\tabcolsep) * \real{0.1361}}@{}}
-\caption{\label{tbl-corr}Pearson correlation coefficients between
-candidate acoustic features and ISOPleasant and ISOEventful across all
-13 locations. Only statistically significant (\(p < 0.01\)) coefficients
-are shown.
-\{fontsize=\textquotesingle10pt\textquotesingle\}}\tabularnewline
+\caption{Pearson correlation coefficients between candidate acoustic
+features and ISOPleasant and ISOEventful across all 13 locations. Only
+statistically significant (\(p < 0.01\)) coefficients are
+shown.}\label{tbl-corr}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Parameter}
@@ -754,8 +735,7 @@ and \(N_5\) are highly correlated, meaning that careful consideration is
 paid to these features to ensure they do not contribute to
 multicollinearity in the final model.
 
-\hypertarget{modelling}{%
-\subsection{Modelling}\label{modelling}}
+\subsection{Modelling}\label{modelling}
 
 Two linear multi-level models (MLM) were computed to predict: 1)
 ISOPleasant, and 2) ISOEventful. These models are trained on the 2019
@@ -819,8 +799,7 @@ The model fitting and feature selection was performed using the
 \texttt{sjPlot} package (v2.8.6) \citep{Luedecke2021sjPlot} and
 \texttt{seaborn} (v0.11.1) \citep{Waskom2021seaborn}.
 
-\hypertarget{online-survey}{%
-\subsection{Online survey}\label{online-survey}}
+\subsection{Online survey}\label{online-survey}
 
 An online listening test was conducted using the Gorilla Experiment
 Builder\footnote{See (\textless www.gorilla.sc\textgreater) (Last viewed
@@ -900,7 +879,9 @@ sections described above.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\textwidth,height=\textheight]{Figure1.png}
+\centering{
+
+\includegraphics[width=1\textwidth,height=\textheight]{Figure1.png}
 
 }
 
@@ -909,10 +890,9 @@ collection, analysis, modeling, and discussion throughout the study. The
 subsections in the text to which each box refers are indicated in
 italics.}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
 The results of the onsite surveys, online experiment, and the model
 development are reported here. They are reported following the structure
@@ -920,13 +900,11 @@ of the ISO/TS 12913 series, revealing the perceived sound source
 dominance, key perceptual attributes (ISOPleasant and ISOEventful) and
 the lockdown-related changes.
 
-\hypertarget{perceived-sound-source-dominance}{%
 \subsection{Perceived sound source
-dominance}\label{perceived-sound-source-dominance}}
+dominance}\label{perceived-sound-source-dominance}
 
-\hypertarget{sound-source-composition-per-location}{%
 \subsubsection{2019 sound source composition per
-location}\label{sound-source-composition-per-location}}
+location}\label{sound-source-composition-per-location}
 
 Questionnaire data was collected in English, Italian, and Spanish in
 both cities. The respective questionnaires can be found in the
@@ -951,7 +929,9 @@ and the most present (Traffic noise, 2.7).
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.6\textwidth,height=\textheight]{Figure2.jpg}
+\centering{
+
+\includegraphics[width=0.6\textwidth,height=\textheight]{Figure2.jpg}
 
 }
 
@@ -962,12 +942,11 @@ participants in each location to the question ``To what extent do you
 presently hear the following four types of sounds?''. Response values
 range from {[}1{]} Not at all to {[}5{]} Dominates completely.}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{overall-change-in-the-perceived-sound-source-dominance-during-lockdown}{%
 \subsubsection{Overall change in the perceived sound source dominance
 during
-lockdown}\label{overall-change-in-the-perceived-sound-source-dominance-during-lockdown}}
+lockdown}\label{overall-change-in-the-perceived-sound-source-dominance-during-lockdown}
 
 1803 words describing the sound sources present in the 2019 recordings
 and 1395 words related to the 2020 recordings were input by participants
@@ -980,18 +959,9 @@ are: noise, car/traffic, bird/birds, talk/voice and (foot)steps.
 \begin{figure}
 
 \begin{minipage}[t]{0.25\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 %
 \begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
 
 \raisebox{-\height}{
 
@@ -999,33 +969,15 @@ are: noise, car/traffic, bird/birds, talk/voice and (foot)steps.
 
 }
 
-}
-
 \end{minipage}%
 %
 \begin{minipage}[t]{0.25\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 \newline
 \begin{minipage}[t]{0.25\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 %
 \begin{minipage}[t]{0.50\linewidth}
-
-{\centering 
 
 \raisebox{-\height}{
 
@@ -1033,26 +985,17 @@ are: noise, car/traffic, bird/birds, talk/voice and (foot)steps.
 
 }
 
-}
-
 \end{minipage}%
 %
 \begin{minipage}[t]{0.25\linewidth}
-
-{\centering 
-
-~
-
-}
-
-\end{minipage}%
+~\end{minipage}%
 
 \caption{\label{fig-wordclo}A graphic illustrating the frequency of
 occurrence of the sound sources reported by the participants of the
 online study across all locations, shown for recordings from the 2019
 (above) and 2020 (below).}
 
-\end{figure}
+\end{figure}%
 
 The results from the listening tests deployed online were analyzed using
 the SPSS Statistics v. 25. Levene's test for equality of variances
@@ -1072,7 +1015,6 @@ whole dataset in 2019, in 2020 the sound sources are, on average, much
 more evenly balanced. No single sound source category was identified as
 frequent across the 2020 dataset.
 
-\hypertarget{tbl-source}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2346}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1235}}
@@ -1080,9 +1022,9 @@ frequent across the 2020 dataset.
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.0741}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2469}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.2593}}@{}}
-\caption{\label{tbl-source}Mean values and standard deviation for the
-perceived dominance of sound sources (rated from 1 - 5), assessed via an
-online survey.}\tabularnewline
+\caption{Mean values and standard deviation for the perceived dominance
+of sound sources (rated from 1 - 5), assessed via an online
+survey.}\label{tbl-source}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Sound source type
@@ -1127,11 +1069,9 @@ Natural & 2019 & 424 & 2.00 & 1.307 & 0.063 \\
 & 2020 & 380 & 2.54 & 1.441 & 0.074 \\
 \end{longtable}
 
-\hypertarget{model-selection-performance-and-application}{%
 \subsection{Model selection, performance, and
-application}\label{model-selection-performance-and-application}}
+application}\label{model-selection-performance-and-application}
 
-\hypertarget{tbl-model}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1538}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2846}}
@@ -1140,10 +1080,11 @@ application}\label{model-selection-performance-and-application}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0615}}@{}}
-\caption{\label{tbl-model}Scaled linear regression models of ISOPleasant
-and ISOEventful for 13 locations in London and Venice. ISOPleasant model
-structure: Random slope, random intercept multi-level model. ISOEventful
-model structure: Multi-variate linear regression.}\tabularnewline
+\caption{Scaled linear regression models of ISOPleasant and ISOEventful
+for 13 locations in London and Venice. ISOPleasant model structure:
+Random slope, random intercept multi-level model. ISOEventful model
+structure: Multi-variate linear
+regression.}\label{tbl-model}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1194,9 +1135,8 @@ Observations & 914 & & & 914 & & \\
 MAE train, test & 0.258 & 0.259 & & 0.233 & 0.231 & \\
 \end{longtable}
 
-\hypertarget{isopleasant-model-selected}{%
 \subsubsection{ISOPleasant model
-selected}\label{isopleasant-model-selected}}
+selected}\label{isopleasant-model-selected}
 
 Following the feature selection, the ISOPleasant model (given in
 Table~\ref{tbl-model}) has \(N_5\) as the fixed effect with a scaled
@@ -1221,18 +1161,19 @@ perceived pleasantness.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.75\textwidth,height=\textheight]{Figure4.jpg}
+\centering{
+
+\includegraphics[width=0.75\textwidth,height=\textheight]{Figure4.jpg}
 
 }
 
 \caption{\label{fig-random}(Color online) Location-level scaled
 coefficients for the ISOPleasant model.}
 
-\end{figure}
+\end{figure}%
 
-\hypertarget{isoeventful-model-selected}{%
 \subsubsection{ISOEventful model
-selected}\label{isoeventful-model-selected}}
+selected}\label{isoeventful-model-selected}
 
 Through the group-level feature selection, all of the group-level
 coefficients were removed, including the LocationID factor itself.
@@ -1246,12 +1187,13 @@ slightly worse than the ISOPleasant at predicting the mean location
 responses, but still performs well (\(R^2_{train} = 0.873\);
 \(R^2_{test} = 0.715\)).
 
-\hypertarget{sec-application}{%
-\subsubsection{Application to lockdown data}\label{sec-application}}
+\subsubsection{Application to lockdown data}\label{sec-application}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.75\textwidth,height=\textheight]{Figure5.jpg}
+\centering{
+
+\includegraphics[width=0.75\textwidth,height=\textheight]{Figure5.jpg}
 
 }
 
@@ -1262,7 +1204,7 @@ made during the lockdown and the change in the location's placement in
 the circumplex. In (b) the marker outline is shown for the 2019
 location, red arrows indicate the change in the location's coordinates.}
 
-\end{figure}
+\end{figure}%
 
 Once the two models were built and assessed, they were then applied to
 the lockdown recording data in order to predict the new soundscape ISO
@@ -1284,20 +1226,17 @@ During the 2020 lockdown, there is general positive move along the
 dimension, but several different patterns of movement can be noted.
 These are investigated further in the Discussion section below.
 
-\hypertarget{discussion}{%
-\section{Discussion}\label{discussion}}
+\section{Discussion}\label{discussion}
 
-\hypertarget{interpretation-of-the-results}{%
 \subsection{Interpretation of the
-results}\label{interpretation-of-the-results}}
+results}\label{interpretation-of-the-results}
 
 To interpret the results addressing the RQ1 and RQ2, it is necessary to
 separately look into the overall change in sound source composition, and
 the change in the affective quality of soundscapes per location.
 
-\hypertarget{change-in-the-sound-source-composition}{%
 \subsubsection{Change in the sound source
-composition}\label{change-in-the-sound-source-composition}}
+composition}\label{change-in-the-sound-source-composition}
 
 The open-ended question about sound sources in the online survey did not
 reveal a change in sound source types but rather confirmed that all
@@ -1326,13 +1265,14 @@ lockdown condition was a useful and unique case study to understand the
 impact which human activities -- and the human sound source type in
 particular -- can have on soundscape perception of urban open spaces.
 
-\hypertarget{predicted-relative-changes-in-soundscapes-due-to-covid-19-restrictions}{%
 \subsubsection{Predicted relative changes in soundscapes due to COVID-19
-restrictions}\label{predicted-relative-changes-in-soundscapes-due-to-covid-19-restrictions}}
+restrictions}\label{predicted-relative-changes-in-soundscapes-due-to-covid-19-restrictions}
 
 \begin{figure}
 
-{\centering \includegraphics{Figure6.jpg}
+\centering{
+
+\includegraphics{Figure6.jpg}
 
 }
 
@@ -1343,7 +1283,7 @@ predicted by the models, represented as vectors centered on the origin.
 MonumentoGaribaldi} with a gray arrow to indicate that this is distinct
 from the effects of the lockdown changes.}
 
-\end{figure}
+\end{figure}%
 
 In order to interpret how the change of the acoustic environment at the
 locations examined would have been perceived, and to answer RQ2,
@@ -1357,8 +1297,7 @@ groups of locations which show similar behaviors in the predicted
 magnitude and direction of change, or discusses a single location which
 is particularly notable.
 
-\hypertarget{piazza-san-marco}{%
-\paragraph{Piazza San Marco}\label{piazza-san-marco}}
+\paragraph{Piazza San Marco}\label{piazza-san-marco}
 
 The largest change is seen in Piazza San Marco, with a predicted
 increase in pleasantness of 0.24 and a decrease in eventfulness of 0.44,
@@ -1375,9 +1314,8 @@ model is able to capture and reflect what may be considered a reasonable
 and expected direction and scale of change within the soundscape
 circumplex.
 
-\hypertarget{locations-showing-an-increase-in-pleasantness}{%
 \paragraph{Locations showing an increase in
-pleasantness}\label{locations-showing-an-increase-in-pleasantness}}
+pleasantness}\label{locations-showing-an-increase-in-pleasantness}
 
 The next locations of interest are those which, in the 2019 survey data,
 were rated as being dominated by traffic noise: Euston Tap, Camden Town,
@@ -1390,9 +1328,8 @@ an increase. Pancras Lock, which was also rated as having high levels of
 both Human and Natural sounds shows only a modest improvement in
 pleasantness.
 
-\hypertarget{locations-showing-a-decrease-in-pleasantness}{%
 \paragraph{Locations showing a decrease in
-pleasantness}\label{locations-showing-a-decrease-in-pleasantness}}
+pleasantness}\label{locations-showing-a-decrease-in-pleasantness}
 
 Among the locations which are predicted to experience a negative effect
 on pleasantness we see a mix of spaces which were assessed as being
@@ -1429,8 +1366,7 @@ impact, in order to determine the true impact a reduction in sound level
 may have, it must be taken in context with how the other aspects of the
 sound will also change.
 
-\hypertarget{euston-tap}{%
-\paragraph{Euston Tap}\label{euston-tap}}
+\paragraph{Euston Tap}\label{euston-tap}
 
 An unexpected result is that Euston Tap is predicted to experience an
 increase in eventfulness and it is unclear whether this accurately
@@ -1449,8 +1385,7 @@ thresholds of traffic noise, a reduction in level -- and therefore a
 reduction in energetic masking -- will allow other aspects of the sound
 to influence the perception.
 
-\hypertarget{monumento-garibaldi}{%
-\paragraph{Monumento Garibaldi}\label{monumento-garibaldi}}
+\paragraph{Monumento Garibaldi}\label{monumento-garibaldi}
 
 Finally, special attention should be paid to the results shown for
 Monumento Garibaldi, which in 2019 was perceived as a pleasant and
@@ -1479,8 +1414,7 @@ included sounds from similar equipment, just based on the psychoacoustic
 features of the sound it is able to reasonably predict the expected
 change in soundscape.
 
-\hypertarget{general-notes}{%
-\paragraph{General notes}\label{general-notes}}
+\paragraph{General notes}\label{general-notes}
 
 As a whole, the primary impact of the 2020 lockdowns on the soundscapes
 in London and Venice was an overall decrease in eventfulness. With the
@@ -1504,8 +1438,7 @@ where this threshold would lie for pleasantness/annoyance, how strict it
 may be, or how it is impacted by the sound source composition of the
 acoustic environment, therefore further research is needed in this area.
 
-\hypertarget{model-selection-results}{%
-\subsubsection{Model selection results}\label{model-selection-results}}
+\subsubsection{Model selection results}\label{model-selection-results}
 
 The most immediately interesting result of the model-building and
 feature selection process, answering to RQ3, is the apparent irrelevance
@@ -1537,8 +1470,7 @@ responses of individuals. The authors believe this modeling approach
 better addresses the practical goal of predictive soundscape modeling
 and reflects the structure of the data collection.
 
-\hypertarget{limitations-of-the-study}{%
-\subsection{Limitations of the study}\label{limitations-of-the-study}}
+\subsection{Limitations of the study}\label{limitations-of-the-study}
 
 The onsite sampling method was initially not intended as the ultimate
 characterization of a location's soundscape but rather as a tool for
@@ -1604,8 +1536,7 @@ lockdown itself, independent of its changes on the sound environment.
 Future research might look into potential perception changes in the
 post-pandemic world.
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\section{Conclusion}\label{conclusion}
 
 This study demonstrates an application of predictive modeling to the
 field of soundscape studies. The model building results reveal that,
@@ -1633,8 +1564,7 @@ snapshot of the soundscape of the spaces, the success of the model in
 responding to new and disturbing sound events demonstrates its potential
 usefulness in long-term monitoring of urban soundscapes.
 
-\hypertarget{acknowledgements}{%
-\section*{Acknowledgements}\label{acknowledgements}}
+\section*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{section}{Acknowledgements}
 
 This project has received funding from the European Research Council
@@ -1654,17 +1584,17 @@ surveys during the spring and the autumn of 2019.
 On-site study data were collected and managed using REDCap electronic
 data capture tools hosted at University College London (UCL).
 
-\hypertarget{appendix-a-online-survey-questionnaire}{%
+{{< page_break >}}
+
 \section*{Appendix A: Online survey
-questionnaire}\label{appendix-a-online-survey-questionnaire}}
+questionnaire}\label{appendix-a-online-survey-questionnaire}
 \addcontentsline{toc}{section}{Appendix A: Online survey questionnaire}
 
-\hypertarget{tbl-gorilla}{}
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.0777}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.9223}}@{}}
-\caption{\label{tbl-gorilla}Questionnaire deployed via the Gorilla
-Experiment Builder}\tabularnewline
+\caption{Questionnaire deployed via the Gorilla Experiment
+Builder}\label{tbl-gorilla}\tabularnewline
 \toprule\noalign{}
 \endfirsthead
 \endhead
@@ -1687,8 +1617,7 @@ vegetation)} \\
 & Not at all / A little / Moderately / A lot / Dominates completely \\
 \end{longtable}
 
-\hypertarget{sec-appmod}{%
-\section*{Appendix B: Model Results}\label{sec-appmod}}
+\section*{Appendix B: Model Results}\label{sec-appmod}
 \addcontentsline{toc}{section}{Appendix B: Model Results}
 
 Table~\ref{tbl-unscl} presents the unscaled coefficients for the
@@ -1698,7 +1627,6 @@ the various factors. However, we feel it is important to present
 unscaled coefficients such that these models could be implemented and
 compared for future work.
 
-\hypertarget{tbl-unscl}{}
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1538}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.2846}}
@@ -1707,10 +1635,10 @@ compared for future work.
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.0615}}@{}}
-\caption{\label{tbl-unscl}The unscaled linear regression models of
-ISOPleasant and ISOEventful for 13 locations in London and Venice.
-Statistically significant p-values are highlighted in
-bold.}\tabularnewline
+\caption{The unscaled linear regression models of ISOPleasant and
+ISOEventful for 13 locations in London and Venice. Statistically
+significant p-values are highlighted in
+bold.}\label{tbl-unscl}\tabularnewline
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1762,14 +1690,16 @@ Observations & 914 & & & 914 & & \\
 
 \begin{figure}
 
-{\centering \includegraphics{Figure7.jpg}
+\centering{
+
+\includegraphics{Figure7.jpg}
 
 }
 
 \caption{\label{fig-unsclRandom}(Color online) The unscaled
 location-level coefficients for the ISOPleasant model.}
 
-\end{figure}
+\end{figure}%
 
 
 \renewcommand\refname{References}
