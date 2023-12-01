@@ -11,7 +11,7 @@ sidebar: false
 ---
 
 ::: {#hero-heading .text-center}
-I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of complex sounds. 
+I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of sounds. 
 
 :::
 
