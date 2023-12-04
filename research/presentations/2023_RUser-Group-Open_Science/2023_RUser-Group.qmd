@@ -1,0 +1,21 @@
+---
+title: |
+  BSEER R User Group talk: R (or Python) for Open and Reproducible Science
+date: "23-03-2023"
+sidebar: false
+categories: 
+  - lecture
+format:
+  html:
+    page-layout: full
+description: A quick talk given for the [BSEER R User Group](https://www.ellenwebborn.com/rusergroup/)
+
+citation:
+  type: speech
+  title: R (or Python) for Open and Reproducible Science
+  event: BSEER R User Group
+  event-place: UCL, London, UK
+
+---
+
+{{< pdf ./2023_RUser-Group-Open-Science.pdf width=100% height=600 >}}
