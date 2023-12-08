@@ -13,7 +13,7 @@ I am currently a Senior Research Fellow at the Institute for Environmental Desig
 - Environmental Acoustics
 - Psychoacoustics
 
-### Education
+## Education
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -27,7 +27,7 @@ London, UK
 Granted September 2022  
 :::
 :::
-- Dissertation: *Predictive Modelling of Complex Urban Soundscapes: Enabling an Engineering Approach to Soundscape Design*
+- Thesis: *Predictive Modelling of Complex Urban Soundscapes: Enabling an Engineering Approach to Soundscape Design*
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -41,7 +41,7 @@ Granted August 2015
 :::
 - Dissertation: *The Physics of the Trombone Mouthpiece*
 
-### Experience
+## Experience
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -66,6 +66,23 @@ June 2022 - Oct 2023
 *Research Fellow in Soundscape Modelling*
 
 - Supervisor: Prof Jian Kang
+
+::: {.d-flex .justify-content-between}
+::: {}
+**The Alan Turing Institute**, British Library, London, UK
+:::
+::: {.text-end}
+May 2022 - March 2023
+:::
+:::
+*Academic PI and Challenge Owner*
+
+Funded by a UCL Health of the Public small grant, the DeLTA project aims to develop deep learning methods (specifically, a Temporal Convolutional Neural Network) for predicting annoyance
+perception of various urban sounds. The Turing Data Study Group is an extension to this project carried out in partnership with the Alan Turing Institute.
+
+- Coordinating a 5-day intensive collaborative hackathon hosted by the Turing Institute
+- Prepare two large-scale datasets and define an open-ended challenge for the AI and data science experts recruited to participate in the DSG
+- Lead the DSG and supervise the preparation of an openly-published report and prototype model for real-world application
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -110,6 +127,45 @@ Summer 2012
 :::
 :::
 *Bass Trombonist*
+
+## Associations
+
+::: {.d-flex .justify-content-between}
+::: {}
+Member, **Acoustical Society of America**
+:::
+::: {.text-end}
+2023 - Present
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Associate Member, **Acoustical Society of America**
+:::
+::: {.text-end}
+2016 - 2023
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Student Member, **Institute of Acoustics**
+:::
+::: {.text-end}
+2015 - Present
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Researcher & Advisory Board Member, **International Misophonia Research Network (IMRN)**
+:::
+::: {.text-end}
+2018 - 2022
+:::
+:::
+
 
 <!-- ### Teaching
 
