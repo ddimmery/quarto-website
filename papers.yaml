@@ -243,3 +243,14 @@ likeminded:
   year: 2023
   venue: Nature
   published_url: https://doi.org/10.1038/s41586-023-06297-w
+ms_repro:
+  title: "Reproducibility in Management Science"
+  authors:
+    - Miloš Fišar
+    - Ben Greiner
+    - Christoph Huber
+    - Elena Katok
+    - Ali Ozkes
+    - <strong>Management Science Reproducibility Collaboration</strong>
+  year: 2023
+  preprint_url: https://osf.io/preprints/osf/mydzv
