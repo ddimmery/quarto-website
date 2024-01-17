@@ -9,9 +9,9 @@ resources:
 
 ::: {.column-page-inset}
 ::: {.column-page-inset-left}
-I am currently the Scientific Coordinator at the Research Network Data Science at the University of Vienna. Starting in January of 2024, I will be the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/news/detail/content/the-hertie-schools-data-science-lab-to-welcome-new-faculty-members-asya-magazinnik-and-drew-dimmery) at the [Hertie School](https://www.hertie-school.org/en/).
+I am the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/research/faculty-and-researchers/profile/person/dimmery) at the [Hertie School](https://www.hertie-school.org/en/)'s [Data Science Lab](https://www.hertie-school.org/en/datasciencelab).
 
-I previously worked on the Adaptive Experimentation team at Facebook Core Data Science in New York.
+I previously worked on the Adaptive Experimentation team at Facebook Core Data Science in New York, and at the Research Network Data Science at the University of Vienna.
 
 My research focuses on the intersection of machine learning and causal inference. I work a lot on experimental design and I think hard about how experimentation can be better and more efficient. I’m also interested in better applying the machinery of machine learning to observational causal inference.
 
