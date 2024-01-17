@@ -33,12 +33,13 @@ homog_policy:
   year: 2021
   preprint: https://arxiv.org/abs/2101.12318
 calib_hte:
-  title: Calibration of Heterogeneous Treatment Effects in Random Experiments
+  title: Calibration of Heterogeneous Treatment Effects in Randomized Experiments
   authors:
     - Yan Leng
     - me
-  year: 2021
+  year: 2024
   preprint: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3875850
+  published_url: https://doi.org/10.1287/isre.2021.0343
 online_design:
   title: Online Balanced Experimental Design
   authors:
@@ -254,3 +255,4 @@ ms_repro:
     - <strong>Management Science Reproducibility Collaboration</strong>
   year: 2023
   preprint: https://osf.io/preprints/osf/mydzv
+  published_url: https://doi.org/10.1287/mnsc.2023.03556
