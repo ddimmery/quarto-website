@@ -13,7 +13,12 @@ I am currently a Senior Research Fellow at the Institute for Environmental Desig
 - Environmental Acoustics
 - Psychoacoustics
 
-## Education
+## CV
+
+{{< pdf ./2024-01-21_Mitchell_Academic_CV_v2.pdf width=100% height=900 >}}
+
+
+<!-- ## Education
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -164,7 +169,7 @@ Researcher & Advisory Board Member, **International Misophonia Research Network 
 ::: {.text-end}
 2018 - 2022
 :::
-:::
+::: -->
 
 
 <!-- ### Teaching

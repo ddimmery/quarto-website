@@ -6,6 +6,10 @@ section-divs: false
 keep-md: true
 ---
 
+## PhD Thesis
+
+You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban Soundscapes: Enabling an engineeering approach to soundscape design*](./Andrew%20Mitchell%20PhD%20Thesis%20Final.pdf).
+
 ```{python}
 #| warning: false
 #| output: false

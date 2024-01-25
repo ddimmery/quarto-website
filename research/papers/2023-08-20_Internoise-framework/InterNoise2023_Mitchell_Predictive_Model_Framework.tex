@@ -80,10 +80,6 @@
 
 \usepackage{gensymb}
 \makeatletter
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -119,18 +115,10 @@
 \newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
 \makeatother
 \makeatletter
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
-\makeatother
-\makeatletter
-\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
-\makeatother
-\makeatletter
-\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
-\makeatother
-\makeatletter
-\makeatother
-\makeatletter
 \makeatother
 \journal{JASA-EL}
 \ifLuaTeX
@@ -142,7 +130,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraings, and applications},
+  pdftitle={A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications},
   pdfauthor={Andrew Mitchell; Francesco Aletta; Tin Oberman; Mercede Erfanian; Jian Kang},
   pdfkeywords={Soundscape, Predictive Modelling, Auditory
 Environment, ISO12913},
@@ -158,7 +146,7 @@ Environment, ISO12913},
 
 \begin{frontmatter}
 \title{A conceptual framework for the practical use of predictive models
-and Soundscape Indices: Goals, constraings, and applications}
+and Soundscape Indices: Goals, constraints, and applications}
 \author[1]{Andrew Mitchell%
 \corref{cor1}%
 }
@@ -222,10 +210,7 @@ environments.
     ISO12913
 \end{keyword}
 \end{frontmatter}
-    \ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, breakable, enhanced, boxrule=0pt, interior hidden, sharp corners, frame hidden]}{\end{tcolorbox}}\fi
-
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+    \section{Introduction}\label{introduction}
 
 As the future of urban sound research and practice moves toward a more
 holistic soundscape focus, the ability to affect change at large scales
@@ -256,9 +241,8 @@ and how they are necessary for certain applications. From the desired
 use cases, we will then outline a framework within which practical
 predictive models can be developed.
 
-\hypertarget{defining-what-a-predictive-soundscape-model-is}{%
 \section{Defining what a predictive soundscape model
-is}\label{defining-what-a-predictive-soundscape-model-is}}
+is}\label{defining-what-a-predictive-soundscape-model-is}
 
 \citet{Aletta2016Soundscape} provide a review of the soundscape
 descriptors and indicators commonly used in soundscape research and
@@ -305,7 +289,9 @@ exposure to the soundscape in question.
 
 \begin{figure}
 
-{\centering \includegraphics{Overall_Model_Concept_Diagram_2022-04-28.png}
+\centering{
+
+\includegraphics{Overall_Model_Concept_Diagram_2022-04-28.png}
 
 }
 
@@ -316,7 +302,7 @@ statistical model is to attempt to approximate or reflect this
 perceptual mappint. Reproduced with permission from
 \citet{Mitchell2022Predictive}}
 
-\end{figure}
+\end{figure}%
 
 It should be made clear that this represents a very simplified view of
 how a soundscape perception is formed, however it provides a useful
@@ -334,9 +320,8 @@ perceptual description which the statistical model aims to reflect. The
 most successful model would then accurately replicate the general
 perceptual mapping across the population.
 
-\hypertarget{applications-in-design-and-mapping}{%
 \section{Applications in design and
-mapping}\label{applications-in-design-and-mapping}}
+mapping}\label{applications-in-design-and-mapping}
 
 The soundscape approach faces several challenges in practical
 applications which are unaddressed by current assessment methods, but
@@ -483,9 +468,8 @@ of metrics, such as dB in noise valuation {[}. . . {]} will allow
 comparison and integration of different studies and building compatible
 evidence bases.''
 
-\hypertarget{the-predictive-soundscape-model-framework}{%
 \section{The Predictive Soundscape Model
-Framework}\label{the-predictive-soundscape-model-framework}}
+Framework}\label{the-predictive-soundscape-model-framework}
 
 Several forms and iterations of predictive models have been developed
 \citep{Lionello2020systematic} and more recently they have been put to
@@ -499,8 +483,7 @@ deployed, while the constraints are practical limitations which may make
 the performance of a given model less than ideal, but are necessary to
 achieve the deployment goals.
 
-\hypertarget{goals}{%
-\subsection{Goals}\label{goals}}
+\subsection{Goals}\label{goals}
 
 Before defining what form a general practical predictive model should
 take, we first need to make clear what the goals of such a model are, as
@@ -541,8 +524,7 @@ be tested. Several other useful features of predictive soundscape models
 arise out of these goals and will be discussed later, but these form the
 core goals of the framework.
 
-\hypertarget{constraints}{%
-\subsection{Constraints}\label{constraints}}
+\subsection{Constraints}\label{constraints}
 
 If we accept that predictive models are necessary to advance a more
 holistic approach to urban sound in smart cities, we must then define
@@ -638,9 +620,8 @@ for characterising the location-context, more work will need to be done
 to determine the appropriate input factors and their relative
 importance.
 
-\hypertarget{making-use-of-the-predictions-in-design}{%
 \section{Making use of the predictions in
-design}\label{making-use-of-the-predictions-in-design}}
+design}\label{making-use-of-the-predictions-in-design}
 
 There are various potential methods for integrating the predictive
 soundscape approach into a design and intervention setting. Not all
@@ -663,7 +644,9 @@ perception to some degree in a positive direction.
 
 \begin{figure}
 
-{\centering \includegraphics{CainCircumplexTarget.png}
+\centering{
+
+\includegraphics{CainCircumplexTarget.png}
 
 }
 
@@ -671,7 +654,7 @@ perception to some degree in a positive direction.
 the soundscape circumplex shape for target-setting for soundscape
 design. Reproduced with permission from \citet{Mitchell2022Predictive}.}
 
-\end{figure}
+\end{figure}%
 
 The most sophisticated method of setting design goals is therefore to
 identify the desired shape which represents the variety of desired
@@ -685,8 +668,7 @@ and the shape of the existing soundscape compared to it. The work of a
 designer is then trialling intervention options which move the design
 soundscape closer to the target soundscape.
 
-\hypertarget{towards-soundscape-indices}{%
-\section{Towards Soundscape Indices}\label{towards-soundscape-indices}}
+\section{Towards Soundscape Indices}\label{towards-soundscape-indices}
 
 Although the types of visualisations developed in
 \citep{Mitchell2022How} and \citep{Cain2013development} are a powerful
@@ -713,8 +695,7 @@ the 'optimal soundscape' for a space. Ideally, a soundscape index (or
 set of soundscape indices) would succeed at capturing all these aspects
 into a single scoring metric.
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\section{Conclusion}\label{conclusion}
 
 The existing methods for soundscape assessment and measurement, such as
 those given in the ISO 12913 series, have been focussed primarily on
