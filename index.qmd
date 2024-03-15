@@ -1,57 +1,52 @@
 ---
 title: "Andrew Mitchell"
 description: "Urban Soundscape Engineering and Analysis"
-image: /social-card.jpg
 about: 
     id: hero-heading
-    template: jolla
+    template: trestles
+    image-shape: round
+    image: /social-card.jpg
+    links:
+        - icon: twitter
+          text: Twitter
+          url: "https://twitter.com/AcousticsMan"
+        - icon: github
+          text: Github
+          url: "https://github.com/MitchellAcoustics"
+        - icon: google
+          text: Scholar
+          url: "https://scholar.google.com/citations?user=xydj7cEAAAAJ&hl=en"
+        - icon: envelope
+          text: Email
+          url: "mailto:andrew.mitchell.18@ucl.ac.uk"
+listing:
+    id: latest-posts
+    type: default
+    contents: posts
+    max-items: 2
+    sort: "date descr"
 resources:
     - "social-card.jpg"
 sidebar: false
+format:
+    html:
+        page-layout: full
 ---
 
-::: {#hero-heading .text-center}
+::: {#hero-heading}
 I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of sounds. 
 
+I was awarded two PhD- and one Post-doctoral Enrichment Awards from The Alan Turing Institute and spent a month in early 2022 as a visiting research fellow at Stockholm University. My ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, Soundscapy, Deep Learning Techniques for noise Annoyance detection (DeLTA), the Catalogue of Soundscape Interventions (CSI), and the Soundscape Attributes Translation Project (SATP).
 :::
 
----
+{{< pagebreak >}}
 
-I was awarded two PhD- and one Post-doctoral Enrichment Awards from The Alan Turing Institute and spent a month in early 2022 as a visiting research fellow at Stockholm University. My ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, Soundscapy, Deep Learning Techniques for noise Annoyance detection (DeLTA), the Catalogue of Soundscape Interventions (CSI), and the Soundscape Attributes Translation Project (SATP).
-
-I am also the host of The Rest is Just Noise, a monthly podcast exploring the relationship between sound and our cities. Each episode, along with my co-hosts and colleagues Dr Francesco Aletta and Dr Tin Oberman, I speak with researchers and experts from a wide range of backgrounds about their work in urban sounds and sound perception.
+I am also the host of **The Rest is Just Noise**, a monthly podcast exploring the relationship between sound and our cities. Each episode, along with my co-hosts and colleagues Dr Francesco Aletta and Dr Tin Oberman, I speak with researchers and experts from a wide range of backgrounds about their work in urban sounds and sound perception.
 
 
 <div id='buzzsprout-large-player'></div><script type='text/javascript' charset='utf-8' src='https://www.buzzsprout.com/1438372.js?container_id=buzzsprout-large-player&player=large'></script>
 
-{{< pagebreak >}}
+## Latest Posts
 
-::: {.column-page-inset .text-center}
-```{=html}
-<a class="btn btn-outline-dark", href="https://twitter.com/AcousticsMan" target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-twitter" role='img' aria-label='Twitter'></i>
-</a>
-
-<a class="btn btn-outline-dark", href="https://github.com/MitchellAcoustics" target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-github" role='img' aria-label='Github'></i>
-</a>
-
-<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/andrew-mitchell-acoustics/" target="_blank" rel="noopener noreferrer">
-    <i class="bi bi-linkedin" role='img' aria-label='LinkedIn'></i>
-</a>
-
-<a class="btn btn-outline-dark", href="https://scholar.google.com/citations?user=xydj7cEAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-    <i class="ai ai-google-scholar" role='img' aria-label='Google Scholar'></i>
-</a>
-
-<!-- <a class="btn btn-outline-dark", href="https://arxiv.org/a/dimmery_d_1.html" target="_blank" rel="noopener noreferrer">
-    <i class="ai ai-arxiv" role='img' aria-label='arXiv'></i>
-</a> -->
-
-<a class="btn btn-outline-dark", href="mailto:andrew.mitchell.18@ucl.ac.uk" target="_blank" rel="noopener noreferrer">
-    <i class="ai bi-envelope" role='img' aria-label='email'></i>
-</a>
-```
+::: {#latest-posts}
 :::
-
-

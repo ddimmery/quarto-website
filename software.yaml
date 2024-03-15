@@ -6,7 +6,7 @@
   website: https://soundscapy.readthedocs.io/en/latest/
   github: https://github.com/MitchellAcoustics/Soundscapy
   package: https://pypi.org/project/soundscapy/
-  logo: https://raw.githubusercontent.com/MitchellAcoustics/Soundscapy/main/docs/logo/LightLogo.png
+  logo: https://raw.githubusercontent.com/MitchellAcoustics/Soundscapy/main/docs/img/LightLogo.png
 - title: "circumplex"
   description: |
     `circumplex` is a Python package for analyzing and visualizing circumplex data. 

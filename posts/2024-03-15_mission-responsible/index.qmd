@@ -1,0 +1,24 @@
+---
+title: |
+  Exploring Soundscape Engineering at UCL: A Mission to Combat Noise Pollution
+description: |
+  In this episode of the ‘Mission: Responsible’ podcast, I explore the fascinating world of soundscape engineering, sharing insights from my visit to the cutting-edge Soundscape Lab at University College London (UCL) and discussing how responsible engineering can combat noise pollution
+date: "2024-03-15"
+categories:
+  - podcast
+engine: markdown
+image: https://deow9bq0xqvbj.cloudfront.net/ep-logo/pbblog17880821/Ep2_5ddkiu.jpg
+sidebar: false
+citation: false
+---
+I’m thrilled to share that I recently had the honor of being a guest on the “Mission: Responsible” podcast with Drs Shini Somara and Simon Clarke! In this episode, we delve into the critical issue of noise pollution and explore how soundscape engineering can be a powerful tool in mitigating its impact on our health and environment.
+
+Here’s a sneak peek into my contribution:
+
+  - Soundscape Engineering: As an advocate for sustainable solutions, I discussed the fascinating field of soundscape engineering. This innovative discipline focuses on taking a holistic approach to shaping the acoustic environment to enhance well-being, reduce noise-related stress, and create harmonious spaces. From urban planning to architectural design, soundscape engineering will play a pivotal role in creating healthier cities in the future.
+
+  - UCL Soundscape Lab: During the podcast, I shared insights from my visit to the Soundscape Lab at University College London (UCL). This cutting-edge research facility is at the forefront of unraveling the complexities of soundscapes. We explored how advanced modeling techniques help us understand noise patterns, identify sources, and design interventions that promote tranquility.
+
+I invite you to listen to the full episode on the “Mission: Responsible” podcast, where we dive deep into the intersection of technology, responsibility, and environmental well-being. Listen here!
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/3XoMoQgOcm7yYbIHdnHnKl?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
