@@ -2,7 +2,7 @@
 title: |
   Exploring Soundscape Engineering at UCL: A Mission to Combat Noise Pollution
 description: |
-  In this episode of the ‘Mission: Responsible’ podcast, I explore the fascinating world of soundscape engineering, sharing insights from my visit to the cutting-edge Soundscape Lab at University College London (UCL) and discussing how responsible engineering can combat noise pollution
+  In this episode of the ‘Mission: Responsible’ podcast, I join Dr Simon Clark to explore the fascinating world of soundscape engineering, sharing insights from his visit to our Soundscape Lab at University College London (UCL) and discussing how responsible engineering can combat noise pollution
 date: "2024-03-15"
 categories:
   - podcast
