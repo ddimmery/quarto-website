@@ -133,7 +133,8 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{elsarticle-harv}
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
@@ -233,7 +234,8 @@ processing \sep Urban development \sep
     Regression analysis
 \end{keyword}
 \end{frontmatter}
-    \section{Introduction}\label{sec-intro}
+    
+\section{Introduction}\label{sec-intro}
 
 The global emergency caused by the COVID-19 pandemic in early 2020
 required national lockdown measures across the world, primarily
@@ -958,36 +960,22 @@ are: noise, car/traffic, bird/birds, talk/voice and (foot)steps.
 
 \begin{figure}
 
-\begin{minipage}[t]{0.25\linewidth}
+\begin{minipage}{0.25\linewidth}
 ~\end{minipage}%
 %
-\begin{minipage}[t]{0.50\linewidth}
-
-\raisebox{-\height}{
-
-\includegraphics{Figure3a.jpg}
-
-}
-
-\end{minipage}%
+\begin{minipage}{0.50\linewidth}
+\includegraphics{Figure3a.jpg}\end{minipage}%
 %
-\begin{minipage}[t]{0.25\linewidth}
+\begin{minipage}{0.25\linewidth}
 ~\end{minipage}%
 \newline
-\begin{minipage}[t]{0.25\linewidth}
+\begin{minipage}{0.25\linewidth}
 ~\end{minipage}%
 %
-\begin{minipage}[t]{0.50\linewidth}
-
-\raisebox{-\height}{
-
-\includegraphics{Figure3b.jpg}
-
-}
-
-\end{minipage}%
+\begin{minipage}{0.50\linewidth}
+\includegraphics{Figure3b.jpg}\end{minipage}%
 %
-\begin{minipage}[t]{0.25\linewidth}
+\begin{minipage}{0.25\linewidth}
 ~\end{minipage}%
 
 \caption{\label{fig-wordclo}A graphic illustrating the frequency of

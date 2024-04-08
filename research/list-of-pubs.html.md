@@ -14,6 +14,7 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
 
 ## Journal Papers
 
+::: {#published-year .cell execution_count=2}
 ### 2024{#published-2024}
 
 ```{=html}
@@ -116,10 +117,12 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
     </a> <span class="__dimensions_badge_embed__" data-doi=10.3390/ijerph16193533 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li></ul>
 ```
 
+:::
 
 
 ## Conference Papers
 
+::: {#confs-year .cell execution_count=3}
 ### 2023{#confs-2023}
 
 ```{=html}
@@ -195,10 +198,12 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
     </a> <span class="__dimensions_badge_embed__" data-doi=10.1121/1.5136681 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li></ul>
 ```
 
+:::
 
 
 ## Other Publications
 
+::: {#other-year .cell execution_count=4}
 ### 2024{#other-2024}
 
 ```{=html}
@@ -229,3 +234,7 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
         Published
     </a> <span class="__dimensions_badge_embed__" data-doi=10.13140/RG.2.2.15590.50245 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li></ul>
 ```
+
+:::
+
+
