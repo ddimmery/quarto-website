@@ -3,6 +3,8 @@ title: |
   Crash course in Soundscape Research from Dr Aletta
 date: "2023-03-11"
 sidebar: false
+author:
+  - name: Francesco Aletta
 categories: 
   - lecture
 format:
