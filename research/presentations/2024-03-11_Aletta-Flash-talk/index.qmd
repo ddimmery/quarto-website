@@ -1,0 +1,22 @@
+---
+title: |
+  Crash course in Soundscape Research from Dr Aletta
+date: "2023-03-11"
+sidebar: false
+categories: 
+  - lecture
+format:
+  html:
+    page-layout: full
+
+citation:
+  type: speech
+  genre: Invited Lecture
+  title: Soundscape Research (in 8 minutes)
+  event: IOA Webinar
+
+---
+
+## Soundscape Research (in less than 8 minutes) by Dr Francesco Aletta
+
+{{< pdf ./Soundscape_IOA_march2024.pdf width=100% height=600 >}}
