@@ -256,3 +256,41 @@ ms_repro:
   year: 2023
   preprint: https://osf.io/preprints/osf/mydzv
   published_url: https://doi.org/10.1287/mnsc.2023.03556
+deactivation:
+  title: 
+  authors:
+    - Hunt Allcott
+    - Matthew Gentzkow
+    - Winter Mason
+    - Arjun Wilkins
+    - Pablo Barberá
+    - Taylor Brown
+    - Juan Carlos Cisneros
+    - Adriana Crespo-Tenorio
+    - me
+    - Deen Freelon
+    - Sandra González-Bailón
+    - Andrew M. Guess
+    - Young Mie Kim
+    - David Lazer
+    - Neil Malhotra
+    - Devra Moehler
+    - Sameer Nair-Desai
+    - Houda Nait El Barj
+    - Brendan Nyhan
+    - Ana Carolina Paixao de Queiroz
+    - Jennifer Pan
+    - Jaime Settle
+    - Emily Thorson
+    - Rebekah Tromble
+    - Carlos Velasco Rivera
+    - Benjamin Wittenbrink
+    - Magdalena Wojcieszak
+    - Saam Zahedian
+    - Annie Franco
+    - Chad Kiewiet de Jonge
+    - Natalie Jomini Stroud
+    - Joshua A. Tucker
+  year: 2024
+  venue: Proceedings of the National Academy of Sciences
+  published_url: https://doi.org/10.1073/pnas.2321584121
