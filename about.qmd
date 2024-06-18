@@ -3,7 +3,7 @@ title: "About"
 sidebar: false
 ---
 
-I am currently a Senior Research Fellow at the Institute for Environmental Design & Engineering at University College London. 
+I am a Lecturer in Artificial Intelligence and Machine Learning for Sustainable Construction at the [Bartlett School of Sustainable Construction](https://www.ucl.ac.uk/bartlett/construction/) at University College London.
 
 ### Research Interests
 

@@ -10,5 +10,13 @@
 			"version": "latest"
 		}
 	},
-	"postCreateCommand": "R -e 'renv::restore()'"
+	"postCreateCommand": "R -e 'renv::restore()'",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"REditorSupport.r"
+			]
+		}
+	}
 }

@@ -27,6 +27,8 @@ website:
       - sidebar:research
       - text: "Software"
         file: software.qmd
+      - text: "Resources"
+        file: resources.qmd
       - text: "Blog"
         file: blog.qmd
 

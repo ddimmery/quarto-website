@@ -1,0 +1,48 @@
+---
+title: "People and Resources Links"
+sidebar: false
+---
+
+This is my general repository of resources and people I find myself using or repeatedly pointing people towards. 
+
+# Urban Soundscapes
+
+Urban Soundscape Studies pull from a wide range of disciplines, some less known than others. When trying to describe these influences to people, I find myself consistently referring to the same people and references as *examplars*^[Note: These really are just examples I tend to go to. I certainly don't pretend this is every influential reference in the field or even necessarily who I consider better than any other researchers. In fact I will mostly highlight lesser known people that don't tend to be the first points of entry for the field (i.e. I probably won't include Schafer, Jian Kang, or Schult-Fortkamp since there's just too much from them to include). I also apologise to any scholar who feels their work has been miscategorised.] for these various approaches. Mostly these are the sort of references I give people who ask me for an introduction to the different branches of urban soundscape research. Many of these researchers have also appeared on my podcast, [*The Rest Is Just Noise*](https://www.justnoisepod.com/) so check out their interviews there as well!
+
+## General Resources
+
+- [*Soundscapes: Humans and Their Acoustic Environment*](https://link.springer.com/book/10.1007/978-3-031-22779-0), eds. Schulte-Fortkamp, Fiebig, Sisneros, Popper, & Fay (2023).
+
+## Soundscape Engineering
+
+- **ME!** Of course, all of my works and publications can be found here. For my broader concepts, recommendations, and tools for soundscape engineering I would point people to the following specifically:
+  - [*A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications*](https://www.researchgate.net/profile/Andrew-Mitchell-18/publication/375516282_A_conceptual_framework_for_the_practical_use_of_predictive_models_and_Soundscape_Indices_Goals_constraints_and_applications/links/654ceaface88b87031d8a7cb/A-conceptual-framework-for-the-practical-use-of-predictive-models-and-Soundscape-Indices-Goals-constraints-and-applications.pdf), Internoise 2023. 
+
+## Landscape Architecture
+
+- [Dr Gunnar Cerwen](https://www.slu.se/cv/gunnar-cerwen/), Landscape Archictect at Swedish University of Agricultural Sciences.
+  - [Soundscape Design](https://soundscapedesign.info/about-us/)
+- [Dr Usue Ruiz Arana](https://www.ncl.ac.uk/apl/people/profile/usueruiz-arana.html), Landscape Architect at Newcastle University
+  - [Urban Soundscapes: A Guide to Listening for Landscape Architecture and Urban Design](https://www.routledge.com/Urban-Soundscapes-A-Guide-to-Listening-for-Landscape-Architecture-and-Urban-Design/RuizArana/p/book/9781032065946)
+
+## History and Sociology
+
+- [Dr Edda Bild](https://iwh.on.ca/people/edda-bild)
+  - *Considering Sound in Planning and Designing Public Spaces: A review of theory and applications and a proposed framework for integrating research and practice*, Journal of Planning Literature (2016). DOI: [10.1177/0885412216662001](https://doi.org/10.1177/0885412216662001).
+  - *Sound as City Maker: Developing participatory collaborative process to work with sound as an urban resource. The case of Mr Visserplein (Amsterdam, NL)*. The Bloomsbury Handbook of Sonic Methodologies (2020). ISBN: [9781501338779](https://www.bloomsbury.com/uk/bloomsbury-handbook-of-sonic-methodologies-9781501338779/)
+  - *The Rest Is Just Noise:* [Sonic Appropriation and the UK Policing Bill](https://www.justnoisepod.com/1438372/8195656-sonic-appropriation-and-the-uk-policing-bill-with-edda-bild)
+- [*The Soundscape of Modernity*](https://mitpress.mit.edu/9780262701068/), Emily Thompson (2004).
+
+# Statistics
+
+- [Statistical Modeling, Causal Inference, and Social Science](https://statmodeling.stat.columbia.edu/), blog from Andrew Gelman, mostly focussed on Bayesian and MLM methods.
+
+## Multilevel Modelling
+
+- *Multilevel (Hierarchical) Modeling: What it can and cannot do*. Gelman (2006). DOI: [10.1198/004017005000000661](http://www.stat.columbia.edu/~gelman/research/published/multi2.pdf)
+
+## Teaching Statistics
+
+- [Common statistical tests are linear models (or: how to teach stats)](https://lindeloev.github.io/tests-as-linear/#9_teaching_materials_and_a_course_outline), blog post by Jonas Kristoffer Lindeløv
+- [Statistical Thinking for the 21st Century](https://statsthinking21.github.io/statsthinking21-core-site/index.html), a great new textbook by Russel A. Poldrack which I have used as the primary resource for my new undergrad statistics course.
+- [Statistical analysis: (1) Plotting the data, (2) Constructing and fitting models, (3) Plotting data along with fitted models, (4) Further modeling and data collection](https://statmodeling.stat.columbia.edu/2023/02/11/statistical-analysis-1-plotting-the-data-2-constructing-and-fitting-models-3-plotting-data-along-with-fitted-models-4-further-modeling-and-data-collection/) and [Any graph should contain the seeds of its own destruction](https://statmodeling.stat.columbia.edu/2021/05/06/any-graph-should-contain-the-seeds-of-its-own-destruction/), blog posts from Andrew Gelman on the statistical modeling workflow

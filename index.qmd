@@ -34,9 +34,9 @@ format:
 ---
 
 ::: {#hero-heading}
-I am currently a Senior Research Fellow in urban soundscape modelling at University College London (UCL). My research interests include soundscape analysis and visualisation, machine learning, and human perception of sounds. 
+I am a Lecturer in Artificial Intelligence and Machine Learning for Sustainable Construction at the [Bartlett School of Sustainable Construction](https://www.ucl.ac.uk/bartlett/construction/) at University College London. My research interests include general uses of AI in the construction industry, the application of machine learning methods to environmental analysis, and soundscape engineering.
 
-I was awarded two PhD- and one Post-doctoral Enrichment Awards from The Alan Turing Institute and spent a month in early 2022 as a visiting research fellow at Stockholm University. My ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, Soundscapy, Deep Learning Techniques for noise Annoyance detection (DeLTA), the Catalogue of Soundscape Interventions (CSI), and the Soundscape Attributes Translation Project (SATP).
+My current ongoing projects include the Soundscape Indices (SSID) Horizon 2020 project, the [Soundscapy](https://soundscapy.readthedocs.io/en/latest/) and [Circumplex](https://circumplex.readthedocs.io/en/latest/) Python packages, and the Soundscape Attributes Translation Project (SATP). 
 :::
 
 {{< pagebreak >}}
