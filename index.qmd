@@ -18,7 +18,7 @@ about:
           url: "https://scholar.google.com/citations?user=xydj7cEAAAAJ&hl=en"
         - icon: envelope
           text: Email
-          url: "mailto:andrew.mitchell.18@ucl.ac.uk"
+          url: "mailto:a.j.mitchell@ucl.ac.uk"
 listing:
     id: latest-posts
     type: default
