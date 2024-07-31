@@ -49,9 +49,6 @@ format:
       formatting: preprint
       model: 3p
       cite-style: authoryear
-    include-in-header: 
-      text: |
-        \usepackage{gensymb}
   
 citation:
   type: article-journal
@@ -87,21 +84,21 @@ The core of this questionnaire is the 8 perceptual attributes (PA) originally de
 
 ## Coordinate transformation into the two primary dimensions
 
-To facilitate the analysis of the PA responses, the Likert scale responses are coded from 1 (Strongly disagree) to 5 (Strongly agree) as ordinal variables. In order to reduce the 8 PA values into a pair of coordinates which can be plotted on the Pleasant-Eventful axes, Part 3 of ISO 12913 [@ISO12913_3] provides a trigonometric transformation, based on the $45\degree$-relationship between the diagonal axes and the pleasant and eventful axes. This transformation projects the coded values from the individual PAs down onto the primary Pleasantness and Eventfulness dimensions then adds them together to form a single coordinate pair. In theory, this coordinate pair then encapsulates information from all 8 PA dimensions onto a more easily understandable and analysable two dimensions. The ISO coordinates are thus calculated by:
+To facilitate the analysis of the PA responses, the Likert scale responses are coded from 1 (Strongly disagree) to 5 (Strongly agree) as ordinal variables. In order to reduce the 8 PA values into a pair of coordinates which can be plotted on the Pleasant-Eventful axes, Part 3 of ISO 12913 [@ISO12913_3] provides a trigonometric transformation, based on the $45\circ$-relationship between the diagonal axes and the pleasant and eventful axes. This transformation projects the coded values from the individual PAs down onto the primary Pleasantness and Eventfulness dimensions then adds them together to form a single coordinate pair. In theory, this coordinate pair then encapsulates information from all 8 PA dimensions onto a more easily understandable and analysable two dimensions. The ISO coordinates are thus calculated by:
 
 $$
 \begin{split}
-    ISO Pleasant = [(pleasant - annoying) + \cos 45\degree * (calm - chaotic) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
+    ISO Pleasant = [(pleasant - annoying) + \cos 45\circ * (calm - chaotic) \\ + \cos 45\circ * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
 $$ {#eq-pleasant}
 
 $$
 \begin{split}
-    ISO Eventful = [(eventful - uneventful) + \cos 45\degree * (chaotic - calm) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
+    ISO Eventful = [(eventful - uneventful) + \cos 45\circ * (chaotic - calm) \\ + \cos 45\circ * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
 $$ {#eq-eventful}
 
-where the PAs are arranged around the circumplex as shown in @fig-radar. The $\cos 45\degree$ term operates to project the diagonal terms down onto the x and y axes, and the $1 / (4 + \sqrt{32})$ scales the resulting coordinates to the range (-1, 1). The result of this transformation is demonstrated in @fig-radar. This treatment of the 8 PAs makes several assumptions and inferences about the relationships between the dimensions. As stated in the standard [@ISO12913_3, 5]:
+where the PAs are arranged around the circumplex as shown in @fig-radar. The $\cos 45\circ$ term operates to project the diagonal terms down onto the x and y axes, and the $1 / (4 + \sqrt{32})$ scales the resulting coordinates to the range (-1, 1). The result of this transformation is demonstrated in @fig-radar. This treatment of the 8 PAs makes several assumptions and inferences about the relationships between the dimensions. As stated in the standard [@ISO12913_3, 5]:
 
 > According to the two-dimensional model, vibrant soundscapes are both pleasant and eventful, chaotic soundscapes are both eventful and unpleasant, monotonous soundscapes are both unpleasant and uneventful, and finally calm soundscapes are both uneventful and pleasant.
 
@@ -242,7 +239,7 @@ The method presented here is a solution for representing the soundscape of a spa
 
 These other approaches are not in opposition to the methods proposed here, but instead further expand our view. The circumplex is a limited view of soundscape perception (this is made obvious by the fact that it excludes the third component, *familiarity*, identified in @Axelsson2010Principal) but it is an exceptionally rich tool for dealing with the two primary aspects of soundscape perception which can readily expand the much more limited view provided by existing noise and annoyance assessment tools. Aspects of the psychological and sociological emphasis can also be integrated into a circumplex-focused approach, as demonstrated in @Erfanian2021Psychological, where personal factors such as age, gender, and psychological well-being were analysed in terms of how they mediated the ISOPleasant and ISOEventful outcomes.
 
-There has been some discussion regarding the interdependence of the PAs and the strict validity of the 90\degree and 45 \degree relationships between the attributes [@Lionello2021Introducing]. Further work has indicated that the scaling between the attributes may vary, but the underlying relationships hold. It is for this reason that we have taken the coordinate projection as the starting point of this critique. It should also be noted that the particular PA descriptors used in ISO 12913 are intended for outdoor environments and should not be directly applied to indoor spaces. However, a proposed set of descriptors for some indoor environments has been derived which further confirms the validity of the circumplex relationships [@Torresin2020Indoor]. The methods proposed here should be directly applicable to indoor spaces by using the comfort/content descriptors as well as to any other translations of soundscape descriptors into other languages [@Aletta2020Soundscape] as long as the dimensional relationships of the circumplex are maintained.
+There has been some discussion regarding the interdependence of the PAs and the strict validity of the 90$\circ$ and 45$\circ$ relationships between the attributes [@Lionello2021Introducing]. Further work has indicated that the scaling between the attributes may vary, but the underlying relationships hold. It is for this reason that we have taken the coordinate projection as the starting point of this critique. It should also be noted that the particular PA descriptors used in ISO 12913 are intended for outdoor environments and should not be directly applied to indoor spaces. However, a proposed set of descriptors for some indoor environments has been derived which further confirms the validity of the circumplex relationships [@Torresin2020Indoor]. The methods proposed here should be directly applicable to indoor spaces by using the comfort/content descriptors as well as to any other translations of soundscape descriptors into other languages [@Aletta2020Soundscape] as long as the dimensional relationships of the circumplex are maintained.
 
 # Conclusions
 

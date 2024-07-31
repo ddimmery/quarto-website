@@ -1,6 +1,6 @@
 ---
 title: "SEM Analysis"
-draft: true
+draft: false
 description: "Analysis of the SATP data using SEM"
 categories: 
   - preprint
@@ -40,9 +40,6 @@ format:
       formatting: preprint
       model: 3p
       cite-style: authoryear
-    include-in-header: 
-      text: |
-        \usepackage{gensymb}
 ---
 
 ```{r setup, include=FALSE}

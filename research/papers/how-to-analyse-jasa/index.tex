@@ -78,7 +78,6 @@
 \def\fps@figure{htbp}
 \makeatother
 
-\usepackage{gensymb}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -307,8 +306,8 @@ responses are coded from 1 (Strongly disagree) to 5 (Strongly agree) as
 ordinal variables. In order to reduce the 8 PA values into a pair of
 coordinates which can be plotted on the Pleasant-Eventful axes, Part 3
 of ISO 12913 \citep{ISO12913_3} provides a trigonometric transformation,
-based on the \(45\degree\)-relationship between the diagonal axes and
-the pleasant and eventful axes. This transformation projects the coded
+based on the \(45\circ\)-relationship between the diagonal axes and the
+pleasant and eventful axes. This transformation projects the coded
 values from the individual PAs down onto the primary Pleasantness and
 Eventfulness dimensions then adds them together to form a single
 coordinate pair. In theory, this coordinate pair then encapsulates
@@ -318,18 +317,18 @@ by:
 
 \begin{equation}\phantomsection\label{eq-pleasant}{
 \begin{split}
-    ISO Pleasant = [(pleasant - annoying) + \cos 45\degree * (calm - chaotic) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
+    ISO Pleasant = [(pleasant - annoying) + \cos 45\circ * (calm - chaotic) \\ + \cos 45\circ * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
 }\end{equation}
 
 \begin{equation}\phantomsection\label{eq-eventful}{
 \begin{split}
-    ISO Eventful = [(eventful - uneventful) + \cos 45\degree * (chaotic - calm) \\ + \cos 45\degree * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
+    ISO Eventful = [(eventful - uneventful) + \cos 45\circ * (chaotic - calm) \\ + \cos 45\circ * (vibrant - monotonous)] * 1/(4+\sqrt{32)}
 \end{split}
 }\end{equation}
 
 where the PAs are arranged around the circumplex as shown in
-Figure~\ref{fig-radar}. The \(\cos 45\degree\) term operates to project
+Figure~\ref{fig-radar}. The \(\cos 45\circ\) term operates to project
 the diagonal terms down onto the x and y axes, and the
 \(1 / (4 + \sqrt{32})\) scales the resulting coordinates to the range
 (-1, 1). The result of this transformation is demonstrated in
@@ -809,7 +808,7 @@ analysed in terms of how they mediated the ISOPleasant and ISOEventful
 outcomes.
 
 There has been some discussion regarding the interdependence of the PAs
-and the strict validity of the 90\degree and 45 \degree relationships
+and the strict validity of the 90\(\circ\) and 45\(\circ\) relationships
 between the attributes \citep{Lionello2021Introducing}. Further work has
 indicated that the scaling between the attributes may vary, but the
 underlying relationships hold. It is for this reason that we have taken

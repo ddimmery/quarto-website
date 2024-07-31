@@ -1,4 +1,94 @@
 - ENTRYTYPE: article
+  ID: Aletta2024Soundscape
+  author: Aletta, Francesco and Mitchell, Andrew and Oberman, Tin and Kang, Jian and
+    Khelil, Sara and Bouzir, Tallal Abdel Karim and Berkouk, Djihed and Xie, Hui and
+    Zhang, Yuan and Zhang, Ruining and Yang, Xinhao and Li, Min and Jambrošić, Kristian
+    and Zaninović, Tamara and van den Bosch, Kirsten and Lühr, Tamara and Orlik, Nicolas
+    and Fitzpatrick, Darragh and Sarampalis, Anastasios and Aumond, Pierre and Lavandier,
+    Catherine and Moshona, Cleopatra Christina and Lepa, Steffen and Fiebig, André
+    and Papadakis, Nikolaos M. and Stavroulakis, Georgios E. and Sudarsono, Anugrah
+    Sabdono and Sarwono, Sugeng Joko and Puglisi, Giuseppina Emma and Jafari, Farid
+    and Astolfi, Arianna and Shtrepi, Louena and Nagahata, Koji and Jo, Hyun In and
+    Jeon, Jin Yong and Lam, Bhan and Chieng, Julia and Ooi, Kenneth and Hong, Joo
+    Young and Monteiro Antunes, Sónia and Alves, Sonia and de Ulhoa Carvalho, Maria
+    Luiza and Michalski, Ranny Loureiro Xavier Nascimento and Kogan, Pablo and Vida
+    Manzano, Jerónimo and García Quesada, Rafael and Suárez Silva, Enrique and Almagro
+    Pastor, José Antonio and Nilsson, Mats E. and Axelsson, Östen and Gan, Woon-Seng
+    and Watcharasupat, Karn N. and Jaratjarungkiat, Sureenate and Ong, Zhen-Ting and
+    Dökmeci Yörükoğlu, Papatya Nur and Erçakmak Osma, Uğur Beyza and Nguyen, Thu Lan
+  date: 2024-09
+  doi: 10.1016/j.apacoust.2024.110109
+  file: :Aletta2024Soundscape - Soundscape Descriptors in Eighteen Languages_ Translation
+    and Validation through Listening Experiments.pdf:PDF
+  issn: 0003-682X
+  journaltitle: Applied Acoustics
+  pages: '110109'
+  publisher: Elsevier BV
+  title: 'Soundscape descriptors in eighteen languages: Translation and validation
+    through listening experiments'
+  volume: '224'
+  year: '2024'
+- ENTRYTYPE: article
+  ID: Hou2024Soundscape
+  author: Hou, Yuanbo and Ren, Qiaoqiao and Mitchell, Andrew and Wang, Wenwu and Kang,
+    Jian and Belpaeme, Tony and Botteldooren, Dick
+  copyright: arXiv.org perpetual, non-exclusive license
+  date: '2024'
+  doi: 10.48550/ARXIV.2406.05914
+  file: :Hou2024Soundscape - Soundscape Captioning Using Sound Affective Quality Network
+    and Large Language Model.pdf:PDF
+  keywords: 'Audio and Speech Processing (eess.AS), Sound (cs.SD), Signal Processing
+    (eess.SP), FOS: Electrical engineering, electronic engineering, information engineering,
+    FOS: Electrical engineering, electronic engineering, information engineering,
+    FOS: Computer and information sciences, FOS: Computer and information sciences'
+  publisher: arXiv
+  title: Soundscape Captioning using Sound Affective Quality Network and Large Language
+    Model
+  year: '2024'
+- ENTRYTYPE: article
+  ID: Mitchell2024Soundscape
+  author: Mitchell, Andrew and Aletta, Francesco and Oberman, Tin and Kang, Jian
+  date: 2024-07
+  doi: 10.31234/osf.io/zpa9e
+  file: :Mitchell2024Soundscape - Soundscape Perception Indices (SPI)_ Developing
+    Context Dependent Single Value Scores of Multidimensional Soundscape Perceptual
+    Quality.pdf:PDF
+  journaltitle: PsyArXiv
+  publisher: Center for Open Science
+  title: 'Soundscape Perception Indices (SPI): Developing context-dependent single
+    value scores of multidimensional soundscape perceptual quality'
+  year: '2024'
+- ENTRYTYPE: article
+  ID: Mitchell2024Searching
+  author: Mitchell, Andrew and Oberman, Tin and Aletta, Francesco and Kang, Jian
+  doi: https://doi.org/10.31219/osf.io/6dbnu
+  journaltitle: OSF Preprints
+  month: January
+  publisher: OSF Preprints
+  title: 'Searching for a common understanding of ''soundscape'': A critical look
+    at the definitions and uses of the term'
+  url: https://osf.io/preprints/osf/6dbnu
+  year: '2024'
+- ENTRYTYPE: article
+  ID: Moshona2024framework
+  author: Moshona, Cleopatra Christina and Fiebig, André and Aletta, Francesco and
+    Chen, Xiaochao and Kang, Jian and Mitchell, Andrew and Oberman, Tin and Schulte-Fortkamp,
+    Brigitte
+  date: 2024-01
+  doi: 10.1515/noise-2024-0002
+  file: :Moshona2024framework - A Framework to Characterize and Classify Soundscape
+    Design Practices Based on Grounded Theory.pdf:PDF
+  issn: 2084-879X
+  journaltitle: Noise Mapping
+  keywords: soundscape-design-strategies, soundscape-interventions,grounded-theory,
+    pyramid, ISO/TS 12913-4
+  number: '1'
+  publisher: Walter de Gruyter GmbH
+  title: A framework to characterize and classify soundscape design practices based
+    on grounded theory
+  volume: '11'
+  year: '2024'
+- ENTRYTYPE: article
   ID: Aletta2019Associations
   abstract: Background Previous studies, mainly conducted in laboratory experiments,
     showed there are associations between the perception of acoustic environments
@@ -618,17 +708,6 @@
   note: (accepted)
   title: 'Soundscapy: A python package for soundscape assessment and analysis'
   year: '2023'
-- ENTRYTYPE: unpublished
-  ID: Mitchell2024Searching
-  author: Mitchell, Andrew and Oberman, Tin and Aletta, Francesco and Kang, Jian
-  doi: https://doi.org/10.31219/osf.io/6dbnu
-  journaltitle: OSF Preprints
-  month: January
-  publisher: OSF Preprints
-  title: 'Searching for a common understanding of ''soundscape'': A critical look
-    at the definitions and uses of the term'
-  url: https://osf.io/preprints/osf/6dbnu
-  year: '2024'
 - ENTRYTYPE: inproceedings
   ID: Moshona2022What
   author: Moshona, Cleopatra Christina and Aletta, Francesco and Henze, Helen and

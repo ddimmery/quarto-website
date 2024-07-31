@@ -8,9 +8,10 @@
 		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {
 			"installTinyTex": true,
 			"version": "latest"
-		}
+		},
+		"ghcr.io/va-h/devcontainers-features/uv:1": {}
 	},
-	"postCreateCommand": "R -e 'renv::restore()'",
+	"postCreateCommand": "pip install -r requirements.txt; Rscript -e 'renv::restore()'",
 	"customizations": {
 		"vscode": {
 			"extensions": [

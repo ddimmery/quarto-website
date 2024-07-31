@@ -59,9 +59,6 @@ format:
       formatting: preprint
       model: 1p
       cite-style: authoryear
-    include-in-header: 
-      text: |
-        \usepackage{gensymb}
   
 citation:
   type: paper-conference

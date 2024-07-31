@@ -18,3 +18,8 @@
   github: https://github.com/MitchellAcoustics/circumplex
   package: https://pypi.org/project/circumplex/
   logo: https://raw.githubusercontent.com/MitchellAcoustics/circumplex/main/docs/img/logo-light.png
+- title: "CitySeg"
+  description: A flexible and efficient pipeline for performing semantic segmentation on images and videos of urban environments.
+  website: https://cityseg.readthedocs.io/en/latest/
+  github: https://github.com/soundscape-labs/cityseg
+  

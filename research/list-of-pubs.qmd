@@ -53,6 +53,9 @@ for data in yaml_data:
     entry_type = data.get("ENTRYTYPE")
     authors = get_authors(data["author"])
     authors = [aut if aut != me else "<strong>Andrew Mitchell</strong>" for aut in authors]
+    if len(authors) > 6: 
+        authors = authors[:6]
+        authors.append("et. al")
     author_str = readable_list(authors)
     year_str = data["year"]
 
@@ -68,7 +71,7 @@ for data in yaml_data:
     pub_doi = data.get("doi")
     pub_url = data.get("url")
     conf_title = data.get("booktitle")
-    journal = data.get("journal")
+    journal = data.get("journal", data.get("journaltitle"))
     publisher = data.get("publisher")
     # venue = data.get("venue")
     journal_pub = entry_type == 'article'
@@ -78,6 +81,8 @@ for data in yaml_data:
 
     if journal is not None:
         pub_str += f" <em>{journal}</em>"
+    elif publisher is not None:
+        pub_str += f" <em>{publisher}</em>"
 
     if conf_title is not None:
         pub_str += f" In <em>{conf_title}</em>"

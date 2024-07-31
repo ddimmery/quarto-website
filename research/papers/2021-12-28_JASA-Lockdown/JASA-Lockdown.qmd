@@ -68,11 +68,6 @@ format:
       model: 3p
       cite-style: authoryear
       layout: onecolumn
-    include-in-header: 
-      text: |
-        \usepackage{gensymb}
-        \usepackage{nth}
-        \usepackage{booktabs}
   
 citation:
   type: article-journal
@@ -127,7 +122,7 @@ The initial onsite data collection featured both questionnaire data collected fr
 
 Although recent results from both @Tarlao2020Investigating and @Erfanian2021Psychological indicate the important influence of personal and demographic factors -- in particular age and gender -- on soundscape perception, these factors were not included as potential features in the modeling process. Given the nature of this study as addressing a scenario when people could not be surveyed, no additional demographic information is available in the lockdown case to be fed into the model and is therefore not useful to include for the development and application of this specific predictive model. This information is reported throughout the study simply to provide further context to the data collection.
 
-The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the \nth{6} and the 25th of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on-site in 2020. 
+The subsequent measurement campaign in 2020 mimicked the binaural recording strategy applied in the initial campaign and was performed between the 6th and the 25th of April 2020 in both cities, this time excluding the questionnaire. An additional 571 binaural recordings were collected on-site in 2020. 
 
 #### Data collection
 
