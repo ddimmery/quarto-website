@@ -1,6 +1,6 @@
 ---
 title: "SEM Analysis"
-draft: false
+draft: true
 description: "Analysis of the SATP data using SEM"
 categories: 
   - preprint
