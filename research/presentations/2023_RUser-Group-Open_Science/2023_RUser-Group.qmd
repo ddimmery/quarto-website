@@ -1,7 +1,7 @@
 ---
 title: |
   BSEER R User Group talk: R (or Python) for Open and Reproducible Science
-date: "23-03-2023"
+date: "2023-03-23"
 sidebar: false
 categories: 
   - lecture

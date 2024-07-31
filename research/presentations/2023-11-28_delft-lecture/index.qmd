@@ -1,7 +1,7 @@
 ---
 title: |
   TU Delft Pi-Lab Talk: Soundscape Designs
-date: "29-11-2023"
+date: "2023-11-29"
 sidebar: false
 categories: 
   - lecture
