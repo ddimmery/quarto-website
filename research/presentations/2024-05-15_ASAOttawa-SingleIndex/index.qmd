@@ -1,0 +1,35 @@
+---
+title: |
+  ASA 2024 Ottawa: Soundscape Perception Indices (SPI)
+date: "2024-05-15"
+sidebar: false
+categories: 
+  - lecture
+format:
+  html:
+    page-layout: full
+image: ASA_Master_Brand_Initials_color.png
+description: Invited talk presented at the 2024 Acoustical Society of America Meeting in Ottawa
+abstract: |
+  The soundscape approach provides a basis for considering the holistic perception of sound environments, in context. While steady advancements have been made in methods for assessment and analysis, a gap exists for comparing soundscapes and quantifying improvements in the multi-dimensional perception of a soundscape. To this end, there is a need for the creation of single value indices to compare soundscape quality which incorporate context, aural diversity, and specific design goals. Just as a variety of decibel-based indices have been developed for various purposes (e.g., LAeq, LCeq, L90, Lden, etc.), the soundscape approach requires the ability to create novel indices for different uses, but which share a common language and understanding. We therefore propose a unified framework for creating both bespoke and archetypal single index measures of soundscape perception based on the soundscape circumplex model, allowing for new indices to be defined in the future. The implementation of this framework is demonstrated through the creation of a public space typology-based index using survey data collected under the SSID Protocol. Indices developed under this framework can enable a broader and more efficient application of the soundscape approach in design, planning, and regulation.
+citation:
+  type: paper-conference
+  genre: Invited Lecture
+  title: Soundscape Perception Indices (SPI) - A unified framework for defining context-dependent single value indices
+  author:
+    - name: Andrew Mitchell
+    - name: Francesco Aletta
+    - name: Tin Oberman
+    - name: Jian Kang
+  container-title: 186th Meeting of the Acoustical Society of America
+  event-place: Ottawa
+  doi: 10.1121/10.0027579
+  url: https://pubs.aip.org/asa/jasa/article/155/3_Supplement/A301/3301593/A-unified-framework-for-creating-soundscape
+google-scholar: true
+
+---
+
+## Soundscape Perception Indices (SPI) - A unified framework for defining context-dependent single value indices
+
+{{< pdf ./2025-05-15_ASAOttawa-SingleIndex.pdf width=100% height=600 >}}
+
