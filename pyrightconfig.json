@@ -1,0 +1,11 @@
+{  
+    "exclude": [
+      "_extensions",
+      "_freeze",
+      "_site",
+      "renv",
+      "research_files",
+      "site_libs",
+    ],
+
+}
