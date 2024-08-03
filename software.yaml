@@ -7,6 +7,7 @@
   github: https://github.com/MitchellAcoustics/Soundscapy
   package: https://pypi.org/project/soundscapy/
   logo: https://raw.githubusercontent.com/MitchellAcoustics/Soundscapy/main/docs/img/LightLogo.png
+  logo_scale: 0.8
 - title: "circumplex"
   description: |
     `circumplex` is a Python package for analyzing and visualizing circumplex data. 
@@ -18,6 +19,7 @@
   github: https://github.com/MitchellAcoustics/circumplex
   package: https://pypi.org/project/circumplex/
   logo: https://raw.githubusercontent.com/MitchellAcoustics/circumplex/main/docs/img/logo-light.png
+  logo_scale: 0.8
 - title: "CitySeg"
   description: A flexible and efficient pipeline for performing semantic segmentation on images and videos of urban environments.
   website: https://cityseg.readthedocs.io/en/latest/
@@ -27,5 +29,5 @@
   github: https://github.com/MitchellAcoustics/devcontainer-template-manager
   website: https://marketplace.visualstudio.com/items?itemName=AndrewMitchell.devcontainer-template-manager
   logo: https://raw.githubusercontent.com/MitchellAcoustics/devcontainer-template-manager/main/icons/DEV-TM-icon.png
-  logo_scale: 0.5
+  logo_scale: 0.6
   

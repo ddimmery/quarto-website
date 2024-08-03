@@ -25,7 +25,7 @@ def button(url, str, icon):
 
 yaml_data = yaml.safe_load(open("software.yaml"))
 
-for data in yaml_data[::-1]:
+for data in yaml_data[::1]:
     logo_scale = data.get("logo_scale", 1)
     width = 200 * logo_scale
 
