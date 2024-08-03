@@ -26,10 +26,13 @@ def button(url, str, icon):
 yaml_data = yaml.safe_load(open("software.yaml"))
 
 for data in yaml_data[::-1]:
-    display(Markdown("## `" + data["title"] + "` {#" + data["title"] + "}"))
+    logo_scale = data.get("logo_scale", 1)
+    width = 200 * logo_scale
+
+    display(Markdown("## `" + data["title"] + "` {#" + data["title"][0] + "}"))
 
     if "logo" in data:
-        display(HTML(f"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='200'>"))
+        display(HTML(f"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='{width}'>"))
 
     display(Markdown(data["description"]))
     buttons = []

@@ -43,14 +43,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -120,6 +134,7 @@
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
 \journal{JASA-EL}
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -139,6 +154,7 @@
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
+
 
 \setlength{\parindent}{6pt}
 \begin{document}
@@ -190,6 +206,7 @@ this approach can be used and developed.
 \end{keyword}
 \end{frontmatter}
     
+
 \section{Introduction}\label{sec-introduction}
 
 Methods for collecting data on how people experience acoustic
@@ -242,17 +259,17 @@ focus on developing a reference method for comparability among
 soundscape studies, rather than a single protocol for soundscape data
 collection. Some attempts have indeed already been made in literature
 for the different methods proposed in the ISO/TS 12913-2:2018
-\citep[\citet{jo2020soundscape}]{aletta2019exploring}. Neither the
-standard nor the general soundscape literature has settled on effective
-methods of analysing and representing the data that results from these
-protocols. Data visualisations are particularly important for
-understanding and communicating information as multifaceted as
-soundscape perception \citep{tufte2001visual}. Although it is unlikely
-that any single method will be sufficient, attempts should be made to
-both facilitate future advancements in this realm and to develop a first
-step approach that captures the inherent uncertainty in perception
-studies, since including uncertainty is considered one of the core
-principles of good data visualisation \citep{Midway2020Principles}.
+\citep[@jo2020soundscape]{aletta2019exploring}. Neither the standard nor
+the general soundscape literature has settled on effective methods of
+analysing and representing the data that results from these protocols.
+Data visualisations are particularly important for understanding and
+communicating information as multifaceted as soundscape perception
+\citep{tufte2001visual}. Although it is unlikely that any single method
+will be sufficient, attempts should be made to both facilitate future
+advancements in this realm and to develop a first step approach that
+captures the inherent uncertainty in perception studies, since including
+uncertainty is considered one of the core principles of good data
+visualisation \citep{Midway2020Principles}.
 
 This study thus aims to review the consequences of these methods for
 larger datasets and provide concrete examples for how soundscapes should
@@ -871,6 +888,7 @@ collection support.
 
 \renewcommand\refname{References}
   \bibliography{references.bib}
+
 
 
 \end{document}

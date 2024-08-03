@@ -1,9 +1,13 @@
 ---
-title: List of Publications
+title: "List of Publications"
 echo: false
+jupyter: python3
 section-divs: false
 keep-md: true
 ---
+
+
+
 
 
 ## PhD Thesis

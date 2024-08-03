@@ -22,4 +22,10 @@
   description: A flexible and efficient pipeline for performing semantic segmentation on images and videos of urban environments.
   website: https://cityseg.readthedocs.io/en/latest/
   github: https://github.com/soundscape-labs/cityseg
+- title: "DevContainer Template Manager"
+  description: A VS Code Extension for managing and creating devcontainer templates.
+  github: https://github.com/MitchellAcoustics/devcontainer-template-manager
+  website: https://marketplace.visualstudio.com/items?itemName=AndrewMitchell.devcontainer-template-manager
+  logo: https://raw.githubusercontent.com/MitchellAcoustics/devcontainer-template-manager/main/icons/DEV-TM-icon.png
+  logo_scale: 0.5
   

@@ -44,14 +44,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -125,6 +139,7 @@
 \@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
 \makeatother
 \journal{J. Acoust. Soc. Am.}
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -146,6 +161,7 @@ development, Regression analysis},
   citecolor={Blue},
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
+
 
 \setlength{\parindent}{6pt}
 \begin{document}
@@ -232,6 +248,7 @@ processing \sep Urban development \sep
 \end{keyword}
 \end{frontmatter}
     
+
 \section{Introduction}\label{sec-intro}
 
 The global emergency caused by the COVID-19 pandemic in early 2020
@@ -1687,6 +1704,7 @@ location-level coefficients for the ISOPleasant model.}
 
 \renewcommand\refname{References}
   \bibliography{../../../FellowshipRefs.bib,../FellowshipRefs.bib}
+
 
 
 \end{document}
