@@ -1,0 +1,12 @@
+{
+  "hash": "2ae47e69e16c7ac03267d9e5a5df393d",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\nlayout: post\ntitle: Which is louder - a wind turbine or your refrigerator?\ndate: today\ntags: [soundscape, publications]\nnoindex: false\nsidebar: false\ncode-fold: true\ndraft: true\n---\n\n\n# Which is louder - a wind turbine or your refrigerator?\n\nStarting source for calculation: https://myworkspace.dnv.com/download/public/renewables/windfarmer/manuals/latest/CalcRef/Noise/noise.html \n\n::: {#b4dd5c89 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n\ndef swl_turbine_i(l_w, d_c, a_tot):\n    \"\"\"\n    Calculate the sound power level of a wind turbine\n    :param l_w: sound power level of the wind turbine\n    :param d_c: directivity correction in decibels\n    :param a: attenuation total\n    :return: sound pressure level of the wind turbine at distance d\n    \"\"\"\n    return l_w + d_c - a\n\ndef a_tot(a_div, a_atm, a_gr, a_bar, a_misc, a_met):\n    \"\"\"\n    Calculate the total attenuation\n    :param a_div: divergence attenuation\n    :param a_atm: atmospheric attenuation\n    :param a_gr: ground attenuation\n    :param a_bar: barrier attenuation\n    :param a_misc: miscellaneous attenuation\n    :param a_met: meteorological attenuation\n    :return: total attenuation\n    \"\"\"\n    return a_div + a_atm + a_gr + a_bar + a_misc + a_met\n\ndef a_div(d, d_0 = 1.0, temp=20, hum=70):\n    \"\"\"\n    Accounts for spherical spreading in the free field from a point sound source over hard ground.\n    :param d: distance from the source\n    :return: divergence attenuation\n    \"\"\"\n\n    return 20 * np.log10(d/d_0) + 11\n\nA = {\n    10: {\n        70: (0.1, 0.4, 1.0, 1.9, 3.7, 9.7, 32.8, 117.0),\n    },\n    20: {\n        70: (0.1, 0.3, 1.1, 2.8, 5.0, 9.0, 22.9, 76.6),\n    },\n    30: {\n        70: (0.1, 0.3, 1.0, 3.1, 7.4, 12.7, 23.1, 59.3),\n    },\n    15: {\n        20: (0.3, 0.6, 1.2, 2.7, 8.2, 28.2, 88.8, 202.0),\n        50: (0.1, 0.5, 1.2, 2.2, 4.2, 10.8, 36.2, 129.0),\n        70: (0.1, 0.3, 1.1, 2.4, 4.1, 8.3, 23.7, 82.8),\n    },\n}\n\ndef a_atm(a, d):\n    \"\"\"\n    Accounts for atmospheric absorption\n    :param a: atmospheric absorption coefficient\n    :param d: distance from the source\n    :return: atmospheric attenuation\n    \"\"\"\n    return (a * d) / 1000\n\n```\n:::\n\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
