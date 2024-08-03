@@ -101,5 +101,5 @@ if [ "$install_tinytex" = true ]; then
     # Uncomment the following lines if you need to install additional LaTeX packages
     tlmgr update --self --all
     tlmgr install fancyhdr fontawesome pgf lastpage synctex texcount latexindent titlesec nth gensymb xelatex-dev caption sidenotes \
-        marginnote changepage # really helps with quarto render to pre-install the required packages rather than autoinstall
+        marginnote changepage graphics # really helps with quarto render to pre-install the required packages rather than autoinstall
 fi
