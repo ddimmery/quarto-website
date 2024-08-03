@@ -5,12 +5,6 @@
 /.venv/
 /_site/
 /site_libs/
-.idea/.gitignore
-.idea/git_toolbox_blame.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/quarto-website.iml
-.idea/ruff.xml
-.idea/vcs.xml
-.idea/inspectionProfiles/profiles_settings.xml
-.idea/inspectionProfiles/Project_Default.xml
+.idea
+_freeze
+research_files
