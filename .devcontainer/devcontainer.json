@@ -1,5 +1,5 @@
 {
-	"name": "Data Science - Python (Rye/uv), R (renv), LaTeX (TinyTeX), Quarto",
+	"name": "Data Science - Python (uv), R (renv), LaTeX (TinyTeX), Quarto",
 	"image": "mcr.microsoft.com/devcontainers/base:debian",
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -8,7 +8,6 @@
 		// },
 		"ghcr.io/devcontainers/features/common-utils:2": {},
 		"ghcr.io/va-h/devcontainers-features/uv:1": {},
-		"ghcr.io/e-gineering/devcontainer-features/rye:1": {},
 		"ghcr.io/devcontainers-contrib/features/ruff:1": {},
 		"ghcr.io/rocker-org/devcontainer-features/r-apt:latest": {
 			"useTesting": true,
@@ -36,7 +35,7 @@
 	],
 	// Options for the postCreateCommand script.
 	"containerEnv": {
-		"SETUP_PY_VENV": "false",  // Setup Python virtual environment, recommend doing this manually with Rye
+		"SETUP_PY_VENV": "false",  // Setup Python virtual environment, recommend doing this manually with uv
 		"SETUP_R_RENV": "true", // Setup R renv, recommend doing this manually with renv initially
 		"INSTALL_PY_DEFAULTS": "false", // Install default data science Python packages, if no requirements.txt, recommend false
 		"INSTALL_R_DEFAULTS": "false",   // Install default data science R packages, if no renv.lock, recommend false
