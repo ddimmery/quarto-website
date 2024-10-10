@@ -41,6 +41,10 @@ Urban Soundscape Studies pull from a wide range of disciplines, some less known 
 
 - *Multilevel (Hierarchical) Modeling: What it can and cannot do*. Gelman (2006). DOI: [10.1198/004017005000000661](http://www.stat.columbia.edu/~gelman/research/published/multi2.pdf)
 
+## Generative Additive Models
+
+- [*GAMs in R: A Free, Interactive Course using `mgcv`* by Noam Ross](https://noamross.github.io/gams-in-r-course/)
+
 ## Teaching Statistics
 
 - [Common statistical tests are linear models (or: how to teach stats)](https://lindeloev.github.io/tests-as-linear/#9_teaching_materials_and_a_course_outline), blog post by Jonas Kristoffer Lindeløv
