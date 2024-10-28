@@ -4,9 +4,9 @@ echo: false
 jupyter: python3
 section-divs: false
 keep-md: true
+keep-ipynb: true
+freeze: auto
 ---
-
-
 
 
 

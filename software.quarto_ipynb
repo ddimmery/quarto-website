@@ -1,0 +1,75 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Software\"\n",
+        "echo: false\n",
+        "jupyter: python3\n",
+        "section-divs: false\n",
+        "keep-md: false\n",
+        "execute: \n",
+        "  include: true\n",
+        "sidebar: false\n",
+        "freeze: auto\n",
+        "keep-ipynb: true\n",
+        "---"
+      ],
+      "id": "b87a8e37"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#| label: software\n",
+        "#| output: asis\n",
+        "import yaml\n",
+        "from IPython.display import display, Markdown, HTML\n",
+        "\n",
+        "def button(url, str, icon):\n",
+        "    icon_base = icon[:2]\n",
+        "    return f\"\"\"<a class=\"btn btn-outline-dark btn-sm\", href=\"{url}\" target=\"_blank\" rel=\"noopener noreferrer\">\n",
+        "        <i class=\"{icon_base} {icon}\" role='img' aria-label='{str}'></i>\n",
+        "        {str}\n",
+        "    </a>\"\"\"\n",
+        "\n",
+        "yaml_data = yaml.safe_load(open(\"software.yaml\"))\n",
+        "\n",
+        "for data in yaml_data[::1]:\n",
+        "    logo_scale = data.get(\"logo_scale\", 1)\n",
+        "    width = 200 * logo_scale\n",
+        "\n",
+        "    display(Markdown(\"## `\" + data[\"title\"] + \"` {#\" + data[\"title\"][0] + \"}\"))\n",
+        "\n",
+        "    if \"logo\" in data:\n",
+        "        display(HTML(f\"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='{width}'>\"))\n",
+        "\n",
+        "    display(Markdown(data[\"description\"]))\n",
+        "    buttons = []\n",
+        "    if \"website\" in data:\n",
+        "        buttons.append(button(data['website'], \"Website\", \"bi-info\"))\n",
+        "    if \"github\" in data:\n",
+        "        buttons.append(button(data['github'], \"Github\", \"bi-github\"))\n",
+        "    if \"package\" in data:\n",
+        "        buttons.append(button(data['package'], \"Package\", \"bi-box-seam\"))\n",
+        "\n",
+        "    display(HTML(\" \".join(buttons)))"
+      ],
+      "id": "software",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/mitch/Documents/GitHub/quarto-website/.venv/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
