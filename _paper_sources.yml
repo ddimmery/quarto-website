@@ -2,5 +2,5 @@
 papers:
   - repo_url: "https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantiativeSoundscapeData.git"
     target_folder: "embedded_paper"
-  # - repo_url: "https://github.com/username/another-paper-repo.git"
-  #   target_folder: "another_paper"
+  - repo_url: "https://github.com/username/another-paper-repo.git"
+    target_folder: "another_paper"
