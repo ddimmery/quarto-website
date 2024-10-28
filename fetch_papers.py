@@ -1,43 +1,106 @@
-
-# %%
-import fsspec
-from pathlib import Path
 import os
+import sys
+import argparse
+from dataclasses import dataclass
+from typing import List
+import yaml
+from pathlib import Path
+import subprocess
+import stat
 
-# Only run this script if the QUARTO_PROJECT_RENDER_ALL environment variable is set 
-# if not os.getenv("QUARTO_PROJECT_RENDER_ALL"):
-#     exit()
 
-#TODO: Wrap in a function
-#TODO: Check if the file already exists before downloading
-#TODO: Check if the file is the same as the one on the server before downloading (use commit hash?)
+@dataclass
+class PaperSource:
+    repo_url: str
+    target_folder: str
 
-### JASA-EL How to Analyse Quantitative Soundscape Data
-paper_dir = Path.cwd().joinpath("research/papers/embedded_paper/")
-paper_dir.mkdir(exist_ok=True, parents=True)
+def check_environment():
+    """Check if required environment variables are set."""
+    if not os.getenv("QUARTO_PROJECT_RENDER_ALL"):
+        print("QUARTO_PROJECT_RENDER_ALL is not set. Exiting.")
+        sys.exit(1)
 
-fs = fsspec.filesystem("github", org="MitchellAcoustics", repo="JASAEL-HowToAnalyseQuantiativeSoundscapeData", ref="main")
+def parse_args():
+    parser = argparse.ArgumentParser(description='Fetch papers for Quarto website')
+    parser.add_argument('--force', '-f', 
+                       action='store_true',
+                       help='Force update regardless of commit hash')
+    return parser.parse_args()
 
-# Download the paper files
-# fs.get("paper.qmd", paper_dir.joinpath("index.qmd").as_posix())
-fs.get("paper.quarto_ipynb", paper_dir.joinpath("index.quarto_ipynb").as_posix())
-fs.get("paper.quarto_ipynb", paper_dir.joinpath("index.ipynb").as_posix())
-fs.get("figures/Figure1.jpg", paper_dir.joinpath("figures/Figure1.jpg").as_posix())
-fs.get("references.bib", paper_dir.joinpath("references.bib").as_posix())
 
-# Download the _freeze files
-destination = Path.cwd().joinpath("_freeze/research/papers/embedded_paper/")
-destination.mkdir(exist_ok=True, parents=True)
+def load_paper_sources(config_file: Path) -> List[PaperSource]:
+    """Load paper sources from a YAML configuration file."""
+    with open(config_file) as f:
+        config = yaml.safe_load(f)
 
-# Should work with this but it doesn't for some reason. See: https://github.com/fsspec/filesystem_spec/issues/1741 
-# fs.get(fs.ls("paper/paper_files"), destination.as_posix(), recursive=True)
+    sources = []
+    for paper in config.get("papers", []):
+        sources.append(
+            PaperSource(
+                repo_url=paper["repo_url"], target_folder=paper["target_folder"]
+            )
+        )
+    return sources
 
-for pth in fs.find("_freeze/paper", withdirs=True):
-    subdir_path = Path(pth).relative_to("_freeze/paper")
-    if fs.isdir(pth):
-        destination.joinpath(subdir_path).mkdir(exist_ok=True, parents=True)
+def ensure_script_executable(script_path: Path):
+    """Ensure the script has executable permissions."""
+    current_mode = script_path.stat().st_mode
+    executable_mode = current_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+    script_path.chmod(executable_mode)
 
-    elif fs.isfile(pth):
-        fs.get(pth, destination.joinpath(subdir_path).as_posix())
-    else:
-        continue
+def run_fetch_script(
+    paper_source: PaperSource,
+    script_path: Path,
+    force_update: bool
+) -> None:
+    """Run the fetch script with the appropriate environment variables."""
+    # Ensure script is executable
+    ensure_script_executable(script_path)
+    
+    env = os.environ.copy()
+    env.update({
+        'PAPER_REPO_URL': paper_source.repo_url,
+        'PAPER_TARGET_FOLDER': paper_source.target_folder,
+        'PAPER_FORCE_UPDATE': str(force_update).lower()
+    })
+    
+    try:
+        subprocess.run([str(script_path)], env=env, check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error fetching paper from {paper_source.repo_url}: {e}")
+        raise
+
+
+def main():
+    args = parse_args()
+
+    # Check environment variables first
+    if not args.force:
+        check_environment()
+    
+    # Define paths relative to the script location
+    script_dir = Path(__file__).parent
+    config_path = script_dir / '_paper_sources.yml'
+    script_path = script_dir / 'fetch_paper_template.sh'
+    
+    # Verify required files exist
+    if not config_path.exists():
+        print(f"Configuration file {config_path} not found.")
+        sys.exit(1)
+    
+    if not script_path.exists():
+        print(f"Template file {script_path} not found.")
+        sys.exit(1)
+    
+    try:
+        paper_sources = load_paper_sources(config_path)
+        
+        for paper_source in paper_sources:
+            run_fetch_script(paper_source, script_path, args.force)
+                
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        sys.exit(1)
+
+if __name__ == '__main__':
+    main()
