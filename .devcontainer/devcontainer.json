@@ -4,7 +4,7 @@
   "remoteEnv": {
     "PYTHON_VERSION": "3.11",
     "SETUP_UV": "true",
-    "SETUP_RENV": "true",
+    "SETUP_RENV": "false",
     // Set environment variables for R and Python
     "PYTHONPATH": "/workspace/src/python:${containerEnv:PYTHONPATH}",
     "R_LIBS_USER": "/opt/r_env",
@@ -60,12 +60,12 @@
     "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
     "ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
     "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
-      "packages": "yaml, languageserver, rmarkdown, knitr"
+      "packages": "yaml"
     },
     "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {}
   },
   "mounts": [
     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   ],
-  "postCreateCommand": "bash .devcontainer/setup_env.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV bash .devcontainer/test_devcontainer_setup.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV"
+  "postCreateCommand": "bash .devcontainer/setup_env.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV  && bash .devcontainer/test_devcontainer_setup.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV"
 }

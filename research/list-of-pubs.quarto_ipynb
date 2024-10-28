@@ -19,7 +19,7 @@
         "\n",
         "You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban Soundscapes: Enabling an engineeering approach to soundscape design*](./Andrew%20Mitchell%20PhD%20Thesis%20Final.pdf).\n"
       ],
-      "id": "49fec2c1"
+      "id": "7c60ae84"
     },
     {
       "cell_type": "code",
@@ -142,7 +142,7 @@
         "            \"<li class='list-group-item'>\" + pub_str + \"<br>\" + \" \".join(buttons) + \"</li>\"\n",
         "        )"
       ],
-      "id": "ea059c9c",
+      "id": "113660c2",
       "execution_count": null,
       "outputs": []
     },
@@ -152,7 +152,7 @@
       "source": [
         "## Journal Papers\n"
       ],
-      "id": "2c65691a"
+      "id": "c8b19097"
     },
     {
       "cell_type": "code",
@@ -176,7 +176,7 @@
       "source": [
         "## Conference Papers\n"
       ],
-      "id": "07a7a4f6"
+      "id": "87940d73"
     },
     {
       "cell_type": "code",
@@ -200,7 +200,7 @@
       "source": [
         "## Other Publications\n"
       ],
-      "id": "b6afc813"
+      "id": "18473bea"
     },
     {
       "cell_type": "code",

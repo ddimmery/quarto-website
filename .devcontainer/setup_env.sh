@@ -57,9 +57,11 @@ command_exists() {
 arch=$(dpkg --print-architecture)
 YQ_BINARY="yq_linux_${arch}"
 YQ_VERSION=v4.44.3
+export PATH=$PATH:~/opt/bin/yq
 wget https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${YQ_BINARY}.tar.gz -O - |\
   tar xz && mv ${YQ_BINARY} /usr/bin/yq
-
+rm -f install-man-page.sh
+rm -f yq.1
 
 # Python setup
 log "Setting up Python environment..."
