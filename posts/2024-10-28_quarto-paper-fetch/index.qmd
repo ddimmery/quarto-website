@@ -1,0 +1,324 @@
+---
+title: |
+  Managing Independent Quarto Papers in an Academic Website
+date: "2024-10-28"
+categories:
+  - code
+engine: markdown
+sidebar: false
+citation: false
+---
+
+# Managing Independent Quarto Papers in an Academic Website
+
+## The Problem: Managing Complex Dependencies in Academic Publishing
+
+When publishing academic papers as Quarto documents, each paper often requires its own specific set of packages and dependencies. This becomes particularly challenging when hosting multiple papers on a single Quarto website. Consider a computational acoustics paper from 2022 using `librosa 0.8` alongside a 2024 paper requiring `librosa 0.10` - both needing different dependency chains and Python versions.
+
+A typical academic website structure might look like:
+
+```
+my-academic-website/
+├── research/
+│   ├── paper1/  # Uses numpy 1.20, pandas 1.3, librosa 0.8
+│   ├── paper2/  # Requires numpy 1.24, pandas 2.0
+│   └── paper3/  # Needs latest versions of everything
+├── _quarto.yml
+└── environment.yml
+```
+
+Since Quarto renders all content using the same virtual environment, we face several challenges:
+
+- Version conflicts between papers
+- Dependency resolution becoming increasingly complex
+- Difficulty in reproducing old papers
+- Maintenance burden growing with each new paper
+
+## A Solution: Pre-rendered Paper Integration
+
+Instead of wrestling with dependency management in a single environment, we can treat each paper as an independent project that gets integrated into the main website post-rendering. This approach has several key components:
+
+1. Independent paper repositories with:
+   - Self-contained environments
+   - Complete reproducibility setup
+   - Pre-rendered content
+   - All supporting materials
+
+2. Main website that:
+   - Pulls in pre-rendered content
+   - Maintains consistent structure
+   - Integrates papers seamlessly
+   - Handles updates efficiently
+
+## Implementation Details
+
+### Paper Repository Structure
+
+Each paper repository follows a standard Quarto structure:
+
+```
+paper-repo/
+├── paper.qmd
+├── figures/
+├── _freeze/
+│   └── paper/
+│       ├── execute-results/
+│       └── figures/
+├── references.bib
+├── pyproject.toml
+└── _quarto.yml
+```
+
+The crucial elements here are:
+- Pre-rendered content in `_freeze/`
+- All dependencies specified in `pyproject.toml` or `requirements.txt`
+- Supporting files organized consistently
+
+The solution consists of three main components:
+
+### 1. Configuration File (`_paper_sources.yml`)
+Define which papers to include and where they should go:
+
+```yaml
+papers:
+  - repo_url: "https://github.com/username/paper1.git"
+    target_folder: "paper1"
+  - repo_url: "https://github.com/username/paper2.git"
+    target_folder: "paper2"
+```
+
+### 2. Paper Fetcher Script
+
+The fetcher script runs as a pre-render step in your Quarto website build process. Add to `_quarto.yml`:
+
+```yaml
+project:
+  pre-render: "python fetch_papers.py"
+```
+
+The script:
+
+- Reads the paper configuration
+- Clones each paper repository
+- Copies pre-rendered content to the appropriate website location
+- Maintains Quarto's freeze directory structure
+
+### 3. Individual Paper Repositories
+
+Each paper repository contains:
+
+- Quarto source files (.qmd or .ipynb)
+- Paper-specific dependencies
+- Pre-rendered content
+- Supporting files (figures, references, etc.)
+
+Importantly, the papers need to be rendered with freeze enabled, keeping the `ipynb`, and the html render cannot use `embed_resources`.
+
+## The Code
+
+You can find the scripts for this process within the repo for my own personal website: [https://github.com/MitchellAcoustics/quarto-website](https://github.com/MitchellAcoustics/quarto-website). 
+
+To start, I've used it to integrate my paper on analysing soundscape data which has its own repo here: [https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantiativeSoundscapeData](https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantiativeSoundscapeData)
+
+### Integration Process
+
+The integration process involves several careful considerations:
+
+1. **File Management**: We need to:
+
+   - Copy only necessary files
+   - Maintain Quarto's directory structure
+   - Handle different paper formats (.qmd, .ipynb)
+   - Preserve supporting materials
+
+2. **Version Control**: Track which version of each paper is integrated:
+
+```python
+def get_repo_info(repo_url: str, branch: Optional[str], commit: Optional[str]) -> str:
+    """Get the latest commit hash for version tracking."""
+    ref = commit or branch or "HEAD"
+    commit_hash = subprocess.check_output(
+        ["git", "ls-remote", repo_url, ref]
+    ).decode().split()[0]
+    return commit_hash
+```
+
+3. **Update Management**: Only update papers when needed:
+
+```python
+def check_update_needed(paper_dir: Path, current_hash: str) -> bool:
+    """Check if paper needs updating based on commit hash."""
+    hash_file = paper_dir / "last_commit.txt"
+    if not hash_file.exists():
+        return True
+    return hash_file.read_text().strip() != current_hash
+```
+
+4. **Error Handling**: Robust error handling for various failure modes:
+
+```python
+def process_paper(self, paper: PaperSource) -> bool:
+    """Process a single paper with comprehensive error handling."""
+    try:
+        result = self.run_fetch_script(paper)
+        if not result.success:
+            self.cleanup_paper_directory(paper)
+            return False
+        return True
+    except Exception as e:
+        self.logger.error(f"Unexpected error: {e}")
+        self.cleanup_paper_directory(paper)
+        return False
+```
+
+### Configuration Management
+
+Papers are configured through a YAML file:
+
+```yaml
+papers:
+  - repo_url: "https://github.com/username/paper1.git"
+    target_folder: "acoustics_2022"
+    branch: "main"  # optional
+    commit: "abc123"  # optional: pin to specific version
+
+  - repo_url: "https://github.com/username/paper2.git"
+    target_folder: "soundscapes_2024"
+```
+
+This provides:
+
+- Clear paper management
+- Version control options
+- Flexible organization
+- Easy addition/removal of papers
+
+### Directory Structure Management
+
+The fetcher maintains a specific directory structure in the main website:
+
+```
+website/
+├── research/papers/
+│   └── {PAPER_TARGET_FOLDER}/
+│       ├── paper.qmd
+│       ├── figures/
+│       └── references.bib
+└── _freeze/research/papers/
+    └── {PAPER_TARGET_FOLDER}/
+        └── {BASE_NAME}/
+            ├── execute-results/
+            └── figures/
+```
+
+This structure is crucial for:
+
+- Quarto's rendering process
+- Website organization
+- Paper independence
+- Resource management
+
+## Implementation Considerations
+
+Several key factors influenced the implementation:
+
+1. **Bash vs. Python Split**
+
+   - Python handles orchestration and paper management
+   - Bash handles file operations and Git interactions
+   - This split provides flexibility and maintainability
+
+2. **Error Handling Strategy**
+
+   - Each paper processes independently
+   - Failures don't affect other papers
+   - Clean up on failure
+   - Detailed logging for troubleshooting
+
+3. **Update Efficiency**
+
+   - Track paper versions via Git commits
+   - Only update changed papers
+   - Force update option available
+   - Preserve local modifications
+
+4. **File Copying Logic**
+
+```bash
+copy_files() {
+    # Copy main paper files
+    for ext in "${PAPER_EXTENSIONS[@]}"; do
+        [ -f "$source_dir/${base_name}.${ext}" ] && \
+            cp "$source_dir/${base_name}.${ext}" "$PAPER_DIR/"
+    done
+
+    # Copy support files and directories
+    for dir in "${SUPPORT_DIRS[@]}"; do
+        [ -d "$source_dir/$dir" ] && cp -r "$source_dir/$dir" "$PAPER_DIR/"
+    done
+    
+    # Handle freeze directory specially
+    if [ -d "$freeze_source" ]; then
+        mkdir -p "$freeze_target"
+        cp -r "$freeze_source"/* "$freeze_target/"
+    fi
+}
+```
+
+## Usage and Integration
+
+The system integrates with Quarto's build process:
+
+1. **Configuration in `_quarto.yml`**:
+```yaml
+project:
+  pre-render: "python fetch_papers.py"
+  render:
+    - "research/papers/**/*.qmd"
+```
+
+2. **Manual Usage**:
+```bash
+# Normal update
+python fetch_papers.py
+
+# Force update all papers
+python fetch_papers.py --force
+
+# Debug mode for troubleshooting
+python fetch_papers.py --debug
+```
+
+
+## The Result
+
+After running the fetch process, papers are integrated into the website with this structure:
+
+```
+website/
+├── research/papers/
+│   ├── paper1/
+│   │   ├── paper.qmd
+│   │   ├── figures/
+│   │   └── references.bib
+│   └── paper2/
+└── _freeze/research/papers/
+    ├── paper1/
+    └── paper2/
+```
+
+Each paper maintains its own integrity while being seamlessly integrated into the main website. Papers can be developed independently with their own dependencies, yet still appear as a cohesive part of your academic website.
+
+This solution, while specific to my needs, demonstrates how to manage complex document dependencies in Quarto projects. The key is leveraging Quarto's pre-render hooks and freeze directory structure to integrate pre-rendered content while maintaining independent development environments for each paper.
+
+## Conclusion
+
+This solution, while specific to my needs, demonstrates an approach to managing complex document dependencies in Quarto projects. The key insights are:
+
+1. Leverage Quarto's pre-render hooks
+2. Use Git for version control and updates
+3. Maintain clean separation of concerns
+4. Provide robust error handling
+5. Keep paper environments independent
+
+The result is a maintainable system that allows each paper to exist independently while still being part of a cohesive website.

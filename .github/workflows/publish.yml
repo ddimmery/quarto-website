@@ -14,11 +14,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
         with:
-          python-version: '3.11'
-          cache: 'pip'
-      - run: pip install -r requirements.txt
+          # Install a specific version of uv.
+          version: "0.4.27"
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -26,9 +28,18 @@ jobs:
           # To install LaTeX to build PDF
           tinytex: true
 
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install the project
+        run: uv sync --all-extras --dev
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Minimize uv cache
+        run: uv cache prune --ci

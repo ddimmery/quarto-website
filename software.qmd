@@ -7,6 +7,8 @@ keep-md: false
 execute: 
   include: true
 sidebar: false
+freeze: auto
+keep-ipynb: true
 ---
 
 ```{python}

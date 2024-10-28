@@ -37,6 +37,7 @@
   doi: 10.48550/ARXIV.2406.05914
   file: :Hou2024Soundscape - Soundscape Captioning Using Sound Affective Quality Network
     and Large Language Model.pdf:PDF
+  journaltitle: arXiv
   keywords: 'Audio and Speech Processing (eess.AS), Sound (cs.SD), Signal Processing
     (eess.SP), FOS: Electrical engineering, electronic engineering, information engineering,
     FOS: Electrical engineering, electronic engineering, information engineering,
@@ -662,13 +663,20 @@
   address: Chiba, Greater Tokyo
   author: Andrew Mitchell and Francesco Aletta and Tin Oberman and Mercede Erfanian
     and Jian Kang
-  booktitle: INTER-NOISE 2023 Conference
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: 2023-11
+  doi: 10.3397/in_2023_0309
   file: :Mitchell2023conceptual - A Conceptual Framework for the Practical Use of
     Predictive Models and Soundscape Indices_ Goals, Constraints, and Applications.pdf:PDF
+  issn: 0736-2935
+  journaltitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
   month: August
-  note: (accepted)
+  number: '6'
+  pages: 2108–2118
+  publisher: Institute of Noise Control Engineering (INCE)
   title: 'A conceptual framework for the practical use of predictive models and Soundscape
     Indices: Goals, constraints, and applications'
+  volume: '268'
   year: '2023'
 - ENTRYTYPE: inproceedings
   ID: Mitchell2023Deep
@@ -698,15 +706,6 @@
   location: Turin, Italy
   month: September
   title: How do we define soundscape?
-  year: '2023'
-- ENTRYTYPE: inproceedings
-  ID: Mitchell2023Soundscapy
-  address: Chiba, Greater Tokyo
-  author: Andrew Mitchell
-  booktitle: INTER-NOISE 2023 Conference
-  month: August
-  note: (accepted)
-  title: 'Soundscapy: A python package for soundscape assessment and analysis'
   year: '2023'
 - ENTRYTYPE: inproceedings
   ID: Moshona2022What
@@ -827,3 +826,100 @@
   title: 'Effects of Visual Stimulus on Soundscape Perception: A Pilot Study Using
     Immersive Virtual Reality (IVR)'
   year: '2023'
+- ENTRYTYPE: inproceedings
+  ID: Mitchell2024Soundscapy
+  author: Andrew Mitchell
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: '2024-08-25'
+  doi: 10.3397/in_2024_3404
+  file: :Mitchell2024Soundscapy - Soundscapy_ a Python Package for Soundscape Assessment
+    and Analysis.pdf:PDF
+  location: Nantes
+  number: '7'
+  pages: 4029–4039
+  title: 'Soundscapy: A python package for soundscape assessment and analysis'
+  volume: '270'
+  year: '2024'
+- ENTRYTYPE: inproceedings
+  ID: Aletta2024Advancing
+  author: Francesco Aletta and Tin Oberman and Andrew Mitchell and Jian Kang and SATP
+    Consortium
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: 2024-10
+  doi: 10.3397/in_2024_3009
+  file: :Aletta2024Advancing - Advancing Cross Cultural Soundscape Research_ Updates
+    from the Soundscape Attributes Translation Project (SATP).pdf:PDF
+  issn: 0736-2935
+  journaltitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  number: '10'
+  pages: 1609–1614
+  publisher: Institute of Noise Control Engineering (INCE)
+  title: 'Advancing cross-cultural soundscape research: updates from the Soundscape
+    Attributes Translation Project (SATP)'
+  volume: '270'
+  year: '2024'
+- ENTRYTYPE: inproceedings
+  ID: Woodland2024Development
+  author: Lisa Woodland and Julia Chieng and Benjamin Fenech and Lisa Lavia and Francesco
+    Aletta and Jian Kang and Andrew Mitchell
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: 2024-10
+  doi: 10.3397/in_2024_4068
+  file: :Woodland2024Development - Development of a Conceptual Framework for a New
+    International Standard on Non Acoustic Factors.pdf:PDF
+  issn: 0736-2935
+  journaltitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  number: '3'
+  pages: 8269–8276
+  publisher: Institute of Noise Control Engineering (INCE)
+  title: Development of a conceptual framework for a new international standard on
+    non-acoustic factors
+  volume: '270'
+  year: '2024'
+- ENTRYTYPE: inproceedings
+  ID: Oberman2024How
+  author: Tin Oberman and Andrew Mitchell and Francesco Aletta and Jian Kang
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: 2024-10
+  doi: 10.3397/in_2024_3719
+  file: :Oberman2024How - How Does Visual Context of Urban Open Spaces Drive Soundscape
+    Pleasantness and Eventfulness_ a Laboratory Experiment Using a Higher Order Ambisonics
+    Speaker System and Immersive Virtual Reality.pdf:PDF
+  issn: 0736-2935
+  journaltitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  number: '5'
+  pages: 6350–6356
+  publisher: Institute of Noise Control Engineering (INCE)
+  title: 'How does visual context of urban open spaces drive soundscape pleasantness
+    and eventfulness: a laboratory experiment using a higher order Ambisonics speaker
+    system and immersive virtual reality'
+  volume: '270'
+  year: '2024'
+- ENTRYTYPE: inproceedings
+  ID: Fang2024Soundwalk
+  author: Xiang Fang and Tasos Varoudis and Tin Oberman and Francesco Aletta and Andrew
+    Mitchell and Jian Kang
+  booktitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  date: 2024-10
+  file: :Fang2024Soundwalk - Soundwalk Syntax Investigating the Effect of Contextual
+    Factors on Soundscape Perception.pdf:PDF
+  journaltitle: INTER-NOISE and NOISE-CON Congress and Conference Proceedings
+  publisher: Institute of Noise Control Engineering (INCE)
+  title: Soundwalk Syntax-Investigating the Effect of Contextual Factors on Soundscape
+    Perception
+  volume: '270'
+  year: '2024'
+- ENTRYTYPE: article
+  ID: Aletta2024Soundscapea
+  author: Francesco Aletta and Arianna Astolfi and Jian Kang and Tin Oberman and Andrew
+    Mitchell
+  date: 2024-09
+  doi: 10.1016/j.apacoust.2024.110305
+  file: :Aletta2024Soundscapea - Soundscape Attributes Translation_ Current Projects
+    and Challenges.pdf:PDF
+  issn: 0003-682X
+  journaltitle: Applied Acoustics
+  pages: '110305'
+  publisher: Elsevier BV
+  title: 'Soundscape attributes translation: Current projects and challenges'
+  year: '2024'

@@ -1,117 +1,71 @@
 {
-	"name": "Data Science - Python (uv), R (renv), LaTeX (TinyTeX), Quarto",
-	"image": "mcr.microsoft.com/devcontainers/base:debian",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		// "ghcr.io/devcontainers/features/python:1": {
-		// 	"version": "latest"
-		// },
-		"ghcr.io/devcontainers/features/common-utils:2": {},
-		"ghcr.io/va-h/devcontainers-features/uv:1": {},
-		"ghcr.io/devcontainers-contrib/features/ruff:1": {},
-		"ghcr.io/rocker-org/devcontainer-features/r-apt:latest": {
-			"useTesting": true,
-			"vscodeRSupport": "full",
-			"installDevTools": true,
-			"installRadian": true,
-			"installRMarkdown": true,
-			"installVscDebugger": true
-		},
-		"ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
-		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
-		"ghcr.io/michidk/devcontainers-features/typst:1": {},
-		// "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-		// 	"packages": "curl"
-		//   },
-		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
-			"packages": "perl, wget, libfontconfig1"
-		},
-		// "ghcr.io/devcontainers-contrib/features/bash-command": {
-		// 	"command": "Rscript -e 'install.packages(c(\"tinytex\", \"rmarkdown\"), repos = \"https://cloud.r-project.org\"); tinytex::install_tinytex()'; echo 'export PATH=$PATH:/root/.TinyTeX/bin/aarch64-linux' >> /root/.bashrc"
-		// }
-	},
-	"overrideFeatureInstallOrder": [
-		"ghcr.io/rocker-org/devcontainer-features/r-apt"
-	],
-	// Options for the postCreateCommand script.
-	"containerEnv": {
-		"SETUP_PY_VENV": "false",  // Setup Python virtual environment, recommend doing this manually with uv
-		"SETUP_R_RENV": "true", // Setup R renv, recommend doing this manually with renv initially
-		"INSTALL_PY_DEFAULTS": "false", // Install default data science Python packages, if no requirements.txt, recommend false
-		"INSTALL_R_DEFAULTS": "false",   // Install default data science R packages, if no renv.lock, recommend false
-		"INSTALL_TINYTEX": "true", // Install TinyTeX, recommend true to use Quarto
-	},
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash ./.devcontainer/postCreateCommand.sh  ${SETUP_PY_VENV} ${SETUP_R_RENV} ${INSTALL_PY_DEFAULTS} ${INSTALL_R_DEFAULTS} ${INSTALL_TINYTEX}",
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [
-		8888,  // Jupyter notebook default port
-		4000,  // Quarto preview default port
-		8787   // RStudio Server (optional, if you decide to use it)
-	  ],
-	  
-	  "portsAttributes": {
-		"8888": {
-		  "label": "Jupyter",
-		  "onAutoForward": "notify"
-		},
-		"4000": {
-		  "label": "Quarto Preview",
-		  "onAutoForward": "openPreview"
-		},
-		"8787": {
-		  "label": "RStudio Server",
-		  "onAutoForward": "notify"
-		}
-	  },
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			// Set *default* container specific settings.json values on container create.
-			"settings": {
-				"[python]": {
-					"defaultInterpreterPath": ".venv/bin/python",
-					"editor.defaultFormatter": "ms-python.vscode-pylance",
-					"editor.formatOnType": true,
-					"editor.formatOnSave": true
-				},
-				"[jupyter]": {
-					"themeMatplotlibPlots": true,
-					"widgetScriptSources": [
-						"unpkg.com",
-						"jsdelivr.com"
-					]
-				},
-				"[r]": {
-					"rterm.linux": "/usr/local/bin/radian",
-					"r.bracketedPaste": true,
-					"r.plot.useHttpgd": true,
-					"[r]": {
-						"editor.wordSeparators": "`~!@#%$^&*()-=+[{]}\\|;:'\",<>/?"
-					}
-				},
-				"quarto.preview.browser": "vscode",
-				"quarto.render.previewType": "internal"
-			},
-			// Add the IDs of extensions you want installed when the container is created.
-			"extensions": [
-				"ms-toolsai.jupyter",
-				"ms-python.python",
-				// "ms-python.vscode-pylance",
-				"ms-toolsai.jupyter",
-				"ms-toolsai.jupyter-renderers",
-				"quarto.quarto",
-				"reditorsupport.r",
-				"rdebugger.r-debugger",
-				"christian-kohler.path-intellisense",
-				"yzhang.markdown-all-in-one",
-				"andrewmitchell.devcontainer-template-manager",
-				"fuadpashayev.bottom-terminal",
-				"ms-toolsai.datawrangler"
-			]
-		}
-	},
-	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "root"
+  "name": "Research Environment",
+  "image": "mitchellacoustics/repro-tinytex:latest",
+  "remoteEnv": {
+    "PYTHON_VERSION": "3.11",
+    "SETUP_UV": "true",
+    "SETUP_RENV": "false",
+    // Set environment variables for R and Python
+    "PYTHONPATH": "/workspace/src/python:${containerEnv:PYTHONPATH}",
+    "R_LIBS_USER": "/opt/r_env",
+    "RENV_PATHS_ROOT": "/opt/r_env",
+    "RENV_PATHS_LIBRARY": "/opt/r_env/library",
+    "UV_HOME": "/opt/python_env",
+    "UV_LINK_MODE": "copy",
+    "VIRTUAL_ENV": "/opt/.venv",
+    "UV_PROJECT_ENVIRONMENT": "/opt/.venv"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "REditorSupport.r",
+        "quarto.quarto-vscode",
+        "James-Yu.latex-workshop",
+        "nvarner.typst-lsp",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "ms-azuretools.vscode-docker",
+        "GitHub.copilot",
+        "eamodio.gitlens",
+        "ms-vscode-remote.remote-containers",
+        "quarto.quarto"
+      ],
+      "settings": {
+        "r.rpath.linux": "/usr/local/bin/R",
+        "r.rterm.linux": "/usr/local/bin/R",
+        "editor.formatOnSave": true,
+        "r.lsp.enabled": true,
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        // ruff settings
+        "[python]": {
+          "defaultInterpreterPath": "/opt/.venv/bin/python",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+          },
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "notebook.formatOnSave.enabled": true,
+        "notebook.codeActionsOnSave": {
+          "notebook.source.fixAll": "explicit",
+          "notebook.source.organizeImports": "explicit"
+        }
+      }
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {},
+    "ghcr.io/rocker-org/devcontainer-features/renv-cache:0": {},
+    "ghcr.io/rocker-org/devcontainer-features/r-packages:1": {
+      "packages": "yaml"
+    },
+    "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {}
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  ],
+  "postCreateCommand": "bash .devcontainer/setup_env.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV  && bash .devcontainer/test_devcontainer_setup.sh --python_version $PYTHON_VERSION --setup_uv $SETUP_UV --setup_renv $SETUP_RENV"
 }

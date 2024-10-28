@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  pre-render: fetch_papers.py
 
 bibliography: FellowshipRefs.bib
 
@@ -65,3 +66,6 @@ format:
       - includes.html
     highlight-style: tango
     smooth-scroll: true
+
+render: 
+  freeze: true
