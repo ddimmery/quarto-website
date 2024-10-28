@@ -45,7 +45,11 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
 <li class='list-group-item'>Yuanbo Hou, Bo Kang, <strong>Andrew Mitchell</strong>, Wenwu Wang, Jian Kang, and Dick Botteldooren. (2024) "Cooperative Scene-Event Modelling for Acoustic Scene Classification." <em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em> doi: 10.1109/TASLP.2023.3323135 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.1109/TASLP.2023.3323135" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
         Published
-    </a> <span class="__dimensions_badge_embed__" data-doi=10.1109/TASLP.2023.3323135 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li></ul>
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.1109/TASLP.2023.3323135 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
+<li class='list-group-item'>Francesco Aletta, Arianna Astolfi, Jian Kang, Tin Oberman, and <strong>Andrew Mitchell</strong>. (2024) "Soundscape attributes translation: Current projects and challenges." <em>Applied Acoustics</em> doi: 10.1016/j.apacoust.2024.110305 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.1016/j.apacoust.2024.110305" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.1016/j.apacoust.2024.110305 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li></ul>
 ```
 
 ### 2023{#published-2023}
@@ -147,6 +151,28 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
 ## Conference Papers
 
 ::: {#confs-year .cell execution_count=3}
+### 2024{#confs-2024}
+
+```{=html}
+<ul class='list-group list-group-flush'><li class='list-group-item'><strong>Andrew Mitchell</strong>. (2024) "Soundscapy: A python package for soundscape assessment and analysis." In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> doi: 10.3397/in_2024_3404 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.3397/in_2024_3404" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.3397/in_2024_3404 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
+<li class='list-group-item'>Francesco Aletta, Tin Oberman, <strong>Andrew Mitchell</strong>, Jian Kang, and SATP Consortium. (2024) "Advancing cross-cultural soundscape research: updates from the Soundscape Attributes Translation Project (SATP)." <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> doi: 10.3397/in_2024_3009 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.3397/in_2024_3009" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.3397/in_2024_3009 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
+<li class='list-group-item'>Lisa Woodland, Julia Chieng, Benjamin Fenech, Lisa Lavia, Francesco Aletta, Jian Kang, and et. al. (2024) "Development of a conceptual framework for a new international standard on non-acoustic factors." <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> doi: 10.3397/in_2024_4068 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.3397/in_2024_4068" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.3397/in_2024_4068 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
+<li class='list-group-item'>Tin Oberman, <strong>Andrew Mitchell</strong>, Francesco Aletta, and Jian Kang. (2024) "How does visual context of urban open spaces drive soundscape pleasantness and eventfulness: a laboratory experiment using a higher order Ambisonics speaker system and immersive virtual reality." <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> doi: 10.3397/in_2024_3719 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.3397/in_2024_3719" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.3397/in_2024_3719 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
+<li class='list-group-item'>Xiang Fang, Tasos Varoudis, Tin Oberman, Francesco Aletta, <strong>Andrew Mitchell</strong>, and Jian Kang. (2024) "Soundwalk Syntax-Investigating the Effect of Contextual Factors on Soundscape Perception." <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em><br></li></ul>
+```
+
 ### 2023{#confs-2023}
 
 ```{=html}
@@ -163,13 +189,15 @@ You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban S
 <li class='list-group-item'>Yuanbo Hou, Siyang Song, Cheg Luo, <strong>Andrew Mitchell</strong>, Qiaoqiao Ren, Jian Kang, and et. al. (2023) "Joint prediction of audio event and annoyance rating in an urban soundscape by hierarchical graph representation learning." In <em>24th INTERSPEECH Conference</em><br></li>
 <li class='list-group-item'>Jian Kang, Francesco Aletta, Tin Oberman, <strong>Andrew Mitchell</strong>, and Mercede Erfanian. (2023) "On the development of Soundscape Indices (SSID)." In <em>The 29th International Congress on Sound and Vibration</em><br></li>
 <li class='list-group-item'>Jian Kang, Francesco Aletta, Tin Oberman, <strong>Andrew Mitchell</strong>, and Mercede Erfanian. (2023) "Subjective evaluation of environmental sounds in context - Towards Soundscape Indices (SSID)." In <em>Forum Acusticum 2023</em><br></li>
-<li class='list-group-item'><strong>Andrew Mitchell</strong>, Francesco Aletta, Tin Oberman, Mercede Erfanian, and Jian Kang. (2023) "A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications." In <em>INTER-NOISE 2023 Conference</em><br></li>
+<li class='list-group-item'><strong>Andrew Mitchell</strong>, Francesco Aletta, Tin Oberman, Mercede Erfanian, and Jian Kang. (2023) "A conceptual framework for the practical use of predictive models and Soundscape Indices: Goals, constraints, and applications." <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> In <em>INTER-NOISE and NOISE-CON Congress and Conference Proceedings</em> doi: 10.3397/in_2023_0309 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.3397/in_2023_0309" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
+        Published
+    </a> <span class="__dimensions_badge_embed__" data-doi=10.3397/in_2023_0309 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
 <li class='list-group-item'><strong>Andrew Mitchell</strong>, Emmeline Brown, Ratneel Deo, Yuanbo Hou, Jasper Kirton-Wingate, Jinhua Liang, and et. al. (2023) "Deep learning techniques for noise annoyance detection: Results from an intensive workshop at the Alan Turing Institute." <em>The Journal of the Acoustical Society of America</em> doi: 10.1121/10.0018787 <br><a class="btn btn-outline-dark btn-sm", href="https://doi.org/10.1121/10.0018787" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
         Published
     </a> <span class="__dimensions_badge_embed__" data-doi=10.1121/10.0018787 data-hide-zero-citations="true" data-style="small_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script></li>
 <li class='list-group-item'><strong>Andrew Mitchell</strong>, Francesco Aletta, Tin Oberman, and Jian Kang. (2023) "How do we define soundscape?." In <em>Forum Acusticum 2023</em><br></li>
-<li class='list-group-item'><strong>Andrew Mitchell</strong>. (2023) "Soundscapy: A python package for soundscape assessment and analysis." In <em>INTER-NOISE 2023 Conference</em><br></li>
 <li class='list-group-item'>Cleopatra Moshona, Francesco Aletta, Xiaochao Chen, André Fiebig, Helen Henze, Jian Kang, and et. al. (2023) "Deriving a typology of soundscape design interventions." In <em>Forum Acusticum 2023</em><br><a class="btn btn-outline-dark btn-sm", href="https://www.researchgate.net/publication/373946566_DERIVING_A_TYPOLOGY_OF_SOUNDSCAPE_DESIGN_INTERVENTIONS" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-journal-text" role='img' aria-label='Published'></i>
         Published

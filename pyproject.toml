@@ -8,6 +8,6 @@ dependencies = [
     "ipykernel>=6.29.5",
     "jupyter>=1.1.1",
     "pyyaml>=6.0.2",
-    "soundscapy>=0.5",
+    "soundscapy>=0.5, <0.6",
     "fsspec>=2024.10.0",
 ]

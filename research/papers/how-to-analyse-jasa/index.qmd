@@ -65,6 +65,7 @@ citation:
 
 sidebar: false
 keep-tex: true
+keep-ipynb: true
 ---
 
 # Introduction {#sec-introduction}

@@ -1,7 +1,7 @@
 project:
   type: website
   output-dir: _site
-  pre-render: fetch_papers.py
+  pre-render: bash fetch_papers.sh
 
 bibliography: FellowshipRefs.bib
 
