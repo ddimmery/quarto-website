@@ -6,79 +6,76 @@ set -euo pipefail
 # Initialize global variables
 DEBUG=${PAPER_DEBUG:-false}
 TEMP_DIR=""
-ORIGINAL_DIR=""
 PAPER_DIR=""
 LAST_COMMIT_FILE=""
 LATEST_COMMIT=""
 
-# Function to log messages with timestamps
+# Define arrays with proper declarations
+declare -a PAPER_EXTENSIONS=("quarto_ipynb" "ipynb" "qmd")
+declare -a SUPPORT_DIRS=("figures" "_tex")
+
+# Simplified logging with error context
 log() {
-    local level="$1"
-    local message="$2"
-    local debug_info="${3:-}"
-    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    
-    echo "[${timestamp}] [${level}] ${message}"
-    
-    if [ "$DEBUG" = "true" ] && [ -n "$debug_info" ]; then
-        echo "DEBUG DETAILS:"
-        echo "$debug_info"
-        echo "---------------"
+    local level=$1
+    local message=$2
+    local context=${3:-}
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] [$level] $message"
+    if [ -n "$context" ]; then
+        echo "  Context: $context"
     fi
 }
 
-# Function to log errors and exit
+# Enhanced error handling
 error_exit() {
-    local message="$1"
-    local debug_info="${2:-}"
+    local message=$1
+    local context=""
     
-    if [ "$DEBUG" = "true" ]; then
-        debug_info+="\nEnvironment:\n"
-        debug_info+="PAPER_REPO_URL=$PAPER_REPO_URL\n"
-        debug_info+="PAPER_TARGET_FOLDER=$PAPER_TARGET_FOLDER\n"
-        debug_info+="Current Directory: $(pwd)\n"
-        debug_info+="Temp Directory: ${TEMP_DIR:-not set}\n"
+    # Build error context
+    context="Current directory: $(pwd)"
+    context+="\nPaper URL: $PAPER_REPO_URL"
+    context+="\nTarget folder: $PAPER_TARGET_FOLDER"
+    context+="\nTemp directory: ${TEMP_DIR:-not set}"
+    context+="\nPaper directory: ${PAPER_DIR:-not set}"
+    
+    # Include git status if in repo
+    if [ -d "$TEMP_DIR" ] && [ -d "$TEMP_DIR/.git" ]; then
+        context+="\nGit status: $(cd "$TEMP_DIR" && git status 2>&1)"
     fi
     
-    log "ERROR" "$message" "$debug_info"
+    # Log the error with context
+    log "ERROR" "$message" "$context"
+    
+    # Exit with error status
     exit 1
 }
 
-# Function to clean up temporary directories
-cleanup() {
-    if [ -n "$TEMP_DIR" ] && [ -d "$TEMP_DIR" ]; then
-        log "DEBUG" "Removing temporary directory" "Directory: $TEMP_DIR"
-        rm -rf "$TEMP_DIR"
-    fi
-}
-
-# Set trap for cleanup on script exit
-trap cleanup EXIT
-
-# Validate environment and requirements
+# Enhanced validation
 validate_environment() {
+    log "INFO" "Validating environment..."
+    
+    # Check required environment variables
     local required_vars=("PAPER_REPO_URL" "PAPER_TARGET_FOLDER")
-    local missing_vars=()
-
+    local missing=()
     for var in "${required_vars[@]}"; do
         if [ -z "${!var:-}" ]; then
-            missing_vars+=("$var")
+            missing+=("$var")
         fi
     done
-
-    if [ ${#missing_vars[@]} -ne 0 ]; then
-        error_exit "Missing required environment variables: ${missing_vars[*]}"
+    if [ ${#missing[@]} -ne 0 ]; then
+        error_exit "Missing required variables: ${missing[*]}"
     fi
 
-    # Check for required commands
+    # Check required commands with specific feedback
     for cmd in git yq; do
         if ! command -v "$cmd" >/dev/null 2>&1; then
-            error_exit "Required command not found: $cmd"
+            error_exit "Required command not found: $cmd" "Please install $cmd before continuing"
         fi
     done
+    
+    log "INFO" "Environment validation successful"
 }
 
-# Get repository information and latest commit
+# Enhanced repository info retrieval
 get_repo_info() {
     local ref="HEAD"
     [ -n "${PAPER_COMMIT:-}" ] && ref="${PAPER_COMMIT}"
@@ -86,53 +83,47 @@ get_repo_info() {
 
     log "INFO" "Fetching repository info" "Using ref: $ref"
     
-    LATEST_COMMIT=$(git ls-remote "$PAPER_REPO_URL" "$ref" | cut -f1) || \
-        error_exit "Failed to fetch latest commit"
-
+    # Try to get commit hash with better error handling
+    LATEST_COMMIT=$(git ls-remote "$PAPER_REPO_URL" "$ref" 2>&1) || {
+        error_exit "Failed to fetch commit hash" "Command output: $LATEST_COMMIT"
+    }
+    
+    LATEST_COMMIT=$(echo "$LATEST_COMMIT" | cut -f1)
+    
     if [ -z "$LATEST_COMMIT" ]; then
-        error_exit "No commit hash found for specified reference"
-    fi
-}
-
-# Check if paper needs updating
-check_update_needed() {
-    [ "${PAPER_FORCE_UPDATE:-false}" = "true" ] && return 0
-    
-    if [ -f "$LAST_COMMIT_FILE" ]; then
-        local last_commit
-        last_commit=$(cat "$LAST_COMMIT_FILE")
-        
-        if [ "$last_commit" = "$LATEST_COMMIT" ]; then
-            log "INFO" "Repository is up-to-date"
-            return 1
-        fi
+        error_exit "No commit hash found" "Ref: $ref, URL: $PAPER_REPO_URL"
     fi
     
-    return 0
+    log "INFO" "Found commit hash: $LATEST_COMMIT"
 }
 
-# Clone the repository
-clone_repository() {
+# Enhanced repository preparation
+prepare_repository() {
+    log "INFO" "Preparing repository..."
+    
     local clone_opts=("--quiet" "--depth" "1")
     [ -n "${PAPER_BRANCH:-}" ] && clone_opts+=("--branch" "${PAPER_BRANCH}")
     
-    log "INFO" "Cloning repository..."
-    
-    if ! git clone "${clone_opts[@]}" "$PAPER_REPO_URL" "$TEMP_DIR"; then
-        error_exit "Failed to clone repository"
-    fi
+    # Clone with better error capture
+    local clone_output
+    clone_output=$(git clone "${clone_opts[@]}" "$PAPER_REPO_URL" "$TEMP_DIR" 2>&1) || {
+        error_exit "Failed to clone repository" "Command output: $clone_output"
+    }
 
     if [ -n "${PAPER_COMMIT:-}" ]; then
-        cd "$TEMP_DIR" || error_exit "Failed to change directory"
-        if ! git checkout -q "$PAPER_COMMIT"; then
-            error_exit "Failed to checkout specified commit"
-        fi
+        cd "$TEMP_DIR" || error_exit "Failed to change to temp directory" "Dir: $TEMP_DIR"
+        local checkout_output
+        checkout_output=$(git checkout -q "$PAPER_COMMIT" 2>&1) || {
+            error_exit "Failed to checkout commit" "Command output: $checkout_output"
+        }
     fi
+    
+    log "INFO" "Repository prepared successfully"
 }
 
-# Find the base name for paper files
+# Find the source file base name
 find_base_name() {
-    local dir="$1"
+    local dir=$1
     local base=""
     
     # Try _quarto.yml first
@@ -143,39 +134,42 @@ find_base_name() {
     
     # Fallback to finding files
     for ext in "qmd" "ipynb"; do
-        local files=("$dir"/*."$ext")
-        if [ -f "${files[0]}" ]; then
-            basename "${files[0]}" ".$ext"
-            return 0
-        fi
+        for file in "$dir"/*."$ext"; do
+            [ -f "$file" ] && basename "$file" ".$ext" && return 0
+        done
     done
     
     return 1
 }
 
-# Copy paper files to target directory
-copy_paper_files() {
-    local source_dir="$1"
-    local base_name="$2"
+# Copy files to target directories
+copy_files() {
+    local source_dir=$1
+    local base_name=$2
     
     mkdir -p "$PAPER_DIR"
     
-    # Copy main files
-    for ext in "quarto_ipynb" "ipynb" "qmd"; do
+    # Copy main paper files
+    for ext in "${PAPER_EXTENSIONS[@]}"; do
         [ -f "$source_dir/${base_name}.${ext}" ] && \
             cp "$source_dir/${base_name}.${ext}" "$PAPER_DIR/"
     done
 
-    # Copy supporting files and directories
+    # Copy support files
     [ -f "$source_dir/references.bib" ] && cp "$source_dir/references.bib" "$PAPER_DIR/"
-    [ -d "$source_dir/figures" ] && cp -r "$source_dir/figures" "$PAPER_DIR/"
-    [ -d "$source_dir/_tex" ] && cp -r "$source_dir/_tex" "$PAPER_DIR/"
+    
+    # Copy support directories
+    for dir in "${SUPPORT_DIRS[@]}"; do
+        [ -d "$source_dir/$dir" ] && cp -r "$source_dir/$dir" "$PAPER_DIR/"
+    done
+    
+    # Copy base-name specific directory
     [ -d "$source_dir/${base_name}_files" ] && \
         cp -r "$source_dir/${base_name}_files" "$PAPER_DIR/"
-    
-    # Copy freeze directory if it exists
+        
+    # Handle freeze directory
     local freeze_source="$source_dir/_freeze/${base_name}"
-    local freeze_target="$ORIGINAL_DIR/_freeze/research/papers/${PAPER_TARGET_FOLDER}/${base_name}"
+    local freeze_target="_freeze/research/papers/${PAPER_TARGET_FOLDER}/${base_name}"
     
     if [ -d "$freeze_source" ]; then
         mkdir -p "$freeze_target"
@@ -183,37 +177,49 @@ copy_paper_files() {
     fi
 }
 
-# Main execution starts here
+# Enhance main function with better error context
 main() {
-    log "INFO" "Starting paper fetch process..."
+    log "INFO" "Starting paper fetch..."
     
     validate_environment
     
-    ORIGINAL_DIR="$(pwd)"
-    PAPER_DIR="${ORIGINAL_DIR}/research/papers/${PAPER_TARGET_FOLDER}"
+    PAPER_DIR="research/papers/${PAPER_TARGET_FOLDER}"
     LAST_COMMIT_FILE="$PAPER_DIR/last_commit.txt"
-    TEMP_DIR="$(mktemp -d)" || error_exit "Failed to create temporary directory"
+    
+    # Create temp directory with error handling
+    TEMP_DIR=$(mktemp -d) || error_exit "Failed to create temp directory"
+    [ -d "$TEMP_DIR" ] || error_exit "Temp directory does not exist" "Dir: $TEMP_DIR"
 
     get_repo_info
-
-    if ! check_update_needed; then
+    
+    # Skip if up-to-date unless force update
+    if [ "${PAPER_FORCE_UPDATE:-false}" != "true" ] && \
+       [ -f "$LAST_COMMIT_FILE" ] && \
+       [ "$(cat "$LAST_COMMIT_FILE")" = "$LATEST_COMMIT" ]; then
+        log "INFO" "Paper is up-to-date"
         exit 0
     fi
 
-    clone_repository
-    
-    cd "$TEMP_DIR" || error_exit "Failed to change to temporary directory"
+    prepare_repository
     
     local base_name
-    base_name=$(find_base_name "$TEMP_DIR") || \
-        error_exit "Could not find paper source file"
+    base_name=$(find_base_name "$TEMP_DIR") || {
+        error_exit "Could not find paper source file" "Contents: $(ls -la "$TEMP_DIR")"
+    }
 
-    copy_paper_files "$TEMP_DIR" "$base_name"
+    copy_files "$TEMP_DIR" "$base_name" || {
+        error_exit "Failed to copy files" "Base name: $base_name"
+    }
     
-    echo "$LATEST_COMMIT" > "$LAST_COMMIT_FILE"
-
+    echo "$LATEST_COMMIT" > "$LAST_COMMIT_FILE" || {
+        error_exit "Failed to save commit hash" "File: $LAST_COMMIT_FILE"
+    }
+    
     log "INFO" "Paper successfully processed"
 }
 
-# Run main function
+# Trap all errors for better debugging
+trap 'error_exit "Script failed" "Line: $LINENO, Command: $BASH_COMMAND"' ERR
+
+# Run main with error handling
 main "$@"
