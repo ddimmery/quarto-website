@@ -1,0 +1,180 @@
+---
+title: |
+  Managing Independent Quarto Papers in an Academic Website
+date: "2024-10-28"
+categories:
+  - podcast
+engine: markdown
+image: https://deow9bq0xqvbj.cloudfront.net/ep-logo/pbblog17880821/Ep2_5ddkiu.jpg
+sidebar: false
+citation: false
+---
+
+# Managing Independent Quarto Papers in an Academic Website
+
+## The Problem: Paper Dependencies in Academic Websites
+
+When publishing academic papers as Quarto documents, each paper often requires its own specific set of packages and dependencies. While this is manageable when papers are developed independently, it becomes problematic when trying to host multiple papers on a single Quarto website.
+
+Consider a typical academic website structure with several papers:
+
+```
+my-academic-website/
+├── research/
+│   ├── paper1/  # Uses numpy 1.20
+│   ├── paper2/  # Requires numpy 1.24
+│   └── paper3/  # Needs latest numpy
+└── _quarto.yml
+```
+
+Since Quarto renders all content using the same virtual environment, version conflicts become inevitable as your collection of papers grows. Each new paper might use updated versions of packages, breaking compatibility with older papers.
+
+## A Solution: Pre-rendered Paper Integration
+
+Instead of rendering all papers within the website's environment, we can:
+
+1. Maintain each paper in its own repository with its specific dependencies
+2. Pre-render the paper in its own environment
+3. Pull the rendered content into the main website
+
+This approach provides several benefits:
+
+- Papers remain independently reproducible
+- Each paper maintains its own dependency environment
+- The main website remains stable
+- Papers can be developed and tested separately
+
+## Implementation
+
+The solution consists of three main components:
+
+### 1. Configuration File (`_paper_sources.yml`)
+Define which papers to include and where they should go:
+
+```yaml
+papers:
+  - repo_url: "https://github.com/username/paper1.git"
+    target_folder: "paper1"
+  - repo_url: "https://github.com/username/paper2.git"
+    target_folder: "paper2"
+```
+
+### 2. Paper Fetcher Script
+
+The fetcher script runs as a pre-render step in your Quarto website build process. Add to `_quarto.yml`:
+
+```yaml
+project:
+  pre-render: "python fetch_papers.py"
+```
+
+The script:
+
+- Reads the paper configuration
+- Clones each paper repository
+- Copies pre-rendered content to the appropriate website location
+- Maintains Quarto's freeze directory structure
+
+### 3. Individual Paper Repositories
+
+Each paper repository contains:
+
+- Quarto source files (.qmd or .ipynb)
+- Paper-specific dependencies
+- Pre-rendered content
+- Supporting files (figures, references, etc.)
+
+Importantly, the papers need to be rendered with freeze enabled, keeping the `ipynb`, and the html render cannot use `embed_resources`.
+
+## The Code
+
+You can find the scripts for this process within the repo for my own personal website: [https://github.com/MitchellAcoustics/quarto-website](https://github.com/MitchellAcoustics/quarto-website)
+
+The basic fetch process is managed by two scripts:
+
+1. A Python controller that handles multiple papers:
+
+```python
+@dataclass
+class PaperSource:
+    repo_url: str
+    target_folder: str
+    branch: Optional[str] = None
+    commit: Optional[str] = None
+
+class PaperFetcher:
+    def process_paper(self, paper: PaperSource) -> bool:
+        """Process a single paper."""
+        try:
+            # Set up environment for bash script
+            env = {
+                'PAPER_REPO_URL': paper.repo_url,
+                'PAPER_TARGET_FOLDER': paper.target_folder,
+                'PAPER_FORCE_UPDATE': str(self.force_update).lower()
+            }
+            
+            # Run the fetch script
+            subprocess.run([self.script_path], env=env, check=True)
+            return True
+            
+        except subprocess.CalledProcessError as e:
+            # Clean up on failure
+            self.cleanup_paper_directory(paper.target_folder)
+            return False
+```
+
+2. A bash script that handles the actual fetching:
+
+```bash
+# Copy paper files to target directories
+copy_files() {
+    local source_dir=$1
+    local base_name=$2
+    
+    # Copy main paper files
+    for ext in "quarto_ipynb" "ipynb" "qmd"; do
+        [ -f "$source_dir/${base_name}.${ext}" ] && \
+            cp "$source_dir/${base_name}.${ext}" "$PAPER_DIR/"
+    done
+
+    # Copy supporting files
+    [ -f "$source_dir/references.bib" ] && \
+        cp "$source_dir/references.bib" "$PAPER_DIR/"
+    
+    # Copy support directories (figures, tex)
+    for dir in "figures" "_tex"; do
+        [ -d "$source_dir/$dir" ] && \
+            cp -r "$source_dir/$dir" "$PAPER_DIR/"
+    done
+    
+    # Handle freeze directory
+    local freeze_source="$source_dir/_freeze/${base_name}"
+    local freeze_target="_freeze/research/papers/${PAPER_TARGET_FOLDER}/${base_name}"
+    
+    if [ -d "$freeze_source" ]; then
+        mkdir -p "$freeze_target"
+        cp -r "$freeze_source"/* "$freeze_target/"
+    fi
+}
+```
+
+## The Result
+
+After running the fetch process, papers are integrated into the website with this structure:
+
+```
+website/
+├── research/papers/
+│   ├── paper1/
+│   │   ├── paper.qmd
+│   │   ├── figures/
+│   │   └── references.bib
+│   └── paper2/
+└── _freeze/research/papers/
+    ├── paper1/
+    └── paper2/
+```
+
+Each paper maintains its own integrity while being seamlessly integrated into the main website. Papers can be developed independently with their own dependencies, yet still appear as a cohesive part of your academic website.
+
+This solution, while specific to my needs, demonstrates how to manage complex document dependencies in Quarto projects. The key is leveraging Quarto's pre-render hooks and freeze directory structure to integrate pre-rendered content while maintaining independent development environments for each paper.

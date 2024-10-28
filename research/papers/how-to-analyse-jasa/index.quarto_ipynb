@@ -138,7 +138,7 @@
         "\n",
         "We therefore present a visualisation in @fig-circ of the soundscape assessments of several urban spaces included in the ISD [@Mitchell2021International] which reflects these goals. The specific locations selected from the ISD are chosen for demonstration only and these methods can be applied to any location. Rather than attempting to represent a single individual's soundscape or of describing a location's soundscape as a single average assessment (as in @Mitchell2021Investigating), this representation shows the whole range of perception of the users of the space. First, rather than calculating the median response to each PA in the location, then calculating the circumplex coordinates, the coordinates for each individual response are calculated. This results in a vector of ISOPleasant, ISOEventful values which are continuous variables from -1 to +1 and can be analysed statistically by calculating summary statistics (mean, standard deviation, quantiles, etc.) and through the use of regression modelling, which can often be simpler and more familiar than the recommended methods of analysing ordinal data. This also enables each individual's response to be placed within the pleasant-eventful space. All of the responses for a location can then be plotted, giving an overall scatter plot for a location, as demonstrated in @fig-circ-1.\n"
       ],
-      "id": "26eff8f2"
+      "id": "c53484c0"
     },
     {
       "cell_type": "code",
@@ -279,7 +279,7 @@
         "\n",
         "# References {.unnumbered}"
       ],
-      "id": "0392639c"
+      "id": "52002fcd"
     }
   ],
   "metadata": {
