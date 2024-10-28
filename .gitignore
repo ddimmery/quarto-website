@@ -7,3 +7,4 @@
 /site_libs/
 .idea
 *.DS_Store
+/.luarc.json
