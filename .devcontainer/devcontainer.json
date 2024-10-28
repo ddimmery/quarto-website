@@ -40,7 +40,7 @@
         "terminal.integrated.defaultProfile.linux": "zsh",
         // ruff settings
         "[python]": {
-          "defaultInterpreterPath": "opt/.venv/bin/python",
+          "defaultInterpreterPath": "/opt/.venv/bin/python",
           "editor.formatOnSave": true,
           "editor.codeActionsOnSave": {
             "source.fixAll": "explicit",

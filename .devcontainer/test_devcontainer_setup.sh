@@ -48,6 +48,7 @@ FAILED_TESTS=()
 
 # Test Python setup
 if [ "$setup_uv" = true ]; then
+    run_test "venv activation" "source /opt/bin/.venv/activate
     run_test "Python version" "python --version"
     run_test "uv installation" "uv --version"
     run_test "Virtual environment activation" "which python | grep -q .venv"
