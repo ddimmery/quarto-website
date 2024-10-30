@@ -2,5 +2,6 @@
 papers:
   - repo_url: "https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git"
     target_folder: "2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData"
-  # - repo_url: "https://github.com/username/another-paper-repo.git"
-  #   target_folder: "another_paper"
+  - repo_url: "https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index"
+    target_folder: "2024-10-30_JASA1112_SPI"
+    branch: "dev"

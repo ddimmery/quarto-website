@@ -19,7 +19,7 @@
         "\n",
         "You can download my PhD Thesis, titled [*Predictive Modelling of Complex Urban Soundscapes: Enabling an engineeering approach to soundscape design*](./Andrew%20Mitchell%20PhD%20Thesis%20Final.pdf).\n"
       ],
-      "id": "7c60ae84"
+      "id": "7a2683d9"
     },
     {
       "cell_type": "code",
@@ -142,7 +142,7 @@
         "            \"<li class='list-group-item'>\" + pub_str + \"<br>\" + \" \".join(buttons) + \"</li>\"\n",
         "        )"
       ],
-      "id": "113660c2",
+      "id": "93772eeb",
       "execution_count": null,
       "outputs": []
     },
@@ -152,7 +152,7 @@
       "source": [
         "## Journal Papers\n"
       ],
-      "id": "c8b19097"
+      "id": "0f507afb"
     },
     {
       "cell_type": "code",
@@ -176,7 +176,7 @@
       "source": [
         "## Conference Papers\n"
       ],
-      "id": "87940d73"
+      "id": "8206ae5c"
     },
     {
       "cell_type": "code",
@@ -200,7 +200,7 @@
       "source": [
         "## Other Publications\n"
       ],
-      "id": "18473bea"
+      "id": "19e08bac"
     },
     {
       "cell_type": "code",
@@ -224,7 +224,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/opt/.venv/share/jupyter/kernels/python3"
+      "path": "/Users/mitch/Documents/GitHub/quarto-website/.venv/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,

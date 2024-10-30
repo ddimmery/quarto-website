@@ -1,0 +1,43 @@
+project:
+  type: default
+  output-dir: paper
+
+# manuscript:
+#   article: paper.qmd
+#   notebooks:
+#     - notebook1.ipynb
+#     - notebook2.ipynb
+
+format:
+  html:
+    # clean: true
+    toc: true
+    code-fold: true
+    # embed-resources: true
+    self-contained-math: true
+    output-file: paper.html
+    comments:
+      hypothesis: true
+  # docx: default
+  # jats: default
+  # typst: default
+  elsevier-pdf:
+    # latex-clean: true
+    latex-output-dir: paper/_tex
+    keep-tex: false
+    output-file: paper.pdf
+    hyperrefoptions: 
+      - "citecolor=black"
+    echo: false
+    journal:
+      name: JASA-EL
+      formatting: preprint
+      model: 3p
+      cite-style: authoryear
+
+  # (other formats)
+  # pdf: default
+
+execute:
+  freeze: auto
+  keep-ipynb: true

@@ -17,7 +17,7 @@
         "keep-ipynb: true\n",
         "---"
       ],
-      "id": "f720ec31"
+      "id": "cb9feb69"
     },
     {
       "cell_type": "code",
@@ -67,7 +67,7 @@
       "name": "python3",
       "language": "python",
       "display_name": "Python 3 (ipykernel)",
-      "path": "/opt/.venv/share/jupyter/kernels/python3"
+      "path": "/Users/mitch/Documents/GitHub/quarto-website/.venv/share/jupyter/kernels/python3"
     }
   },
   "nbformat": 4,
