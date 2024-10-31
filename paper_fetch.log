@@ -4589,3 +4589,1255 @@ project:
 2024-10-31 14:10:59 | INFO     | __main__:main:522 | ════════════════════════════════════════════════════════════════════════════════
 2024-10-31 14:10:59 | SUCCESS  | __main__:main:523 | ✅ All papers processed successfully (2/2)
 2024-10-31 14:10:59 | INFO     | __main__:main:526 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:14 | INFO     | __main__:main:497                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:14 | SUCCESS  | __main__:main:498                  | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:31:14 | INFO     | __main__:main:499                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:14 | INFO     | __main__:wrapper:70                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:31:14 | SUCCESS  | __main__:process:335                  | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:31:14 | DEBUG    | __main__:process:336                  | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:31:14 | DEBUG    | __main__:process:337                  | Branch: None
+2024-10-31 14:31:14 | DEBUG    | __main__:process:338                  | Commit: None
+2024-10-31 14:31:15 | INFO     | __main__:wrapper:95                   | ▶ Checking repository status
+2024-10-31 14:31:15 | SUCCESS  | __main__:_check_if_updated:374                  |   ✓ Paper is up to date (commit: a9f5077d891d5a64816dc18844fbf12e2a2b9dae)
+2024-10-31 14:31:15 | INFO     | __main__:wrapper:78                   | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:31:15 | INFO     | __main__:wrapper:70                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:31:15 | SUCCESS  | __main__:process:335                  | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:31:15 | DEBUG    | __main__:process:336                  | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:31:15 | DEBUG    | __main__:process:337                  | Branch: dev
+2024-10-31 14:31:15 | DEBUG    | __main__:process:338                  | Commit: None
+2024-10-31 14:31:15 | INFO     | __main__:wrapper:95                   | ▶ Checking repository status
+2024-10-31 14:31:15 | SUCCESS  | __main__:_check_if_updated:374                  |   ✓ Paper is up to date (commit: 92d7e82ca139a56def4607a35b14ce6dd1202bdb)
+2024-10-31 14:31:15 | INFO     | __main__:wrapper:78                   | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:31:15 | INFO     | __main__:main:522                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:15 | SUCCESS  | __main__:main:523                  | ✅ All papers processed successfully (2/2)
+2024-10-31 14:31:15 | INFO     | __main__:main:526                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:22 | INFO     | __main__:main:497                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:22 | SUCCESS  | __main__:main:498                  | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:31:22 | INFO     | __main__:main:499                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:22 | INFO     | __main__:wrapper:70                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:31:22 | SUCCESS  | __main__:process:335                  | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:31:22 | DEBUG    | __main__:process:336                  | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:31:22 | DEBUG    | __main__:process:337                  | Branch: None
+2024-10-31 14:31:22 | DEBUG    | __main__:process:338                  | Commit: None
+2024-10-31 14:31:22 | INFO     | __main__:wrapper:95                   | ▶ Checking repository status
+2024-10-31 14:31:22 | INFO     | __main__:wrapper:95                   | ▶ Cloning repository
+2024-10-31 14:31:22 | INFO     | __main__:_clone_repo:405                  |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:31:23 | INFO     | __main__:wrapper:95                   | ▶ Copying files
+2024-10-31 14:31:23 | INFO     | __main__:_copy_files:425                  |   📋 Starting file copy
+2024-10-31 14:31:23 | INFO     | __main__:wrapper:95                   | ▶ Loading Quarto configuration
+2024-10-31 14:31:23 | DEBUG    | __main__:_load_config:148                  |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:31:23 | DEBUG    | __main__:_determine_project_type:156                  |   Determined project type: default
+2024-10-31 14:31:23 | DEBUG    | __main__:_find_main_doc:186                  |   Searching for main document
+2024-10-31 14:31:23 | SUCCESS  | __main__:_find_main_doc:197                  |   Found main document with common name: paper.qmd
+2024-10-31 14:31:23 | DEBUG    | __main__:__init__:137                  |   Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:31:23 | INFO     | __main__:wrapper:95                   | ▶ Analyzing project structure
+2024-10-31 14:31:23 | DEBUG    | __main__:_get_bibliography_files:213                  |   Collecting bibliography files
+2024-10-31 14:31:23 | INFO     | __main__:_get_bibliography_files:224                  |   Found bibliography files in filesystem:
+2024-10-31 14:31:23 | INFO     | __main__:_get_bibliography_files:226                  |     └── references.bib
+2024-10-31 14:31:23 | DEBUG    | __main__:_get_notebooks:236                  |   Collecting notebooks for default project
+2024-10-31 14:31:23 | DEBUG    | __main__:_get_support_directories:276                  |   Collecting support directories
+2024-10-31 14:31:23 | INFO     | __main__:_get_support_directories:286                  |   Found support directories:
+2024-10-31 14:31:23 | INFO     | __main__:_get_support_directories:288                  |     └── figures
+2024-10-31 14:31:23 | DEBUG    | __main__:_get_freeze_directories:293                  |   Collecting freeze directories for default project
+2024-10-31 14:31:23 | SUCCESS  | __main__:_get_freeze_directories:302                  |   Found default project freeze directory: _freeze/paper
+2024-10-31 14:31:23 | INFO     | __main__:get_files:173                  |   📁 Collected files:
+2024-10-31 14:31:23 | INFO     | __main__:get_files:174                  |   └── 📄 Standard files:
+2024-10-31 14:31:23 | INFO     | __main__:get_files:176                  |       └── _quarto.yml
+2024-10-31 14:31:23 | INFO     | __main__:get_files:176                  |       └── figures
+2024-10-31 14:31:23 | INFO     | __main__:get_files:176                  |       └── paper.qmd
+2024-10-31 14:31:23 | INFO     | __main__:get_files:176                  |       └── references.bib
+2024-10-31 14:31:23 | INFO     | __main__:get_files:177                  |   └── 🧊 Freeze files:
+2024-10-31 14:31:23 | INFO     | __main__:get_files:179                  |       └── _freeze/paper
+2024-10-31 14:31:23 | INFO     | __main__:_copy_files:432                  |   Copying standard files:
+2024-10-31 14:31:23 | INFO     | __main__:_copy_files:444                  |     └── Copied directory: figures
+2024-10-31 14:31:24 | INFO     | __main__:_copy_files:441                  |     └── Copied file: paper.qmd
+2024-10-31 14:31:24 | INFO     | __main__:_copy_files:441                  |     └── Copied file: _quarto.yml
+2024-10-31 14:31:24 | INFO     | __main__:_copy_files:441                  |     └── Copied file: references.bib
+2024-10-31 14:31:24 | INFO     | __main__:_copy_files:450                  |   Copying freeze files:
+2024-10-31 14:31:24 | INFO     | __main__:_copy_files:457                  |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:31:24 | INFO     | __main__:wrapper:95                   | ▶ Saving commit information
+2024-10-31 14:31:24 | INFO     | __main__:_save_commit:397                  |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:31:24 | DEBUG    | __main__:_save_commit:400                  |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:31:24 | SUCCESS  | __main__:process:360                  | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:31:24 | INFO     | __main__:wrapper:78                   | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:31:24 | INFO     | __main__:wrapper:70                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:31:24 | SUCCESS  | __main__:process:335                  | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:31:24 | DEBUG    | __main__:process:336                  | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:31:24 | DEBUG    | __main__:process:337                  | Branch: dev
+2024-10-31 14:31:24 | DEBUG    | __main__:process:338                  | Commit: None
+2024-10-31 14:31:24 | INFO     | __main__:wrapper:95                   | ▶ Checking repository status
+2024-10-31 14:31:24 | INFO     | __main__:wrapper:95                   | ▶ Cloning repository
+2024-10-31 14:31:24 | INFO     | __main__:_clone_repo:405                  |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:31:32 | INFO     | __main__:wrapper:95                   | ▶ Copying files
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:425                  |   📋 Starting file copy
+2024-10-31 14:31:32 | INFO     | __main__:wrapper:95                   | ▶ Loading Quarto configuration
+2024-10-31 14:31:32 | DEBUG    | __main__:_load_config:148                  |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:31:32 | DEBUG    | __main__:_determine_project_type:156                  |   Determined project type: manuscript
+2024-10-31 14:31:32 | DEBUG    | __main__:_find_main_doc:186                  |   Searching for main document
+2024-10-31 14:31:32 | SUCCESS  | __main__:_find_main_doc:191                  |   Found main document in manuscript config: index.qmd
+2024-10-31 14:31:32 | DEBUG    | __main__:__init__:137                  |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:31:32 | INFO     | __main__:wrapper:95                   | ▶ Analyzing project structure
+2024-10-31 14:31:32 | DEBUG    | __main__:_get_bibliography_files:213                  |   Collecting bibliography files
+2024-10-31 14:31:32 | INFO     | __main__:_get_bibliography_files:218                  |   Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:31:32 | INFO     | __main__:_get_bibliography_files:224                  |   Found bibliography files in filesystem:
+2024-10-31 14:31:32 | INFO     | __main__:_get_bibliography_files:226                  |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:31:32 | DEBUG    | __main__:_get_notebooks:236                  |   Collecting notebooks for manuscript project
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:243                  |   Found notebooks in manuscript config:
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:245                  |     └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:245                  |     └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:259                  |   Found embedded notebooks:
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:261                  |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:_get_notebooks:261                  |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:31:32 | DEBUG    | __main__:_get_support_directories:276                  |   Collecting support directories
+2024-10-31 14:31:32 | INFO     | __main__:_get_support_directories:286                  |   Found support directories:
+2024-10-31 14:31:32 | INFO     | __main__:_get_support_directories:288                  |     └── figures
+2024-10-31 14:31:32 | INFO     | __main__:_get_support_directories:288                  |     └── notebooks
+2024-10-31 14:31:32 | DEBUG    | __main__:_get_freeze_directories:293                  |   Collecting freeze directories for manuscript project
+2024-10-31 14:31:32 | INFO     | __main__:get_files:173                  |   📁 Collected files:
+2024-10-31 14:31:32 | INFO     | __main__:get_files:174                  |   └── 📄 Standard files:
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── FellowshipRefs-biblatex.bib
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── _quarto.yml
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── figures
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── index.qmd
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── notebooks
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:get_files:176                  |       └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:get_files:177                  |   └── 🧊 Freeze files:
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:432                  |   Copying standard files:
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:444                  |     └── Copied directory: notebooks
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:441                  |     └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:441                  |     └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:444                  |     └── Copied directory: figures
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:441                  |     └── Copied file: _quarto.yml
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:441                  |     └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:31:32 | INFO     | __main__:_copy_files:441                  |     └── Copied file: index.qmd
+2024-10-31 14:31:32 | INFO     | __main__:wrapper:95                   | ▶ Saving commit information
+2024-10-31 14:31:32 | INFO     | __main__:_save_commit:397                  |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:31:32 | DEBUG    | __main__:_save_commit:400                  |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:31:32 | SUCCESS  | __main__:process:360                  | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:31:32 | INFO     | __main__:wrapper:78                   | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:31:32 | INFO     | __main__:main:522                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:31:32 | SUCCESS  | __main__:main:523                  | ✅ All papers processed successfully (2/2)
+2024-10-31 14:31:32 | INFO     | __main__:main:526                  | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:33:12 | INFO     | __main__:main:496 | ════════════════════════════════════════════════════════════════════════════════2024-10-31 14:33:12 | SUCCESS  | __main__:main:497 | 🚀 QUARTO PAPER FETCHER2024-10-31 14:33:12 | INFO     | __main__:main:498 | ════════════════════════════════════════════════════════════════════════════════2024-10-31 14:33:12 | INFO     | __main__:wrapper:69 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════2024-10-31 14:33:12 | SUCCESS  | __main__:process:334 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData2024-10-31 14:33:12 | DEBUG    | __main__:process:335 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git2024-10-31 14:33:12 | DEBUG    | __main__:process:336 | Branch: None2024-10-31 14:33:12 | DEBUG    | __main__:process:337 | Commit: None2024-10-31 14:33:13 | INFO     | __main__:wrapper:94 | ▶ Checking repository status2024-10-31 14:33:13 | INFO     | __main__:wrapper:94 | ▶ Cloning repository2024-10-31 14:33:13 | INFO     | __main__:_clone_repo:404 |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Copying files2024-10-31 14:33:14 | INFO     | __main__:_copy_files:424 |   📋 Starting file copy2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Loading Quarto configuration2024-10-31 14:33:14 | DEBUG    | __main__:_load_config:147 |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+2024-10-31 14:33:14 | DEBUG    | __main__:_determine_project_type:155 |   Determined project type: default2024-10-31 14:33:14 | DEBUG    | __main__:_find_main_doc:185 |   Searching for main document2024-10-31 14:33:14 | SUCCESS  | __main__:_find_main_doc:196 |   Found main document with common name: paper.qmd2024-10-31 14:33:14 | DEBUG    | __main__:__init__:136 |   Initialized QuartoProject: type=default, main_doc=paper.qmd2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Analyzing project structure2024-10-31 14:33:14 | DEBUG    | __main__:_get_bibliography_files:212 |   Collecting bibliography files2024-10-31 14:33:14 | INFO     | __main__:_get_bibliography_files:223 |   Found bibliography files in filesystem:2024-10-31 14:33:14 | INFO     | __main__:_get_bibliography_files:225 |     └── references.bib2024-10-31 14:33:14 | DEBUG    | __main__:_get_notebooks:235 |   Collecting notebooks for default project2024-10-31 14:33:14 | DEBUG    | __main__:_get_support_directories:275 |   Collecting support directories2024-10-31 14:33:14 | INFO     | __main__:_get_support_directories:285 |   Found support directories:2024-10-31 14:33:14 | INFO     | __main__:_get_support_directories:287 |     └── figures2024-10-31 14:33:14 | DEBUG    | __main__:_get_freeze_directories:292 |   Collecting freeze directories for default project2024-10-31 14:33:14 | SUCCESS  | __main__:_get_freeze_directories:301 |   Found default project freeze directory: _freeze/paper2024-10-31 14:33:14 | INFO     | __main__:get_files:172 |   📁 Collected files:2024-10-31 14:33:14 | INFO     | __main__:get_files:173 |   └── 📄 Standard files:2024-10-31 14:33:14 | INFO     | __main__:get_files:175 |       └── _quarto.yml2024-10-31 14:33:14 | INFO     | __main__:get_files:175 |       └── figures2024-10-31 14:33:14 | INFO     | __main__:get_files:175 |       └── paper.qmd2024-10-31 14:33:14 | INFO     | __main__:get_files:175 |       └── references.bib2024-10-31 14:33:14 | INFO     | __main__:get_files:176 |   └── 🧊 Freeze files:2024-10-31 14:33:14 | INFO     | __main__:get_files:178 |       └── _freeze/paper2024-10-31 14:33:14 | INFO     | __main__:_copy_files:431 |   Copying standard files:2024-10-31 14:33:14 | INFO     | __main__:_copy_files:440 |     └── Copied file: references.bib2024-10-31 14:33:14 | INFO     | __main__:_copy_files:440 |     └── Copied file: _quarto.yml2024-10-31 14:33:14 | INFO     | __main__:_copy_files:443 |     └── Copied directory: figures2024-10-31 14:33:14 | INFO     | __main__:_copy_files:440 |     └── Copied file: paper.qmd2024-10-31 14:33:14 | INFO     | __main__:_copy_files:449 |   Copying freeze files:2024-10-31 14:33:14 | INFO     | __main__:_copy_files:456 |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Saving commit information2024-10-31 14:33:14 | INFO     | __main__:_save_commit:396 |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae2024-10-31 14:33:14 | DEBUG    | __main__:_save_commit:399 |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt2024-10-31 14:33:14 | SUCCESS  | __main__:process:359 | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData2024-10-31 14:33:14 | INFO     | __main__:wrapper:77 | ═════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:33:14 | INFO     | __main__:wrapper:69 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════2024-10-31 14:33:14 | SUCCESS  | __main__:process:334 | 📑 Processing paper: 2024-10-30_JASA1112_SPI2024-10-31 14:33:14 | DEBUG    | __main__:process:335 | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index2024-10-31 14:33:14 | DEBUG    | __main__:process:336 | Branch: dev2024-10-31 14:33:14 | DEBUG    | __main__:process:337 | Commit: None2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Checking repository status2024-10-31 14:33:14 | INFO     | __main__:wrapper:94 | ▶ Cloning repository2024-10-31 14:33:14 | INFO     | __main__:_clone_repo:404 |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index2024-10-31 14:33:18 | INFO     | __main__:wrapper:94 | ▶ Copying files2024-10-31 14:33:18 | INFO     | __main__:_copy_files:424 |   📋 Starting file copy2024-10-31 14:33:18 | INFO     | __main__:wrapper:94 | ▶ Loading Quarto configuration2024-10-31 14:33:18 | DEBUG    | __main__:_load_config:147 |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+2024-10-31 14:33:18 | DEBUG    | __main__:_determine_project_type:155 |   Determined project type: manuscript2024-10-31 14:33:18 | DEBUG    | __main__:_find_main_doc:185 |   Searching for main document2024-10-31 14:33:18 | SUCCESS  | __main__:_find_main_doc:190 |   Found main document in manuscript config: index.qmd2024-10-31 14:33:18 | DEBUG    | __main__:__init__:136 |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd2024-10-31 14:33:18 | INFO     | __main__:wrapper:94 | ▶ Analyzing project structure2024-10-31 14:33:18 | DEBUG    | __main__:_get_bibliography_files:212 |   Collecting bibliography files2024-10-31 14:33:18 | INFO     | __main__:_get_bibliography_files:217 |   Found bibliography in config: FellowshipRefs-biblatex.bib2024-10-31 14:33:18 | INFO     | __main__:_get_bibliography_files:223 |   Found bibliography files in filesystem:2024-10-31 14:33:18 | INFO     | __main__:_get_bibliography_files:225 |     └── FellowshipRefs-biblatex.bib2024-10-31 14:33:18 | DEBUG    | __main__:_get_notebooks:235 |   Collecting notebooks for manuscript project2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:242 |   Found notebooks in manuscript config:2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:244 |     └── ./notebooks/SingleIndex-Code.ipynb2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:244 |     └── ./notebooks/TargetOptimization.ipynb2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:258 |   Found embedded notebooks:2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:260 |     └── notebooks/SingleIndex-Code.ipynb2024-10-31 14:33:18 | INFO     | __main__:_get_notebooks:260 |     └── notebooks/TargetOptimization.ipynb2024-10-31 14:33:18 | DEBUG    | __main__:_get_support_directories:275 |   Collecting support directories2024-10-31 14:33:18 | INFO     | __main__:_get_support_directories:285 |   Found support directories:2024-10-31 14:33:18 | INFO     | __main__:_get_support_directories:287 |     └── figures2024-10-31 14:33:18 | INFO     | __main__:_get_support_directories:287 |     └── notebooks2024-10-31 14:33:18 | DEBUG    | __main__:_get_freeze_directories:292 |   Collecting freeze directories for manuscript project2024-10-31 14:33:18 | INFO     | __main__:get_files:172 |   📁 Collected files:2024-10-31 14:33:18 | INFO     | __main__:get_files:173 |   └── 📄 Standard files:2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── FellowshipRefs-biblatex.bib2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── _quarto.yml2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── figures2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── index.qmd2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── notebooks2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── notebooks/SingleIndex-Code.ipynb2024-10-31 14:33:18 | INFO     | __main__:get_files:175 |       └── notebooks/TargetOptimization.ipynb2024-10-31 14:33:18 | INFO     | __main__:get_files:176 |   └── 🧊 Freeze files:2024-10-31 14:33:18 | INFO     | __main__:_copy_files:431 |   Copying standard files:2024-10-31 14:33:18 | INFO     | __main__:_copy_files:443 |     └── Copied directory: notebooks2024-10-31 14:33:18 | INFO     | __main__:_copy_files:440 |     └── Copied file: _quarto.yml2024-10-31 14:33:18 | INFO     | __main__:_copy_files:440 |     └── Copied file: FellowshipRefs-biblatex.bib2024-10-31 14:33:18 | INFO     | __main__:_copy_files:440 |     └── Copied file: notebooks/TargetOptimization.ipynb2024-10-31 14:33:18 | INFO     | __main__:_copy_files:440 |     └── Copied file: notebooks/SingleIndex-Code.ipynb2024-10-31 14:33:18 | INFO     | __main__:_copy_files:440 |     └── Copied file: index.qmd2024-10-31 14:33:18 | INFO     | __main__:_copy_files:443 |     └── Copied directory: figures2024-10-31 14:33:18 | INFO     | __main__:wrapper:94 | ▶ Saving commit information2024-10-31 14:33:18 | INFO     | __main__:_save_commit:396 |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb2024-10-31 14:33:18 | DEBUG    | __main__:_save_commit:399 |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt2024-10-31 14:33:18 | SUCCESS  | __main__:process:359 | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI2024-10-31 14:33:18 | INFO     | __main__:wrapper:77 | ═════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:33:18 | INFO     | __main__:main:521 | ════════════════════════════════════════════════════════════════════════════════2024-10-31 14:33:18 | SUCCESS  | __main__:main:522 | ✅ All papers processed successfully (2/2)2024-10-31 14:33:18 | INFO     | __main__:main:525 | ════════════════════════════════════════════════════════════════════════════════2024-10-31 14:35:01 | INFO     | __main__:main:497 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:01 | SUCCESS  | __main__:main:498 | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:35:01 | INFO     | __main__:main:499 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:01 | INFO     | __main__:wrapper:70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:35:01 | SUCCESS  | __main__:process:335 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:35:01 | DEBUG    | __main__:process:336 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:35:01 | DEBUG    | __main__:process:337 | Branch: None
+2024-10-31 14:35:01 | DEBUG    | __main__:process:338 | Commit: None
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Checking repository status
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Cloning repository
+2024-10-31 14:35:02 | INFO     |   __main__:_clone_repo:405 |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Copying files
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:425 |   📋 Starting file copy
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Loading Quarto configuration
+2024-10-31 14:35:02 | DEBUG    |   __main__:_load_config:148 |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:35:02 | DEBUG    |   __main__:_determine_project_type:156 |   Determined project type: default
+2024-10-31 14:35:02 | DEBUG    |   __main__:_find_main_doc:186 |   Searching for main document
+2024-10-31 14:35:02 | SUCCESS  |   __main__:_find_main_doc:197 |   Found main document with common name: paper.qmd
+2024-10-31 14:35:02 | DEBUG    |   __main__:__init__:137 |   Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Analyzing project structure
+2024-10-31 14:35:02 | DEBUG    |   __main__:_get_bibliography_files:213 |   Collecting bibliography files
+2024-10-31 14:35:02 | INFO     |   __main__:_get_bibliography_files:224 |   Found bibliography files in filesystem:
+2024-10-31 14:35:02 | INFO     |   __main__:_get_bibliography_files:226 |     └── references.bib
+2024-10-31 14:35:02 | DEBUG    |   __main__:_get_notebooks:236 |   Collecting notebooks for default project
+2024-10-31 14:35:02 | DEBUG    |   __main__:_get_support_directories:276 |   Collecting support directories
+2024-10-31 14:35:02 | INFO     |   __main__:_get_support_directories:286 |   Found support directories:
+2024-10-31 14:35:02 | INFO     |   __main__:_get_support_directories:288 |     └── figures
+2024-10-31 14:35:02 | DEBUG    |   __main__:_get_freeze_directories:293 |   Collecting freeze directories for default project
+2024-10-31 14:35:02 | SUCCESS  |   __main__:_get_freeze_directories:302 |   Found default project freeze directory: _freeze/paper
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:173 |   📁 Collected files:
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:174 |   └── 📄 Standard files:
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:176 |       └── _quarto.yml
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:176 |       └── figures
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:176 |       └── paper.qmd
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:176 |       └── references.bib
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:177 |   └── 🧊 Freeze files:
+2024-10-31 14:35:02 | INFO     |   __main__:get_files:179 |       └── _freeze/paper
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:432 |   Copying standard files:
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:444 |     └── Copied directory: figures
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:441 |     └── Copied file: paper.qmd
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:441 |     └── Copied file: references.bib
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:441 |     └── Copied file: _quarto.yml
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:450 |   Copying freeze files:
+2024-10-31 14:35:02 | INFO     |   __main__:_copy_files:457 |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:95 | ▶ Saving commit information
+2024-10-31 14:35:02 | INFO     |   __main__:_save_commit:397 |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:35:02 | DEBUG    |   __main__:_save_commit:400 |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:35:02 | SUCCESS  | __main__:process:360 | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:35:02 | INFO     | __main__:wrapper:70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:35:02 | SUCCESS  | __main__:process:335 | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:35:02 | DEBUG    | __main__:process:336 | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:35:02 | DEBUG    | __main__:process:337 | Branch: dev
+2024-10-31 14:35:02 | DEBUG    | __main__:process:338 | Commit: None
+2024-10-31 14:35:03 | INFO     | __main__:wrapper:95 | ▶ Checking repository status
+2024-10-31 14:35:03 | INFO     | __main__:wrapper:95 | ▶ Cloning repository
+2024-10-31 14:35:03 | INFO     |   __main__:_clone_repo:405 |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:35:04 | INFO     | __main__:wrapper:95 | ▶ Copying files
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:425 |   📋 Starting file copy
+2024-10-31 14:35:04 | INFO     | __main__:wrapper:95 | ▶ Loading Quarto configuration
+2024-10-31 14:35:04 | DEBUG    |   __main__:_load_config:148 |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:35:04 | DEBUG    |   __main__:_determine_project_type:156 |   Determined project type: manuscript
+2024-10-31 14:35:04 | DEBUG    |   __main__:_find_main_doc:186 |   Searching for main document
+2024-10-31 14:35:04 | SUCCESS  |   __main__:_find_main_doc:191 |   Found main document in manuscript config: index.qmd
+2024-10-31 14:35:04 | DEBUG    |   __main__:__init__:137 |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:35:04 | INFO     | __main__:wrapper:95 | ▶ Analyzing project structure
+2024-10-31 14:35:04 | DEBUG    |   __main__:_get_bibliography_files:213 |   Collecting bibliography files
+2024-10-31 14:35:04 | INFO     |   __main__:_get_bibliography_files:218 |   Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:35:04 | INFO     |   __main__:_get_bibliography_files:224 |   Found bibliography files in filesystem:
+2024-10-31 14:35:04 | INFO     |   __main__:_get_bibliography_files:226 |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:35:04 | DEBUG    |   __main__:_get_notebooks:236 |   Collecting notebooks for manuscript project
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:243 |   Found notebooks in manuscript config:
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:245 |     └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:245 |     └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:259 |   Found embedded notebooks:
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:261 |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:_get_notebooks:261 |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:04 | DEBUG    |   __main__:_get_support_directories:276 |   Collecting support directories
+2024-10-31 14:35:04 | INFO     |   __main__:_get_support_directories:286 |   Found support directories:
+2024-10-31 14:35:04 | INFO     |   __main__:_get_support_directories:288 |     └── figures
+2024-10-31 14:35:04 | INFO     |   __main__:_get_support_directories:288 |     └── notebooks
+2024-10-31 14:35:04 | DEBUG    |   __main__:_get_freeze_directories:293 |   Collecting freeze directories for manuscript project
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:173 |   📁 Collected files:
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:174 |   └── 📄 Standard files:
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── FellowshipRefs-biblatex.bib
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── _quarto.yml
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── figures
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── index.qmd
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── notebooks
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:176 |       └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:get_files:177 |   └── 🧊 Freeze files:
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:432 |   Copying standard files:
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:444 |     └── Copied directory: notebooks
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:441 |     └── Copied file: index.qmd
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:441 |     └── Copied file: _quarto.yml
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:441 |     └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:441 |     └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:444 |     └── Copied directory: figures
+2024-10-31 14:35:04 | INFO     |   __main__:_copy_files:441 |     └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:04 | INFO     | __main__:wrapper:95 | ▶ Saving commit information
+2024-10-31 14:35:04 | INFO     |   __main__:_save_commit:397 |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:35:04 | DEBUG    |   __main__:_save_commit:400 |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:35:04 | SUCCESS  | __main__:process:360 | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:35:04 | INFO     | __main__:wrapper:78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:35:04 | INFO     | __main__:main:522 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:04 | SUCCESS  | __main__:main:523 | ✅ All papers processed successfully (2/2)
+2024-10-31 14:35:04 | INFO     | __main__:main:526 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:24 | INFO     | __main__:main:497 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:24 | SUCCESS  | __main__:main:498 | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:35:24 | INFO     | __main__:main:499 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:24 | INFO     | __main__:wrapper:70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:35:24 | SUCCESS  | __main__:process:335 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:35:24 | DEBUG    | __main__:process:336 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:35:24 | DEBUG    | __main__:process:337 | Branch: None
+2024-10-31 14:35:24 | DEBUG    | __main__:process:338 | Commit: None
+2024-10-31 14:35:24 | INFO     | __main__:wrapper:95 | ▶ Checking repository status
+2024-10-31 14:35:24 | INFO     | __main__:wrapper:95 | ▶ Cloning repository
+2024-10-31 14:35:24 | INFO     | __main__:_clone_repo:405   |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Copying files
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:425   |   📋 Starting file copy
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Loading Quarto configuration
+2024-10-31 14:35:25 | DEBUG    | __main__:_load_config:148   |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:35:25 | DEBUG    | __main__:_determine_project_type:156   |   Determined project type: default
+2024-10-31 14:35:25 | DEBUG    | __main__:_find_main_doc:186   |   Searching for main document
+2024-10-31 14:35:25 | SUCCESS  | __main__:_find_main_doc:197   |   Found main document with common name: paper.qmd
+2024-10-31 14:35:25 | DEBUG    | __main__:__init__:137   |   Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Analyzing project structure
+2024-10-31 14:35:25 | DEBUG    | __main__:_get_bibliography_files:213   |   Collecting bibliography files
+2024-10-31 14:35:25 | INFO     | __main__:_get_bibliography_files:224   |   Found bibliography files in filesystem:
+2024-10-31 14:35:25 | INFO     | __main__:_get_bibliography_files:226   |     └── references.bib
+2024-10-31 14:35:25 | DEBUG    | __main__:_get_notebooks:236   |   Collecting notebooks for default project
+2024-10-31 14:35:25 | DEBUG    | __main__:_get_support_directories:276   |   Collecting support directories
+2024-10-31 14:35:25 | INFO     | __main__:_get_support_directories:286   |   Found support directories:
+2024-10-31 14:35:25 | INFO     | __main__:_get_support_directories:288   |     └── figures
+2024-10-31 14:35:25 | DEBUG    | __main__:_get_freeze_directories:293   |   Collecting freeze directories for default project
+2024-10-31 14:35:25 | SUCCESS  | __main__:_get_freeze_directories:302   |   Found default project freeze directory: _freeze/paper
+2024-10-31 14:35:25 | INFO     | __main__:get_files:173   |   📁 Collected files:
+2024-10-31 14:35:25 | INFO     | __main__:get_files:174   |   └── 📄 Standard files:
+2024-10-31 14:35:25 | INFO     | __main__:get_files:176   |       └── _quarto.yml
+2024-10-31 14:35:25 | INFO     | __main__:get_files:176   |       └── figures
+2024-10-31 14:35:25 | INFO     | __main__:get_files:176   |       └── paper.qmd
+2024-10-31 14:35:25 | INFO     | __main__:get_files:176   |       └── references.bib
+2024-10-31 14:35:25 | INFO     | __main__:get_files:177   |   └── 🧊 Freeze files:
+2024-10-31 14:35:25 | INFO     | __main__:get_files:179   |       └── _freeze/paper
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:432   |   Copying standard files:
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:444   |     └── Copied directory: figures
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:441   |     └── Copied file: references.bib
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:441   |     └── Copied file: paper.qmd
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:441   |     └── Copied file: _quarto.yml
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:450   |   Copying freeze files:
+2024-10-31 14:35:25 | INFO     | __main__:_copy_files:457   |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Saving commit information
+2024-10-31 14:35:25 | INFO     | __main__:_save_commit:397   |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:35:25 | DEBUG    | __main__:_save_commit:400   |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:35:25 | SUCCESS  | __main__:process:360 | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:35:25 | SUCCESS  | __main__:process:335 | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:35:25 | DEBUG    | __main__:process:336 | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:35:25 | DEBUG    | __main__:process:337 | Branch: dev
+2024-10-31 14:35:25 | DEBUG    | __main__:process:338 | Commit: None
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Checking repository status
+2024-10-31 14:35:25 | INFO     | __main__:wrapper:95 | ▶ Cloning repository
+2024-10-31 14:35:25 | INFO     | __main__:_clone_repo:405   |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:35:28 | INFO     | __main__:wrapper:95 | ▶ Copying files
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:425   |   📋 Starting file copy
+2024-10-31 14:35:28 | INFO     | __main__:wrapper:95 | ▶ Loading Quarto configuration
+2024-10-31 14:35:28 | DEBUG    | __main__:_load_config:148   |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:35:28 | DEBUG    | __main__:_determine_project_type:156   |   Determined project type: manuscript
+2024-10-31 14:35:28 | DEBUG    | __main__:_find_main_doc:186   |   Searching for main document
+2024-10-31 14:35:28 | SUCCESS  | __main__:_find_main_doc:191   |   Found main document in manuscript config: index.qmd
+2024-10-31 14:35:28 | DEBUG    | __main__:__init__:137   |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:35:28 | INFO     | __main__:wrapper:95 | ▶ Analyzing project structure
+2024-10-31 14:35:28 | DEBUG    | __main__:_get_bibliography_files:213   |   Collecting bibliography files
+2024-10-31 14:35:28 | INFO     | __main__:_get_bibliography_files:218   |   Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:35:28 | INFO     | __main__:_get_bibliography_files:224   |   Found bibliography files in filesystem:
+2024-10-31 14:35:28 | INFO     | __main__:_get_bibliography_files:226   |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:35:28 | DEBUG    | __main__:_get_notebooks:236   |   Collecting notebooks for manuscript project
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:243   |   Found notebooks in manuscript config:
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:245   |     └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:245   |     └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:259   |   Found embedded notebooks:
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:261   |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:_get_notebooks:261   |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:28 | DEBUG    | __main__:_get_support_directories:276   |   Collecting support directories
+2024-10-31 14:35:28 | INFO     | __main__:_get_support_directories:286   |   Found support directories:
+2024-10-31 14:35:28 | INFO     | __main__:_get_support_directories:288   |     └── figures
+2024-10-31 14:35:28 | INFO     | __main__:_get_support_directories:288   |     └── notebooks
+2024-10-31 14:35:28 | DEBUG    | __main__:_get_freeze_directories:293   |   Collecting freeze directories for manuscript project
+2024-10-31 14:35:28 | INFO     | __main__:get_files:173   |   📁 Collected files:
+2024-10-31 14:35:28 | INFO     | __main__:get_files:174   |   └── 📄 Standard files:
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── FellowshipRefs-biblatex.bib
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── _quarto.yml
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── figures
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── index.qmd
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── notebooks
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:get_files:176   |       └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:get_files:177   |   └── 🧊 Freeze files:
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:432   |   Copying standard files:
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:444   |     └── Copied directory: notebooks
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:444   |     └── Copied directory: figures
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:441   |     └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:441   |     └── Copied file: _quarto.yml
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:441   |     └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:441   |     └── Copied file: index.qmd
+2024-10-31 14:35:28 | INFO     | __main__:_copy_files:441   |     └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:35:28 | INFO     | __main__:wrapper:95 | ▶ Saving commit information
+2024-10-31 14:35:28 | INFO     | __main__:_save_commit:397   |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:35:28 | DEBUG    | __main__:_save_commit:400   |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:35:28 | SUCCESS  | __main__:process:360 | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:35:28 | INFO     | __main__:wrapper:78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:35:28 | INFO     | __main__:main:522 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:35:28 | SUCCESS  | __main__:main:523 | ✅ All papers processed successfully (2/2)
+2024-10-31 14:35:28 | INFO     | __main__:main:526 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:40:38 | INFO     | __main__:main:497                                      | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:40:38 | SUCCESS  | __main__:main:498                                      | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:40:38 | INFO     | __main__:main:499                                      | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:40:38 | INFO     | __main__:wrapper:70                                       | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:40:38 | SUCCESS  | __main__:process:335                                      | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:40:38 | DEBUG    | __main__:process:336                                      | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:40:38 | DEBUG    | __main__:process:337                                      | Branch: None
+2024-10-31 14:40:38 | DEBUG    | __main__:process:338                                      | Commit: None
+2024-10-31 14:40:38 | INFO     | __main__:wrapper:95                                       | ▶ Checking repository status
+2024-10-31 14:40:38 | INFO     | __main__:wrapper:95                                       | ▶ Cloning repository
+2024-10-31 14:40:38 | INFO     | __main__:_clone_repo:405                                      |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:95                                       | ▶ Copying files
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:425                                      |   📋 Starting file copy
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:95                                       | ▶ Loading Quarto configuration
+2024-10-31 14:40:40 | DEBUG    | __main__:_load_config:148                                      |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:40:40 | DEBUG    | __main__:_determine_project_type:156                                      |   Determined project type: default
+2024-10-31 14:40:40 | DEBUG    | __main__:_find_main_doc:186                                      |   Searching for main document
+2024-10-31 14:40:40 | SUCCESS  | __main__:_find_main_doc:197                                      |   Found main document with common name: paper.qmd
+2024-10-31 14:40:40 | DEBUG    | __main__:__init__:137                                      |   Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:95                                       | ▶ Analyzing project structure
+2024-10-31 14:40:40 | DEBUG    | __main__:_get_bibliography_files:213                                      |   Collecting bibliography files
+2024-10-31 14:40:40 | INFO     | __main__:_get_bibliography_files:224                                      |   Found bibliography files in filesystem:
+2024-10-31 14:40:40 | INFO     | __main__:_get_bibliography_files:226                                      |     └── references.bib
+2024-10-31 14:40:40 | DEBUG    | __main__:_get_notebooks:236                                      |   Collecting notebooks for default project
+2024-10-31 14:40:40 | DEBUG    | __main__:_get_support_directories:276                                      |   Collecting support directories
+2024-10-31 14:40:40 | INFO     | __main__:_get_support_directories:286                                      |   Found support directories:
+2024-10-31 14:40:40 | INFO     | __main__:_get_support_directories:288                                      |     └── figures
+2024-10-31 14:40:40 | DEBUG    | __main__:_get_freeze_directories:293                                      |   Collecting freeze directories for default project
+2024-10-31 14:40:40 | SUCCESS  | __main__:_get_freeze_directories:302                                      |   Found default project freeze directory: _freeze/paper
+2024-10-31 14:40:40 | INFO     | __main__:get_files:173                                      |   📁 Collected files:
+2024-10-31 14:40:40 | INFO     | __main__:get_files:174                                      |   └── 📄 Standard files:
+2024-10-31 14:40:40 | INFO     | __main__:get_files:176                                      |       └── _quarto.yml
+2024-10-31 14:40:40 | INFO     | __main__:get_files:176                                      |       └── figures
+2024-10-31 14:40:40 | INFO     | __main__:get_files:176                                      |       └── paper.qmd
+2024-10-31 14:40:40 | INFO     | __main__:get_files:176                                      |       └── references.bib
+2024-10-31 14:40:40 | INFO     | __main__:get_files:177                                      |   └── 🧊 Freeze files:
+2024-10-31 14:40:40 | INFO     | __main__:get_files:179                                      |       └── _freeze/paper
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:432                                      |   Copying standard files:
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: _quarto.yml
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: references.bib
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: paper.qmd
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:444                                      |     └── Copied directory: figures
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:450                                      |   Copying freeze files:
+2024-10-31 14:40:40 | INFO     | __main__:_copy_files:457                                      |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:95                                       | ▶ Saving commit information
+2024-10-31 14:40:40 | INFO     | __main__:_save_commit:397                                      |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:40:40 | DEBUG    | __main__:_save_commit:400                                      |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:40:40 | SUCCESS  | __main__:process:360                                      | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:78                                       | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:40:40 | INFO     | __main__:wrapper:70                                       | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:40:40 | SUCCESS  | __main__:process:335                                      | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:40:40 | DEBUG    | __main__:process:336                                      | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:40:40 | DEBUG    | __main__:process:337                                      | Branch: dev
+2024-10-31 14:40:40 | DEBUG    | __main__:process:338                                      | Commit: None
+2024-10-31 14:40:41 | INFO     | __main__:wrapper:95                                       | ▶ Checking repository status
+2024-10-31 14:40:41 | INFO     | __main__:wrapper:95                                       | ▶ Cloning repository
+2024-10-31 14:40:41 | INFO     | __main__:_clone_repo:405                                      |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:40:45 | INFO     | __main__:wrapper:95                                       | ▶ Copying files
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:425                                      |   📋 Starting file copy
+2024-10-31 14:40:45 | INFO     | __main__:wrapper:95                                       | ▶ Loading Quarto configuration
+2024-10-31 14:40:45 | DEBUG    | __main__:_load_config:148                                      |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:40:45 | DEBUG    | __main__:_determine_project_type:156                                      |   Determined project type: manuscript
+2024-10-31 14:40:45 | DEBUG    | __main__:_find_main_doc:186                                      |   Searching for main document
+2024-10-31 14:40:45 | SUCCESS  | __main__:_find_main_doc:191                                      |   Found main document in manuscript config: index.qmd
+2024-10-31 14:40:45 | DEBUG    | __main__:__init__:137                                      |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:40:45 | INFO     | __main__:wrapper:95                                       | ▶ Analyzing project structure
+2024-10-31 14:40:45 | DEBUG    | __main__:_get_bibliography_files:213                                      |   Collecting bibliography files
+2024-10-31 14:40:45 | INFO     | __main__:_get_bibliography_files:218                                      |   Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:40:45 | INFO     | __main__:_get_bibliography_files:224                                      |   Found bibliography files in filesystem:
+2024-10-31 14:40:45 | INFO     | __main__:_get_bibliography_files:226                                      |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:40:45 | DEBUG    | __main__:_get_notebooks:236                                      |   Collecting notebooks for manuscript project
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:243                                      |   Found notebooks in manuscript config:
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:245                                      |     └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:245                                      |     └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:259                                      |   Found embedded notebooks:
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:261                                      |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:_get_notebooks:261                                      |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:40:45 | DEBUG    | __main__:_get_support_directories:276                                      |   Collecting support directories
+2024-10-31 14:40:45 | INFO     | __main__:_get_support_directories:286                                      |   Found support directories:
+2024-10-31 14:40:45 | INFO     | __main__:_get_support_directories:288                                      |     └── figures
+2024-10-31 14:40:45 | INFO     | __main__:_get_support_directories:288                                      |     └── notebooks
+2024-10-31 14:40:45 | DEBUG    | __main__:_get_freeze_directories:293                                      |   Collecting freeze directories for manuscript project
+2024-10-31 14:40:45 | INFO     | __main__:get_files:173                                      |   📁 Collected files:
+2024-10-31 14:40:45 | INFO     | __main__:get_files:174                                      |   └── 📄 Standard files:
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── FellowshipRefs-biblatex.bib
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── _quarto.yml
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── figures
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── index.qmd
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── notebooks
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:get_files:176                                      |       └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:get_files:177                                      |   └── 🧊 Freeze files:
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:432                                      |   Copying standard files:
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: index.qmd
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:444                                      |     └── Copied directory: figures
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: _quarto.yml
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:444                                      |     └── Copied directory: notebooks
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:40:45 | INFO     | __main__:_copy_files:441                                      |     └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:40:45 | INFO     | __main__:wrapper:95                                       | ▶ Saving commit information
+2024-10-31 14:40:45 | INFO     | __main__:_save_commit:397                                      |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:40:45 | DEBUG    | __main__:_save_commit:400                                      |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:40:45 | SUCCESS  | __main__:process:360                                      | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:40:45 | INFO     | __main__:wrapper:78                                       | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:40:45 | INFO     | __main__:main:522                                      | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:40:45 | SUCCESS  | __main__:main:523                                      | ✅ All papers processed successfully (2/2)
+2024-10-31 14:40:45 | INFO     | __main__:main:526                                      | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:48:39 | INFO     |    __main__    :     main      :497 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:48:39 | SUCCESS  |    __main__    :     main      :498 | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:48:39 | INFO     |    __main__    :     main      :499 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:48:39 | INFO     |    __main__    :    wrapper    : 70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:48:39 | SUCCESS  |    __main__    :    process    :335 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:48:39 | DEBUG    |    __main__    :    process    :336 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:48:39 | DEBUG    |    __main__    :    process    :337 | Branch: None
+2024-10-31 14:48:39 | DEBUG    |    __main__    :    process    :338 | Commit: None
+2024-10-31 14:48:40 | INFO     |    __main__    :    wrapper    : 95 | ▶ Checking repository status
+2024-10-31 14:48:40 | INFO     |    __main__    :    wrapper    : 95 | ▶ Cloning repository
+2024-10-31 14:48:40 | INFO     |    __main__    :  _clone_repo  :405 |   📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 95 | ▶ Copying files
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :425 |   📋 Starting file copy
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 95 | ▶ Loading Quarto configuration
+2024-10-31 14:48:41 | DEBUG    |    __main__    : _load_config  :148 |   Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_determine_project_type:156 |   Determined project type: default
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_find_main_doc :186 |   Searching for main document
+2024-10-31 14:48:41 | SUCCESS  |    __main__    :_find_main_doc :197 |   Found main document with common name: paper.qmd
+2024-10-31 14:48:41 | DEBUG    |    __main__    :   __init__    :137 |   Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 95 | ▶ Analyzing project structure
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_get_bibliography_files:213 |   Collecting bibliography files
+2024-10-31 14:48:41 | INFO     |    __main__    :_get_bibliography_files:224 |   Found bibliography files in filesystem:
+2024-10-31 14:48:41 | INFO     |    __main__    :_get_bibliography_files:226 |     └── references.bib
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_get_notebooks :236 |   Collecting notebooks for default project
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_get_support_directories:276 |   Collecting support directories
+2024-10-31 14:48:41 | INFO     |    __main__    :_get_support_directories:286 |   Found support directories:
+2024-10-31 14:48:41 | INFO     |    __main__    :_get_support_directories:288 |     └── figures
+2024-10-31 14:48:41 | DEBUG    |    __main__    :_get_freeze_directories:293 |   Collecting freeze directories for default project
+2024-10-31 14:48:41 | SUCCESS  |    __main__    :_get_freeze_directories:302 |   Found default project freeze directory: _freeze/paper
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :173 |   📁 Collected files:
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :174 |   └── 📄 Standard files:
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :176 |       └── _quarto.yml
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :176 |       └── figures
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :176 |       └── paper.qmd
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :176 |       └── references.bib
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :177 |   └── 🧊 Freeze files:
+2024-10-31 14:48:41 | INFO     |    __main__    :   get_files   :179 |       └── _freeze/paper
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :432 |   Copying standard files:
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: paper.qmd
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :444 |     └── Copied directory: figures
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: references.bib
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: _quarto.yml
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :450 |   Copying freeze files:
+2024-10-31 14:48:41 | INFO     |    __main__    :  _copy_files  :457 |     └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 95 | ▶ Saving commit information
+2024-10-31 14:48:41 | INFO     |    __main__    : _save_commit  :397 |   💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:48:41 | DEBUG    |    __main__    : _save_commit  :400 |   Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:48:41 | SUCCESS  |    __main__    :    process    :360 | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:48:41 | INFO     |    __main__    :    wrapper    : 70 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:48:41 | SUCCESS  |    __main__    :    process    :335 | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:48:41 | DEBUG    |    __main__    :    process    :336 | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:48:41 | DEBUG    |    __main__    :    process    :337 | Branch: dev
+2024-10-31 14:48:41 | DEBUG    |    __main__    :    process    :338 | Commit: None
+2024-10-31 14:48:42 | INFO     |    __main__    :    wrapper    : 95 | ▶ Checking repository status
+2024-10-31 14:48:42 | INFO     |    __main__    :    wrapper    : 95 | ▶ Cloning repository
+2024-10-31 14:48:42 | INFO     |    __main__    :  _clone_repo  :405 |   📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:48:45 | INFO     |    __main__    :    wrapper    : 95 | ▶ Copying files
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :425 |   📋 Starting file copy
+2024-10-31 14:48:45 | INFO     |    __main__    :    wrapper    : 95 | ▶ Loading Quarto configuration
+2024-10-31 14:48:45 | DEBUG    |    __main__    : _load_config  :148 |   Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_determine_project_type:156 |   Determined project type: manuscript
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_find_main_doc :186 |   Searching for main document
+2024-10-31 14:48:45 | SUCCESS  |    __main__    :_find_main_doc :191 |   Found main document in manuscript config: index.qmd
+2024-10-31 14:48:45 | DEBUG    |    __main__    :   __init__    :137 |   Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:48:45 | INFO     |    __main__    :    wrapper    : 95 | ▶ Analyzing project structure
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_get_bibliography_files:213 |   Collecting bibliography files
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_bibliography_files:218 |   Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_bibliography_files:224 |   Found bibliography files in filesystem:
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_bibliography_files:226 |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_get_notebooks :236 |   Collecting notebooks for manuscript project
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :243 |   Found notebooks in manuscript config:
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :245 |     └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :245 |     └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :259 |   Found embedded notebooks:
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :261 |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_notebooks :261 |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_get_support_directories:276 |   Collecting support directories
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_support_directories:286 |   Found support directories:
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_support_directories:288 |     └── figures
+2024-10-31 14:48:45 | INFO     |    __main__    :_get_support_directories:288 |     └── notebooks
+2024-10-31 14:48:45 | DEBUG    |    __main__    :_get_freeze_directories:293 |   Collecting freeze directories for manuscript project
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :173 |   📁 Collected files:
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :174 |   └── 📄 Standard files:
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── FellowshipRefs-biblatex.bib
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── _quarto.yml
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── figures
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── index.qmd
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── notebooks
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :176 |       └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :   get_files   :177 |   └── 🧊 Freeze files:
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :432 |   Copying standard files:
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :444 |     └── Copied directory: notebooks
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :444 |     └── Copied directory: figures
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: index.qmd
+2024-10-31 14:48:45 | INFO     |    __main__    :  _copy_files  :441 |     └── Copied file: _quarto.yml
+2024-10-31 14:48:45 | INFO     |    __main__    :    wrapper    : 95 | ▶ Saving commit information
+2024-10-31 14:48:45 | INFO     |    __main__    : _save_commit  :397 |   💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:48:45 | DEBUG    |    __main__    : _save_commit  :400 |   Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:48:45 | SUCCESS  |    __main__    :    process    :360 | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:48:45 | INFO     |    __main__    :    wrapper    : 78 | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:48:45 | INFO     |    __main__    :     main      :522 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:48:45 | SUCCESS  |    __main__    :     main      :523 | ✅ All papers processed successfully (2/2)
+2024-10-31 14:48:45 | INFO     |    __main__    :     main      :526 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:52:49 | INFO     | __main__:main:521 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:52:49 | SUCCESS  | __main__:main:522 | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:52:49 | INFO     | __main__:main:523 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:52:49 | INFO     | __main__:wrapper:94 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:52:49 | SUCCESS  | __main__:process:359 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:52:49 | DEBUG    | __main__:process:360 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:52:49 | DEBUG    | __main__:process:361 | Branch: None
+2024-10-31 14:52:49 | DEBUG    | __main__:process:362 | Commit: None
+2024-10-31 14:52:50 | INFO     | __main__:wrapper:119 | ▶ Checking repository status
+2024-10-31 14:52:50 | INFO     | __main__:wrapper:119 | ▶ Cloning repository
+2024-10-31 14:52:50 | INFO     | __main__:_clone_repo:429 | 📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119     | ▶ Copying files
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:449 | 📋 Starting file copy
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119     | ▶ Loading Quarto configuration
+2024-10-31 14:52:51 | DEBUG    | __main__:_load_config:172 | Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:52:51 | DEBUG    | __main__:_determine_project_type:180 | Determined project type: default
+2024-10-31 14:52:51 | DEBUG    | __main__:_find_main_doc:210          | Searching for main document
+2024-10-31 14:52:51 | SUCCESS  | __main__:_find_main_doc:221          | Found main document with common name: paper.qmd
+2024-10-31 14:52:51 | DEBUG    | __main__:__init__:161                | Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119                 | ▶ Analyzing project structure
+2024-10-31 14:52:51 | DEBUG    | __main__:_get_bibliography_files:237 | Collecting bibliography files
+2024-10-31 14:52:51 | INFO     | __main__:_get_bibliography_files:248 | Found bibliography files in filesystem:
+2024-10-31 14:52:51 | INFO     | __main__:_get_bibliography_files:250 |   └── references.bib
+2024-10-31 14:52:51 | DEBUG    | __main__:_get_notebooks:260          | Collecting notebooks for default project
+2024-10-31 14:52:51 | DEBUG    | __main__:_get_support_directories:300 | Collecting support directories
+2024-10-31 14:52:51 | INFO     | __main__:_get_support_directories:310 | Found support directories:
+2024-10-31 14:52:51 | INFO     | __main__:_get_support_directories:312 |   └── figures
+2024-10-31 14:52:51 | DEBUG    | __main__:_get_freeze_directories:317  | Collecting freeze directories for default project
+2024-10-31 14:52:51 | SUCCESS  | __main__:_get_freeze_directories:326  | Found default project freeze directory: _freeze/paper
+2024-10-31 14:52:51 | INFO     | __main__:get_files:197                | 📁 Collected files:
+2024-10-31 14:52:51 | INFO     | __main__:get_files:198                | └── 📄 Standard files:
+2024-10-31 14:52:51 | INFO     | __main__:get_files:200                |     └── _quarto.yml
+2024-10-31 14:52:51 | INFO     | __main__:get_files:200                |     └── figures
+2024-10-31 14:52:51 | INFO     | __main__:get_files:200                |     └── paper.qmd
+2024-10-31 14:52:51 | INFO     | __main__:get_files:200                |     └── references.bib
+2024-10-31 14:52:51 | INFO     | __main__:get_files:201                | └── 🧊 Freeze files:
+2024-10-31 14:52:51 | INFO     | __main__:get_files:203                |     └── _freeze/paper
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:456              | Copying standard files:
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:465              |   └── Copied file: references.bib
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:465              |   └── Copied file: paper.qmd
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:468              |   └── Copied directory: figures
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:465              |   └── Copied file: _quarto.yml
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:474              | Copying freeze files:
+2024-10-31 14:52:51 | INFO     | __main__:_copy_files:481              |   └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119                  | ▶ Saving commit information
+2024-10-31 14:52:51 | INFO     | __main__:_save_commit:421             | 💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:52:51 | DEBUG    | __main__:_save_commit:424             | Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:52:51 | SUCCESS  | __main__:process:384                  | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:102                  | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:94                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:52:51 | SUCCESS  | __main__:process:359                  | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:52:51 | DEBUG    | __main__:process:360                  | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:52:51 | DEBUG    | __main__:process:361                  | Branch: dev
+2024-10-31 14:52:51 | DEBUG    | __main__:process:362                  | Commit: None
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119                  | ▶ Checking repository status
+2024-10-31 14:52:51 | INFO     | __main__:wrapper:119                  | ▶ Cloning repository
+2024-10-31 14:52:51 | INFO     | __main__:_clone_repo:429              | 📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:52:52 | INFO     | __main__:wrapper:119                  | ▶ Copying files
+2024-10-31 14:52:52 | INFO     | __main__:_copy_files:449              | 📋 Starting file copy
+2024-10-31 14:52:52 | INFO     | __main__:wrapper:119                  | ▶ Loading Quarto configuration
+2024-10-31 14:52:52 | DEBUG    | __main__:_load_config:172             | Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:52:52 | DEBUG    | __main__:_determine_project_type:180  | Determined project type: manuscript
+2024-10-31 14:52:52 | DEBUG    | __main__:_find_main_doc:210           | Searching for main document
+2024-10-31 14:52:52 | SUCCESS  | __main__:_find_main_doc:215           | Found main document in manuscript config: index.qmd
+2024-10-31 14:52:52 | DEBUG    | __main__:__init__:161                 | Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:52:52 | INFO     | __main__:wrapper:119                  | ▶ Analyzing project structure
+2024-10-31 14:52:52 | DEBUG    | __main__:_get_bibliography_files:237  | Collecting bibliography files
+2024-10-31 14:52:52 | INFO     | __main__:_get_bibliography_files:242  | Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:52:52 | INFO     | __main__:_get_bibliography_files:248  | Found bibliography files in filesystem:
+2024-10-31 14:52:52 | INFO     | __main__:_get_bibliography_files:250  |   └── FellowshipRefs-biblatex.bib
+2024-10-31 14:52:52 | DEBUG    | __main__:_get_notebooks:260           | Collecting notebooks for manuscript project
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:267           | Found notebooks in manuscript config:
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:269           |   └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:269           |   └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:283           | Found embedded notebooks:
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:285           |   └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:52:52 | INFO     | __main__:_get_notebooks:285           |   └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:52:52 | DEBUG    | __main__:_get_support_directories:300 | Collecting support directories
+2024-10-31 14:52:52 | INFO     | __main__:_get_support_directories:310 | Found support directories:
+2024-10-31 14:52:52 | INFO     | __main__:_get_support_directories:312 |   └── figures
+2024-10-31 14:52:52 | INFO     | __main__:_get_support_directories:312 |   └── notebooks
+2024-10-31 14:52:52 | DEBUG    | __main__:_get_freeze_directories:317  | Collecting freeze directories for manuscript project
+2024-10-31 14:52:52 | INFO     | __main__:get_files:197                | 📁 Collected files:
+2024-10-31 14:52:52 | INFO     | __main__:get_files:198                | └── 📄 Standard files:
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── _quarto.yml
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── figures
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── index.qmd
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── notebooks
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:52:52 | INFO     | __main__:get_files:200                |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:52:53 | INFO     | __main__:get_files:201                | └── 🧊 Freeze files:
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:456              | Copying standard files:
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:468              |   └── Copied directory: notebooks
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:465              |   └── Copied file: index.qmd
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:468              |   └── Copied directory: figures
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:465              |   └── Copied file: _quarto.yml
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:465              |   └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:465              |   └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:52:53 | INFO     | __main__:_copy_files:465              |   └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:52:53 | INFO     | __main__:wrapper:119                  | ▶ Saving commit information
+2024-10-31 14:52:53 | INFO     | __main__:_save_commit:421             | 💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:52:53 | DEBUG    | __main__:_save_commit:424             | Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:52:53 | SUCCESS  | __main__:process:384                  | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:52:53 | INFO     | __main__:wrapper:102                  | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:52:53 | INFO     | __main__:main:546                     | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:52:53 | SUCCESS  | __main__:main:547                     | ✅ All papers processed successfully (2/2)
+2024-10-31 14:52:53 | INFO     | __main__:main:550                     | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:53:19 | INFO     | __main__:main:521 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:53:19 | SUCCESS  | __main__:main:522 | 🚀 QUARTO PAPER FETCHER
+2024-10-31 14:53:19 | INFO     | __main__:main:523 | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:53:19 | INFO     | __main__:wrapper:94 | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:53:19 | SUCCESS  | __main__:process:359 | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:53:19 | DEBUG    | __main__:process:360 | Repository URL: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:53:19 | DEBUG    | __main__:process:361 | Branch: None
+2024-10-31 14:53:19 | DEBUG    | __main__:process:362 | Commit: None
+2024-10-31 14:53:19 | INFO     | __main__:wrapper:119 | ▶ Checking repository status
+2024-10-31 14:53:19 | INFO     | __main__:wrapper:119 | ▶ Cloning repository
+2024-10-31 14:53:19 | INFO     | __main__:_clone_repo:429 | 📥 Cloning: https://github.com/MitchellAcoustics/JASAEL-HowToAnalyseQuantitativeSoundscapeData.git
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119     | ▶ Copying files
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:449 | 📋 Starting file copy
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119     | ▶ Loading Quarto configuration
+2024-10-31 14:53:21 | DEBUG    | __main__:_load_config:172 | Loaded config:
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: JASA-EL
+    keep-tex: false
+    latex-output-dir: paper/_tex
+    output-file: paper.pdf
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    output-file: paper.html
+    self-contained-math: true
+    toc: true
+project:
+  output-dir: paper
+  type: default
+
+2024-10-31 14:53:21 | DEBUG    | __main__:_determine_project_type:180 | Determined project type: default
+2024-10-31 14:53:21 | DEBUG    | __main__:_find_main_doc:210          | Searching for main document
+2024-10-31 14:53:21 | SUCCESS  | __main__:_find_main_doc:221          | Found main document with common name: paper.qmd
+2024-10-31 14:53:21 | DEBUG    | __main__:__init__:161                | Initialized QuartoProject: type=default, main_doc=paper.qmd
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119                 | ▶ Analyzing project structure
+2024-10-31 14:53:21 | DEBUG    | __main__:_get_bibliography_files:237 | Collecting bibliography files
+2024-10-31 14:53:21 | INFO     | __main__:_get_bibliography_files:248 | Found bibliography files in filesystem:
+2024-10-31 14:53:21 | INFO     | __main__:_get_bibliography_files:250 |   └── references.bib
+2024-10-31 14:53:21 | DEBUG    | __main__:_get_notebooks:260          | Collecting notebooks for default project
+2024-10-31 14:53:21 | DEBUG    | __main__:_get_support_directories:300 | Collecting support directories
+2024-10-31 14:53:21 | INFO     | __main__:_get_support_directories:310 | Found support directories:
+2024-10-31 14:53:21 | INFO     | __main__:_get_support_directories:312 |   └── figures
+2024-10-31 14:53:21 | DEBUG    | __main__:_get_freeze_directories:317  | Collecting freeze directories for default project
+2024-10-31 14:53:21 | SUCCESS  | __main__:_get_freeze_directories:326  | Found default project freeze directory: _freeze/paper
+2024-10-31 14:53:21 | INFO     | __main__:get_files:197                | 📁 Collected files:
+2024-10-31 14:53:21 | INFO     | __main__:get_files:198                | └── 📄 Standard files:
+2024-10-31 14:53:21 | INFO     | __main__:get_files:200                |     └── _quarto.yml
+2024-10-31 14:53:21 | INFO     | __main__:get_files:200                |     └── figures
+2024-10-31 14:53:21 | INFO     | __main__:get_files:200                |     └── paper.qmd
+2024-10-31 14:53:21 | INFO     | __main__:get_files:200                |     └── references.bib
+2024-10-31 14:53:21 | INFO     | __main__:get_files:201                | └── 🧊 Freeze files:
+2024-10-31 14:53:21 | INFO     | __main__:get_files:203                |     └── _freeze/paper
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:456              | Copying standard files:
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:465              |   └── Copied file: references.bib
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:465              |   └── Copied file: _quarto.yml
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:468              |   └── Copied directory: figures
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:465              |   └── Copied file: paper.qmd
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:474              | Copying freeze files:
+2024-10-31 14:53:21 | INFO     | __main__:_copy_files:481              |   └── Copied freeze directory: _freeze/paper to _freeze/research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/paper
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119                  | ▶ Saving commit information
+2024-10-31 14:53:21 | INFO     | __main__:_save_commit:421             | 💾 Saving commit hash: a9f5077d891d5a64816dc18844fbf12e2a2b9dae
+2024-10-31 14:53:21 | DEBUG    | __main__:_save_commit:424             | Commit hash saved to: research/papers/2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData/last_commit.txt
+2024-10-31 14:53:21 | SUCCESS  | __main__:process:384                  | ✨ Successfully processed paper 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:102                  | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:94                   | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-10-31 14:53:21 | SUCCESS  | __main__:process:359                  | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-10-31 14:53:21 | DEBUG    | __main__:process:360                  | Repository URL: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:53:21 | DEBUG    | __main__:process:361                  | Branch: dev
+2024-10-31 14:53:21 | DEBUG    | __main__:process:362                  | Commit: None
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119                  | ▶ Checking repository status
+2024-10-31 14:53:21 | INFO     | __main__:wrapper:119                  | ▶ Cloning repository
+2024-10-31 14:53:21 | INFO     | __main__:_clone_repo:429              | 📥 Cloning: https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index
+2024-10-31 14:53:27 | INFO     | __main__:wrapper:119                  | ▶ Copying files
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:449              | 📋 Starting file copy
+2024-10-31 14:53:27 | INFO     | __main__:wrapper:119                  | ▶ Loading Quarto configuration
+2024-10-31 14:53:27 | DEBUG    | __main__:_load_config:172             | Loaded config:
+bibliography: FellowshipRefs-biblatex.bib
+execute:
+  freeze: auto
+  keep-ipynb: true
+format:
+  elsevier-pdf:
+    echo: false
+    hyperrefoptions:
+    - citecolor=black
+    journal:
+      cite-style: authoryear
+      formatting: preprint
+      model: 3p
+      name: Journal of the Acoustical Society of America
+    keep-tex: false
+  html:
+    code-fold: true
+    comments:
+      hypothesis: true
+    self-contained-math: true
+    toc: true
+manuscript:
+  article: index.qmd
+  notebooks:
+  - ./notebooks/SingleIndex-Code.ipynb
+  - ./notebooks/TargetOptimization.ipynb
+project:
+  output-dir: ./paper/
+  type: default
+
+2024-10-31 14:53:27 | DEBUG    | __main__:_determine_project_type:180  | Determined project type: manuscript
+2024-10-31 14:53:27 | DEBUG    | __main__:_find_main_doc:210           | Searching for main document
+2024-10-31 14:53:27 | SUCCESS  | __main__:_find_main_doc:215           | Found main document in manuscript config: index.qmd
+2024-10-31 14:53:27 | DEBUG    | __main__:__init__:161                 | Initialized QuartoProject: type=manuscript, main_doc=index.qmd
+2024-10-31 14:53:27 | INFO     | __main__:wrapper:119                  | ▶ Analyzing project structure
+2024-10-31 14:53:27 | DEBUG    | __main__:_get_bibliography_files:237  | Collecting bibliography files
+2024-10-31 14:53:27 | INFO     | __main__:_get_bibliography_files:242  | Found bibliography in config: FellowshipRefs-biblatex.bib
+2024-10-31 14:53:27 | INFO     | __main__:_get_bibliography_files:248  | Found bibliography files in filesystem:
+2024-10-31 14:53:27 | INFO     | __main__:_get_bibliography_files:250  |   └── FellowshipRefs-biblatex.bib
+2024-10-31 14:53:27 | DEBUG    | __main__:_get_notebooks:260           | Collecting notebooks for manuscript project
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:267           | Found notebooks in manuscript config:
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:269           |   └── ./notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:269           |   └── ./notebooks/TargetOptimization.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:283           | Found embedded notebooks:
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:285           |   └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:_get_notebooks:285           |   └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:53:27 | DEBUG    | __main__:_get_support_directories:300 | Collecting support directories
+2024-10-31 14:53:27 | INFO     | __main__:_get_support_directories:310 | Found support directories:
+2024-10-31 14:53:27 | INFO     | __main__:_get_support_directories:312 |   └── figures
+2024-10-31 14:53:27 | INFO     | __main__:_get_support_directories:312 |   └── notebooks
+2024-10-31 14:53:27 | DEBUG    | __main__:_get_freeze_directories:317  | Collecting freeze directories for manuscript project
+2024-10-31 14:53:27 | INFO     | __main__:get_files:197                | 📁 Collected files:
+2024-10-31 14:53:27 | INFO     | __main__:get_files:198                | └── 📄 Standard files:
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── FellowshipRefs-biblatex.bib
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── _quarto.yml
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── figures
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── index.qmd
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── notebooks
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:get_files:200                |     └── notebooks/TargetOptimization.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:get_files:201                | └── 🧊 Freeze files:
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:456              | Copying standard files:
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:465              |   └── Copied file: FellowshipRefs-biblatex.bib
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:465              |   └── Copied file: notebooks/SingleIndex-Code.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:465              |   └── Copied file: _quarto.yml
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:468              |   └── Copied directory: figures
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:468              |   └── Copied directory: notebooks
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:465              |   └── Copied file: notebooks/TargetOptimization.ipynb
+2024-10-31 14:53:27 | INFO     | __main__:_copy_files:465              |   └── Copied file: index.qmd
+2024-10-31 14:53:27 | INFO     | __main__:wrapper:119                  | ▶ Saving commit information
+2024-10-31 14:53:27 | INFO     | __main__:_save_commit:421             | 💾 Saving commit hash: 92d7e82ca139a56def4607a35b14ce6dd1202bdb
+2024-10-31 14:53:27 | DEBUG    | __main__:_save_commit:424             | Commit hash saved to: research/papers/2024-10-30_JASA1112_SPI/last_commit.txt
+2024-10-31 14:53:27 | SUCCESS  | __main__:process:384                  | ✨ Successfully processed paper 2024-10-30_JASA1112_SPI
+2024-10-31 14:53:27 | INFO     | __main__:wrapper:102                  | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-10-31 14:53:27 | INFO     | __main__:main:546                     | ════════════════════════════════════════════════════════════════════════════════
+2024-10-31 14:53:27 | SUCCESS  | __main__:main:547                     | ✅ All papers processed successfully (2/2)
+2024-10-31 14:53:27 | INFO     | __main__:main:550                     | ════════════════════════════════════════════════════════════════════════════════

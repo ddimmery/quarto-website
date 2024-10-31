@@ -18,41 +18,65 @@ def setup_logging(console_level: str = "SUCCESS"):
     # Remove default handler
     logger.remove()
 
-    # Custom log formats - remove extra spaces and simplify timestamp
-    console_format = (
-        "<green>{time:HH:mm:ss}</green> | "
-        "<level>{level: <8}</level> | "
-        "{extra[padding]}<level>{message}</level>"
-    )
-
-    file_format = (
-        "{time:YYYY-MM-DD HH:mm:ss} | "
-        "{level: <8} | "
-        "{name}:{function}:{line} | "
-        "{extra[padding]}{message}"
-    )
+    # Initialize formatters
+    console_formatter = ConsoleFormatter()
+    file_formatter = FileFormatter()
 
     # Configure logger with context
     logger.configure(
         handlers=[
             {
                 "sink": sys.stderr,
-                "format": console_format,
+                "format": console_formatter.format,
                 "level": console_level,
                 "colorize": True,
             },
             {
-                "sink": "paper_fetch.log",  # Single log file
-                "format": file_format,
+                "sink": "paper_fetch.log",
+                "format": file_formatter.format,
                 "level": "DEBUG",
-                "rotation": "1 MB",  # Keep only last 1 MB of logs
-                "enqueue": True,  # Ensure multi-thread safety
+                "rotation": "1 MB",
+                "enqueue": True,
             },
-        ],
-        extra={"padding": ""},
+        ]
     )
     global console_level_setting
     console_level_setting = console_level
+
+class ConsoleFormatter:
+    """Formatter for console output with dynamic padding for aligned stages."""
+    def __init__(self):
+        self.fmt = (
+            "<green>{time:HH:mm:ss}</green> | "
+            "<level>{level: <8}</level> | "
+            "{extra[padding]}<level>{message}</level>\n"
+            "{exception}"
+        )
+
+    def format(self, record):
+        if "padding" not in record["extra"]:
+            record["extra"]["padding"] = ""
+        return self.fmt
+
+
+class FileFormatter:
+    """Formatter for file output with dynamic metadata padding for alignment."""
+    def __init__(self):
+        self.padding = 0
+        self.fmt = (
+            "{time:YYYY-MM-DD HH:mm:ss} | "
+            "{level: <8} | "
+            "{name}:{function}:{line}{extra[padding]} | "
+            "{message}\n"
+            "{exception}"
+        )
+
+    def format(self, record):
+        # Calculate required padding based on metadata length
+        metadata_length = len(f"{record['name']}:{record['function']}:{record['line']}")
+        self.padding = max(self.padding, metadata_length)
+        record["extra"]["padding"] = " " * (self.padding - metadata_length)
+        return self.fmt
 
 
 def stage(name: str):
