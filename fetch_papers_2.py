@@ -59,7 +59,7 @@ class QuartoProject:
     project_type: str
     main_document: Path
     notebooks: List[Path]
-    bibliography: Optional[Path]
+    bibliography: Set[Path]
     output_dir: Path
     additional_files: Set[Path]
 
