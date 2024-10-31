@@ -5,43 +5,113 @@ import subprocess
 import shutil
 from pathlib import Path
 from dataclasses import dataclass
-from typing import Dict, Set, Optional, List
+from typing import Dict, Set, Optional
+import argparse
 import yaml
 from loguru import logger
 import sys
-from datetime import datetime
+
 
 # Configure loguru
-def setup_logging(debug: bool = False):
-    """Configure loguru logger with file and console outputs."""
+def setup_logging(console_level: str = "SUCCESS"):
+    """Configure loguru logger with enhanced stage visualization and basic rotation."""
     # Remove default handler
     logger.remove()
-    
-    # Add colored stderr handler
-    log_format = (
-        "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | "
+
+    # Custom log formats - remove extra spaces and simplify timestamp
+    console_format = (
+        "<green>{time:HH:mm:ss}</green> | "
         "<level>{level: <8}</level> | "
-        "<cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - "
-        "<level>{message}</level>"
+        "{extra[padding]}<level>{message}</level>"
     )
-    
-    # Set debug level for console if requested
-    logger_level = "DEBUG" if debug else "INFO"
-    logger.add(sys.stderr, format=log_format, level=logger_level, colorize=True)
-    
-    # Add file handler with more detailed format
+
     file_format = (
         "{time:YYYY-MM-DD HH:mm:ss} | "
         "{level: <8} | "
         "{name}:{function}:{line} | "
-        "{message}"
+        "{extra[padding]}{message}"
     )
-    log_file = f"paper_fetch_{datetime.now():%Y%m%d_%H%M%S}.log"
-    logger.add(log_file, format=file_format, level="DEBUG", rotation="100 MB")
+
+    # Configure logger with context
+    logger.configure(
+        handlers=[
+            {
+                "sink": sys.stderr,
+                "format": console_format,
+                "level": console_level,
+                "colorize": True,
+            },
+            {
+                "sink": "paper_fetch.log",  # Single log file
+                "format": file_format,
+                "level": "DEBUG",
+                "rotation": "1 MB",  # Keep only last 1 MB of logs
+                "enqueue": True,  # Ensure multi-thread safety
+            },
+        ],
+        extra={"padding": ""},
+    )
+    global console_level_setting
+    console_level_setting = console_level
+
+
+def stage(name: str):
+    """Decorator to mark and log processing stages."""
+
+    def decorator(func):
+        @logger.catch
+        def wrapper(*args, **kwargs):
+            # Create stage header
+            stage_header = f" STAGE: {name} "
+            padding = "═" * (40 - len(stage_header) // 2)
+
+            # Log stage start
+            with logger.contextualize(padding=""):
+                logger.info(f"{padding}{stage_header}{padding}")
+
+            # Execute function with indented logging
+            with logger.contextualize(padding=""):
+                result = func(*args, **kwargs)
+
+            # Log stage completion
+            with logger.contextualize(padding=""):
+                logger.info(f"{'═' * (len(stage_header) + 2 * len(padding))}\n")
+
+            return result
+
+        return wrapper
+
+    return decorator
+
+
+def substage(name: str):
+    """Decorator to mark and log processing substages."""
+
+    def decorator(func):
+        @logger.catch
+        def wrapper(*args, **kwargs):
+            # Log substage header with consistent indentation
+            with logger.contextualize(padding=""):
+                logger.info(f"▶ {name}")
+
+            # Execute function with additional indentation
+            if console_level_setting == "SUCCESS":
+                result = func(*args, **kwargs)
+            else:
+                with logger.contextualize(padding="  "):
+                    result = func(*args, **kwargs)
+
+            return result
+
+        return wrapper
+
+    return decorator
+
 
 @dataclass
 class Paper:
     """Paper source configuration."""
+
     repo_url: str
     target_folder: str
     branch: Optional[str] = None
@@ -49,22 +119,33 @@ class Paper:
 
     @classmethod
     def from_dict(cls, data: dict) -> Optional["Paper"]:
-        return cls(**data) if all(k in data for k in ("repo_url", "target_folder")) else None
+        return (
+            cls(**data)
+            if all(k in data for k in ("repo_url", "target_folder"))
+            else None
+        )
+
 
 class QuartoProject:
     """Analyzes and processes Quarto projects."""
+
     def __init__(self, repo_dir: Path):
         self.repo_dir = repo_dir
         self.config = self._load_config()
         self.project_type = self._determine_project_type()
         self.main_doc = self._find_main_doc()
-        logger.debug(f"Initialized QuartoProject: type={self.project_type}, main_doc={self.main_doc}")
-        
+        logger.debug(
+            "Initialized QuartoProject: type={}, main_doc={}",
+            self.project_type,
+            self.main_doc,
+        )
+
+    @substage("Loading Quarto configuration")
     def _load_config(self) -> dict:
         config_path = self.repo_dir / "_quarto.yml"
         if config_path.exists():
             config = yaml.safe_load(config_path.read_text())
-            logger.debug(f"Loaded Quarto config:\n{yaml.dump(config, indent=2)}")
+            logger.debug("Loaded config:\n{}", yaml.dump(config, indent=2))
             return config
         logger.warning("No _quarto.yml found, using empty config")
         return {}
@@ -75,67 +156,68 @@ class QuartoProject:
         logger.debug(f"Determined project type: {project_type}")
         return project_type
 
+    @substage("Analyzing project structure")
     def get_files(self) -> Dict[str, Set[Path]]:
         """Get required project files based on project type."""
-        logger.debug("Starting file collection process")
-        
         standard_files = {
             Path("_quarto.yml"),
             self.main_doc,
             *self._get_bibliography_files(),
             *self._get_notebooks(),
-            *self._get_support_directories()
+            *self._get_support_directories(),
         }
-        
+
         freeze_files = self._get_freeze_directories()
-        
+
         # Log files in a structured way
-        logger.debug("Collected files:")
-        logger.debug("Standard files:")
+        logger.info("📁 Collected files:")
+        logger.info("└── 📄 Standard files:")
         for f in sorted(standard_files):
-            logger.debug(f"  └── {f}")
-        logger.debug("Freeze files:")
+            logger.info("    └── {}", f)
+        logger.info("└── 🧊 Freeze files:")
         for f in sorted(freeze_files):
-            logger.debug(f"  └── {f}")
-        
+            logger.info("    └── {}", f)
+
         return {"standard": standard_files, "freeze": freeze_files}
 
     @logger.catch(message="Error finding main document")
     def _find_main_doc(self) -> Path:
         """Find main document based on project type."""
         logger.debug("Searching for main document")
-        
+
         # Check manuscript configuration
         if self.project_type == "manuscript":
             if article := self.config.get("manuscript", {}).get("article"):
                 logger.success(f"Found main document in manuscript config: {article}")
                 return Path(article)
-        
+
         # Check common names
         for name in ["index.qmd", "paper.qmd", "manuscript.qmd"]:
             if (self.repo_dir / name).exists():
                 logger.success(f"Found main document with common name: {name}")
                 return Path(name)
-        
+
         # Take first .qmd or .ipynb file
         for ext in ["qmd", "ipynb"]:
             if files := list(self.repo_dir.glob(f"*.{ext}")):
                 main_doc = files[0].relative_to(self.repo_dir)
-                logger.success(f"Using first found {ext} file as main document: {main_doc}")
+                logger.success(
+                    f"Using first found {ext} file as main document: {main_doc}"
+                )
                 return main_doc
-        
+
         raise FileNotFoundError("No main document found")
 
     def _get_bibliography_files(self) -> Set[Path]:
         """Get bibliography files from both config and filesystem."""
         logger.debug("Collecting bibliography files")
         bib_files = set()
-        
+
         # Check config
         if bib_path := self.config.get("bibliography"):
             logger.info(f"Found bibliography in config: {bib_path}")
             bib_files.add(Path(bib_path))
-        
+
         # Find all .bib files
         filesystem_bibs = self._find_files("*.bib")
         if filesystem_bibs:
@@ -143,46 +225,50 @@ class QuartoProject:
             for bib in filesystem_bibs:
                 logger.info(f"  └── {bib}")
             bib_files.update(filesystem_bibs)
-        
+
+        if len(bib_files) == 0:
+            logger.warning("✖ No bibliography files found.")
+
         return bib_files
 
     def _get_notebooks(self) -> Set[Path]:
         """Get notebooks based on project type."""
-        logger.debug(f"Collecting notebooks for {self.project_type} project")
+        logger.debug("Collecting notebooks for {} project", self.project_type)
         notebooks = set()
-        
+
         if self.project_type == "manuscript":
             # Get notebooks from manuscript config
             config_notebooks = self.config.get("manuscript", {}).get("notebooks", [])
             if config_notebooks:
                 logger.info("Found notebooks in manuscript config:")
                 for nb in config_notebooks:
-                    logger.info(f"  └── {nb}")
+                    logger.info("  └── {}", nb)
                 notebooks.update(Path(nb) for nb in config_notebooks)
-            
+
             # Look for embedded notebooks in main document
             main_doc_path = self.repo_dir / self.main_doc
             if main_doc_path.exists():
                 content = main_doc_path.read_text()
-                embedded_notebooks = []
-                for line in content.split("\n"):
-                    if "embed notebooks/" in line:
-                        nb_path = line.split("notebooks/")[1].split("#")[0].strip()
-                        embedded_notebooks.append(nb_path)
-                        notebooks.add(Path("notebooks") / nb_path)
+                embedded_notebooks = {
+                    line.split("notebooks/")[1].split("#")[0].strip()
+                    for line in content.splitlines()
+                    if "embed notebooks/" in line
+                }
+
                 if embedded_notebooks:
                     logger.info("Found embedded notebooks:")
-                    for nb in embedded_notebooks:
-                        logger.info(f"  └── notebooks/{nb}")
+                    for nb in sorted(embedded_notebooks):
+                        logger.info("  └── notebooks/{}", nb)
+                        notebooks.add(Path("notebooks") / nb)
         else:
             # For default projects, include all notebooks
             found_notebooks = self._find_files("**/*.ipynb")
             if found_notebooks:
                 logger.info("Found notebooks in filesystem:")
-                for nb in found_notebooks:
-                    logger.info(f"  └── {nb}")
+                for nb in sorted(found_notebooks):
+                    logger.info("  └── {}", nb)
                 notebooks.update(found_notebooks)
-        
+
         return notebooks
 
     def _get_support_directories(self) -> Set[Path]:
@@ -190,11 +276,11 @@ class QuartoProject:
         logger.debug("Collecting support directories")
         # Common directories for both types
         dirs = {"figures", "_tex"}
-        
+
         # Add notebooks directory for manuscript projects
         if self.project_type == "manuscript":
             dirs.add("notebooks")
-            
+
         found_dirs = {Path(d) for d in dirs if (self.repo_dir / d).exists()}
         if found_dirs:
             logger.info("Found support directories:")
@@ -207,7 +293,7 @@ class QuartoProject:
         logger.debug(f"Collecting freeze directories for {self.project_type} project")
         freeze_dirs = set()
         freeze_base = self.repo_dir / "_freeze"
-        
+
         if self.project_type == "default":
             # For default projects, check main document's freeze directory
             freeze_path = freeze_base / self.main_doc.stem
@@ -221,104 +307,124 @@ class QuartoProject:
                 found_dirs = [
                     Path("_freeze") / p.relative_to(freeze_base)
                     for p in freeze_base.glob("**/*")
-                    if p.is_dir() and not any(part.startswith("_") for part in p.parts[1:])
+                    if p.is_dir()
+                    and not any(part.startswith("_") for part in p.parts[1:])
                 ]
                 if found_dirs:
                     logger.info("Found manuscript freeze directories:")
                     for d in sorted(found_dirs):
                         logger.info(f"  └── {d}")
                     freeze_dirs.update(found_dirs)
-        
+
         return freeze_dirs
 
     def _find_files(self, pattern: str) -> Set[Path]:
         """Find files matching pattern."""
         return {f.relative_to(self.repo_dir) for f in self.repo_dir.glob(pattern)}
 
+
 class PaperManager:
     """Manages paper fetching and processing."""
+
     def __init__(self, force_update: bool = False):
         self.force_update = force_update
 
-    @logger.catch
+    @stage("Paper Processing")
     def process(self, paper: Paper) -> bool:
         """Process a single paper."""
-        logger.info(f"Processing paper: {paper.target_folder}")
-        logger.debug(f"Repository URL: {paper.repo_url}")
-        logger.debug(f"Branch: {paper.branch}")
-        logger.debug(f"Commit: {paper.commit}")
-        
+        logger.success("📑 Processing paper: {}", paper.target_folder)
+        logger.debug("Repository URL: {}", paper.repo_url)
+        logger.debug("Branch: {}", paper.branch)
+        logger.debug("Commit: {}", paper.commit)
+
         paper_dir = Path("research/papers") / paper.target_folder
         commit_file = paper_dir / "last_commit.txt"
 
         try:
             # Get latest commit
-            ref = paper.commit or f"refs/heads/{paper.branch}" if paper.branch else "HEAD"
-            logger.debug(f"Getting latest commit for ref: {ref}")
+            ref = (
+                paper.commit or f"refs/heads/{paper.branch}" if paper.branch else "HEAD"
+            )
             latest_commit = self._get_commit(paper.repo_url, ref)
-            logger.debug(f"Latest commit: {latest_commit}")
 
-            # Check if update needed
-            if not self.force_update and commit_file.exists():
-                current_commit = commit_file.read_text().strip()
-                if current_commit == latest_commit:
-                    logger.success(f"Paper {paper.target_folder} is up to date (commit: {current_commit})")
-                    return True
-                logger.info(f"Update needed: current={current_commit}, latest={latest_commit}")
+            if self._check_if_updated(commit_file, latest_commit):
+                return True
 
             # Process paper
             with tempfile.TemporaryDirectory() as temp_dir:
                 temp_path = Path(temp_dir)
-                logger.debug(f"Created temporary directory: {temp_path}")
-                
                 self._clone_repo(paper, temp_path)
                 self._copy_files(temp_path, paper_dir, paper.target_folder)
-                
-                commit_file.parent.mkdir(parents=True, exist_ok=True)
-                commit_file.write_text(latest_commit)
-                logger.debug(f"Updated commit file: {commit_file}")
+                self._save_commit(commit_file, latest_commit)
 
-            logger.success(f"Successfully processed paper {paper.target_folder}")
+            logger.success("✨ Successfully processed paper {}", paper.target_folder)
             return True
 
         except Exception as e:
-            logger.exception(f"Failed to process {paper.repo_url}: {e}")
+            logger.exception("❌ Failed to process {}: {}", paper.repo_url, e)
             self._cleanup(paper_dir)
             return False
+
+    @substage("Checking repository status")
+    def _check_if_updated(self, commit_file: Path, latest_commit: str) -> bool:
+        """Check if paper needs updating."""
+        if not self.force_update and commit_file.exists():
+            current_commit = commit_file.read_text().strip()
+            if current_commit == latest_commit:
+                logger.success("✓ Paper is up to date (commit: {})", current_commit)
+                return True
+            logger.info(
+                "⟳ Update needed: current={}, latest={}", current_commit, latest_commit
+            )
+        return False
 
     @logger.catch
     def _get_commit(self, repo_url: str, ref: str) -> str:
         """Get commit hash."""
         result = subprocess.run(
             ["git", "ls-remote", repo_url, ref],
-            capture_output=True, text=True, check=True
+            capture_output=True,
+            text=True,
+            check=True,
         )
         if not result.stdout:
             raise ValueError(f"No commit found for ref: {ref}")
         return result.stdout.split()[0]
 
-    @logger.catch
+    @substage("Saving commit information")
+    def _save_commit(self, commit_file: Path, commit_hash: str) -> None:
+        """Save the current commit hash to the commit file."""
+        logger.info("💾 Saving commit hash: {}", commit_hash)
+        commit_file.parent.mkdir(parents=True, exist_ok=True)
+        commit_file.write_text(commit_hash)
+        logger.debug("Commit hash saved to: {}", commit_file)
+
+    @substage("Cloning repository")
     def _clone_repo(self, paper: Paper, path: Path) -> None:
         """Clone repository."""
-        logger.info(f"Cloning repository: {paper.repo_url}")
+        logger.info("📥 Cloning: {}", paper.repo_url)
         cmd = ["git", "clone", "--quiet", "--depth", "1"]
         if paper.branch:
             cmd.extend(["--branch", paper.branch])
         cmd.extend([paper.repo_url, str(path)])
-        
+
         subprocess.run(cmd, check=True, capture_output=True)
-        
+
         if paper.commit:
             logger.info(f"Checking out specific commit: {paper.commit}")
             subprocess.run(
                 ["git", "checkout", "-q", paper.commit],
-                check=True, capture_output=True, cwd=path
+                check=True,
+                capture_output=True,
+                cwd=path,
             )
 
-    @logger.catch
+    @substage("Copying files")
     def _copy_files(self, source: Path, target: Path, folder: str) -> None:
         """Copy files to target directory."""
-        logger.info(f"Starting file copy from {source} to {target}")
+        logger.info("📋 Starting file copy")
+
+        # Create QuartoProject instance once
         project = QuartoProject(source)
         files = project.get_files()
 
@@ -332,24 +438,27 @@ class PaperManager:
                 if src.is_file():
                     dst.parent.mkdir(parents=True, exist_ok=True)
                     shutil.copy2(src, dst)
-                    logger.info(f"  └── Copied file: {item}")
+                    logger.info("  └── Copied file: {}", item)
                 else:
                     shutil.copytree(src, dst, dirs_exist_ok=True)
-                    logger.info(f"  └── Copied directory: {item}")
+                    logger.info("  └── Copied directory: {}", item)
             else:
-                logger.warning(f"Source file not found: {src}")
+                logger.warning("Source file not found: {}", src)
 
         # Copy freeze files to special location
-        logger.info("Copying freeze files:")
-        for freeze_dir in files["freeze"]:
-            src = source / freeze_dir
-            dst = Path("_freeze/research/papers") / folder / freeze_dir.name
-            if src.exists():
-                dst.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copytree(src, dst, dirs_exist_ok=True)
-                logger.info(f"  └── Copied freeze directory: {freeze_dir} to {dst}")
-            else:
-                logger.warning(f"Source freeze directory not found: {src}")
+        if files["freeze"]:
+            logger.info("Copying freeze files:")
+            for freeze_dir in files["freeze"]:
+                src = source / freeze_dir
+                dst = Path("_freeze/research/papers") / folder / freeze_dir.name
+                if src.exists():
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copytree(src, dst, dirs_exist_ok=True)
+                    logger.info(
+                        "  └── Copied freeze directory: {} to {}", freeze_dir, dst
+                    )
+                else:
+                    logger.warning("Source freeze directory not found: {}", src)
 
     def _cleanup(self, path: Path) -> None:
         """Clean up on failure."""
@@ -359,61 +468,81 @@ class PaperManager:
                 shutil.rmtree(p)
                 logger.debug(f"Removed directory: {p}")
 
-# Previous code remains the same until the main() function...
 
 def main():
-    import argparse
-    
     parser = argparse.ArgumentParser(description="Fetch Quarto papers")
     parser.add_argument("--force", "-f", action="store_true", help="Force update")
-    parser.add_argument("--config", type=Path, default=Path("research/_paper_sources.yml"))
-    parser.add_argument("--debug", "-d", action="store_true", help="Enable debug logging")
+    parser.add_argument(
+        "--config", type=Path, default=Path("research/_paper_sources.yml")
+    )
+    parser.add_argument(
+        "--log-level",
+        default="SUCCESS",
+        help="Logging level",
+        choices=["DEBUG", "INFO", "SUCCESS", "WARNING", "ERROR"],
+    )
+    parser.add_argument(
+        "--debug", "-d", action="store_true", help="Enable debug logging"
+    )
     args = parser.parse_args()
 
+    # Determine log level without logging
+    log_level = "DEBUG" if args.debug else args.log_level
+
     # Setup logging with loguru
-    setup_logging(debug=args.debug)
+    setup_logging(console_level=log_level)
 
-    # Log startup information
-    logger.info("Starting paper fetcher")
-    logger.debug("Arguments: {}", args)
+    # Log startup with higher level and no extra padding
+    with logger.contextualize(padding=""):
+        logger.info(f"{'═' * 80}")
+        logger.success("🚀 QUARTO PAPER FETCHER")
+        logger.info(f"{'═' * 80}")
 
-    # Load and process papers
     try:
         config = yaml.safe_load(args.config.read_text())
-        logger.debug("Loaded config:\n{}", yaml.dump(config, indent=2))
-        
         papers = [p for p in map(Paper.from_dict, config.get("papers", [])) if p]
-        logger.info("Found {} valid papers in config", len(papers))
-        
+
         if not papers:
             logger.warning("No valid papers found")
             return 1
 
         manager = PaperManager(force_update=args.force)
-        
-        # Process papers and collect results
         results = []
+
+        # Process each paper
         for paper in papers:
-            logger.info("=" * 80)
-            logger.info("Processing paper: {}", paper.target_folder)
             results.append(manager.process(paper))
-        
-        # Log summary
+
+        # Log summary with no extra padding
         success_count = sum(results)
         total_count = len(results)
-        if success_count == total_count:
-            logger.success("All papers processed successfully ({}/{})", success_count, total_count)
-        else:
-            logger.warning("Processed {}/{} papers successfully", success_count, total_count)
-            failed_papers = [p.target_folder for p, r in zip(papers, results) if not r]
-            logger.warning("Failed papers: {}", ", ".join(failed_papers))
-        
+
+        with logger.contextualize(padding=""):
+            if success_count == total_count:
+                logger.info(f"{'═' * 80}")
+                logger.success(
+                    f"✅ All papers processed successfully ({success_count}/{total_count})"
+                )
+                logger.info(f"{'═' * 80}")
+            else:
+                logger.warning(f"{'═' * 80}")
+                logger.warning(
+                    f"⚠️  Processed {success_count}/{total_count} papers successfully"
+                )
+                failed_papers = [
+                    p.target_folder for p, r in zip(papers, results) if not r
+                ]
+                logger.warning(f"❌ Failed papers: {', '.join(failed_papers)}")
+                logger.warning(f"{'═' * 80}")
+
         return 0 if all(results) else 1
 
     except Exception as e:
-        logger.exception("Unexpected error: {}", e)
+        logger.exception(f"❌ Unexpected error: {e}")
         return 1
+
 
 if __name__ == "__main__":
     import sys
+
     sys.exit(main())
