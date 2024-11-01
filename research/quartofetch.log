@@ -1,0 +1,28 @@
+2024-11-01 04:38:04 | INFO     | quartofetch.cli:run:140 | ════════════════════════════════════════════════════════════════════════════════
+2024-11-01 04:38:04 | SUCCESS  | quartofetch.cli:run:141 | 🚀 Quarto FETCH
+2024-11-01 04:38:04 | INFO     | quartofetch.cli:run:142 | ════════════════════════════════════════════════════════════════════════════════
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:82 | ═════════════════════════ STAGE: Configuration Loading ═════════════════════════
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:90 | ════════════════════════════════════════════════════════════════════════════════
+
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107 | ▶ Paper Configuration
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107 | ▶ Paper Processing
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:82  | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-11-01 04:38:04 | INFO     | quartofetch.paper_manager:process:73   | 📑 Processing paper: 2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107 | ▶ Paper Validation
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107 | ▶ Repository Status Check
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107 | ▶ Repository Status Check
+2024-11-01 04:38:04 | SUCCESS  | quartofetch.paper_manager:_check_if_updated:131 | ✓ Paper is up to date (commit: a9f5077d891d5a64816dc18844fbf12e2a2b9dae)
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:90           | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:82           | ════════════════════════════ STAGE: Paper Processing ════════════════════════════
+2024-11-01 04:38:04 | INFO     | quartofetch.paper_manager:process:73            | 📑 Processing paper: 2024-10-30_JASA1112_SPI
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107          | ▶ Paper Validation
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107          | ▶ Repository Status Check
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107          | ▶ Repository Status Check
+2024-11-01 04:38:04 | SUCCESS  | quartofetch.paper_manager:_check_if_updated:131 | ✓ Paper is up to date (commit: 92d7e82ca139a56def4607a35b14ce6dd1202bdb)
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:90           | ═════════════════════════════════════════════════════════════════════════════════
+
+2024-11-01 04:38:04 | INFO     | quartofetch.logging_config:wrapper:107          | ▶ Results Summary
+2024-11-01 04:38:04 | INFO     | quartofetch.cli:_log_results:114                | ════════════════════════════════════════════════════════════════════════════════
+2024-11-01 04:38:04 | SUCCESS  | quartofetch.cli:_log_results:116                | ✅ All papers processed successfully (2/2)
+2024-11-01 04:38:04 | INFO     | quartofetch.cli:_log_results:127                | ════════════════════════════════════════════════════════════════════════════════
