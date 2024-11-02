@@ -10,4 +10,4 @@
 /.luarc.json
 __pychache__
 
-*.log
+# *.log
