@@ -8,5 +8,6 @@
 .idea
 *.DS_Store
 /.luarc.json
-paper_fetch_*.log
 __pychache__
+
+*.log

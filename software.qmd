@@ -12,11 +12,12 @@ keep-ipynb: true
 ---
 
 ```{python}
-#| label: "software"
-#| id: "software"
-#| output: asis
+# | label: "software"
+# | id: "software"
+# | output: asis
 import yaml
 from IPython.display import display, Markdown, HTML
+
 
 def button(url, str, icon):
     icon_base = icon[:2]
@@ -25,7 +26,17 @@ def button(url, str, icon):
         {str}
     </a>"""
 
+
 yaml_data = yaml.safe_load(open("software.yaml"))
+
+
+def downloads_badge(package_name: str) -> str:
+    return f"""![](https://img.shields.io/pypi/dm/{package_name})"""
+
+
+def pypi_v_badge(package_name: str) -> str:
+    return f"""![](https://img.shields.io/pypi/v/{package_name})"""
+
 
 for data in yaml_data[::1]:
     logo_scale = data.get("logo_scale", 1)
@@ -34,16 +45,29 @@ for data in yaml_data[::1]:
     display(Markdown("## `" + data["title"] + "` {#" + data["title"][0] + "}"))
 
     if "logo" in data:
-        display(HTML(f"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='{width}'>"))
+        display(
+            HTML(
+                f"<img src={data['logo']} href='{data['website']}' align='right' alt='' width='{width}'>"
+            )
+        )
 
     display(Markdown(data["description"]))
+    if "package" in data:
+        package_name = data["package"].split("/")[-2]
+        display(
+            Markdown(
+                downloads_badge(package_name)
+                + " &nbsp; &nbsp; &nbsp; "
+                + pypi_v_badge(package_name)
+            )
+        )
     buttons = []
     if "website" in data:
-        buttons.append(button(data['website'], "Website", "bi-info"))
+        buttons.append(button(data["website"], "Website", "bi-info"))
     if "github" in data:
-        buttons.append(button(data['github'], "Github", "bi-github"))
+        buttons.append(button(data["github"], "Github", "bi-github"))
     if "package" in data:
-        buttons.append(button(data['package'], "Package", "bi-box-seam"))
+        buttons.append(button(data["package"], "Package", "bi-box-seam"))
 
     display(HTML(" ".join(buttons)))
 ```
