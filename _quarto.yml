@@ -3,7 +3,7 @@ project:
   output-dir: _site
   pre-render: uvx quartofetch --config ./research/_paper_sources.yml --log-file ./research/quartofetch.log
 
-bibliography: FellowshipRefs.bib
+bibliography: FellowshipRefs2.bib
 
 website:
   title: "Andrew Mitchell"

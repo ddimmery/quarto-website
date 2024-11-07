@@ -72,7 +72,7 @@ citation:
   event-place: Chiba, Greater Tokyo
 
 sidebar: false
-keep-tex: true
+keep-tex: false
 ---
 
 ## Introduction

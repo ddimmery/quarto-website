@@ -87,7 +87,7 @@ citation:
   url: https://pubs.aip.org/asa/jasa/article/150/6/4474/995506/Investigating-urban-soundscapes-of-the-COVID-19
 
 sidebar: false
-keep-tex: true
+keep-tex: false
 ---
 
 ## Introduction {#sec-intro}

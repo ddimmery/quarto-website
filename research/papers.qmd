@@ -9,7 +9,7 @@ listing:
     categories: true
     feed: true
   - id : notebooks
-    contents: "papers/**/notebooks/**.ipynb"
+    contents: "papers/**/notebooks/*!(.out).ipynb"
     sort: "date desc"
     type: default
     grid-columns: 2

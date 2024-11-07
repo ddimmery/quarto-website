@@ -47,12 +47,25 @@ keywords:
   - urban design
 
 date: "2024-10-28"
-bibliography: FellowshipRefs-biblatex.bib
+
+format:
+  html:
+    toc: true
+    code-fold: true
+    self-contained-math: true
+  elsevier-pdf:
+    hyperrefoptions: 
+      - "citecolor=black"
+    echo: false
+    journal:
+      name: Journal of the Acoustical Society of America
+      model: 3p
+      cite-style: authoryear
 
 citation:
   type: article-journal
   container-title: "Journal of the Acoustical Society of America"
-  # doi: "10.1121/10.0009794"
+  doi: "10.1121/10.0034417"
   # number: "3"
   # page: "037201"
   # volume: "2"
@@ -140,7 +153,7 @@ There are four steps involved in calculating the SPI, as shown in @fig-bespoke-s
 3. Compare test and target distributions using the distance metric (two-dimensional Kolmogorov-Smirnov distance $D_{BKS}$);
 4. Calculate $SPI = 100 * (1 - D_{BKS})$.
 
-![Steps for calculating the SPI.](figures/SPI-framework.drawio.png){#fig-bespoke-spi width="100%"}
+![Steps for calculating the SPI.](figures/SPI-framework.drawio.png){#fig-bespoke-spi width="100%" fig-env="figure*"}
 
 These steps and their required background are discussed in detail in the following sections. @sec-targets will then present strategies for defining targets and their applications. Throughout this paper, we use the data contained in the International Soundscape Database (ISD) [@Mitchell2024International], which includes 1300+ individual responses on the PAQ scales collected across 13 locations in London and Venice, according to the SSID Protocol [@Mitchell2020Soundscape].
 
@@ -190,13 +203,13 @@ Soundscape targets can thus be set by defining the desired MSN distribution. To 
 
 ## Sample a Target Distribution {#sec-sample-a-target-distribution}
 
-Once the parameters for an MSN are defined (i.e., the target), the MSN is then sampled using the `sn` package [@Azzalini2021R] in `R` [@RCT2018R]. This is to prepare the target distribution to be compared with the empirical test distribution. Several restrictions to the possible parameter values apply, most importantly the covariance matrix $\Omega$ must be a positive-definite matrix. In depth discussions of how these parameterizations should be defined and their restrictions can be found in @Azzalini2016How. @fig-targets shows the result of sampling (n=1000) the three example distributions given in @tbl-target-params and plotting them as soundscape distributions.
+Once the parameters for an MSN are defined (i.e., the target), the MSN is then sampled using the `sn` package [@Azzalini2021R] in `R` [@RCT2018R]. This is to prepare the target distribution to be compared with the empirical test distribution. Several restrictions to the possible parameter values apply, most importantly the covariance matrix $\Omega$ must be a positive-definite matrix. In depth discussions of how these parameterizations should be defined and their restrictions can be found in @Azzalini2016How. @fig-tgts shows the result of sampling (n=1000) the three example distributions given in @tbl-target-params and plotting them as soundscape distributions.
 
-{{< embed notebooks/SingleIndex-Code.ipynb#fig-targets >}}
+{{< embed notebooks/SingleIndex-Code.ipynb#fig-tgts >}}
 
 ## Compare the target and test soundscape assessment distributions
 
-Central to the SPI framework is the concept of a distance metric, which quantifies the deviation of a given soundscape from a desired target soundscape. This distance metric serves as the basis for calculating the SPI value, with smaller distances indicating a closer alignment between the perceived soundscape and the target soundscape perception. The distance between the test and target soundscape distributions is calculated using a two-dimensional Kolmogorov-Smirnov distance $D_{BKS}$} [@Fasano1987multidimensional]. The KS distance is a non-parametric metric of the equality of continuous distributions which is sensitive to both the location and shape of the distributions [@Chakravati1967Handbook].
+Central to the SPI framework is the concept of a distance metric, which quantifies the deviation of a given soundscape from a desired target soundscape. This distance metric serves as the basis for calculating the SPI value, with smaller distances indicating a closer alignment between the perceived soundscape and the target soundscape perception. The distance between the test and target soundscape distributions is calculated using a two-dimensional Kolmogorov-Smirnov distance $D_{BKS}$ [@Fasano1987multidimensional]. The KS distance is a non-parametric metric of the equality of continuous distributions which is sensitive to both the location and shape of the distributions [@Chakravati1967Handbook].
 
 Essentially, we approach this as a problem of (dis)similarity between soundscapes. The $D_{BKS}$ distance metric is then proposed to assess how similar any two given soundscapes distributions are within the circumplex. Taken to the extreme, two perfectly matching distributions in the soundscape circumplex would return a 100% SPI value, while two completely dissimilar distributions would return a 0% SPI value. In practical terms, for the former, this will never be achieved in real world scenarios; for the latter, it is also difficult to estimate how low the SPI value could actually go, and it should be considered that the distance may happen in different directions within the circumplex space. For instance, if a distribution for a vibrant soundscape was taken as a reference, a compared soundscape distribution may exhibit low SPI values for being located in the calm, OR monotonous, OR chaotic regions of the model.
 
@@ -332,7 +345,7 @@ In this example, these sets of targets would correspond to different types of pl
 
 This set of targets made up of e.g. parks, plazas etc. is just one example of an application of reference SPIs. Other examples could include a demographics SPI, where different targets are set for respondents from different demographic groups, or a "use case" SPI with different targets set for different intended purposes of spaces (e.g. recreation, restoration, socialising). We encourage users of the SPI to define both their own single reference targets that can be added these suites of targets for use by others, and their own new sets of reference.
 
-[@Kogan2018Green, Fig.6], in fact displays a startlingly similar concept, showing the locations of the three categories of traffic noise dominance ('traffic noise', 'balanced', and 'natural') plotted in the circumplex perceptual model. It can be clearly seen in this plot that the GSI categories create their own clusters within the circumplex.
+@Kogan2018Green, Fig.6, in fact displays a startlingly similar concept, showing the locations of the three categories of traffic noise dominance ('traffic noise', 'balanced', and 'natural') plotted in the circumplex perceptual model. It can be clearly seen in this plot that the GSI categories create their own clusters within the circumplex.
 
 Although it is expected that the target distribution would usually represent the ideal or goal soundscape perception, it is also possible to define target distributions that represent undesirable or suboptimal soundscape perceptions. For instance, in a soundscape mapping context, it may be beneficial to map and identify chaotic soundscapes across a city in order to better target areas for soundscape interventions. In this case, the target distribution would be set in the chaotic quadrant and a higher SPI would indicate a closer alignment with the target distribution. This flexibility allows the SPI to be applied to a wide range of contexts and applications, enabling the quantification and comparison of soundscape quality across diverse scenarios.
 
