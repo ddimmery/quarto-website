@@ -20,6 +20,11 @@
   package: https://pypi.org/project/circumplex/
   logo: https://raw.githubusercontent.com/MitchellAcoustics/circumplex/main/docs/img/logo-light.png
   logo_scale: 0.8
+- title: "quartofetch"
+  description: |
+    A command-line tool for managing multiple Quarto paper repositories in a research project. It automatically fetches, updates, and organizes Quarto paper repositories while maintaining their build caches.
+  package: https://pypi.org/project/quartofetch/
+  github: https://github.com/MitchellAcoustics/quartofetch
 - title: "CitySeg"
   description: A flexible and efficient pipeline for performing semantic segmentation on images and videos of urban environments.
   website: https://cityseg.readthedocs.io/en/latest/

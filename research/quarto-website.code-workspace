@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"name": "quarto-website",
+			"path": ".."
+		},
+		{
+			"name": "quartofetch",
+			"path": "../../quartofetch"
+		},
+		{
+			"name": "J2401_JASA_SSID-Single-Index",
+			"path": "../../../../Library/CloudStorage/OneDrive-UniversityCollegeLondon/_Fellowship/Papers - Drafts/J2401_JASA_SSID-Single-Index"
+		}
+	],
+	"settings": {
+		"r.lsp.promptToInstall": false,
+		"notebook.formatOnSave.enabled": true,
+		"notebook.defaultFormatter": "charliermarsh.ruff",
+		"notebook.formatOnCellExecution": true
+	}
+}
