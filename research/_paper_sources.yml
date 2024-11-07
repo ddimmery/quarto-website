@@ -4,4 +4,3 @@ papers:
     target_folder: "2022-03-16_JASAEL-HowToAnalyseQuantitativeSoundscapeData"
   - repo_url: "https://github.com/MitchellAcoustics/J2401_JASA_SSID-Single-Index"
     target_folder: "2024-10-30_JASA1112_SPI"
-    branch: "dev"

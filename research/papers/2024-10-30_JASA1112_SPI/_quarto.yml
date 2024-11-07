@@ -3,7 +3,7 @@ project:
   output-dir: ./paper/
 
 manuscript:
-  article: index.qmd
+  article: Mitchell2024_JASA-SPI.qmd
   notebooks:
     - ./notebooks/SingleIndex-Code.ipynb
     - ./notebooks/TargetOptimization.ipynb
