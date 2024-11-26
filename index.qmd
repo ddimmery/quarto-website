@@ -7,7 +7,6 @@ resources:
     - "social-card.jpg"
 ---
 
-::: {.column-page-inset}
 ::: {.column-page-inset-left}
 I am the [Professor of Data Science for the Common Good](https://www.hertie-school.org/en/research/faculty-and-researchers/profile/person/dimmery) at the [Hertie School](https://www.hertie-school.org/en/)'s [Data Science Lab](https://www.hertie-school.org/en/datasciencelab).
 
@@ -17,10 +16,8 @@ My research focuses on the intersection of machine learning and causal inference
 
 I’m most interested in methodological research useful for the study of social phenomena.
 :::
-
 ::: {.column-margin}
 ![](headshot.jpg){.rounded}
-:::
 :::
 
 {{< pagebreak >}}
