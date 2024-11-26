@@ -36,3 +36,6 @@ format:
     include-in-header:
       - includes.html
     highlight-style: tango
+
+execute:
+  freeze: auto
