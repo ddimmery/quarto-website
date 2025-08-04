@@ -1,35 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ddimmery.com/research.html</loc>
-    <lastmod>2022-05-19T11:03:33.252Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ddimmery.com/posts/softblock-demo/index.html</loc>
-    <lastmod>2022-05-19T11:03:34.368Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ddimmery.com/posts/quarto-website/index.html</loc>
-    <lastmod>2022-05-19T11:03:35.223Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ddimmery.com/index.html</loc>
-    <lastmod>2022-05-19T11:03:35.902Z</lastmod>
+    <loc>https://ddimmery.com/blog.html</loc>
+    <lastmod>2025-08-04T21:00:02.306Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/about.html</loc>
-    <lastmod>2022-05-19T11:03:36.171Z</lastmod>
+    <lastmod>2024-06-06T18:09:03.154Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ddimmery.com/posts/softblock-demo/index.html</loc>
+    <lastmod>2022-05-10T20:12:19.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ddimmery.com/research.html</loc>
+    <lastmod>2025-08-04T20:21:07.425Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ddimmery.com/posts/quarto-website/index.html</loc>
+    <lastmod>2025-08-04T20:48:25.952Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ddimmery.com/index.html</loc>
+    <lastmod>2025-08-04T17:20:35.788Z</lastmod>
   </url>
   <url>
     <loc>https://ddimmery.com/software.html</loc>
-    <lastmod>2022-05-19T11:03:38.158Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ddimmery.com/cv.html</loc>
-    <lastmod>2022-05-19T11:03:38.415Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ddimmery.com/blog.html</loc>
-    <lastmod>2022-05-19T11:03:38.703Z</lastmod>
+    <lastmod>2025-08-04T20:43:39.506Z</lastmod>
   </url>
 </urlset>

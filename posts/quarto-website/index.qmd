@@ -257,22 +257,22 @@ Setting up Actions means that simple updates to pages (or YAML files) can actual
 
 # Future dreams
 
-I imagine my CV is similar to most academics' in that it's built like a house of cards (and overfull hboxs). Whenever I add something new to it, I have to copy some lines from elsewhere and modify them to fit the new entry. This always takes me way more time than I'd like. If I mashed together my current [About page](/about.qmd) with the [Research page](/research.qmd), it's like 90% of the way to a full CV. It should presumably be pretty easy to do explicitly combine them and output a reasonable-looking CV. 
+I imagine my CV is similar to most academics' in that it's built like a house of cards (and overfull hboxs). Whenever I add something new to it, I have to copy some lines from elsewhere and modify them to fit the new entry. This always takes me way more time than I'd like. If I mashed together my current [About page](../../about.qmd) with the [Research page](../../research.qmd), it's like 90% of the way to a full CV. It should presumably be pretty easy to do explicitly combine them and output a reasonable-looking CV. 
 
 This is a project for another day, though. Too much of the Research page directly outputs HTML, which makes it difficult to naïvely import into a $\LaTeX$ CV.
 
 An almost completely naïve approach to directly importing the relevant pages creates [this ugly document](cv.pdf).
 
 <details><summary>Naïve CV</summary>
-```{markdown}
+``` markdown
 ---
 title: "Curriculum Vitae"
 format: pdf
 ---
 
-{{< include about.qmd >}}
+{{{< include about.qmd >}}}
 
-{{< include research.md >}}
+{{{< include research.md >}}}
 ```
 </details>
 

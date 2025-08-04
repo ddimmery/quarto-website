@@ -1,7 +1,7 @@
 ---
 title: "Software"
 echo: false
-jupyter: python3
+jupyter: quarto-website
 section-divs: false
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Drew's News"
 listing:
   contents: posts
   sort: "date desc"
@@ -7,3 +7,10 @@ listing:
   categories: true
   feed: true
 ---
+
+::: {.callout-tip  collapse="false"}
+## Subscription
+Subscribe to the [RSS feed](blog.xml) for updates.
+
+If you'd prefer to receive the blog as a newsletter, [Feedrabbit](https://feedrabbit.com/) is a good and simple choice (until I make something better).
+:::

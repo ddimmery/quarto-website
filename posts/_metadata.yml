@@ -16,8 +16,8 @@ smooth-scroll: true
 author:
   - name: Drew Dimmery
     url: https://ddimmery.com
-    affiliation: Data Science @ University of Vienna
-    affiliation-url: https://datascience.univie.ac.at/
+    affiliation: The Hertie School
+    affiliation-url: https://www.hertie-school.org/en/datasciencelab
 
 # citation
 citation: true

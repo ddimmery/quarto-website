@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.377">
+<meta name="generator" content="quarto-1.5.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,16 +10,22 @@
 <meta name="dcterms.date" content="2022-05-10">
 <meta name="description" content="In this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.">
 
-<title>Drew Dimmery - Using SoftBlock to Design an Experiment</title>
+<title>Drew Dimmery – Using SoftBlock to Design an Experiment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -30,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -44,69 +50,46 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
 <link href="../../favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -115,8 +98,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7YLFF5F90"></script>
@@ -131,6 +116,26 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Move RSS feed to sidebar on blog page
+  const rssBox = document.querySelector('.rss-feed-box');
+  const categoriesTitle = document.querySelector('#quarto-margin-sidebar .quarto-listing-category-title');
+  
+  if (rssBox && categoriesTitle) {
+    // Create a new RSS feed element for the sidebar
+    const sidebarRss = document.createElement('div');
+    sidebarRss.className = 'sidebar-rss-feed';
+    sidebarRss.innerHTML = `
+      <h6>📡 RSS Feed</h6>
+      <div><a href="blog.xml">Subscribe to updates!</a></div>
+    `;
+    
+    // Insert before the categories title
+    categoriesTitle.parentNode.insertBefore(sidebarRss, categoriesTitle);
+  }
+});
+</script>
 <script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="../../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
 <script src="../../site_libs/datatables-binding-0.22/datatables.js"></script>
@@ -144,48 +149,58 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Drew Dimmery - Using SoftBlock to Design an Experiment">
-<meta property="og:description" content="In this demo, I'm going to walk through an example experimental design using methods from our [recent paper on Balanced Design](https://arxiv.org/abs/2010.11332).">
+<meta property="og:description" content="In this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.">
 <meta property="og:image" content="https://ddimmery.com/posts/softblock-demo/three-designs.jpg">
-<meta property="og:site-name" content="Drew Dimmery">
+<meta property="og:site_name" content="Drew Dimmery">
 <meta name="twitter:title" content="Drew Dimmery - Using SoftBlock to Design an Experiment">
-<meta name="twitter:description" content="In this demo, I'm going to walk through an example experimental design using methods from our [recent paper on Balanced Design](https://arxiv.org/abs/2010.11332).">
+<meta name="twitter:description" content="In this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.">
 <meta name="twitter:image" content="https://ddimmery.com/posts/softblock-demo/three-designs.jpg">
 <meta name="twitter:creator" content="@drewdim">
+<meta name="twitter:site" content="@drewdim">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Drew Dimmery</span>
-  </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Home</a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">About</a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html">Research</a>
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../software.html">Software</a>
+    <a class="nav-link" href="../../software.html"> 
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html">Blog</a>
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Drew’s News</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -194,6 +209,11 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Using SoftBlock to Design an Experiment</h1>
+                  <div>
+        <div class="description">
+          In this demo, I’m going to walk through an example experimental design using methods from our <a href="https://arxiv.org/abs/2010.11332">recent paper on Balanced Design</a>.
+        </div>
+      </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">experimental-design</div>
                 <div class="quarto-category">demo</div>
@@ -201,29 +221,21 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
                   </div>
   </div>
     
-  <div>
-    <div class="description">
-      In this demo, I’m going to walk through an example experimental design using methods from our <a href="https://arxiv.org/abs/2010.11332">recent paper on Balanced Design</a>.
-    </div>
-  </div>
-
   <div class="quarto-title-meta-author">
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
-      <a href="https://ddimmery.com">Drew Dimmery</a> 
+      <p class="author"><a href="https://ddimmery.com">Drew Dimmery</a> </p>
     </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
           <p class="affiliation">
-              <a href="https://datascience.univie.ac.at/">
-              Data Science @ University of Vienna
+              <a href="https://www.hertie-school.org/en/datasciencelab">
+              The Hertie School
               </a>
             </p>
         </div>
-      </div>
-
-
+    </div>
 
   <div class="quarto-title-meta">
 
@@ -234,12 +246,13 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
         <p class="date">May 10, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
   <div>
     <div class="abstract">
-      <div class="abstract-title">Abstract</div>
+      <div class="block-title">Abstract</div>
       <p>This is a demo of using SoftBlock for experimental design for a notional randomization of precincts in North Carolina. To optimize power, we focus on ensuring very similar patterns of prior voting patterns in treatment and in control. This demo walks through all the necessary steps for this process and shows how to perform estimation of average and heterogeneous effects.</p>
     </div>
   </div>
@@ -248,18 +261,18 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Contents</h2>
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#implementation-of-methods" id="toc-implementation-of-methods" class="nav-link" data-scroll-target="#implementation-of-methods">Implementation of methods</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#description" id="toc-description" class="nav-link" data-scroll-target="#description">Description</a></li>
   <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code">Source Code</a></li>
   </ul></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#get-precinct-data" id="toc-get-precinct-data" class="nav-link" data-scroll-target="#get-precinct-data">Get Precinct data</a>
   <ul class="collapse">
   <li><a href="#results-data" id="toc-results-data" class="nav-link" data-scroll-target="#results-data">Results Data</a></li>
@@ -270,12 +283,12 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
   </ul></li>
   <li><a href="#assign-treatment-four-ways" id="toc-assign-treatment-four-ways" class="nav-link" data-scroll-target="#assign-treatment-four-ways">Assign treatment four ways</a></li>
   <li><a href="#power-simulation" id="toc-power-simulation" class="nav-link" data-scroll-target="#power-simulation">Power simulation</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#simulate-each-design" id="toc-simulate-each-design" class="nav-link" data-scroll-target="#simulate-each-design">Simulate each design</a></li>
   <li><a href="#power-comparison" id="toc-power-comparison" class="nav-link" data-scroll-target="#power-comparison">Power Comparison</a></li>
   </ul></li>
   <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#average-effects" id="toc-average-effects" class="nav-link" data-scroll-target="#average-effects">Average Effects</a></li>
   <li><a href="#plot-average-effects" id="toc-plot-average-effects" class="nav-link" data-scroll-target="#plot-average-effects">Plot Average Effects</a></li>
   <li><a href="#heterogeneous-effects" id="toc-heterogeneous-effects" class="nav-link" data-scroll-target="#heterogeneous-effects">Heterogeneous Effects</a></li>
@@ -291,9 +304,7 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 
 
 
-<div class="cell">
 
-</div>
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
 <p>In particular, I’m going to imagine that I’m designing an experiment in which I assign different treatments to particular precincts in North Carolina. In order to optimize power, of course, we want to make sure that our two test groups look as similar as possible in terms of prior voting patterns.</p>
@@ -319,7 +330,7 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 See source code
 </summary>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">readLines</span>(<span class="st">"https://raw.githubusercontent.com/ddimmery/softblock/master/r_implementation.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -477,7 +488,7 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <section id="results-data" class="level3">
 <h3 class="anchored" data-anchor-id="results-data">Results Data</h3>
 <div class="cell" data-hash="index_cache/html/get_precinct_results_d1c2efc22d72ed750c45b6260e9c0425">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://dl.ncsbe.gov/ENRS/2020_11_03/results_pct_20201103.zip"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>zip_file <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">".zip"</span>)</span>
@@ -514,7 +525,7 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <section id="shapefiles" class="level3">
 <h3 class="anchored" data-anchor-id="shapefiles">Shapefiles</h3>
 <div class="cell" data-hash="index_cache/html/get_precinct_shapes_b35eb3361df0f797fc8662ac0d02a298">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">=</span> <span class="st">"https://s3.amazonaws.com/dl.ncsbe.gov/ShapeFiles/Precinct/SBE_PRECINCTS_20201018.zip"</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>temp <span class="ot">&lt;-</span> <span class="fu">tempfile</span>()</span>
@@ -530,7 +541,7 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <section id="aggregate-data-and-join" class="level2">
 <h2 class="anchored" data-anchor-id="aggregate-data-and-join">Aggregate Data and Join</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>results <span class="sc">%&gt;%</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="st">`</span><span class="at">Real Precinct</span><span class="st">`</span> <span class="sc">==</span> <span class="st">'Y'</span>) <span class="sc">%&gt;%</span></span>
@@ -554,13 +565,12 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <pre><code>`summarise()` has grouped output by 'County'. You can override using the
 `.groups` argument.</code></pre>
 </div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">inner_join</span>(results_agg, shapes, <span class="at">by=</span><span class="fu">c</span>(<span class="st">'County'</span><span class="ot">=</span><span class="st">'county_nam'</span>, <span class="st">'Precinct'</span><span class="ot">=</span><span class="st">'prec_id'</span>)) <span class="ot">-&gt;</span> df_joined</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>DT<span class="sc">::</span><span class="fu">datatable</span>(df_joined <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="at">size=</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span>geometry), <span class="at">rownames =</span> <span class="cn">FALSE</span>, <span class="at">options=</span><span class="fu">list</span>(<span class="at">scrollX=</span><span class="cn">TRUE</span>, <span class="at">autoWidth =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
 <div id="htmlwidget-1770d66a86dcce969965" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1770d66a86dcce969965">{"x":{"filter":"none","vertical":false,"data":[["WAKE","WAKE","SWAIN","CRAVEN","BUNCOMBE","ORANGE","GUILFORD","HENDERSON","HOKE","GUILFORD","DAVIDSON","MECKLENBURG","GUILFORD","GUILFORD","GASTON","CARTERET","GUILFORD","RICHMOND","LEE","ROWAN","WAYNE","MADISON","MECKLENBURG","NEW HANOVER","BUNCOMBE","MECKLENBURG","CUMBERLAND","PENDER","CASWELL","HALIFAX","WILKES","WATAUGA","NORTHAMPTON","FRANKLIN","ORANGE","GUILFORD","CABARRUS","HENDERSON","BRUNSWICK","BUNCOMBE","IREDELL","RUTHERFORD","CUMBERLAND","MECKLENBURG","BLADEN","DURHAM","BRUNSWICK","CABARRUS","BURKE","MECKLENBURG","ALEXANDER","WAKE","SAMPSON","CABARRUS","WAYNE","WAKE","HARNETT","DURHAM","CASWELL","YANCEY","ROBESON","ROWAN","COLUMBUS","ALAMANCE","RUTHERFORD","ROBESON","PERQUIMANS","DURHAM","WAKE","JOHNSTON","GUILFORD","GUILFORD","WILKES","WAKE","MADISON","DAVIDSON","STANLY","GUILFORD","GUILFORD","MECKLENBURG","PITT","MECKLENBURG","CLEVELAND","RUTHERFORD","PERQUIMANS","ORANGE","GUILFORD","BRUNSWICK","GUILFORD","LENOIR","UNION","CUMBERLAND","WAKE","BERTIE","UNION","DAVIE","RANDOLPH","GASTON","UNION","FORSYTH"],["16-07","20-11","WHCH","20","21.1","CS1","OR2","SM","01","G32","52","141","G05","H26","40","ASCI","G11","13","C1","04","11","MARS H","235","W25","34.1","128","CC21","CF11","ANDE","HPR","108","02","CREEKS","11","SJ","G40A2","07-00","PV","17","39.2","ST4","14","G4A","113","P502","06","05","02-05","0051","001","E","18-01","HARR","12-04","21","20-04","PR20","35.3","LEAS","06 JAC","17","13","P25B","06E","10A","22","PARKVI","38","16-01","PR04","H24","FR5B","101","01-29","HOT SP","64","0018","NCGR1","H01","021","0200B","015","LAWNDL","06A","BELVID","WC","H20B","16","G65","FC","029C","MB62","04-10","W1","012","03","AS","18","036","304"],[462,626,2005,2615,919,176,291,2513,274,270,3109,1788,192,197,3788,621,209,213,551,3340,196,2992,2103,1014,385,1858,2377,2618,699,237,204,297,134,1265,169,235,348,1289,5288,359,2375,1827,1099,2109,141,125,3280,463,2568,992,1962,493,1295,366,183,406,485,399,531,1197,252,1792,993,1780,1021,1799,1412,383,442,404,272,161,276,368,648,760,918,428,330,1410,399,2578,1362,2057,555,370,144,4433,280,3250,2139,1980,370,294,2155,1923,3108,4649,1669,1432],[0.318181818181818,0.337060702875399,0.571072319201995,0.356022944550669,0.736670293797606,0.340909090909091,0.206185567010309,0.247512932749702,0.372262773722628,0.348148148148148,0.13669990350595,0.809284116331096,0.942708333333333,0.350253807106599,0.328669482576558,0.20450885668277,0.602870813397129,0.314553990610329,0.29038112522686,0.177245508982036,0.739795918367347,0.415441176470588,0.538754160722777,0.814595660749507,0.628571428571429,0.677610333692142,0.684896928901977,0.282276546982429,0.253218884120172,0.405063291139241,0.25,0.101010101010101,0.298507462686567,0.544664031620553,0.526627218934911,0.561702127659575,0.0977011494252874,0.339022498060512,0.367624810892587,0.554317548746518,0.450947368421053,0.347564313081554,0.563239308462238,0.451398767188241,0.432624113475177,0.776,0.315243902439024,0.352051835853132,0.316978193146417,0.576612903225806,0.203873598369011,0.569979716024341,0.652509652509653,0.382513661202186,0.557377049180328,0.38423645320197,0.441237113402062,0.49874686716792,0.451977401129944,0.305764411027569,0.432539682539683,0.140625,0.0795568982880161,0.51685393258427,0.188050930460333,0.413007226236798,0.380311614730878,0.704960835509138,0.402714932126697,0.21039603960396,0.319852941176471,0.403726708074534,0.101449275362319,0.358695652173913,0.350308641975309,0.701315789473684,0.218954248366013,0.233644859813084,0.681818181818182,0.646808510638298,0.533834586466165,0.754072924747867,0.413362701908957,0.394749635391347,0.259459459459459,0.389189189189189,0.305555555555556,0.358448003609294,0.514285714285714,0.307692307692308,0.350163627863488,0.777272727272727,0.391891891891892,0.636054421768708,0.127146171693735,0.160686427457098,0.263835263835264,0.490212949021295,0.257040143798682,0.959497206703911],[0.632034632034632,0.630990415335463,0.40498753117207,0.633269598470363,0.244831338411317,0.625,0.762886597938144,0.737365698368484,0.60948905109489,0.622222222222222,0.84818269540045,0.161633109619687,0.0416666666666667,0.624365482233503,0.66156282998944,0.793880837359098,0.368421052631579,0.671361502347418,0.696914700544465,0.807784431137725,0.239795918367347,0.571189839572192,0.442225392296719,0.151873767258383,0.34025974025974,0.306781485468245,0.296592343289861,0.699006875477464,0.739628040057225,0.586497890295359,0.730392156862745,0.885521885521885,0.694029850746269,0.444268774703557,0.443786982248521,0.421276595744681,0.890804597701149,0.643134212567882,0.626323751891074,0.417827298050139,0.532210526315789,0.636015325670498,0.415832575068244,0.532005689900427,0.553191489361702,0.192,0.667378048780488,0.628509719222462,0.674844236760125,0.412298387096774,0.785423037716616,0.36105476673428,0.336679536679537,0.579234972677596,0.426229508196721,0.586206896551724,0.525773195876289,0.446115288220551,0.532956685499058,0.679197994987469,0.563492063492063,0.844866071428571,0.916414904330312,0.464606741573034,0.800195886385896,0.576431350750417,0.609065155807365,0.263707571801567,0.561085972850679,0.782178217821782,0.647058823529412,0.565217391304348,0.880434782608696,0.608695652173913,0.62962962962963,0.286842105263158,0.766884531590414,0.738317757009346,0.306060606060606,0.334751773049645,0.451127819548872,0.223816912335144,0.580029368575624,0.588721438988819,0.726126126126126,0.586486486486486,0.645833333333333,0.63365666591473,0.435714285714286,0.684307692307692,0.635811126694717,0.206565656565657,0.578378378378378,0.363945578231293,0.860788863109049,0.823192927717109,0.722972972972973,0.492794149279415,0.729778310365488,0.0307262569832402],[455,621,1976,2598,911,175,292,2491,270,271,3096,1761,189,198,3743,602,209,212,544,3318,193,2975,2082,1011,383,1851,2356,2589,688,236,202,294,133,1254,171,228,345,1280,5236,350,2351,1801,1089,2101,137,126,3235,463,2545,987,1943,485,1286,354,181,403,482,395,526,1201,247,1778,984,1768,1021,1743,1401,379,441,405,268,161,270,369,634,752,909,425,321,1400,389,2559,1351,2043,549,368,143,4382,278,3211,2119,1956,364,290,2129,1912,3068,4598,1651,1420],[0.30989010989011,0.307568438003221,0.527327935222672,0.349884526558891,0.717892425905598,0.337142857142857,0.184931506849315,0.23163388197511,0.388888888888889,0.328413284132841,0.157945736434109,0.770584894946053,0.931216931216931,0.313131313131313,0.322468608068394,0.240863787375415,0.507177033492823,0.330188679245283,0.294117647058824,0.17209162145871,0.694300518134715,0.409411764705882,0.508165225744476,0.76162215628091,0.62402088772846,0.647757968665586,0.673599320882852,0.287755890305137,0.260174418604651,0.411016949152542,0.282178217821782,0.119047619047619,0.300751879699248,0.566188197767145,0.508771929824561,0.548245614035088,0.121739130434783,0.32109375,0.36096256684492,0.517142857142857,0.432581880051042,0.348695169350361,0.543617998163453,0.403617325083294,0.45985401459854,0.76984126984127,0.317465224111283,0.323974082073434,0.311591355599214,0.472137791286727,0.215645908389089,0.534020618556701,0.642301710730949,0.364406779661017,0.530386740331492,0.339950372208437,0.454356846473029,0.448101265822785,0.473384030418251,0.308909242298085,0.45748987854251,0.142857142857143,0.100609756097561,0.511877828054299,0.180215475024486,0.423981640849111,0.366880799428979,0.651715039577836,0.408163265306122,0.232098765432099,0.328358208955224,0.385093167701863,0.159259259259259,0.265582655826558,0.38801261829653,0.679521276595745,0.218921892189219,0.2,0.672897196261682,0.584285714285714,0.534704370179949,0.701836654943337,0.416728349370836,0.379833578071464,0.262295081967213,0.380434782608696,0.335664335664336,0.346188954815153,0.456834532374101,0.308626596075989,0.328928739971685,0.744376278118609,0.332417582417582,0.606896551724138,0.120244246124941,0.161087866108787,0.267275097783572,0.473466724662897,0.246517262265294,0.946478873239437],[0.617582417582418,0.626409017713366,0.3917004048583,0.615858352578907,0.244785949506037,0.628571428571429,0.75,0.72059413890004,0.566666666666667,0.645756457564576,0.800064599483204,0.158432708688245,0.0211640211640212,0.616161616161616,0.632113278119156,0.722591362126246,0.406698564593301,0.632075471698113,0.621323529411765,0.780289330922242,0.253886010362694,0.547563025210084,0.440441882804995,0.155291790306627,0.339425587467363,0.307941653160454,0.277589134125637,0.643105446118192,0.706395348837209,0.555084745762712,0.653465346534653,0.826530612244898,0.661654135338346,0.39792663476874,0.456140350877193,0.447368421052632,0.855072463768116,0.6375,0.604469060351413,0.417142857142857,0.513398553806891,0.600777345918934,0.382920110192837,0.567824845311756,0.481751824817518,0.19047619047619,0.61854714064915,0.624190064794816,0.624361493123772,0.505572441742654,0.732372619660319,0.364948453608247,0.32348367029549,0.531073446327684,0.414364640883978,0.588089330024814,0.5,0.470886075949367,0.486692015209125,0.648626144879267,0.469635627530364,0.80933633295838,0.865853658536585,0.438914027149321,0.78256611165524,0.530694205393001,0.605281941470378,0.287598944591029,0.503401360544218,0.730864197530864,0.600746268656716,0.577639751552795,0.792592592592593,0.696476964769648,0.555205047318612,0.265957446808511,0.733773377337734,0.757647058823529,0.289719626168224,0.369285714285714,0.413881748071979,0.255177803829621,0.53960029607698,0.584924131179638,0.715846994535519,0.584239130434783,0.573426573426573,0.616841624828845,0.406474820143885,0.656804733727811,0.631429919773478,0.193251533742331,0.607142857142857,0.351724137931034,0.849694692343823,0.792364016736402,0.694263363754889,0.48260113092649,0.713506965475469,0.0267605633802817],[460,622,1988,2610,911,176,294,2504,273,270,3106,1761,192,196,3757,622,210,212,546,3322,194,2984,2083,1017,387,1853,2365,2605,695,237,203,298,134,1264,172,226,345,1280,5261,353,2369,1808,1095,2110,139,125,3259,458,2562,991,1957,485,1289,360,182,402,484,401,526,1208,251,1791,987,1778,1022,1771,1410,381,441,405,269,158,273,370,640,756,918,428,323,1405,399,2569,1360,2052,554,370,142,4404,278,3236,2136,1972,365,290,2146,1923,3094,4633,1657,1429],[0.397826086956522,0.392282958199357,0.582997987927565,0.37816091954023,0.768386388583974,0.397727272727273,0.244897959183673,0.275958466453674,0.450549450549451,0.411111111111111,0.183837733419189,0.817717206132879,0.927083333333333,0.38265306122449,0.35400585573596,0.255627009646302,0.580952380952381,0.358490566037736,0.353479853479854,0.215532811559302,0.72680412371134,0.454758713136729,0.556409025444071,0.816125860373648,0.679586563307494,0.696168375607124,0.712896405919662,0.320153550863724,0.296402877697842,0.438818565400844,0.305418719211823,0.151006711409396,0.328358208955224,0.588607594936709,0.546511627906977,0.685840707964602,0.133333333333333,0.35859375,0.409237787492872,0.541076487252125,0.47741663149008,0.383849557522124,0.594520547945205,0.456872037914692,0.467625899280576,0.824,0.356244246701442,0.360262008733624,0.36455893832943,0.572149344096872,0.251916198262647,0.579381443298969,0.675717610550815,0.413888888888889,0.582417582417582,0.427860696517413,0.487603305785124,0.556109725685786,0.490494296577947,0.335264900662252,0.597609561752988,0.169737576772753,0.109422492401216,0.555680539932508,0.211350293542074,0.514398644833427,0.401418439716312,0.716535433070866,0.469387755102041,0.281481481481481,0.390334572490706,0.462025316455696,0.164835164835165,0.408108108108108,0.428125,0.712962962962963,0.266884531590414,0.280373831775701,0.73374613003096,0.650533807829181,0.571428571428571,0.748151031529778,0.443382352941176,0.42495126705653,0.288808664259928,0.424324324324324,0.380281690140845,0.400317892824705,0.52158273381295,0.334672435105068,0.360955056179775,0.792596348884381,0.424657534246575,0.63448275862069,0.144454799627213,0.204368174726989,0.322559793148028,0.518022879343838,0.277610138805069,0.960111966410077],[0.580434782608696,0.593247588424437,0.388832997987928,0.614176245210728,0.215148188803513,0.551136363636364,0.727891156462585,0.7064696485623,0.538461538461538,0.57037037037037,0.806825499034127,0.156729131175468,0.0416666666666667,0.581632653061224,0.631354804365185,0.736334405144695,0.380952380952381,0.636792452830189,0.626373626373626,0.773028296207104,0.22680412371134,0.531501340482574,0.42294767162746,0.151425762045231,0.30749354005168,0.290879654614139,0.263002114164905,0.657965451055662,0.693525179856115,0.552742616033755,0.660098522167488,0.832214765100671,0.671641791044776,0.399525316455696,0.430232558139535,0.309734513274336,0.857971014492754,0.621875,0.580307926249762,0.41643059490085,0.503165892781764,0.599557522123894,0.379908675799087,0.530331753554502,0.503597122302158,0.152,0.621356244246701,0.622270742358079,0.627244340359094,0.422805247225025,0.73939703628002,0.36701030927835,0.313421256788208,0.527777777777778,0.406593406593407,0.534825870646766,0.495867768595041,0.41645885286783,0.5,0.647350993377483,0.390438247011952,0.817978782802903,0.879432624113475,0.427446569178853,0.779843444227006,0.474308300395257,0.588652482269504,0.251968503937008,0.480725623582766,0.711111111111111,0.579925650557621,0.531645569620253,0.827838827838828,0.581081081081081,0.5515625,0.261904761904762,0.71677559912854,0.698598130841122,0.241486068111455,0.335943060498221,0.416040100250627,0.23316465550798,0.543382352941176,0.565302144249513,0.700361010830325,0.564864864864865,0.577464788732394,0.58991825613079,0.406474820143885,0.65512978986403,0.621722846441948,0.175456389452333,0.547945205479452,0.348275862068965,0.846691519105312,0.78523140925637,0.669036845507434,0.464493848478308,0.710923355461678,0.0258922323303009],[457,605,1960,2559,904,173,289,2483,269,261,3096,1646,185,190,3589,578,207,211,533,3271,190,2969,1390,1000,382,1447,2329,2564,683,231,201,294,134,1234,169,224,342,1276,5206,352,2326,1764,1086,2100,134,122,3189,458,2534,674,1936,482,1276,352,177,393,472,391,511,1193,241,1755,972,1750,1006,1759,1396,370,431,405,259,156,271,364,631,749,901,415,315,1087,391,2176,1337,2030,551,363,142,4357,270,3188,2106,1950,362,288,2120,1908,2974,4438,1642,1394],[0.341356673960613,0.335537190082645,0.548469387755102,0.336850332161,0.733407079646018,0.38150289017341,0.221453287197232,0.238421264599275,0.390334572490706,0.360153256704981,0.140180878552972,1,0.962162162162162,0.415789473684211,0.330454165505712,0.20242214532872,0.618357487922705,0.355450236966825,0.309568480300188,0.174258636502599,0.736842105263158,0.407881441562816,1,0.818,0.615183246073298,1,0.712322885358523,0.290561622464899,0.254758418740849,0.402597402597403,0.233830845771144,0.129251700680272,0.298507462686567,0.581847649918963,0.597633136094675,0.642857142857143,0.10233918128655,0.322100313479624,0.352093737994622,0.525568181818182,0.459157351676698,0.342403628117914,0.587476979742173,0.413809523809524,0.455223880597015,0.819672131147541,0.311696456569457,0.342794759825328,0.320836621941594,1,0.207128099173554,0.564315352697095,0.646551724137931,0.414772727272727,0.581920903954802,0.361323155216285,0.468220338983051,0.524296675191816,0.469667318982387,0.309304274937133,0.452282157676349,0.15042735042735,0.0925925925925926,0.522285714285714,0.185884691848907,0.436043206367254,0.377507163323782,0.708108108108108,0.445475638051044,0.180246913580247,0.335907335907336,0.429487179487179,0.136531365313653,0.31043956043956,0.351822503961965,0.702269692923899,0.237513873473918,0.224096385542169,0.698412698412698,1,0.529411764705882,1,0.425579655946148,0.378817733990148,0.259528130671506,0.396694214876033,0.330985915492958,0.342666972687629,0.57037037037037,0.288268506900878,0.335707502374169,0.797948717948718,0.370165745856354,0.635416666666667,0.124528301886792,0.154088050314465,0.267316745124412,0.486480396575034,0.267356881851401,0.969153515064562],[0.601750547045952,0.626446280991735,0.390816326530612,0.663149667839,0.236725663716814,0.61849710982659,0.778546712802768,0.733387031816351,0.609665427509294,0.639846743295019,0.859819121447028,0,0.0378378378378378,0.58421052631579,0.653663973251602,0.79757785467128,0.381642512077295,0.644549763033175,0.690431519699812,0.825741363497401,0.263157894736842,0.558100370495116,0,0.174,0.342931937172775,0,0.287677114641477,0.708658346333853,0.745241581259151,0.597402597402597,0.721393034825871,0.826530612244898,0.701492537313433,0.418152350081037,0.402366863905325,0.357142857142857,0.89766081871345,0.649686520376176,0.647330003841721,0.417613636363636,0.540842648323302,0.638321995464853,0.412523020257827,0.586190476190476,0.544776119402985,0.180327868852459,0.685794920037629,0.657205240174673,0.658642462509866,0,0.773243801652893,0.363070539419087,0.352664576802508,0.585227272727273,0.418079096045198,0.592875318066158,0.531779661016949,0.475703324808184,0.530332681017613,0.664710813076278,0.547717842323652,0.84957264957265,0.907407407407407,0.477714285714286,0.802186878727634,0.563956793632746,0.622492836676218,0.291891891891892,0.496519721577726,0.817283950617284,0.664092664092664,0.57051282051282,0.822878228782288,0.67032967032967,0.597464342313788,0.297730307076101,0.762486126526082,0.775903614457831,0.301587301587302,0,0.470588235294118,0,0.548242333582648,0.591133004926108,0.740471869328494,0.603305785123967,0.669014084507042,0.655955932981409,0.42962962962963,0.711731493099122,0.664292497625831,0.202051282051282,0.585635359116022,0.364583333333333,0.875471698113208,0.845911949685535,0.732683254875588,0.501351960342497,0.732643118148599,0.0308464849354376],[2319,2363,2460,1498,1808,178,966,793,736,919,1361,466,885,964,1101,1652,890,9,638,2582,2127,556,515,237,1813,456,1461,104,1643,843,2079,2130,208,1123,171,1001,1738,788,1868,1818,712,2564,1430,447,1895,1254,1857,1720,1763,337,1978,2335,2548,1731,2118,2358,831,1304,1644,2030,2646,2588,1529,2013,2577,2653,101,1300,2313,651,1007,1018,2072,2177,555,1367,2519,1003,925,375,60,364,1548,2575,97,175,985,1863,918,617,2430,1468,2247,1904,2399,1327,20,1077,2415,1186],["16-07","20-11","WHCH","FAIRFIELD HARBOUR","HAW CREEK ELEMENTARY SCHOOL","COLES STORE","OR2","SOUTH MILLS RIVER","ALLENDALE","G32","SILVER HILL 52","141","G05","H26","DALLAS  1","Atlantic/Sea Level/Cedar Island","G11","MINERAL SPRINGS  2","C1","BRADSHAW","11","MARS HILL","235","W25","BLACK MOUNTAIN 3 - LAKE TOMAHAWK","128","CROSS CREEK 21","CAPE FEAR","ANDERSON","HOBGOOD","FAIRPLAINS","BEAVER DAM","CREEKSVILLE","SANDY CREEK","ST JOHN","G40A2","07-00","PISGAH VIEW","LONGWOOD","FAIRVIEW VOLUNTEER FIRE DEPT","STATESVILLE  4","FOREST CITY  2","CROSS CREEK 30-G4","113","ELIZABETHTOWN  2","LAKEWOOD SCHOOL","TOWNCREEK","02-05","SILVER CREEK 01","001","ELLENDALE","18-01","HARRELLS","12-04","21","20-04","STEWARTS CREEK","0035.3","LEASBURG","JACKS CREEK","LUMBERTON  7","ROCK GROVE","WILLIAMS 2","EAST GRAHAM","DUNCAN CREEK-GOLDEN VALLEY","NORTH PEMBROKE","PARKVILLE","HOPE VALLEY BAPTIST","16-01","BENTONVILLE","H24","FR5B","ANTIOCH","01-29","HOT SPRINGS","THOMASVILLE 3 64","RICHFIELD","NCGR1","H01","021","AYDEN B","015","LAWNDL","CHIMNEY ROCK","BELVIDERE","WHITE CROSS","H20B","SHINGLETREE 1","G65","FALLING CREEK","STALLINGS VFD","MONTIBELLO","04-10","WINDSOR 1","BETHLEHEM PRESBYTERIAN CHURCH","CLARKSVILLE","ASHEBORO SOUTH","ASHBROOK","CROSSROADS AME ZION CHURCH","FORSYTH TECH CC MAZIE WOODRUFF CTR"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[92,92,87,25,11,68,41,45,47,41,29,60,41,41,36,16,41,77,53,80,96,57,60,65,11,60,26,71,17,42,97,95,66,35,68,41,13,45,10,11,49,81,26,60,9,32,10,13,12,60,2,92,82,13,96,92,43,32,17,100,78,80,24,1,81,78,72,32,92,51,41,41,97,92,57,29,84,41,41,60,74,60,23,81,72,68,41,10,41,54,90,26,92,8,90,30,76,36,90,34],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>County<\/th>\n      <th>Precinct<\/th>\n      <th>total_vote_pres<\/th>\n      <th>dem_share_pres<\/th>\n      <th>gop_share_pres<\/th>\n      <th>total_vote_senate<\/th>\n      <th>dem_share_senate<\/th>\n      <th>gop_share_senate<\/th>\n      <th>total_vote_gov<\/th>\n      <th>dem_share_gov<\/th>\n      <th>gop_share_gov<\/th>\n      <th>total_vote_house<\/th>\n      <th>dem_share_house<\/th>\n      <th>gop_share_house<\/th>\n      <th>id<\/th>\n      <th>enr_desc<\/th>\n      <th>of_prec_id<\/th>\n      <th>county_id<\/th>\n      <th>blockid<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"autoWidth":true,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12,13,14,17]}],"order":[],"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
@@ -569,7 +579,7 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <section id="add-some-geographic-features" class="level2">
 <h2 class="anchored" data-anchor-id="add-some-geographic-features">Add some geographic features</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>geometry <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">st_centroid</span>() <span class="sc">%&gt;%</span></span>
@@ -580,7 +590,7 @@ assign_matched_pairs &lt;- function(.data, cols, .s2=2, .neighbors=6) {
 <pre><code>Warning in CPL_crs_from_input(x): GDAL Message 1: +init=epsg:XXXX syntax is
 deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></pre>
 </div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>longitude <span class="ot">=</span> latlong[, <span class="st">'X'</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>latitude <span class="ot">=</span> latlong[, <span class="st">'Y'</span>]</span>
@@ -593,12 +603,12 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </section>
 <section id="assign-treatment-four-ways" class="level1">
 <h1>Assign treatment four ways</h1>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Softblock</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Greedy nearest neighbors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">QuickBlock</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Matched Pairs</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">now</span>()</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> <span class="fu">assign_softblock</span>(<span class="fu">c</span>(</span>
@@ -620,7 +630,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">now</span>()</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> <span class="fu">assign_greedy_neighbors</span>(<span class="fu">c</span>(</span>
@@ -642,7 +652,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>start_time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">now</span>()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
@@ -652,7 +662,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    total_vote_gov, dem_share_gov, gop_share_gov, <span class="co"># 2020 governor</span></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    total_vote_house, dem_share_house, gop_share_house <span class="co"># 2020 house</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>) <span class="ot">-&gt;</span> df_qb</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>qb_blocks <span class="ot">=</span> <span class="fu">quickblock</span>(<span class="fu">as.data.frame</span>(df_qb), <span class="at">size_constraint =</span> 6L)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>qb_blocks <span class="ot">=</span> <span class="fu">quickblock</span>(<span class="fu">as.data.frame</span>(df_qb), <span class="at">size_constraint =</span> <span class="dv">6</span>L)</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>treatment_qb <span class="ot">=</span> <span class="fu">as.integer</span>(<span class="fu">as.character</span>(<span class="fu">assign_treatment</span>(qb_blocks, <span class="at">treatments=</span><span class="fu">c</span>(<span class="st">'0'</span>, <span class="st">'1'</span>))))</span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>end_time <span class="ot">=</span> lubridate<span class="sc">::</span><span class="fu">now</span>()</span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(end_time <span class="sc">-</span> start_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -664,7 +674,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is extremely slow.</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># start_time = lubridate::now()</span></span>
@@ -696,7 +706,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <li>Sweep over a range of effect sizes.</li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>create_power_simulator <span class="ot">=</span> <span class="cf">function</span>(W, A, Y) {</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    dL <span class="ot">=</span> <span class="fu">diag</span>(W)</span>
@@ -735,12 +745,12 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <section id="simulate-each-design" class="level2">
 <h2 class="anchored" data-anchor-id="simulate-each-design">Simulate each design</h2>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Softblock</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Greedy Neighbors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">QuickBlock</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>simulate_power <span class="ot">=</span> <span class="fu">create_power_simulator</span>(softblock_weights, df_joined<span class="sc">$</span>treatment_sb, df_joined<span class="sc">$</span>dem_share_pres)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>estimate_power_for_effect <span class="ot">=</span> <span class="cf">function</span>(effect) <span class="fu">mean</span>(<span class="fu">replicate</span>(<span class="dv">25</span>, <span class="fu">simulate_power</span>(<span class="at">effect=</span>effect)))</span>
@@ -751,7 +761,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>simulate_power <span class="ot">=</span> <span class="fu">create_power_simulator</span>(nn_weights, df_joined<span class="sc">$</span>treatment_nn, df_joined<span class="sc">$</span>dem_share_pres)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>estimate_power_for_effect <span class="ot">=</span> <span class="cf">function</span>(effect) <span class="fu">mean</span>(<span class="fu">replicate</span>(<span class="dv">25</span>, <span class="fu">simulate_power</span>(<span class="at">effect=</span>effect)))</span>
@@ -761,7 +771,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>simulate_power <span class="ot">=</span> <span class="fu">create_power_simulator_qb</span>(qb_blocks, df_joined<span class="sc">$</span>treatment_qb, df_joined<span class="sc">$</span>dem_share_pres)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>estimate_power_for_effect <span class="ot">=</span> <span class="cf">function</span>(effect) <span class="fu">mean</span>(<span class="fu">replicate</span>(<span class="dv">25</span>, <span class="fu">simulate_power</span>(<span class="at">effect=</span>effect)))</span>
@@ -776,7 +786,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <section id="power-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="power-comparison">Power Comparison</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
@@ -790,7 +800,11 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/power_plot-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/power_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -802,7 +816,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <p>The effect estimates here use the appropriate design-based estimators for each design.</p>
 <p>First, I’m going to generate a fake outcome to use. I’ll leave the average effect near zero (0.5pp), but individual effects are random draws from around that vale, but with heterogeneous effects based on democratic vote share in 2020 (i.e.&nbsp;positive effects in democratic precincts and vice versa).</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>outcome <span class="ot">=</span> df_joined<span class="sc">$</span>dem_share_pres</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>ite <span class="ot">=</span> <span class="fu">with</span>(df_joined, <span class="fl">0.005</span> <span class="sc">+</span> <span class="fl">0.005</span> <span class="sc">*</span> (<span class="fu">plogis</span>((dem_share_pres <span class="sc">-</span> <span class="fu">median</span>(dem_share_pres)) <span class="sc">/</span> <span class="fu">sd</span>(dem_share_pres))))</span>
@@ -811,12 +825,12 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>df_joined<span class="sc">$</span>outcome_qb <span class="ot">=</span> <span class="fu">with</span>(df_joined, outcome <span class="sc">+</span> treatment_qb <span class="sc">*</span> ite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Softblock</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Greedy Neighbors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">QuickBlock</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>estimate_effect <span class="ot">=</span> <span class="cf">function</span>(W, A, Y) {</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    dL <span class="ot">=</span> <span class="fu">diag</span>(W)</span>
@@ -836,7 +850,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>nn_est <span class="ot">=</span> <span class="fu">estimate_effect</span>(nn_weights, df_joined<span class="sc">$</span>treatment_nn, df_joined<span class="sc">$</span>outcome_nn)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -844,7 +858,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">=</span> quickblock<span class="sc">::</span><span class="fu">blocking_estimator</span>(df_joined<span class="sc">$</span>outcome_qb, qb_blocks, df_joined<span class="sc">$</span>treatment_qb)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>qb_est <span class="ot">=</span> <span class="fu">list</span>(<span class="at">estimate=</span>result<span class="sc">$</span>effects[<span class="dv">2</span>,<span class="dv">1</span>], <span class="at">std.error=</span><span class="fu">sqrt</span>(result<span class="sc">$</span>effect_variances[<span class="dv">2</span>,<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -857,7 +871,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <section id="plot-average-effects" class="level2">
 <h2 class="anchored" data-anchor-id="plot-average-effects">Plot Average Effects</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">estimate=</span><span class="fu">c</span>(sb_est<span class="sc">$</span>estimate, nn_est<span class="sc">$</span>estimate, qb_est<span class="sc">$</span>estimate),</span>
@@ -872,7 +886,11 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/plot_fx-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/plot_fx-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -880,7 +898,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <h2 class="anchored" data-anchor-id="heterogeneous-effects">Heterogeneous Effects</h2>
 <p>These effects will be estimated using DR-learner of <a href="https://arxiv.org/abs/2004.14497">Kennedy (2020)</a>. For simplicity, I will estimate nuisance functions using <code>glmnet</code>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>predict.hte.split <span class="ot">=</span> <span class="cf">function</span>(x, a, y, s, <span class="at">predict.s=</span><span class="dv">4</span>) {</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    s.pi <span class="ot">=</span> (predict.s) <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">+</span> <span class="dv">1</span></span>
@@ -915,12 +933,12 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </section>
 <section id="estimate-htes" class="level2">
 <h2 class="anchored" data-anchor-id="estimate-htes">Estimate HTEs</h2>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Softblock</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Greedy Neighbors</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false">QuickBlock</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> <span class="fu">calculate_hte</span>(<span class="fu">c</span>(</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    longitude, latitude, area_km2, vote_density_pres, <span class="co"># geographic</span></span>
@@ -939,7 +957,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> <span class="fu">calculate_hte</span>(<span class="fu">c</span>(</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    longitude, latitude, area_km2, vote_density_pres, <span class="co"># geographic</span></span>
@@ -958,7 +976,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </div>
 <div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_joined <span class="sc">%&gt;%</span> <span class="fu">calculate_hte</span>(<span class="fu">c</span>(</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    longitude, latitude, area_km2, vote_density_pres, <span class="co"># geographic</span></span>
@@ -981,7 +999,7 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <section id="plot-hte-distributions" class="level2">
 <h2 class="anchored" data-anchor-id="plot-hte-distributions">Plot HTE distributions</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_joined, <span class="fu">aes</span>()) <span class="sc">+</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">x=</span>hte_sb, <span class="at">fill=</span><span class="st">'SoftBlock'</span>), <span class="at">bins=</span><span class="dv">50</span>, <span class="at">alpha=</span><span class="fl">0.4</span>) <span class="sc">+</span></span>
@@ -991,7 +1009,11 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="index_files/figure-html/hte_plot-1.png" class="img-fluid" width="672"></p>
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/hte_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -999,8 +1021,8 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
 </section>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div quarto-reuse="quarto-reuse" class="quarto-appendix-contents"><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2022,
-  author = {Drew Dimmery},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2022,
+  author = {Dimmery, Drew},
   title = {Using {SoftBlock} to {Design} an {Experiment}},
   date = {2022-05-10},
   url = {https://ddimmery.com/posts/softblock-demo},
@@ -1012,13 +1034,30 @@ deprecated. It might return a CRS with a non-EPSG compliant axis order.</code></
     all the necessary steps for this process and shows how to perform
     estimation of average and heterogeneous effects.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2022" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Drew Dimmery. 2022. <span>“Using SoftBlock to Design an
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2022" class="csl-entry quarto-appendix-citeas" role="listitem">
+Dimmery, Drew. 2022. <span>“Using SoftBlock to Design an
 Experiment.”</span> May 10, 2022. <a href="https://ddimmery.com/posts/softblock-demo">https://ddimmery.com/posts/softblock-demo</a>.
 </div></div></section></div></main> <!-- /main -->
-<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1026,12 +1065,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1040,17 +1082,73 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ddimmery\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1060,39 +1158,303 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
@@ -1100,4 +1462,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
