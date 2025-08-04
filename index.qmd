@@ -16,7 +16,6 @@ My research focuses on the intersection of machine learning and causal inference
 
 I’m most interested in methodological research useful for the study of social phenomena.
 :::
-
 ::: {.column-margin}
 ![](headshot.jpg){.rounded}
 :::
