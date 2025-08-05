@@ -1,9 +1,8 @@
 ---
 title: "Research"
 echo: false
-jupyter: quarto-website
+jupyter: quarto-env
 section-divs: false
-keep-md: true
 format: html
 ---
 
