@@ -77,27 +77,6 @@ gtag('js', new Date());
 gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Move RSS feed to sidebar on blog page
-  const rssBox = document.querySelector('.rss-feed-box');
-  const categoriesTitle = document.querySelector('#quarto-margin-sidebar .quarto-listing-category-title');
-  
-  if (rssBox && categoriesTitle) {
-    // Create a new RSS feed element for the sidebar
-    const sidebarRss = document.createElement('div');
-    sidebarRss.className = 'sidebar-rss-feed';
-    sidebarRss.innerHTML = `
-      <h6>📡 RSS Feed</h6>
-      <div><a href="blog.xml">Subscribe to updates!</a></div>
-    `;
-    
-    // Insert before the categories title
-    categoriesTitle.parentNode.insertBefore(sidebarRss, categoriesTitle);
-  }
-});
-</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -147,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./blog.html"> 
-<span class="menu-text">Drew’s News</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->

@@ -3,19 +3,25 @@ title: "Research"
 echo: false
 jupyter: quarto-website
 section-divs: false
-keep-md: true
 format: html
 ---
 
 ```{python}
 import yaml
+import requests
 from IPython.display import display, Markdown, HTML
+import json
+import os
+
+# Semantic Scholar Author ID
+AUTHOR_ID = "90810256"
+YAML_FILE = "papers.yaml"
 
 def readable_list(_s):
-  if len(_s) < 3:
-    return ' and '.join(map(str, _s))
-  *a, b = _s
-  return f"{', '.join(map(str, a))}, and {b}"
+    if len(_s) < 3:
+        return ' and '.join(map(str, _s))
+    *a, b = _s
+    return f"{', '.join(map(str, a))}, and {b}"
 
 def button(url, str, icon):
     icon_base = icon[:2]
@@ -24,33 +30,162 @@ def button(url, str, icon):
         {str}
     </a>"""
 
+def fetch_author_papers(author_id):
+    """Fetch papers from Semantic Scholar API"""
+    base_url = "https://api.semanticscholar.org/graph/v1"
+    fields = "paperId,title,authors,year,venue,publicationDate,externalIds,openAccessPdf,url"
+    
+    url = f"{base_url}/author/{author_id}/papers"
+    params = {'fields': fields, 'limit': 1000}
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        print(f"Error fetching data from Semantic Scholar: {e}")
+        return None
 
+def create_yaml_entry_from_ss_paper(paper):
+    """Convert Semantic Scholar paper to YAML entry format"""
+    paper_id = paper.get('paperId')
+    title = paper.get('title', 'Untitled')
+    year = paper.get('year')
+    venue = paper.get('venue', '')
+    
+    # Process authors
+    authors = []
+    for author in paper.get('authors', []):
+        author_name = author.get('name', '')
+        if 'Dimmery' in author_name:
+            authors.append("me")
+        else:
+            authors.append(author_name)
+    
+    entry = {
+        'title': title,
+        'authors': authors,
+        'year': year,
+        'venue': venue if venue else None,
+        'visible': False,  # Default to not visible
+        'ssid': paper_id,
+    }
+    
+    # Add external links if available
+    external_ids = paper.get('externalIds', {})
+    if external_ids.get('DOI'):
+        entry['published_url'] = f"https://doi.org/{external_ids['DOI']}"
+    
+    if external_ids.get('ArXiv'):
+        entry['preprint'] = f"https://arxiv.org/abs/{external_ids['ArXiv']}"
+    
+    # Add open access PDF if available
+    open_access = paper.get('openAccessPdf')
+    if open_access and open_access.get('url'):
+        entry['pdf_url'] = open_access['url']
+    
+    return entry
 
-yaml_data = yaml.safe_load(open("papers.yaml"))
+def sync_with_semantic_scholar():
+    """Sync YAML file with new papers from Semantic Scholar"""
+    # print("Fetching papers from Semantic Scholar...")
+    
+    # Load existing YAML data
+    if os.path.exists(YAML_FILE):
+        with open(YAML_FILE, 'r') as f:
+            yaml_data = yaml.safe_load(f) or {}
+    else:
+        yaml_data = {}
+    
+    # Get existing SSIDs to avoid duplicates
+    existing_ssids = set()
+    for key, data in yaml_data.items():
+        if 'ssid' in data:
+            existing_ssids.add(data['ssid'])
+    
+    # Fetch from Semantic Scholar
+    ss_papers = fetch_author_papers(AUTHOR_ID)
+    if not ss_papers or 'data' not in ss_papers:
+        # print("Failed to fetch papers from Semantic Scholar")
+        return yaml_data
+    
+    new_papers_count = 0
+    for paper in ss_papers['data']:
+        paper_id = paper.get('paperId')
+        if paper_id and paper_id not in existing_ssids:
+            # Create a unique key for the new paper
+            title_key = paper.get('title', '').lower().replace(' ', '_').replace(',', '').replace(':', '')[:20]
+            year = paper.get('year', 'unknown')
+            key = f"{title_key}_{year}"
+            
+            # Ensure unique key
+            counter = 1
+            original_key = key
+            while key in yaml_data:
+                key = f"{original_key}_{counter}"
+                counter += 1
+            
+            yaml_data[key] = create_yaml_entry_from_ss_paper(paper)
+            new_papers_count += 1
+    
+    if new_papers_count > 0:
+        # Write back to YAML file
+        with open(YAML_FILE, 'w') as f:
+            yaml.dump(yaml_data, f, default_flow_style=False, sort_keys=False)
+        # print(f"Added {new_papers_count} new papers to {YAML_FILE}")
+    else:
+        pass
+        # print("No new papers found")
+    
+    return yaml_data
+
+# Sync with Semantic Scholar to get any new papers
+yaml_data = sync_with_semantic_scholar()
+
+# Process papers for display (only visible ones)
 pub_strs = {"pubs": {}, "wps": {}}
-for _, data in yaml_data.items():
+
+for key, data in yaml_data.items():
+    # Only show visible papers
+    if not data.get('visible', False):
+        continue
+        
     title_str = data["title"]
     authors = data.get("authors", ["me"])
     authors = [aut if aut != "me" else "<strong>Drew Dimmery</strong>" for aut in authors]
     author_str = readable_list(authors)
-    year_str = data["year"]
+    year_str = str(data["year"])
 
     buttons = []
+    
+    # Preprint button
     preprint = data.get("preprint")
-    if preprint is not None:
+    if preprint:
         buttons.append(button(preprint, "Preprint", "bi-file-earmark-pdf"))
 
+    # GitHub button
     github = data.get("github")
-    if github is not None:
+    if github:
         buttons.append(button(github, "Github", "bi-github"))
+    
+    # Data button
+    data_url = data.get("data")
+    if data_url:
+        buttons.append(button(data_url, "Data", "bi-database"))
+    
+    # PDF button
+    pdf_url = data.get("pdf_url")
+    if pdf_url:
+        buttons.append(button(pdf_url, "PDF", "bi-file-earmark-pdf"))
 
+    # Published URL
     pub_url = data.get("published_url")
     venue = data.get("venue")
     working_paper = pub_url is None
     
     pub_str = f'{author_str}. ({year_str}) "{title_str}."'
 
-    if venue is not None:
+    if venue:
         pub_str += f" <em>{venue}</em>"
 
     if working_paper:
