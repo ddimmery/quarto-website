@@ -1,296 +1,549 @@
 rl4real:
-    title: "Real-world Video Adaptation with Reinforcement Learning"
-    authors:
-        - Hongzi Mao
-        - Shannon Chen
-        - me
-        - Shaun Singh
-        - Drew Blaisdell
-        - Yuandong Tian
-        - Mohammad Alizadeh
-        - Eytan Bakshy
-    year: 2019
-    preprint: https://openreview.net/forum?id=SJlCkwN8iV
-    published_url:
-    venue: ICML Workshop - RL4RealLife
-    github:
-safe_ts:
-  title: "Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints"
+  title: Real-world Video Adaptation with Reinforcement Learning
   authors:
-    - Sam Daulton
-    - Shaun Singh
-    - Vashist Avadhanula
-    - me
-    - Eytan Bakshy
+  - Hongzi Mao
+  - Shannon Chen
+  - me
+  - Shaun Singh
+  - Drew Blaisdell
+  - Yuandong Tian
+  - Mohammad Alizadeh
+  - Eytan Bakshy
+  year: 2019
+  preprint: https://arxiv.org/abs/2008.12858
+  published_url: https://openreview.net/forum?id=SJlCkwN8iV
+  venue: ICML Workshop - RL4RealLife
+  github: null
+  visible: true
+  ssid: dfb52fa2be6f9c8a59e319b9f86d01c18892802a
+safe_ts:
+  title: Thompson Sampling for Contextual Bandit Problems with Auxiliary Safety Constraints
+  authors:
+  - Sam Daulton
+  - Shaun Singh
+  - Vashist Avadhanula
+  - me
+  - Eytan Bakshy
   year: 2019
   preprint: https://arxiv.org/abs/1911.00638
   venue: NeurIPS Workshop - Safety and Robustness in Decision Making
+  visible: true
+  ssid: 7c8803e90a51af3eb37504839be6a63552eed971
 homog_policy:
-  title: "Experimentation for Homogenous Policy Change"
+  title: Experimentation for Homogenous Policy Change
   authors:
-    - Molly Offer-Westort
-    - me
-  year: 2021
+  - Molly Offer-Westort
+  - me
+  year: 2025
   preprint: https://arxiv.org/abs/2101.12318
+  visible: true
+  ssid: 1b8d1eef0ada504b5c43da95d523283e6eca1037
 calib_hte:
   title: Calibration of Heterogeneous Treatment Effects in Randomized Experiments
   authors:
-    - Yan Leng
-    - me
+  - Yan Leng
+  - me
   year: 2024
   preprint: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3875850
   published_url: https://doi.org/10.1287/isre.2021.0343
+  venue: Information Systems Research
+  visible: true
+  ssid: a57003edeaa23ea8b33691cebe3e5bb12175e96c
 online_design:
   title: Online Balanced Experimental Design
   authors:
-    - David Arbour
-    - me
-    - Tung Mai
-    - Anup Rao
+  - David Arbour
+  - me
+  - Tung Mai
+  - Anup Rao
   published_url: https://proceedings.mlr.press/v162/arbour22a.html
+  github: https://ddimmery.github.io/balancer-package/
   venue: ICML
   year: 2022
   preprint: https://arxiv.org/abs/2203.02025
+  visible: true
+  ssid: 5f8581d52b8d62bf7a6d6201c3d341dfb3ffa524
 pi0:
-  title: "A search for single photon events in neutrino interactions"
+  title: A search for single photon events in neutrino interactions
   authors:
-    - C.T Kullenberg
-    - S.R. Mishra
-    - me
-    - the NOMAD Collaboration
+  - C.T Kullenberg
+  - S.R. Mishra
+  - me
+  - the NOMAD Collaboration
   published_url: https://doi.org/10.1016/j.physletb.2011.11.049
+  preprint: https://arxiv.org/abs/1111.3713
   venue: Physics Letters B
-  year: 2012
+  year: 2011
+  visible: true
+  ssid: 43a3d45805906db7e716469087ba0968aeda2782
 dark_money:
-  title: "Shining the Light on Dark Money: Political Spending by Nonprofits"
+  title: 'Shining the Light on Dark Money: Political Spending by Nonprofits'
   authors:
-    - me
-    - Andrew Peterson
+  - me
+  - Andrew Peterson
   year: 2016
   published_url: https://doi.org/10.7758/RSF.2016.2.7.04
-  venue: "RSF: The Russell Sage Foundation Journal of the Social Sciences"
+  venue: 'RSF: The Russell Sage Foundation Journal of the Social Sciences'
+  visible: true
+  ssid: 67e1cb157b4e6d2657d67063d73250003fb9893c
 exp_eb:
   title: Shrinkage Estimators in Online Experiments
   authors:
-    - me
-    - Eytan Bakshy
-    - Jasjeet Sekhon
+  - me
+  - Eytan Bakshy
+  - Jasjeet Sekhon
   year: 2019
   venue: KDD
   preprint: https://arxiv.org/abs/1904.12918
   published_url: https://doi.org/10.1145/3292500.3330771
+  visible: true
+  ssid: 69ba2f6f62530d0957e415f37f727786d5dbcdad
 bope:
   title: Balanced off-policy evaluation in general action spaces
   authors:
-    - Arjun Sondhi
-    - David Arbour
-    - me
+  - Arjun Sondhi
+  - David Arbour
+  - me
   year: 2020
   venue: AISTATS
   preprint: https://arxiv.org/abs/1906.03694
   published_url: https://proceedings.mlr.press/v108/sondhi20a.html
+  visible: true
+  ssid: a667661fb5d4501a26dae9e2b5805aaba17a9d6c
 pw:
   title: Permutation Weighting
   authors:
-    - David Arbour
-    - me
-    - Arjun Sondhi
+  - David Arbour
+  - me
+  - Arjun Sondhi
   year: 2021
   venue: ICML
   preprint: https://arxiv.org/abs/1901.01230
   published_url: https://proceedings.mlr.press/v139/arbour21a.html
+  visible: true
+  ssid: c6dc17af90ee275b906d4da97b5c4437ea857cda
 softblock:
   title: Efficient Balanced Treatment Assignments for Experimentation
   authors:
-    - David Arbour
-    - me
-    - Anup Rao
+  - David Arbour
+  - me
+  - Anup Rao
   year: 2021
   venue: AISTATS
   preprint: https://arxiv.org/abs/2010.11332
   published_url: https://proceedings.mlr.press/v130/arbour21a.html
   github: https://github.com/ddimmery/softblock
+  visible: true
+  ssid: f99736b70d084d8bc273e4e0a50852554e6e1025
 gen_exp:
   title: Designing Transportable Experiments Under S-admissability
   authors:
-    - My Phan
-    - David Arbour
-    - me
-    - Anup Rao
+  - My Phan
+  - David Arbour
+  - me
+  - Anup Rao
   year: 2021
   venue: AISTATS
   github: https://github.com/myphan9/Designing_Transportable_Experiments
   preprint: https://arxiv.org/abs/2009.03860
   published_url: https://proceedings.mlr.press/v130/phan21a.html
+  visible: true
+  ssid: a99f3735ad8ffbfbc76e6db51235b926329b82e3
 interp_hte:
-  title: "Distilling Heterogeneity: From Explanations of Heterogeneous Treatment Effect Models to Interpretable Policies"
+  title: 'Distilling Heterogeneity: From Explanations of Heterogeneous Treatment Effect
+    Models to Interpretable Policies'
   authors:
-    - Han Wu
-    - Sarah Tan
-    - Weiwei Li
-    - Mia Garrard
-    - Adam Obeng
-    - me
-    - Shaun Singh
-    - Hanson Wang
-    - Daniel Jiang
-    - Eytan Bakshy
+  - Han Wu
+  - Sarah Tan
+  - Weiwei Li
+  - Mia Garrard
+  - Adam Obeng
+  - me
+  - Shaun Singh
+  - Hanson Wang
+  - Daniel Jiang
+  - Eytan Bakshy
   year: 2022
   preprint: https://arxiv.org/abs/2111.03267
   published_url: https://dl.acm.org/doi/10.1145/3534678.3539175
+  visible: true
+  ssid: 05b28963a18f88d5115584e0ad1f46c118597a1b
 chronofeed:
-  title: "How do social media feed algorithms affect attitudes and behavior in an election campaign?"
+  title: How do social media feed algorithms affect attitudes and behavior in an election
+    campaign?
   authors:
-    - Andrew Guess
-    - Neil Malhotra
-    - Jennifer Pan
-    - Pablo Barberá
-    - Hunt Alcott
-    - Taylor Brown
-    - Adriana Crespo-Tenorio
-    - me
-    - Deen Freelon
-    - Matthew Gentzkow
-    - Sandra González-Bailón
-    - Edward Kennedy
-    - Young Mie Kim
-    - David Lazer
-    - Devra Moehler
-    - Brendan Nyhan
-    - Carlos Velasco Rivera
-    - Jaime Settle
-    - Daniel Thomas
-    - Emily Thorson
-    - Rebekah Tromble
-    - Arjun Wilkins
-    - Magdalena Wojcieszak
-    - Beixian Xiong
-    - Chad Kiewet de Jong
-    - Annie Franco
-    - Winter Mason
-    - Natalie Jomini Stroud
-    - Joshua Tucker
+  - Andrew Guess
+  - Neil Malhotra
+  - Jennifer Pan
+  - "Pablo Barber\xE1"
+  - Hunt Alcott
+  - Taylor Brown
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - Matthew Gentzkow
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - Edward Kennedy
+  - Young Mie Kim
+  - David Lazer
+  - Devra Moehler
+  - Brendan Nyhan
+  - Carlos Velasco Rivera
+  - Jaime Settle
+  - Daniel Thomas
+  - Emily Thorson
+  - Rebekah Tromble
+  - Arjun Wilkins
+  - Magdalena Wojcieszak
+  - Beixian Xiong
+  - Chad Kiewet de Jong
+  - Annie Franco
+  - Winter Mason
+  - Natalie Jomini Stroud
+  - Joshua Tucker
   year: 2023
   venue: Science
   published_url: https://doi.org/10.1126/science.abp9364
+  visible: true
+  data: https://socialmediaarchive.org/search?c=US2020&cc=US2020&ln=en
+  ssid: f48409576a7b05ec99dcc44429e655bcc6992bdb
 reshares:
-  title: "Reshares on social media amplify political news but do not detectably affect beliefs or opinions"
+  title: Reshares on social media amplify political news but do not detectably affect
+    beliefs or opinions
   authors:
-    - Andrew Guess
-    - Neil Malhotra
-    - Jennifer Pan
-    - Pablo Barberá
-    - Hunt Alcott
-    - Taylor Brown
-    - Adriana Crespo-Tenorio
-    - me
-    - Deen Freelon
-    - Matthew Gentzkow
-    - Sandra González-Bailón
-    - Edward Kennedy
-    - Young Mie Kim
-    - David Lazer
-    - Devra Moehler
-    - Brendan Nyhan
-    - Carlos Velasco Rivera
-    - Jaime Settle
-    - Daniel Thomas
-    - Emily Thorson
-    - Rebekah Tromble
-    - Arjun Wilkins
-    - Magdalena Wojcieszak
-    - Beixian Xiong
-    - Chad Kiewet de Jong
-    - Annie Franco
-    - Winter Mason
-    - Natalie Jomini Stroud
-    - Joshua Tucker
+  - Andrew Guess
+  - Neil Malhotra
+  - Jennifer Pan
+  - "Pablo Barber\xE1"
+  - Hunt Alcott
+  - Taylor Brown
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - Matthew Gentzkow
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - Edward Kennedy
+  - Young Mie Kim
+  - David Lazer
+  - Devra Moehler
+  - Brendan Nyhan
+  - Carlos Velasco Rivera
+  - Jaime Settle
+  - Daniel Thomas
+  - Emily Thorson
+  - Rebekah Tromble
+  - Arjun Wilkins
+  - Magdalena Wojcieszak
+  - Beixian Xiong
+  - Chad Kiewet de Jong
+  - Annie Franco
+  - Winter Mason
+  - Natalie Jomini Stroud
+  - Joshua Tucker
   year: 2023
   venue: Science
   published_url: https://doi.org/10.1126/science.add8424
+  visible: true
+  data: https://socialmediaarchive.org/search?c=US2020&cc=US2020&ln=en
+  ssid: 546a7c8f645fc4608cefcc1f6d1311aba2db3dce
 likeminded:
-  title: "Like-minded sources on Facebook are prevalent but not polarizing"
+  title: Like-minded sources on Facebook are prevalent but not polarizing
   authors:
-    - Brendan Nyhan
-    - Jaime Settle
-    - Emily Thorson
-    - Magdalena Wojcieszak
-    - Pablo Barberá
-    - Annie Chen
-    - Hunt Alcott
-    - Taylor Brown
-    - Adriana Crespo-Tenorio
-    - me
-    - Deen Freelon
-    - Matthew Gentzkow
-    - Sandra González-Bailón
-    - Andrew Guess
-    - Edward Kennedy
-    - Young Mie Kim
-    - David Lazer
-    - Neil Malhotra
-    - Devra Moehler
-    - Jennifer Pan
-    - Daniel Thomas
-    - Rebekah Tromble
-    - Carlos Velasco Rivera
-    - Arjun Wilkins
-    - Beixian Xiong
-    - Chad Kiewet de Jong
-    - Annie Franco
-    - Winter Mason
-    - Natalie Jomini Stroud
-    - Joshua Tucker
+  - Brendan Nyhan
+  - Jaime Settle
+  - Emily Thorson
+  - Magdalena Wojcieszak
+  - "Pablo Barber\xE1"
+  - Annie Chen
+  - Hunt Alcott
+  - Taylor Brown
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - Matthew Gentzkow
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - Andrew Guess
+  - Edward Kennedy
+  - Young Mie Kim
+  - David Lazer
+  - Neil Malhotra
+  - Devra Moehler
+  - Jennifer Pan
+  - Daniel Thomas
+  - Rebekah Tromble
+  - Carlos Velasco Rivera
+  - Arjun Wilkins
+  - Beixian Xiong
+  - Chad Kiewet de Jong
+  - Annie Franco
+  - Winter Mason
+  - Natalie Jomini Stroud
+  - Joshua Tucker
   year: 2023
   venue: Nature
   published_url: https://doi.org/10.1038/s41586-023-06297-w
+  data: https://socialmediaarchive.org/search?c=US2020&cc=US2020&ln=en
+  visible: true
+  ssid: dab93b1ee4e0abff46f7417baa88c5af8bc16fe4
 ms_repro:
-  title: "Reproducibility in Management Science"
+  title: Reproducibility in Management Science
   authors:
-    - Miloš Fišar
-    - Ben Greiner
-    - Christoph Huber
-    - Elena Katok
-    - Ali Ozkes
-    - <strong>Management Science Reproducibility Collaboration</strong>
+  - "Milo\u0161 Fi\u0161ar"
+  - Ben Greiner
+  - Christoph Huber
+  - Elena Katok
+  - Ali Ozkes
+  - <strong>Management Science Reproducibility Collaboration</strong>
   year: 2023
   preprint: https://osf.io/preprints/osf/mydzv
   published_url: https://doi.org/10.1287/mnsc.2023.03556
+  visible: true
+  ssid: null
 deactivation:
-  title: "The effects of Facebook and Instagram on the 2020 election: A deactivation experiment"
+  title: "The Effect of Deactivating Facebook and Instagram on Users\u2019 Emotional\
+    \ State"
   authors:
-    - Hunt Allcott
-    - Matthew Gentzkow
-    - Winter Mason
-    - Arjun Wilkins
-    - Pablo Barberá
-    - Taylor Brown
-    - Juan Carlos Cisneros
-    - Adriana Crespo-Tenorio
-    - me
-    - Deen Freelon
-    - Sandra González-Bailón
-    - Andrew M. Guess
-    - Young Mie Kim
-    - David Lazer
-    - Neil Malhotra
-    - Devra Moehler
-    - Sameer Nair-Desai
-    - Houda Nait El Barj
-    - Brendan Nyhan
-    - Ana Carolina Paixao de Queiroz
-    - Jennifer Pan
-    - Jaime Settle
-    - Emily Thorson
-    - Rebekah Tromble
-    - Carlos Velasco Rivera
-    - Benjamin Wittenbrink
-    - Magdalena Wojcieszak
-    - Saam Zahedian
-    - Annie Franco
-    - Chad Kiewiet de Jonge
-    - Natalie Jomini Stroud
-    - Joshua A. Tucker
+  - Hunt Allcott
+  - Matt Gentzkow
+  - Benjamin Wittenbrink
+  - Juan Carlos Cisneros
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - Andrew Guess
+  - Y. Kim
+  - David Lazer
+  - Neil A. Malhotra
+  - D. Moehler
+  - Sameer Nair-Desai
+  - Brendan Nyhan
+  - Jennifer Pan
+  - Jaime Settle
+  - Emily Thorson
+  - Rebekah Tromble
+  - Carlos Velasco
+  - Arjun S. Wilkins
+  - Magdalena Wojcieszak
+  - Annie Franco
+  - Chad Kiewiet de Jonge
+  - Winter Mason
+  - Talia Stroud
+  - J. Tucker
+  year: 2025
+  visible: true
+  ssid: f10d1ddad38ed6e4f14daf4624244338cf88bee8
+  preprint: https://doi.org/10.2139/ssrn.5224201
+ad_experimental:
+  title: The Effects of Political Advertising on Facebook and Instagram Before the
+    2020 US Election
+  authors:
+  - Hunt Allcott
+  - Matt Gentzkow
+  - "Ro\u2019ee Levy"
+  - Adriana Crespo-Tenorio
+  - Natasha Dumas
+  - Winter Mason
+  - D. Moehler
+  - "Pablo Barber\xE1"
+  - Taylor Brown
+  - Juan Carlos Cisneros
+  - me
+  - Deen Freelon
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - Andrew Guess
+  - Y. Kim
+  - David Lazer
+  - Neil A. Malhotra
+  - Sameer Nair-Desai
+  - Brendan Nyhan
+  - Ana Carolina Paixao de Queiroz
+  - Jennifer Pan
+  - Jaime Settle
+  - Emily Thorson
+  - Rebekah Tromble
+  - Carlos Velasco
+  - Benjamin Wittenbrink
+  - Magdalena Wojcieszak
+  - Shiqi Yang
+  - Saam Zahedian
+  - Annie Franco
+  - Chad Kiewiet de Jonge
+  - Talia Stroud
+  - J. Tucker
+  year: 2025
+  visible: true
+  ssid: b8c6e8c3e3ef0ce3221cfcd4f53c54f6dcdb2988
+  preprint: https://doi.org/10.2139/ssrn.5259653
+enough:
+  title: Enough?
+  authors:
+  - me
+  - Kevin Munger
+  year: 2025
+  venue: Observational Studies
+  visible: true
+  ssid: 5fbc7addbc77b9df1265d262c9d3e94be595995d
+  preprint: https://arxiv.org/abs/2501.12161
+  published_url: https://doi.org/10.1353/obs.2025.a956838
+subjective_visualiza_2023:
+  title: 'Subjective visualization experiences: impact of visual design and experimental
+    design'
+  authors:
+  - Laura Koesten
+  - me
+  - Michael Gleicher
+  - Torsten Moller
+  year: 2023
+  visible: true
+  ssid: 1f44ac53af9ca5def8fd5410c0d313cd9a58e97f
+  preprint: https://arxiv.org/abs/2310.13713
+likeminded_correction:
+  title: 'Author Correction: Like-minded sources on Facebook are prevalent but not
+    polarizing'
+  authors:
+  - B. Nyhan
+  - Jaime Settle
+  - Emily A. Thorson
+  - Magdalena Wojcieszak
+  - "Pablo Barber\xE1"
+  - Annie Y Chen
+  - Hunt Allcott
+  - Taylor Brown
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - M. Gentzkow
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - A. Guess
+  - Edward Kennedy
+  - Y. Kim
+  - David Lazer
+  - Neil Malhotra
+  - D. Moehler
+  - Jennifer Pan
+  - Daniel Robert Thomas
+  - Rebekah Tromble
+  - C. Rivera
+  - Arjun S. Wilkins
+  - Beixian Xiong
+  - Chad Kiewiet de Jonge
+  - Annie Franco
+  - Winter Mason
+  - N. Stroud
+  - Joshua A. Tucker
+  year: 2023
+  venue: Nature
+  visible: true
+  ssid: 332ba28ccfd0c8f04974590072b14fd83a445f7e
+  published_url: https://doi.org/10.1038/s41586-023-06795-x
+  pdf_url: https://www.nature.com/articles/s41586-023-06795-x.pdf
+online_discrepancy:
+  title: Online Discrepancy Minimization via Persistent Self-Balancing Walks
+  authors:
+  - D. Arbour
+  - me
+  - Tung Mai
+  - Anup B. Rao
+  year: 2021
+  venue: arXiv.org
+  visible: false
+  ssid: 1c7debb2d884276f33b2433c29fcfbe6fdbeee30
+  preprint: https://arxiv.org/abs/2102.02765
+improving_experiment_2015:
+  title: Improving Experimental Designs through Adaptive Treatment Allocation
+  authors:
+  - me
+  year: 2015
+  venue: null
+  visible: false
+  ssid: d96cfd8f06f7c829e4b8bfc8eaa0ce9b201e8ea6
+methodological_detai_None:
+  title: Methodological Details
+  authors:
+  - me
+  - Edward Kennedy
+  year: null
+  venue: null
+  visible: false
+  ssid: 6f66c7c95d644cffcd3a6ba3ec05741365de2b97
+distilling_heterogen_2021:
+  title: 'Distilling Heterogeneity: From Explanations of Heterogeneous Treatment Effect
+    Models to Interpretable Policies'
+  authors:
+  - Han Wu
+  - S. Tan
+  - Weiwei Li
+  - Mia Garrard
+  - Adam Obeng
+  - me
+  - Shaun Singh
+  - Hanson Wang
+  - Daniel R. Jiang
+  - E. Bakshy
+  year: 2021
+  venue: arXiv.org
+  visible: false
+  ssid: 34fa16cde3c243e859e5e4d793161effdf794b3e
+calibration_of_heter_2021:
+  title: Calibration of Heterogeneous Treatment Effects in Random Experiments
+  authors:
+  - Yan Leng
+  - me
+  year: 2021
+  venue: Social Science Research Network
+  visible: false
+  ssid: 89256848ad74819c3145191452ceb2bce30bf4e7
+  published_url: https://doi.org/10.2139/ssrn.3875850
+enough?_2025:
+  title: Enough?
+  authors:
+  - me
+  - Kevin Munger
+  year: 2025
+  venue: null
+  visible: false
+  ssid: f359d3b2ffb76a328c97774b80187f64b9b240a3
+  preprint: https://arxiv.org/abs/2501.12161
+the_effects_of_faceb_2024:
+  title: 'The effects of Facebook and Instagram on the 2020 election: A deactivation
+    experiment'
+  authors:
+  - Hunt Allcott
+  - M. Gentzkow
+  - Winter Mason
+  - Arjun S. Wilkins
+  - "Pablo Barber\xE1"
+  - Taylor Brown
+  - Juan Carlos Cisneros
+  - Adriana Crespo-Tenorio
+  - me
+  - Deen Freelon
+  - "Sandra Gonz\xE1lez-Bail\xF3n"
+  - A. Guess
+  - Y. Kim
+  - David Lazer
+  - Neil Malhotra
+  - D. Moehler
+  - Sameer Nair-Desai
+  - Houda Nait El Barj
+  - Brendan Nyhan
+  - Ana Carolina Paixao de Queiroz
+  - Jennifer Pan
+  - Jaime Settle
+  - Emily A. Thorson
+  - Rebekah Tromble
+  - Carlos Velasco Rivera
+  - Benjamin Wittenbrink
+  - Magdalena Wojcieszak
+  - Saam Zahedian
+  - Annie Franco
+  - Chad Kiewiet de Jonge
+  - N. Stroud
+  - Joshua A. Tucker
   year: 2024
-  venue: Proceedings of the National Academy of Sciences
+  venue: Proceedings of the National Academy of Sciences of the United States of America
+  visible: false
+  ssid: 22ac0a0e6ab46dde2efc5b5df3768930503169ac
   published_url: https://doi.org/10.1073/pnas.2321584121
+  pdf_url: https://www.pnas.org/doi/pdf/10.1073/pnas.2321584121
