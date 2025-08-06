@@ -1,0 +1,61 @@
+name: Send Newsletter
+
+on:
+  workflow_dispatch:
+    inputs:
+      post:
+        description: 'Post slug (e.g., my-post-slug for _site/posts/my-post-slug/index.html)'
+        required: true
+        type: string
+      subject_override:
+        description: 'Override email subject (optional)'
+        required: false
+        type: string
+      test_mode:
+        description: 'Send to test email only'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  send-newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          
+      - name: Install dependencies
+        run: |
+          pip install pyyaml beautifulsoup4 html2text
+          
+      - name: Decrypt email list
+        run: |
+          echo "${{ secrets.EMAIL_LIST_GPG_KEY }}" | base64 -d > private.key
+          gpg --import private.key
+          gpg --decrypt --quiet --batch --passphrase "${{ secrets.EMAIL_LIST_PASSPHRASE }}" \
+              --output email_list.json .github/email_list.gpg
+          rm private.key
+          
+      - name: Generate and send newsletter
+        run: |
+          python .github/scripts/send_newsletter.py \
+            --post-path "_site/posts/${{ inputs.post_path }}/index.html" \
+            --subject-override "${{ inputs.subject_override }}" \
+            --test-mode "${{ inputs.test_mode }}"
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          FROM_NAME: ${{ secrets.FROM_NAME }}
+          TEST_EMAIL: ${{ secrets.TEST_EMAIL }}
+          
+      - name: Clean up
+        if: always()
+        run: |
+          rm -f email_list.json
