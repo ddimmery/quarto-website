@@ -27,12 +27,15 @@ website:
 
 format:
   html:
-    theme: journal
+    theme: dimmery.scss
+    mainfont: "Palatino"
     css: styles.css
     toc: true
     toc-depth: 4
     toc-title: "Contents"
-    html-math-method: katex
+    html-math-method: 
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
     include-in-header:
       - includes.html
     highlight-style: tango

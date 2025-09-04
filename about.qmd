@@ -105,6 +105,34 @@ Summer 2015
 
 ### Teaching
 
+#### Hertie School
+::: {.d-flex .justify-content-between}
+::: {}
+Causal Machine Learning
+:::
+::: {.text-end}
+2024-
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Data Structures & Algorithms
+:::
+::: {.text-end}
+2024-
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+::: {}
+Machine Learning
+:::
+::: {.text-end}
+2024-
+:::
+:::
+
 #### Facebook
 ::: {.d-flex .justify-content-between}
 ::: {}

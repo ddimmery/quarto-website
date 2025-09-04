@@ -109,22 +109,34 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -212,7 +224,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="demo">demo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="experimental-design">experimental-design <span class="quarto-category-count">(1)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="demo">demo <span class="quarto-category-count">(1)</span></div><div class="category" data-category="experiments">experiments <span class="quarto-category-count">(3)</span></div><div class="category" data-category="metascience">metascience <span class="quarto-category-count">(3)</span></div><div class="category" data-category="methodology">methodology <span class="quarto-category-count">(2)</span></div><div class="category" data-category="social-media">social-media <span class="quarto-category-count">(4)</span></div><div class="category" data-category="technology">technology <span class="quarto-category-count">(4)</span></div><div class="category" data-category="website">website <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -258,7 +270,292 @@ Subscription
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="website" data-listing-date-sort="1652220000000" data-listing-file-modified-sort="1754340505952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2672">
+<div class="quarto-post image-right" data-index="0" data-categories="methodology,experiments" data-listing-date-sort="1739401200000" data-listing-file-modified-sort="1756980238684" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1447">
+<div class="thumbnail">
+<p><a href="./posts/whats-the-point-of-rcts/index.html" class="no-external"></a></p><a href="./posts/whats-the-point-of-rcts/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/whats-the-point-of-rcts/main-image.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/whats-the-point-of-rcts/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/whats-the-point-of-rcts/index.html" class="no-external">What’s the point of RCTs?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/whats-the-point-of-rcts/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('methodology'); return false;">
+methodology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('experiments'); return false;">
+experiments
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/whats-the-point-of-rcts/index.html" class="no-external">An ontological perspective on the value of experimentation</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/whats-the-point-of-rcts/index.html" class="no-external">
+<div class="listing-date">
+Feb 13, 2025
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="social-media,metascience" data-listing-date-sort="1738105200000" data-listing-file-modified-sort="1756981459590" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5187">
+<div class="thumbnail">
+<p><a href="./posts/what-was-us2020/index.html" class="no-external"></a></p><a href="./posts/what-was-us2020/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/what-was-us2020/main-image.webp" class="thumbnail-image"></p>
+</a><p><a href="./posts/what-was-us2020/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/what-was-us2020/index.html" class="no-external">What was US2020?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/what-was-us2020/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('social-media'); return false;">
+social-media
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('metascience'); return false;">
+metascience
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/what-was-us2020/index.html" class="no-external">The dialectics of big internet research</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/what-was-us2020/index.html" class="no-external">
+<div class="listing-date">
+Jan 29, 2025
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="technology,social-media" data-listing-date-sort="1732143600000" data-listing-file-modified-sort="1756980246853" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1555">
+<div class="thumbnail">
+<p><a href="./posts/is-bluesky-convivial/index.html" class="no-external"></a></p><a href="./posts/is-bluesky-convivial/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/is-bluesky-convivial/main-image.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/is-bluesky-convivial/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/is-bluesky-convivial/index.html" class="no-external">Is Bluesky convivial?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/is-bluesky-convivial/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('social-media'); return false;">
+social-media
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/is-bluesky-convivial/index.html" class="no-external">Smalltalk and the impossibility of social toolmaking to empower end-users</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/is-bluesky-convivial/index.html" class="no-external">
+<div class="listing-date">
+Nov 21, 2024
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="social-media,technology" data-listing-date-sort="1706569200000" data-listing-file-modified-sort="1756980247064" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1387">
+<div class="thumbnail">
+<p><a href="./posts/examining-the-apparatus/index.html" class="no-external"></a></p><a href="./posts/examining-the-apparatus/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/examining-the-apparatus/main-image.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/examining-the-apparatus/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/examining-the-apparatus/index.html" class="no-external">Examining the Apparatus</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/examining-the-apparatus/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('social-media'); return false;">
+social-media
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/examining-the-apparatus/index.html" class="no-external">The purpose of a system is what it does!</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/examining-the-apparatus/index.html" class="no-external">
+<div class="listing-date">
+Jan 30, 2024
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="methodology,experiments" data-listing-date-sort="1705359600000" data-listing-file-modified-sort="1756980333473" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1695">
+<div class="thumbnail">
+<p><a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external"></a></p><a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/calibration-as-an-hte-diagnostic/image_1.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external">Calibration as an HTE diagnostic</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('methodology'); return false;">
+methodology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('experiments'); return false;">
+experiments
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external">Paper just accepted to Information Systems Research</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/calibration-as-an-hte-diagnostic/index.html" class="no-external">
+<div class="listing-date">
+Jan 16, 2024
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="metascience" data-listing-date-sort="1704322800000" data-listing-file-modified-sort="1756981481197" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1657">
+<div class="thumbnail">
+<p><a href="./posts/plagiarism-is-bad/index.html" class="no-external"></a></p><a href="./posts/plagiarism-is-bad/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/plagiarism-is-bad/main-image.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/plagiarism-is-bad/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/plagiarism-is-bad/index.html" class="no-external">Plagiarism is bad</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/plagiarism-is-bad/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('metascience'); return false;">
+metascience
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/plagiarism-is-bad/index.html" class="no-external">Papers are what we do: we should try to do them well</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/plagiarism-is-bad/index.html" class="no-external">
+<div class="listing-date">
+Jan 4, 2024
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="social-media,technology" data-listing-date-sort="1696284000000" data-listing-file-modified-sort="1756980246907" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2281">
+<div class="thumbnail">
+<p><a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external"></a></p><a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/stop-looking-for-the-next-twitter/main-image.png" class="thumbnail-image"></p>
+</a><p><a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external">Stop looking for the next Twitter</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('social-media'); return false;">
+social-media
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external">BlueSky doesn’t solve any of Twitter’s real problems, nor will any other microblog</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/stop-looking-for-the-next-twitter/index.html" class="no-external">
+<div class="listing-date">
+Oct 3, 2023
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="technology,metascience" data-listing-date-sort="1694383200000" data-listing-file-modified-sort="1756981493491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3041">
+<div class="thumbnail">
+<p><a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external"></a></p><a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external">
+<p><img loading="lazy" src="./posts/a-blueprint-for-the-regulation-of-tech/main-image.jpeg" class="thumbnail-image"></p>
+</a><p><a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external">A Blueprint for the Regulation of Tech</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('technology'); return false;">
+technology
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('metascience'); return false;">
+metascience
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external">Counterfactuals are the key to accurately assessing the risks of online platforms</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/a-blueprint-for-the-regulation-of-tech/index.html" class="no-external">
+<div class="listing-date">
+Sep 11, 2023
+</div>
+<div class="listing-author">
+Drew Dimmery
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="website" data-listing-date-sort="1652220000000" data-listing-file-modified-sort="1754340505952" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2672">
 <div class="thumbnail">
 <p><a href="./posts/quarto-website/index.html" class="no-external"></a></p><a href="./posts/quarto-website/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/quarto-website/tobias-meme.jpg" class="thumbnail-image"></p>
@@ -291,7 +588,7 @@ Drew Dimmery
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="experimental-design,demo" data-listing-date-sort="1652133600000" data-listing-file-modified-sort="1652213539086" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2139">
+<div class="quarto-post image-right" data-index="9" data-categories="experiments,demo" data-listing-date-sort="1652133600000" data-listing-file-modified-sort="1756910453563" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2139">
 <div class="thumbnail">
 <p><a href="./posts/softblock-demo/index.html" class="no-external"></a></p><a href="./posts/softblock-demo/index.html" class="no-external">
 <p><img loading="lazy" src="./posts/softblock-demo/three-designs.jpg" class="thumbnail-image"></p>
@@ -305,8 +602,8 @@ Drew Dimmery
 <a href="./posts/softblock-demo/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('experimental-design'); return false;">
-experimental-design
+<div class="listing-category" onclick="window.quartoListingCategory('experiments'); return false;">
+experiments
 </div>
 <div class="listing-category" onclick="window.quartoListingCategory('demo'); return false;">
 demo

@@ -1,0 +1,55 @@
+---
+title: "Examining the Apparatus"
+description: "The purpose of a system is what it does!"
+date: "2024-01-30"
+categories:
+  - social-media
+  - technology
+image: main-image.jpeg
+---
+
+Kevin Munger has [a great article out problematizing the idea of “The Algorithm”](https://www.motherjones.com/politics/2024/01/the-algorithm-social-media-facebook-technology-the-apparatus/). You should read the Mother Jones article and then you should read [his Substack](https://kevinmunger.substack.com/p/the-algorithm-is-the-only-critique)^[This editorial line of this blog is generally pro-Munger.]. They’re both great! And they touch on an important theme I’ll return to a lot, which is about the right ways to conceive of and examine complex systems.
+
+The argument, in brief, is that “the Algorithm” is a misleading frame that elides our participation in the system. He proposes (based on the hottest philosopher of 2024, Vilém Flusser) “the Apparatus” as a better term that acknowledges each of our presence within this greater system which defines much of what we actually mean by “the Algorithm”.
+
+In this blog, I’m going talk about the implications of re-formulating the source of our present weirdness as “the Apparatus”. How is the apparatus constructed? What are the nuts and bolts of how exactly we are implicated in its construction? Shockingly, I’ll argue we need more experiments.
+
+---
+
+## The Apparatus, explained
+
+I think it’s worth talking through how change happens in Tech. I’ll focus on Meta, because it’s the place I know best. This is basically the guts of how the Apparatus gets created.
+
+The problem faced by Tech companies is, put simply “how should we decide what to do?”. There are a number of approaches to this, but I’m going to contrast two:
+
+- Build stuff and then ask people how/whether they like it.
+- Build stuff and then see how/whether people use it.
+We have to keep in mind, however, that we’re fundamentally talking about making decisions for a product used by (e.g.) 2 billion people. We have to think about how these two approaches would work in that setting, i.e. asking the question “Will it scale?”
+
+The first approach would rely on large-scale surveys. There’s no real way to build up qualitative knowledge about 2 billion people, so we need to be quantitative, and surveys are pretty much the only game in town if you want to get folks’ opinions like this. There are hard limits here, though. At the limit, you can’t (for instance) ask every user how their experience of the site is every five minutes. At Facebook, the standard “cool-down” period after taking a survey was six months when I was there. This imposes hard limits on the precision with which you can actually measure the opinions of users^[It would be interesting to write down, under reasonable assumptions, exactly what this would impose as the minimal detectable effect. It would probably be small (for social science), but implausibly large (for the practical decisions about product made 1000 times a day in tech).].
+
+The second approach would rely on directly observing behavior and encoding this into meaningful measures about what people are doing. Most of this is just counting things that people are doing^[There was a joke at Facebook that this was the main skill of data scientists: we invented a whole job just to do advanced counting. Move fast and count things!]. Because you don’t ask for any of your users’ attention to do this, there aren’t really any practical limits to your measurement of on-platform behaviors^[Technical limits exist. Tracking and storing all mouse movement for all 2 billion users would be an absurdly large amount of data collection. More commonly, the practice would be to radically downsample any of this kind of data that is collected.].
+
+Given these practicalities, it’s unsurprising that the result is an almost ideological belief in *behavioralism*: that the only way to understand what users want is to observe what they do^[Of course, there’s also a “revealed preferences” element to this, but even if you ignore that, there’s still a practical matter of scaling.]. My understanding is that this was part of an inspiring introductory speech that Chris Cox would give to new hires^[Somehow, I didn’t get this either as an intern or when I started as a full-time. This is sad, as I’ve heard is was a fascinating romp through the history of technology in a very McLuhan way. Oh well.].
+
+## The Apparatus, sustained
+
+This process results in a cycle of iterative improvement. [Matt Hindman’s book](https://press.princeton.edu/books/hardcover/9780691159263/the-internet-trap) does a good job of describing the power of this cycle. It’s also the basis of the Agile software development philosophy, expressed at Facebook as “ship early, ship often” or, more provocatively, “move fast and break things”.
+
+This saying has, I think, always been misinterpreted. The point is not that you’re okay with breaking things. The point is that you’re okay with *trying* new things, because you know that you have systems in place for identifying when things break. Many of the neurotic high-performers that get hired in tech are perfectionists, so you need to encourage them to not spend years working on something before launching it and seeing how it works. This should really be interpreted through [a mantra of the Agile Manifesto](https://agilemanifesto.org/):
+
+> Our highest priority is to **satisfy the customer** through early and continuous delivery of valuable software.
+
+Over time, trying a bunch of stuff (some of which might *seem* crazy ex ante) and watching what users do in response to it is a great way to build a successful product. I think this is one of the defining features of the secret sauce of modern Big Tech.
+
+This perspective flows into incentives throughout the company. Software engineers are, in large part, promoted and compensated based on how well their changes result in user behavior that is deemed “good”. The number went up? Congratulations, you get a bonus. You can break apart this monolith, but this isn’t a bad first order approximation^[I think you can break a lot of work in Tech into three groups (excluding support staff that doesn’t work directly on product): engineers (make numbers go up), UX researchers (make sure we choose the right numbers to go up), internal measurement tool builders (make sure when we say number goes up, it actually went up).].
+
+## The Apparatus, examined
+
+This discussion should make it clear that there’s no sense in which any person understands “the Algorithm”, as Kevin argues. Wouldn’t that be comforting? Stafford Beer had a famous saying, “[The purpose of a system is what it does](https://en.wikipedia.org/wiki/The_purpose_of_a_system_is_what_it_does)”. This isn’t a reassuring sentiment. We have to work extremely hard to see and measure what a system does. There’s no easy shortcut through “intentions” to understand a system. Even with a truth-serum, we can’t just ask Zuck what he intended to build and then decide if that’s good or bad^[I think many critics would be surprised at the prevalence good intentions here.]. No engineer fully understands the entirety of the complex system they’re working on, so we can’t judge the worth of what they’ve built solely on what they intended to build.
+
+So what *is* the purpose of the apparatus? Well, in one sense it’s essentially the aggregate of the incentives for all the people *building* the apparatus: making the numbers go up. If we want to understand the purpose of the apparatus, we need to encode the things it does into numbers, and measure how changes to the apparatus result in changes to those numbers. There’s only one consistent way to do that: experimentation^[There’s an argument here that this is granting too much to behavioralism: that framing the problem in these terms is already giving up the game. I don’t think this is true. A strong argument for behavioralism is that it grants a common epistemological playing field that leads to productive arguments about what should be measured and what should be valued: a regulatory framework. Those are much more productive, I think, than arguing about more basic epistemological points on which there can never be agreement.]. And we need to find the right *new* numbers to measure, because there will undoubtedly be unintended consequences. 
+
+But we cannot forget that the essence of the behavioralism in Tech is that *we are those numbers*. We are as much a part of the apparatus as the engineers who build the system: every post, every click, every message, every linger over a story is part of the apparatus. This isn’t just true in the sense of our being complicit in the system. It’s true mechanically in the way engineers *construct* the system. The builders of the system *want* to give us what we want.
+
+Thanks for reading Drew’s News! Subscribe for free to receive new posts and support my work.

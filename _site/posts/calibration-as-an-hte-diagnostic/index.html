@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Drew Dimmery">
+<meta name="dcterms.date" content="2024-01-16">
+<meta name="description" content="Paper just accepted to Information Systems Research">
+
+<title>Drew Dimmery – Calibration as an HTE diagnostic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7YLFF5F90"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Drew Dimmery - Calibration as an HTE diagnostic">
+<meta property="og:description" content="Paper just accepted to Information Systems Research">
+<meta property="og:image" content="https://ddimmery.com/posts/calibration-as-an-hte-diagnostic/image_1.png">
+<meta property="og:site_name" content="Drew Dimmery">
+<meta property="og:image:height" content="619">
+<meta property="og:image:width" content="999">
+<meta name="twitter:title" content="Drew Dimmery - Calibration as an HTE diagnostic">
+<meta name="twitter:description" content="Paper just accepted to Information Systems Research">
+<meta name="twitter:image" content="https://ddimmery.com/posts/calibration-as-an-hte-diagnostic/image_1.png">
+<meta name="twitter:creator" content="@drewdim">
+<meta name="twitter:site" content="@drewdim">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="619">
+<meta name="twitter:image-width" content="999">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Drew Dimmery</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Calibration as an HTE diagnostic</h1>
+                  <div>
+        <div class="description">
+          Paper just accepted to Information Systems Research
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">methodology</div>
+                <div class="quarto-category">experiments</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://ddimmery.com">Drew Dimmery</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.hertie-school.org/en/datasciencelab">
+              The Hertie School
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 16, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>In <a href="https://open.substack.com/pub/drewdimmery/p/stop-looking-for-the-next-twitter?r=bjnt&amp;utm_campaign=post&amp;utm_medium=web">an earlier post</a>, I promised that rather than writing threads about papers, I’d talk about them here. That’s what this post is!</p>
+<p>I’ve just had <a href="https://doi.org/10.1287/isre.2021.0343">a paper (with Yan Leng)</a> accepted to Information Systems Research titled “Calibration of Heterogeneous Treatment Effects in Randomized Experiments”. The entire motivation of the paper can be summed up in the following chart, showing that the HTEs are not alright:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image_1.png" class="img-fluid figure-img"></p>
+<figcaption>Image</figcaption>
+</figure>
+</div>
+<hr>
+<p>The data undergirding this chart came from a big (and important) experiment at Facebook which was run around 2019 or so. It is sufficiently sensitive that I (still) can’t talk about what the actual intervention was, but one of the big questions was about how much heterogeneity there was in the intervention. It would have been a big deal if a small fraction of people exhibited very large effects, so we needed to look into whether this was the case. We did this by applying some of the rapidly developing literature on ML estimation of heterogeneous effects.</p>
+<p>We threw machine learning at the problem using a bunch of covariates we collected about users’ behavior. We started with the simplest possible model, the venerable T-learner<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. When I was at Facebook, I did a bunch of interviews in which I asked candidates to walk me through their model-building and model-testing process (starting with very simple gut-checks). One of the open-ended questions I would always ask was “how would you know if this particular model was good enough (e.g.&nbsp;to launch to production)?” With ML, you can often give pretty sensible answers to this question depending on what you’re trying to do and thinking carefully about what errors mean<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. We found this a surprisingly hard question to answer in the causal setting.</p>
+<p>How can we have a sense as to whether our HTEs are reasonable? In a standard machine learning setting, you have true labels which you can compare to your estimates to see how well you do at prediction. Even in the case of non-standard prediction models where you only learn about the truth long after you predict, you can use the truth to get a sense of how well you do. A great example of this was when <a href="https://projects.fivethirtyeight.com/checking-our-work/">FiveThirtyEight evaluated all of their predictive models they’d ever done</a>. Of course, as you learn in the first lecture of any causal inference class, you never actually observe the true treatment effect: you only have exactly one of the treatment and control potential outcome for a unit.</p>
+<p>The standard answer in the causal setting is that while you cannot observe <em>individual</em> effects, you can observe <em>average</em> effects. To bring things back to the motivating graph at the top, we started with the very simple exercise of splitting up our data based on quintiles of the estimated HTEs (from the T-learner) and comparing the average model-based estimates against the standard difference-in-means estimates in each quintile.</p>
+<p>The results were pretty startling, as the ML-based HTEs were radically smaller in magnitude than the <em>known unbiased</em> estimates from a difference-in-means. In short, this plot instantly alerted us to the fact that something was going very wrong. As you can see in the plot, these differences cannot simply be explained away as sampling variation in the difference-in-means. Rather, we found the issue to be that the plugin estimators make a fundamentally incorrect bias-variance tradeoff because they’re modeling <em>response-surfaces</em> rather than <em>treatment effects</em>. If you were to have infinite data, this problem might go away, but we’re ultimately never in asymptopia, and we need some heuristics and diagnostics to help us navigate this tradeoff.</p>
+<p>The core of our paper is thus to motivate people to <em>look at their data</em>. Have your models actually done a good job of replicating the effects you know you can have some faith in? If not, you need to try and do something else. You can fit a new model (e.g.&nbsp;<a href="https://ddimmery.github.io/tidyhte/">a DR-learner with tidyhte</a>), or you can use our method to do something basically like <a href="https://en.wikipedia.org/wiki/Platt_scaling">Platt scaling</a>, which is what we talk through in the paper: take the aggregated data and find a linear transformation which makes the resulting estimates line up as best they can with the subgroup effects<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>For the linear rescaling approach to work well, you have to make a lot of assumptions. The review process was very focused on demonstrating that this calibration procedure improves the underlying HTE estimates<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but I think the best way to think about this is as, fundamentally, a diagnostic method. What we’re doing here is showing you how to look at your data and your model and see whether they align in any way whatsoever<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. The ultimate plot we landed on (and recommend) looks like the following, which is read basically like a QQ plot:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image_2.png" class="img-fluid figure-img"></p>
+<figcaption>Image</figcaption>
+</figure>
+</div>
+<p>Note that the axes are scaled by the arcsin. In our settings, at least, this was very important, as estimated HTEs tended to have somewhat long tails (you can see that the vast majority of units are estimated to have effects with magnitude less than 1 or so, but there are still some pretty large estimated effects). To be clear, at the tails of the data, the HTE model understates true effects by around 50% (the difference in the blue dashed line defined by the difference-in-means and the red one from the estimated HTEs). When you care about what your intervention is actually doing, that’s an unacceptable error that you must do something to correct.</p>
+<p>In general, I think finite-sample performance for HTEs is vastly underrated in import. There’s some very weird asymptotic shenanigans that happen in some of these HTE papers that I think should be pushed on more. For instance, did you know that causal forests acquire a lot of their nice properties because asymptotically, each terminal node has a constant treatment effect? How often does our data have remotely constant treatment effects within estimated leaves when heterogeneity actually matters? A lot of how well CF will do on your particular data is going to come down to what your true CATE function looks like (just like a lot of other approaches). Luckily, random forests are generally pretty good models, so I don’t think this invalidates much, but it does suggest you need to think hard about model validation. You shouldn’t just rely on asymptotic results.</p>
+<p>Another result from our paper I like is that you can exactly characterize the (conditional) bias that you’ll get from fitting a T-learner with ridge regression: it’s purely a function of the regularization parameter: more regularization means more bias<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. With a T-learner, you typically manage the bias-variance tradeoff on the response surfaces <em>individually</em>, so if you have a very noisy underlying response function, you’ll get a lot of bias <em>even if your true CATE function is very well behaved</em>! If we want to be serious about estimating HTEs, we should take these kinds of finite sample properties seriously. It’s 100% a finite sample issue, as if your data gets big enough, you won’t need to regularize, so you won’t have any bias.</p>
+<p>In <a href="https://arxiv.org/abs/2010.11332">one of my papers</a> (with David Arbour and Anup Rao), we come at this from a whole different angle, motivating an experimental design based on doing a good job for a particular (knn-based) HTE estimator. We show that one particular view of good design is explicitly trying to minimize the MSE of HTE estimators<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. I really like this paper, although it’s admittedly pretty weird<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>. In particular, I think the connection between experimental design and the <a href="https://en.wikipedia.org/wiki/Maximum_cut">Maxcut problem</a> is a fun insight that makes <a href="https://arxiv.org/abs/1312.0531">Kallus’s great design paper</a> a little easier to understand.</p>
+<p>Anyway, try talking through all this in a Twitter thread!</p>
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>There are some reasons to expect that in an RCT a T-learner shouldn’t be too bad: you don’t need to correct for propensity scores (they’re all the same), so you really just want a model to help you extrapolate the tiny amount from nearby factuals to counterfactuals. <a href="https://www.pnas.org/doi/10.1073/pnas.1804597116">Soren’s paper</a> on X-learner has some simulations that bear this out. I want to be very clear that I am not recommending that you just stick with T-learners in RCTs, though! I’m only making the very weak argument that it isn’t crazy to think they might do a decent job as a first-cut.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A lot of very good computer scientists completely balked at the question, though. It requires actually thinking about the specifics of the application rather than just looking at an AUC number and making an evaluation.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>An alternative approach that may be even better is to use the <a href="https://arxiv.org/abs/1712.04802v7">Chernozhukov et al.&nbsp;procedure</a>. We don’t directly compare to this, largely because our motivation starts from the position of diagnostics rather than estimation.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>This was definitely reasonable from their perspective: there’s no sense in which the procedure we’re proposing is a panacea to the problems of HTE estimation (I’m increasingly negative on whether there is such a “correct” procedure).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>The <a href="https://grf-labs.github.io/grf/reference/test_calibration.html">GRF package</a> has something they refer to as a “test” of calibration, but I think it’s an important distinction to provide these kinds of tests in a visual way. You will almost certainly turn up more problems when you are looking at more than just a single number (e.g.&nbsp;criticisms of the NHST paradigm <a href="https://www.johnmyleswhite.com/notebook/2012/05/14/criticism-3-of-nhst-essential-information-is-lost-when-transforming-2d-data-into-a-1d-measure/">compressing all information into a single p-value</a>).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Basically, what you get is the following, using the fact that ridge regression is basically just a linear rescaling of OLS (assuming the covariates form an orthonormal basis). The coefficient vector, β, is the set of “true” linear coefficients of the best linear predictor to the CATE function, λ is the regularization parameter:<a href="https://substackcdn.com/image/fetch/$s_!Ncf0!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6353e5dc-354d-4382-876e-ad3b895efc25_628x108.png"></a><a href="#footnote-anchor-7">7</a>Technically we’re minimizing a bound on MSE (albeit a tight bound). We have a whole section (4.3 and 4.4) problematizing the idea of optimization here, because ultimately you just can’t know enough about your data a priori to make “optimization” something that fully makes sense. In particular, I like the counterexample we define in Section 4.4 which I think makes the dependence on unknown properties (the conditional variance) very clear.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Footnote 7<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>The assignment process is basically not randomized, except up to a relabelling (i.e.&nbsp;swapping treatment and control). There are randomized extensions to this that would probably work quite well and efficiently, but which we haven’t spent the time to put together — feel free to reach out if you want to talk about them.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2024,
+  author = {Dimmery, Drew},
+  title = {Calibration as an {HTE} Diagnostic},
+  date = {2024-01-16},
+  url = {https://ddimmery.com/posts/calibration-as-an-hte-diagnostic},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Dimmery, Drew. 2024. <span>“Calibration as an HTE Diagnostic.”</span>
+January 16, 2024. <a href="https://ddimmery.com/posts/calibration-as-an-hte-diagnostic">https://ddimmery.com/posts/calibration-as-an-hte-diagnostic</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ddimmery\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

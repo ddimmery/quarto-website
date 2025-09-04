@@ -77,6 +77,32 @@ gtag('js', new Date());
 gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>

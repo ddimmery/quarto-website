@@ -2,6 +2,14 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/whats-the-point-of-rcts/index.html",
+      "/posts/what-was-us2020/index.html",
+      "/posts/is-bluesky-convivial/index.html",
+      "/posts/examining-the-apparatus/index.html",
+      "/posts/calibration-as-an-hte-diagnostic/index.html",
+      "/posts/plagiarism-is-bad/index.html",
+      "/posts/stop-looking-for-the-next-twitter/index.html",
+      "/posts/a-blueprint-for-the-regulation-of-tech/index.html",
       "/posts/quarto-website/index.html",
       "/posts/softblock-demo/index.html"
     ]

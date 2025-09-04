@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Drew Dimmery">
+<meta name="dcterms.date" content="2023-10-03">
+<meta name="description" content="BlueSky doesn’t solve any of Twitter’s real problems, nor will any other microblog">
+
+<title>Drew Dimmery – Stop looking for the next Twitter</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7YLFF5F90"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Drew Dimmery - Stop looking for the next Twitter">
+<meta property="og:description" content="BlueSky doesn’t solve any of Twitter’s real problems, nor will any other microblog">
+<meta property="og:image" content="https://ddimmery.com/posts/stop-looking-for-the-next-twitter/main-image.png">
+<meta property="og:site_name" content="Drew Dimmery">
+<meta name="twitter:title" content="Drew Dimmery - Stop looking for the next Twitter">
+<meta name="twitter:description" content="BlueSky doesn’t solve any of Twitter’s real problems, nor will any other microblog">
+<meta name="twitter:image" content="https://ddimmery.com/posts/stop-looking-for-the-next-twitter/main-image.png">
+<meta name="twitter:creator" content="@drewdim">
+<meta name="twitter:site" content="@drewdim">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Drew Dimmery</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Stop looking for the next Twitter</h1>
+                  <div>
+        <div class="description">
+          BlueSky doesn’t solve any of Twitter’s real problems, nor will any other microblog
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">social-media</div>
+                <div class="quarto-category">technology</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://ddimmery.com">Drew Dimmery</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.hertie-school.org/en/datasciencelab">
+              The Hertie School
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 3, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#all-microblogging-is-fundamentally-the-same" id="toc-all-microblogging-is-fundamentally-the-same" class="nav-link active" data-scroll-target="#all-microblogging-is-fundamentally-the-same">All microblogging is fundamentally the same</a></li>
+  <li><a href="#some-microblogging-is-different-but-not-better" id="toc-some-microblogging-is-different-but-not-better" class="nav-link" data-scroll-target="#some-microblogging-is-different-but-not-better">Some microblogging is different (but not better)</a></li>
+  <li><a href="#what-are-we-doing-on-here" id="toc-what-are-we-doing-on-here" class="nav-link" data-scroll-target="#what-are-we-doing-on-here">What are we doing On Here?</a></li>
+  <li><a href="#what-am-i-doing" id="toc-what-am-i-doing" class="nav-link" data-scroll-target="#what-am-i-doing">What am I doing?</a></li>
+  <li><a href="#build-alternative-communities" id="toc-build-alternative-communities" class="nav-link" data-scroll-target="#build-alternative-communities">Build alternative communities!</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Everyone seems to agree now that <a href="https://kevinmunger.substack.com/p/ultima-ratio-twitterum">Twitter/X is bad</a>. They’re right. But the desire to recapture some idyllic ahistorical version of Twitter is wrongheaded. The nature of the platform has serious problems that cannot be solved by a different owner, CEO or by changes in content moderation/ranking. The medium is the message, and the medium is, overall, pretty bad for a lot of what we use it for.</p>
+<p>I’m going to trace through my argument around why the design of microblogging platforms are bad and then sketch out how I’m personally choosing to engage with them in light of this badness.</p>
+<hr>
+<section id="all-microblogging-is-fundamentally-the-same" class="level2">
+<h2 class="anchored" data-anchor-id="all-microblogging-is-fundamentally-the-same">All microblogging is fundamentally the same</h2>
+<p>There are differences between microblogging sites (I’m primarily thinking about Twitter/X, BlueSky, Mastodon and Threads, but I imagine anything else basically fits the same mold). Nevertheless, I think the core properties are basically the following:</p>
+<ul>
+<li><strong>Short text snippets</strong>. I think this is definitional. If it weren’t based around this, it wouldn’t be microblogging.</li>
+<li><strong>Virality</strong>. Content gets out of the small community in which it’s posted. This is fun (at first) for the poster and fun for the viewer. The nature of a viral platform means when you see stuff from outside your community, it has already been vetted, so it is almost definitionally ‘highly engaging’ for some highly specific definition of those words.</li>
+<li><strong>Simple engagement possibilities</strong>. There are very simple, easy ways to engage with the content you see. A “like” or a “reskeet” is just a click of the mouse away. You don’t have to think very hard or construct a complete and cogent thought in order to “engage” with what you see<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+<li><strong>A “feed” of posts</strong>. You are deluged with an infinitely scrolling progression of more content (making you <a href="https://www.youtube.com/watch?v=i2qx5P0kQSM">infinitely content</a>, right?). There are a lot of other features that matter on the margin. Exactly how long is a post? Can you Quote-tweet / Retweet? What content is allowed / promoted? This stuff matters, but I don’t think it really gets at the core of what microblogging is. (As an aside, I think we as social scientists are much better at testing the differences between possible affordances <em>within</em> a single platform than we are at testing the big meaningful differences <em>between</em> platforms).</li>
+</ul>
+<p>The thing that I find really clear about this is that these affordances are not built to enable deep and thoughtful exchange of ideas. They’re built to enable surface-level engagement that you’ll come back for again and again.</p>
+</section>
+<section id="some-microblogging-is-different-but-not-better" class="level2">
+<h2 class="anchored" data-anchor-id="some-microblogging-is-different-but-not-better">Some microblogging is different (but not better)</h2>
+<p>I think Jack may have learned exactly the wrong lessons from Twitter. It seems that the AT protocol which undergirds BlueSky is <a href="https://atproto.com/guides/overview#speech-reach-and-moderation">fundamentally built</a> around the idea that <em>Jack shouldn’t have to be the person that everyone gets mad at</em>. You don’t like how your feed is ranked? Not his fault, that’s a different layer than he controls. Don’t like how content moderation works? Well, you should be on a <a href="https://blueskyweb.xyz/blog/4-13-2023-moderation">different application with different rules</a>. This goes to extremes with platforms like Mastodon, where some servers won’t do any moderation whatsoever, while others will ban you aggressively for not giving adequate content warnings. This is <em>different</em> than other microblogging services, but I don’t think there’s much of a way to say it’s <em>better</em>. For instance, <a href="https://www.theverge.com/2023/7/24/23806093/mastodon-csam-study-decentralized-network">the massive CSAM problems there</a>.</p>
+<p>How this has worked in practice with AT/BlueSky is kind of different. BlueSky is the only real application built on AT, which means that Jack doesn’t just get to sit around dealing with AT issues, he has to deal with BlueSky issues, too. All of a sudden (and despite his original intentions), he’s having to manage an actual platform rather than just a protocol. This means that BlueSky is (slowly) developing content moderation standards, some of which are actually implemented at the protocol layer (e.g.&nbsp;in AT rather than in BlueSky). As I understand, CSAM, for instance, is a protocol-level concern for AT, it is not federated out to individual applications. I can’t see how this won’t continue to be a giant wellspring of conflicts.</p>
+</section>
+<section id="what-are-we-doing-on-here" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-we-doing-on-here">What are we doing On Here?</h2>
+<p>There are two main things I think happen on microblogs:</p>
+<ul>
+<li><strong>Discovery. </strong>There’s nothing I’ve seen that’s better at delivering interesting papers and news items to the front of my face (i.e.&nbsp;“pointing at things”). Microblogging is extremely effective at making serendipitous connections. Getting pointers to things of interest from people within a hop or two of you in a network which you form according to your whims is extremely powerful!</li>
+<li><strong>Jokes/entertainment</strong>. There’s a reason that dril is the greatest poster on microblogs. One-liners are a classic joke format, and they’re enjoyable to consume on a feed (perhaps especially a feed that also has a lot of self-important academics on it). What I think <em>doesn’t</em> happen, is anything very much like “discussion”. Discussion requires grace between interlocutors, which is hard to extend given the threat of virality inherent in the platform. Discussion requires context, which is destroyed with virality and its associated <a href="https://journals.sagepub.com/doi/10.1177/1461444810365313">context collapse</a>. And important discussions require depth, which is not really possible in short snippets of text. I also think that <em>privacy</em> is often crucial to good discussion<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Real privacy is anathema to virality: you can’t really have both. When discussions are ephemeral and low-cost its much easier to try out ideas to see if they seem compelling and convincing.</li>
+</ul>
+<p>The easiest discussions to have on microblogs are ones in which the interlocutors already agree with one another and share full context (or which are just pointing to something and saying, essentially “good” or “bad”). In this case, a few words are all it takes to explain what one means and make one’s position clear. As discussions require more nuance and rely on context that is <em>not</em> shared (i.e.&nbsp;on more complex topics), then the goal should not be to write in chunks of a few hundred characters.</p>
+<p>I think that a lot of the appreciation of tweet-length communication is a reflection of a failure of academic writing. For a lot of research, the first time someone takes the time to make it broadly accessible is when a tweet-thread is written out<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. I’ll bite the bullet, and freely admit that was true for me with our ICML paper about online balanced experimental design. The version we submitted (and which was accepted) was essentially just math. The paper’s structure was, essentially, introduction → math → simulations → the end. Reviewers didn’t <em>love</em> it, but they were <em>intimidated</em> by it<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. We <a href="https://arxiv.org/abs/2203.02025">cleaned it up</a> for the camera-ready version (yes, that’s the easy-to-digest version), but the first time we really thought about how to communicate our results to a broader audience was <a href="https://twitter.com/DrewDim/status/1556648259787149312">when I wrote about it for Twitter</a>. That’s bad!<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> While one solution to this problem is to just write papers that are more accessible, the incentives are currently entirely against this. Being rigorous but difficult to understand is, often, a <em>very</em> <em>good</em> move if your primary incentive is publication.</p>
+<p>Twitter, however, has incentives which at least preference some amount of accessibility. If you want your work to be shared and consumed, you have to hook people and encourage them to “engage.” In contrast to typical academicese, I think this is a nice change of pace, and is one of the reason I sometimes appreciate them. “Engagement,” however, is quite different than “accessible.” To be accessible, I think you want things like easy hyperlinks/citation, formatting, figures, quotations and, yes, more than a couple hundred characters. Maybe you also want to throw in some code or math as a treat! We can obviously do better than tweets for this.</p>
+</section>
+<section id="what-am-i-doing" class="level2">
+<h2 class="anchored" data-anchor-id="what-am-i-doing">What am I doing?</h2>
+<p>I’m treating microblogging for what it is. I’m essentially indifferent between services, as I don’t think the differences are that meaningful relative to what’s the same. I enjoy finding things on these platforms, so I will peruse them, but I will not expect discussion, and I won’t use them as if I do. Since I think threads about new work are not a particularly good way to provide digestible versions of papers, I will avoid making them. I don’t want to push for “engagement” with my work; I want people to understand it and its context. Instead, I will share new work, and (if appropriate) will link to a longer-form accessible introduction for that work in this space (or somewhere like it)<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. In short, I will try to make it easy to <em>discover</em> my work on microblogs, but I will not attempt to <em>explain</em> my work in that setting. The platform is not conducive to such explanation. I may also make jokes, but, well, most of those are for the groupchats where I can be <em>spicy</em>.</p>
+<p>I think this is ultimately the kind of recommendation Neil Postman makes about television in <em>Amusing Ourselves to Death, </em>too: TV is fantastic entertainment device, but <em>don’t mistake it for something that it’s not</em>. Don’t treat it as a medium of explanation or of news or of education. What it <em>does</em> is entertain.</p>
+<p>Microblogging platforms are not built for good discussion. I will avoid a poor facsimile of conversation there, and have conversations in places where those conversations can be at their best. For me, this means that my <em>conversation</em> happens outside of the “clearnet”. I have a variety of WhatsApp / Slack / Discord groups for talking with collaborators or just randomers with shared interests. This is, I believe, a much more productive approach than trying to make microblogging into something that it can’t ever really do well. In these environments, you can set up affordances to enable the kind of discussion you want: you can make it easy to share LaTeX, or code. You can make spaces for highly moderated discussions or free-flowing sharing of memes. But most fundamentally, you can retain so much more control and privacy<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>.</p>
+</section>
+<section id="build-alternative-communities" class="level2">
+<h2 class="anchored" data-anchor-id="build-alternative-communities">Build alternative communities!</h2>
+<p>About a year ago I started up a Discord for discussion about experimentation which ultimately hasn’t seen much discussion in it. I’m continuing to hang out there, so if anyone wants somewhere outside of the clearnet to talk about experiments, <a href="https://discord.com/invite/MrxjbHc3jD">feel free to join</a>! Or come there to tell me about why this post is bad.</p>
+<p>But also, use microblogs to create your own semi-private communities and make them easy to discover! The magic of the internet is that it’s all code and you can create whatever you want within those (weak) bounds. There are a ton of tools out there to create whatever kind of community you want, and you don’t need to troll around for “the next Twitter.” <strong>Twitter wasn’t ever all that good</strong>, and you can just go ahead and make the <em>better</em> community that you’d rather see! Many of those communities won’t work<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, and that’s totally fine; the process of figuring out what works is how we find a space for online discussion that’s <em>better</em> than Twitter, which is what we should aspire to, anyway.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image_1.png" class="img-fluid figure-img"></p>
+<figcaption>Image</figcaption>
+</figure>
+</div>
+<p>What AI thinks “a twitter-like website” looks like. It isn’t <em>wrong</em>.Thank you for reading Drew’s News. Now please microblog this in a long thread.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Note: this is bad. My hot take is that thinking is good and we should try to do more of it and improve how we do it. The simple binary “engagement” actions constrain human behavior into radically low dimensional signals. This is basically what Kevin means when he talks about <a href="https://kevinmunger.substack.com/p/the-discourse-is-the-cybernetic-event">online platforms making us behave like machines</a>. This is not good! There are no posts for which my reaction can truly be summed up by a binary “Like” action! A RT sometimes is an endorsement, but sometimes it isn’t! None of this is expressible in the platforms!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>By privacy, I mean that the ability to pretty strongly control how wide the distribution of your content is (such as by sending something in a group chat where only your wife and brother-in-law can read it). Encryption, cybersecurity and data protection are important components of privacy, but not what I’m talking about.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>An analogy I like is that threads are in the style of a poetry slam (derogatory). It’s not inherently “bad”, but it is a very distinct style which focuses on having meaningful “beats” every couple dozen words or so. Good tweets in a thread often are basically glorified figures (with caption). That’s a very constraining style!<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Comments were essentially “the problem seems important and there’s a lot of math which seems correct”. Some reviewers even called it easy to read, which we all had a good laugh over. The math was abstruse and we literally introduced a parameter without ever explaining why it was important!<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>It also hasn’t always been this way. A good example is Norbert Wiener’s Cybernetics, which is a ludicrous book in a lot of ways, but it was also not targeted solely at an in-group of very technical readers. Only some chapters are.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>I think an Oped length of about 1000 words is a good one to shoot for (don’t check how long this post is, sorry), e.g.&nbsp;<a href="https://www.nowpublishers.com/article/Details/QJPS-16112">Alex’s nice paper</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Control and privacy seem to cut against the democratizing impulse, but they don’t have to. You can, for example, be gracious in admitting people and harsh in throwing them out when they don’t abide by community norms. The key democratizing element isn’t in making everything public, but in giving people a chance. Being public can actually be much worse in some cases: Imagine saying something kind of dumb and going viral as a grad student (when we are all very silly). Not good!<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>I don’t even know what “work” means here. Just think about this community formation as expanding the groupchats you’re already having good discussions in. Is it a “failed” groupchat if you stop talking in it at some point? Obviously not! Is a coffee meeting a failure if it doesn’t result in a permanent collaboration? Spin something up and see how it goes!<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2023,
+  author = {Dimmery, Drew},
+  title = {Stop Looking for the Next {Twitter}},
+  date = {2023-10-03},
+  url = {https://ddimmery.com/posts/stop-looking-for-the-next-twitter},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Dimmery, Drew. 2023. <span>“Stop Looking for the Next Twitter.”</span>
+October 3, 2023. <a href="https://ddimmery.com/posts/stop-looking-for-the-next-twitter">https://ddimmery.com/posts/stop-looking-for-the-next-twitter</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ddimmery\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

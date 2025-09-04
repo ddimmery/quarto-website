@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Drew Dimmery">
+<meta name="dcterms.date" content="2023-09-11">
+<meta name="description" content="Counterfactuals are the key to accurately assessing the risks of online platforms">
+
+<title>Drew Dimmery – A Blueprint for the Regulation of Tech</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../favicon.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7YLFF5F90"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
+</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Drew Dimmery - A Blueprint for the Regulation of Tech">
+<meta property="og:description" content="Counterfactuals are the key to accurately assessing the risks of online platforms">
+<meta property="og:image" content="https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech/main-image.jpeg">
+<meta property="og:site_name" content="Drew Dimmery">
+<meta name="twitter:title" content="Drew Dimmery - A Blueprint for the Regulation of Tech">
+<meta name="twitter:description" content="Counterfactuals are the key to accurately assessing the risks of online platforms">
+<meta name="twitter:image" content="https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech/main-image.jpeg">
+<meta name="twitter:creator" content="@drewdim">
+<meta name="twitter:site" content="@drewdim">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Drew Dimmery</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../software.html"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">A Blueprint for the Regulation of Tech</h1>
+                  <div>
+        <div class="description">
+          Counterfactuals are the key to accurately assessing the risks of online platforms
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">technology</div>
+                <div class="quarto-category">metascience</div>
+              </div>
+                  </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author"><a href="https://ddimmery.com">Drew Dimmery</a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              <a href="https://www.hertie-school.org/en/datasciencelab">
+              The Hertie School
+              </a>
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 11, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#what-do-we-want-to-measure" id="toc-what-do-we-want-to-measure" class="nav-link active" data-scroll-target="#what-do-we-want-to-measure">What do we want to measure?</a></li>
+  <li><a href="#who-gets-to-measure-them" id="toc-who-gets-to-measure-them" class="nav-link" data-scroll-target="#who-gets-to-measure-them">Who gets to measure them?</a></li>
+  <li><a href="#when-are-they-measured" id="toc-when-are-they-measured" class="nav-link" data-scroll-target="#when-are-they-measured">When are they measured?</a></li>
+  <li><a href="#wrapping-it-up" id="toc-wrapping-it-up" class="nav-link" data-scroll-target="#wrapping-it-up">Wrapping it up</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>The US2020 Facebook and Instagram Election Project (US2020 from here out), the first four papers of which were recently published in Science and Nature, can be the blueprint for meaningful regulation of large online platforms. It’s crucial not just to be satisfied in access to data, but in access to rigorous tests of how changes on platforms affect society.</p>
+<p>The key connection is to avoid examining the project through a purely academic lens about academic research and the knowledge gained through the studies.</p>
+<p>The <a href="https://www.science.org/content/article/does-social-media-polarize-voters-unprecedented-experiments-facebook-users-reveal">news post at Science by Kai Kupferschmidt</a> focuses on this dimension, with input from Joe Bak-Coleman’s saying that “This is not how research on the potential dangers of social media should be conducted”. He focuses on the research and the project as a model for gaining academic knowledge.</p>
+<p>The <a href="https://www.science.org/doi/10.1126/science.adi2430">commentary by project rapporteur Michael Wagner</a> focused, too, on the project as largely academic in nature. Wagner gets one element of the project exactly correct from this dimension: It requires the goodwill of Meta to work correctly, which makes a difficult model for future scholarly work.</p>
+<p>Meta <a href="https://about.fb.com/news/2023/07/research-social-media-impact-elections/">wants the project interpreted solely as the results of academic research based on Nick Clegg’s news post</a>: “Its findings will be hugely valuable to us, and we hope they will also help policymakers as they shape the rules of the road for the internet”. The <em>findings</em> of these studies should shape discourse on regulation, and not the <em>structure</em> of the collaboration itself. These findings are (overall) pretty positive for Meta. They show that algorithms are <em>powerful </em>(they change a lot about on-platform behavior), but they aren’t <em>scary</em> (they don’t swing elections). There are subtleties here, and I don’t mean to get into a detailed accounting of the exact substantive results, but I think this is the reading of the Project Meta wants to push to advertisers (the former story) and to regulators (the latter one).</p>
+<p><a href="https://twitter.com/brandonsilverm/status/1684976994449272832?s=20">Brandon Silverman gets nearly to the quick</a>: “That’s why ultimately <em>we need regulation</em> if we want more of this sort of thing and for me, that represents one of the biggest promises of the Digital Services Act[…]” We should think about regulation as a way to free this kind of information from tech companies. But he doesn’t go nearly far enough. A model of data-sharing (proposed in the next tweet) does not go far enough, and it sets up perverse incentives for companies to neglect rigorous measurements of changes that might place them in a negative light.</p>
+<p>My argument in this piece is that the structure of collaboration of US2020—sophisticated experts telling online platforms what they must measure about societal impact—should be the future of the regulation of the internet. Don’t simply accept the framing that Nick Clegg pushes, that we should take these findings and make policies based solely on them (implicitly assuming they are the only evidence we might get). The way platforms work is constantly changing: we should not seek perfect <a href="https://twitter.com/aecoppock/status/1684911539390652416?s=20">generalizability of the findings</a>, we should instead seek systems which allow us to continue to probe and measure how these platforms work flexibly, as they change.</p>
+<section id="what-do-we-want-to-measure" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-we-want-to-measure">What do we want to measure?</h2>
+<p>Many of the most important questions we have about tech’s relationship to society are counterfactuals: If Facebook were otherwise identical but ranked Feed chronologically rather than by an algorithm, would there be more or less hate? If YouTube made different choices in recommendations, would it make people less extreme? A counterfactual, fundamentally, asks what would happen were the world just a little bit different. When thinking about the regulation of technology, we’re asking questions like these: if Facebook were to operate differently in some way, would society be better or would it be worse? This embeds two questions: One is a scientific question: what would society be like if Facebook were different? The second is a question of values: Would that counterfactual society be better or worse?&nbsp;</p>
+<p>The scientific question can be answered through randomized control trials (RCTs). Such RCTs, however, can only truly be implemented by and within these large tech platforms, so under the status quo the question of values can only be answered by people within those walls. Engineers, data scientists, managers and executives of tech companies: mostly good hearted people, but people who work within institutions that require they think about the good of the platform rather than the good of society.</p>
+<p>I worked within Meta for years on improving the process through which the company evaluated potential counterfactual versions of itself – in other words, testing changes through A/B tests. The entire business of software development is to try lots of stuff out but only keep the things that work towards the business’s goals. These goals are expressed in numbers (“KPIs” or “metrics”). <a href="https://ax.dev/">My team built machine learning tools</a> to realize these business goals. When business values change, so too, can the platform. Look no further than <a href="https://about.fb.com/news/2018/01/news-feed-fyi-bringing-people-closer-together/">Facebook’s 2018 pivot to “meaningful social interactions”</a>. Once new numbers are chosen as the target, machine learning gears turn and the platform (in many ways a black box to everyone) pivots on a dime to optimize these new metrics.</p>
+<p>Many of these business values are widely held societal norms: nobody in tech wants more spam or child sexual abuse material, for instance. As such, companies develop sophisticated (albeit <a href="https://www.washingtonpost.com/technology/2023/06/07/meta-instagram-child-porn/">imperfect</a>) systems for detecting and removing such content and ensuring that it is not distributed widely. Other metrics, like the time spent on a platform, are less clear cut: essentially all internet platforms prize this as a KPI, but it does not necessarily align with what is best for society.</p>
+<p>Democratic societies have systems for answering questions of values: we elect representatives who enact policies so that society embodies the values we care about. When such values are contentious, there is conflict, of course, but there is a peaceful process for resolving that conflict through our institutions. Tech lacks the mechanism to ensure that it embodies societal values: even market pressure isn’t straightforward, since usage is free thanks to advertising.</p>
+</section>
+<section id="who-gets-to-measure-them" class="level2">
+<h2 class="anchored" data-anchor-id="who-gets-to-measure-them">Who gets to measure them?</h2>
+<p>The only real counterfactual evidence about tech’s effects is controlled by tech itself. This is the promise of US2020, a project I worked on while at Meta. The unique power of this project is that it reveals the counterfactuals which—but for the press of a button—Facebook can decide to make reality. Asking ‘Should Facebook remove algorithmic ranking?’ contains both a question of science and a question of values – and this project answers the question of science, <a href="https://doi.org/%20doi:10.1126/science.abp9364">showing precisely what would happen if Facebook did no algorithmic ranking on Feed</a>. As a result, the question of values is finally exposed to democratic scrutiny. Do we measure the right things to effectively answer that question? The way forward can only be an iterative refinement of asking the question and trying to improve the answers we get.</p>
+<p>In short, the Election Project is a blueprint for the effective regulation of technology companies. The approach is straightforward and consistent with the language of <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065&amp;qid=1666857835014#d1e3513-1-1">Chapter III, Section 5 of the Digital Services Act</a>. Regulators can require that for important, societally relevant changes, Very Large Online Platforms must run and report the results of RCTs. These are far more informative than audits of the <em>processes</em> used in these platforms or providing data access without counterfactuals, or trying to explain the precise details of how underlying machine learning systems work (which are mostly black boxes to everyone internally, too). To reiterate: in general, many of the most important systems at VLOPs are not truly “understood” by those who create them. Rather, they are refined by measuring what they do, and launching the changes that push those measurements in a direction that those measurements deem positive.</p>
+<p>Philipp Lorenz-Spreen has already compellingly argued that <a href="https://reclaimingautonomyonline.notion.site/reclaimingautonomyonline/Researcher-access-to-platform-data-under-the-DSA-Questions-and-answers-8f7390f3ae6b4aa7ad53d53158ed257c#82d252b2543f43cbb35489209884a230">Article 40 of the DSA is a way to free the results of internal A/B tests to the public</a>. Tech companies are already running lots of A/B tests, so maybe we can just require them to share those results! This is a very positive step, but it isn’t enough. The problem with limiting ourselves to these tests is that platforms can simply stop doing them on issues they feel present a regulation risk. We’re back in the same place we started where our ability to understand counterfactuals is dependent on the platforms’ goodwill.</p>
+<p>Platforms already limit what is measured internally for this reason. A direct example of this is race in the US. Put simply, Meta works hard to limit what it knows about race in order to preclude legal risks like <a href="https://www.nytimes.com/2019/03/28/us/politics/facebook-housing-discrimination.html">it faced around housing discrimination in 2019</a>. When I left Meta, the primary way concerns about disparate impact were examined were through zip-code level demographics. This process ensures that individual users’ race was not <em>explicitly</em> inferred, so race cannot be <em>explicitly</em> taken into account in decisions. To be clear, this does not mean that systems do not have <a href="https://www.justice.gov/crt/fcs/T6Manual7">disparate racial impacts</a>. It does, however, make it very hard to measure when those disparate impacts might exist.</p>
+<p>There are also precedents for requirements to run RCTs, such as with the <a href="https://assets.publishing.service.gov.uk/media/6363b00de90e0705a8c3544d/CMA_Experiments_note.pdf">UK’s Competition and Markets Authority requirement that Google test changes to third-party cookies</a>. The logic here was that Google’s change to how cookies work might lead to big changes in how the advertising market works. Without understanding that impact, the regulator can not make an informed decision about whether it was anti-competitive or not. Hence, require Google to measure the impact, since they’re the only people who can.</p>
+<p>More traditionally, this is key to the FDA’s regulation of <a href="https://www.fda.gov/patients/drug-development-process/step-3-clinical-research">food and medicine</a>. The regulator is not generally performing the clinical trials to demonstrate safety itself: it instead requires that the would-be producer carry out the required tests, and ensures that those tests meet the standards of scientific rigor necessary to ensure safety. We think it’s important to verify that drugs meet at least a minimal standard before pushing them out broadly to all citizens. The same should be true for large changes to internet platforms. Note that the structure of clinical trials under the FDA would be exactly subject to the same critiques that are being made of US2020.&nbsp;</p>
+<p>The point is not who is actually running the test, but who is defining what particular tests must be conducted and how resulting outcomes must be measured. As an insider to this process, let me be very clear: US2020 took <em>incredible</em> care that external academics understood in detail the process by which concepts were operationalized and measured. A lot of the back-and-forth in the collaboration was specifically about this: academics didn’t understand how data is collected and stored internally, and internal researchers needed clear operationalizations to measure the concepts requested. I think I saw someone throw out that there were around 1000 variables to figure this out for.</p>
+<p>The DSA provides an avenue for this kind of accountability through counterfactual evidence, but it isn’t through Article 40. Instead, it’s through Article 34. Allow me to quote:</p>
+<blockquote class="blockquote">
+<p>Providers of very large online platforms and of very large online search engines shall diligently identify, analyse and assess any systemic risks in the Union stemming from the design or functioning of their service and its related systems, including algorithmic systems, or from the use made of their services.</p>
+</blockquote>
+<p>By suggesting that these risks arise from the design or functioning of the service, this sentence invokes counterfactuals. The question at play is whether platform design <em>causes</em> these risks. The only valid way to assess this is through counterfactuals as measured through randomized control trials. The counterfactual risk is what VLOPs should demonstrate in their risk assessments. I recognize that this plain-english reading is not formal legal analysis (and I am not a lawyer). Given the latitude of regulators to choose how this law should be interpreted, I hope that they do so in the way that will give them actual answers to the societally important questions of counterfactual risk. US2020 shows them how they can do that. Unfortunately, based on the <a href="https://op.europa.eu/en/publication-detail/-/publication/c1d645d0-42f5-11ee-a8b8-01aa75ed71a1/language-de">Commission’s current example of how to apply the risk management framework</a>, this is not likely to be the approach taken to interpreting the DSA.</p>
+</section>
+<section id="when-are-they-measured" class="level2">
+<h2 class="anchored" data-anchor-id="when-are-they-measured">When are they measured?</h2>
+<p>Time is a crucial element of this story. The number one complaint by everyone involved in US2020 is the time it took to make it happen. As <a href="https://kevinmunger.substack.com/p/mark-zuckerberg-wants-you-to-think">Kevin Munger emphasizes, it was 32 months after the US2020 studies were actually performed that they were published</a>. Part of that delay was because of peer review (note that the chronological feed paper was originally received by Science on March 7, 2022, but was only published on July 27, 2023. The paper was definitely improved in that time, but it goes without saying that nothing about the intervention or outcome measurement could have been improved or changed as a result of this peer review. It had already happened.</p>
+<p>Surely nothing changed about Facebook in that time, right? Well, shortly after submission of chrono-feed, on July 27, 2022, Mark Zuckerberg made an announcement on the Q2 earnings call: “<a href="https://investor.fb.com/investor-events/event-details/2022/Q2-2022-Earnings/default.aspx">Right now, about 15% of content in a person’s Facebook feed and a little more than that of their Instagram feed is recommended by our AI from people, groups, or accounts that you don’t follow. We expect these numbers to more than double by the end of next year.</a>” Shit. It’s at this point that I’ll note we found clear heterogeneity of the effects of chronological feed on variables like how much uncivil content and slurs show up on Feed, as well as on-platform political behavior on the dimension of inventory size. When there’s more content Feed could show you, there’s more potential for Feed algorithms to change what you see.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image_1.png" class="img-fluid figure-img"></p>
+<figcaption>Image</figcaption>
+</figure>
+</div>
+<p>Larger inventory is associated with larger effects on on-platform political behavior.Kevin and I have a <a href="https://osf.io/w38ye">new working paper</a> showing exactly how poorly agnostic approaches to generalizability fare when reality refuses to stay fixed. When reality is changing at internet speed, then it’s necessary that our knowledge generation process matches that speed. US2020 could do better on this. A lot of work had to be done to mitigate the risks that were inherent in the project as the first of its kind. There was a whole software infrastructure that had to be built from the ground up for protecting privacy, which was done at a pretty incredible speed. There was also a lot of work to build up the internal processes to make everything work both within the collaboration and within Meta (e.g.&nbsp;legal and privacy reviews to make sure user data was appropriately protected). And as stated above, there was a whole arduous process of defining meaningful operationalizations of everything: to a real extent, the scientific language of internal and external researchers wasn’t exactly the same, so translation was required.</p>
+<p>If we’re thinking about an ongoing regulatory process, however, a lot of these concerns go away: an infrastructure and set of systems will be set up (by necessity) to streamline processes. Variable definitions will be negotiated over time, so that’s largely just a fixed cost per variable. If the output is regulatory rather than academic, the results wouldn’t need to be gated by the fickle peer review process (just government bureaucracy!).</p>
+<p>Defining appropriate implementation of the regulations, too, must be a negotiated and long-term process. Meta has spent years defining specific internal metrics to understand the best dimensions of platform behavior to measure for business purposes. We cannot expect US2020 to have gotten the right societally important dimensions correct on the first try. DSA requires platforms to measure risks “on civic discourse and electoral processes, and public security”. How should these be operationalized? This can only be an iterative process as we see what kinds of measurements are both informative about what we care about in the world and sensitive to the kinds of changes VLOPs make. Iteration on the US2020 model is how to begin this process of refinement.</p>
+</section>
+<section id="wrapping-it-up" class="level2">
+<h2 class="anchored" data-anchor-id="wrapping-it-up">Wrapping it up</h2>
+<p>If we want to truly understand a world where tech is different in some way, we must change it in that way and measure what happens as a result. This is how Meta ensures Feed aligns with its business values, and this is the only way to ensure Feed – alongside all other aspects of online platforms – aligns with our societal values, as well. This may require platforms to run RCTs they would not have already run: we may imagine changes that they have not previously tested. At the very least, it will almost certainly be necessary to require that they measure outcomes they might not otherwise measure. In the US, for instance, this might mean requiring that they collect data on race that they are otherwise reluctant to hold.</p>
+<p>US2020 has many of the features that are necessary for this kind of counterfactual accountability. It provides rigorous evidence of how Meta’s products would work if we were to change them. The RCTs were designed by external academics with full control rights, whose incentive is not to improve Meta’s bottom-line, but to expose answers to societally relevant questions. Meta had no substantial freedom to say no to such requests. It was not fast enough, nor was it large enough scale (e.g.&nbsp;it was only in the US). Regulators don’t currently have the expertise in-house to do the work that these academics did in asking good questions and co-designing studies to answer them. This is an important problem to solve, but other fields (like the FDA) have shown that such expertise can be acquired by regulatory agencies.</p>
+<p>The biggest problem with US2020 is that it <a href="https://www.science.org/doi/full/10.1126/science.adi2430">only exists out of Meta’s goodwill</a>. And given how expensive it was for Meta, it’s not clear how much of that there is left. Look through the author list for the Meta employees – most worked primarily on this project for the last 3 years, and lots of other engineers and data scientists contributed substantial time as well. These people are all superstars and just their direct compensation over that time is a huge commitment from Meta: easily millions of dollars, likely tens of millions. Given recent belt-tightening, I wouldn’t count on Meta independently finding this a good tradeoff solely in order to be transparent. If we want to guarantee this kind of transparency from internet platforms, then we shouldn’t just hope that they will keep choosing to bring us rigorous counterfactual evaluation. Government should require it.</p>
+<p>Think other people should read this? Feel free to share:</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2023,
+  author = {Dimmery, Drew},
+  title = {A {Blueprint} for the {Regulation} of {Tech}},
+  date = {2023-09-11},
+  url = {https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech},
+  langid = {en}
+}
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Dimmery, Drew. 2023. <span>“A Blueprint for the Regulation of
+Tech.”</span> September 11, 2023. <a href="https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech">https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech</a>.
+</div></div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ddimmery\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

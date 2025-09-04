@@ -5,7 +5,7 @@ abstract: >
   This is a demo of using SoftBlock for experimental design for a notional randomization of precincts in North Carolina. To optimize power, we focus on ensuring very similar patterns of prior voting patterns in treatment and in control. This demo walks through all the necessary steps for this process and shows how to perform estimation of average and heterogeneous effects.
 date: "2022-05-10"
 categories:
-  - experimental-design
+  - experiments
   - demo
 code-fold: true
 image: /posts/softblock-demo/three-designs.jpg

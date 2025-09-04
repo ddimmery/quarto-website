@@ -78,6 +78,32 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 </script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Drew Dimmery - About">
@@ -148,6 +174,7 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
   <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">Experience</a></li>
   <li><a href="#teaching" id="toc-teaching" class="nav-link" data-scroll-target="#teaching">Teaching</a>
   <ul>
+  <li><a href="#hertie-school" id="toc-hertie-school" class="nav-link" data-scroll-target="#hertie-school">Hertie School</a></li>
   <li><a href="#facebook" id="toc-facebook" class="nav-link" data-scroll-target="#facebook">Facebook</a></li>
   <li><a href="#nyu-undergraduate" id="toc-nyu-undergraduate" class="nav-link" data-scroll-target="#nyu-undergraduate">NYU Undergraduate</a></li>
   <li><a href="#nyu-graduate" id="toc-nyu-graduate" class="nav-link" data-scroll-target="#nyu-graduate">NYU Graduate</a></li>
@@ -282,6 +309,33 @@ Granted June 2010</p>
 </section>
 <section id="teaching" class="level3">
 <h3 class="anchored" data-anchor-id="teaching">Teaching</h3>
+<section id="hertie-school" class="level4">
+<h4 class="anchored" data-anchor-id="hertie-school">Hertie School</h4>
+<div class="d-flex justify-content-between">
+<div>
+<p>Causal Machine Learning</p>
+</div>
+<div class="text-end">
+<p>2024-</p>
+</div>
+</div>
+<div class="d-flex justify-content-between">
+<div>
+<p>Data Structures &amp; Algorithms</p>
+</div>
+<div class="text-end">
+<p>2024-</p>
+</div>
+</div>
+<div class="d-flex justify-content-between">
+<div>
+<p>Machine Learning</p>
+</div>
+<div class="text-end">
+<p>2024-</p>
+</div>
+</div>
+</section>
 <section id="facebook" class="level4">
 <h4 class="anchored" data-anchor-id="facebook">Facebook</h4>
 <div class="d-flex justify-content-between">
