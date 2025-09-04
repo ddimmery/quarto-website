@@ -8,7 +8,7 @@ categories:
   - experiments
   - demo
 code-fold: true
-image: /posts/softblock-demo/three-designs.jpg
+image: main-image.png
 ---
 
 

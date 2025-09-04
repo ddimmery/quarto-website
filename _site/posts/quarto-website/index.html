@@ -116,22 +116,34 @@ gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 <style>html{ scroll-behavior: smooth; }</style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+<script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  },
+  chtml: {
+    font: 'mathjax-pagella'
+  },
+  loader: {
+    paths: {
+      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
+      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+    },
+    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
+  },
+  startup: {
+    ready() {
+      MathJax.startup.defaultReady();
+      MathJax._.output.fonts.generic = {
+        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
+      }
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -163,14 +175,18 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Drew Dimmery - Quarto for an Academic Website">
 <meta property="og:description" content="I continue my long search for a way to generate a nicely formatted website with publication list based on adding publication information to a single source of truth without re-remembering how all the formatting works each time.">
-<meta property="og:image" content="https://ddimmery.com/posts/quarto-website/tobias-meme.jpg">
+<meta property="og:image" content="https://ddimmery.com/posts/quarto-website/main-image.png">
 <meta property="og:site_name" content="Drew Dimmery">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:width" content="801">
 <meta name="twitter:title" content="Drew Dimmery - Quarto for an Academic Website">
 <meta name="twitter:description" content="I continue my long search for a way to generate a nicely formatted website with publication list based on adding publication information to a single source of truth without re-remembering how all the formatting works each time.">
-<meta name="twitter:image" content="https://ddimmery.com/posts/quarto-website/tobias-meme.jpg">
+<meta name="twitter:image" content="https://ddimmery.com/posts/quarto-website/main-image.png">
 <meta name="twitter:creator" content="@drewdim">
 <meta name="twitter:site" content="@drewdim">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-width" content="801">
 </head>
 
 <body class="nav-fixed">
@@ -520,7 +536,7 @@ jobs:
 <section id="future-dreams" class="level1">
 <h1>Future dreams</h1>
 <p>I imagine my CV is similar to most academics’ in that it’s built like a house of cards (and overfull hboxs). Whenever I add something new to it, I have to copy some lines from elsewhere and modify them to fit the new entry. This always takes me way more time than I’d like. If I mashed together my current <a href="../../about.html">About page</a> with the <a href="../../research.html">Research page</a>, it’s like 90% of the way to a full CV. It should presumably be pretty easy to do explicitly combine them and output a reasonable-looking CV.</p>
-<p>This is a project for another day, though. Too much of the Research page directly outputs HTML, which makes it difficult to naïvely import into a <span class="math inline">\LaTeX</span> CV.</p>
+<p>This is a project for another day, though. Too much of the Research page directly outputs HTML, which makes it difficult to naïvely import into a <span class="math inline">\(\LaTeX\)</span> CV.</p>
 <p>An almost completely naïve approach to directly importing the relevant pages creates <a href="cv.pdf">this ugly document</a>.</p>
 <details>
 <summary>
@@ -535,7 +551,7 @@ Naïve CV
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>{{&lt; include research.md &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<p>It’s definitely possible to improve on this. The easiest hacky approach is to just write a whole alternative version of the HTML formatting code which resides in <code>research.qmd</code> to output appropriately formatted <span class="math inline">\LaTeX</span> markup.</p>
+<p>It’s definitely possible to improve on this. The easiest hacky approach is to just write a whole alternative version of the HTML formatting code which resides in <code>research.qmd</code> to output appropriately formatted <span class="math inline">\(\LaTeX\)</span> markup.</p>
 <p>For now, I’m pretty pleased with the system I have, but ask me again in three months.</p>
 
 

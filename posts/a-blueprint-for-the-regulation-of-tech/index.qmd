@@ -5,7 +5,7 @@ date: "2023-09-11"
 categories:
   - technology
   - metascience
-image: main-image.jpeg
+image: main-image.png
 ---
 
 The US2020 Facebook and Instagram Election Project (US2020 from here out), the first four papers of which were recently published in Science and Nature, can be the blueprint for meaningful regulation of large online platforms. It’s crucial not just to be satisfied in access to data, but in access to rigorous tests of how changes on platforms affect society.

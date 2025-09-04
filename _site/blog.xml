@@ -79,7 +79,7 @@ Dimmery, Drew. 2025. <span>“What’s the Point of RCTs?”</span> February
   <category>experiments</category>
   <guid>https://ddimmery.com/posts/whats-the-point-of-rcts/</guid>
   <pubDate>Wed, 12 Feb 2025 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/whats-the-point-of-rcts/main-image.png" medium="image" type="image/png"/>
+  <media:content url="https://ddimmery.com/posts/whats-the-point-of-rcts/main-image.png" medium="image" type="image/png" height="143" width="144"/>
 </item>
 <item>
   <title>What was US2020?</title>
@@ -218,7 +218,7 @@ Dimmery, Drew. 2025. <span>“What Was US2020?”</span> January 29, 2025.
   <category>metascience</category>
   <guid>https://ddimmery.com/posts/what-was-us2020/</guid>
   <pubDate>Tue, 28 Jan 2025 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/what-was-us2020/main-image.webp" medium="image" type="image/webp"/>
+  <media:content url="https://ddimmery.com/posts/what-was-us2020/main-image.png" medium="image" type="image/png" height="54" width="144"/>
 </item>
 <item>
   <title>Is Bluesky convivial?</title>
@@ -315,7 +315,7 @@ Dimmery, Drew. 2024. <span>“Is Bluesky Convivial?”</span> November 21,
   <category>social-media</category>
   <guid>https://ddimmery.com/posts/is-bluesky-convivial/</guid>
   <pubDate>Wed, 20 Nov 2024 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/is-bluesky-convivial/main-image.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/is-bluesky-convivial/main-image.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Examining the Apparatus</title>
@@ -392,7 +392,7 @@ Dimmery, Drew. 2024. <span>“Examining the Apparatus.”</span> January 30,
   <category>technology</category>
   <guid>https://ddimmery.com/posts/examining-the-apparatus/</guid>
   <pubDate>Mon, 29 Jan 2024 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/examining-the-apparatus/main-image.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/examining-the-apparatus/main-image.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Calibration as an HTE diagnostic</title>
@@ -462,7 +462,7 @@ January 16, 2024. <a href="https://ddimmery.com/posts/calibration-as-an-hte-diag
   <category>experiments</category>
   <guid>https://ddimmery.com/posts/calibration-as-an-hte-diagnostic/</guid>
   <pubDate>Mon, 15 Jan 2024 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/calibration-as-an-hte-diagnostic/image_1.png" medium="image" type="image/png" height="89" width="144"/>
+  <media:content url="https://ddimmery.com/posts/calibration-as-an-hte-diagnostic/main-image.png" medium="image" type="image/png" height="89" width="144"/>
 </item>
 <item>
   <title>Plagiarism is bad</title>
@@ -553,7 +553,7 @@ Dimmery, Drew. 2024. <span>“Plagiarism Is Bad.”</span> January 4, 2024.
   <category>metascience</category>
   <guid>https://ddimmery.com/posts/plagiarism-is-bad/</guid>
   <pubDate>Wed, 03 Jan 2024 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/plagiarism-is-bad/main-image.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/plagiarism-is-bad/main-image.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Stop looking for the next Twitter</title>
@@ -644,7 +644,7 @@ October 3, 2023. <a href="https://ddimmery.com/posts/stop-looking-for-the-next-t
   <category>technology</category>
   <guid>https://ddimmery.com/posts/stop-looking-for-the-next-twitter/</guid>
   <pubDate>Mon, 02 Oct 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/stop-looking-for-the-next-twitter/main-image.png" medium="image" type="image/png"/>
+  <media:content url="https://ddimmery.com/posts/stop-looking-for-the-next-twitter/main-image.png" medium="image" type="image/png" height="100" width="144"/>
 </item>
 <item>
   <title>A Blueprint for the Regulation of Tech</title>
@@ -725,7 +725,7 @@ Tech.”</span> September 11, 2023. <a href="https://ddimmery.com/posts/a-bluepr
   <category>metascience</category>
   <guid>https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech/</guid>
   <pubDate>Sun, 10 Sep 2023 22:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech/main-image.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/a-blueprint-for-the-regulation-of-tech/main-image.png" medium="image" type="image/png" height="95" width="144"/>
 </item>
 <item>
   <title>Quarto for an Academic Website</title>
@@ -1011,7 +1011,7 @@ Dimmery, Drew. 2022. <span>“Quarto for an Academic Website.”</span> May
   <category>website</category>
   <guid>https://ddimmery.com/posts/quarto-website/</guid>
   <pubDate>Tue, 10 May 2022 22:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/quarto-website/tobias-meme.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/quarto-website/main-image.png" medium="image" type="image/png" height="216" width="144"/>
 </item>
 <item>
   <title>Using SoftBlock to Design an Experiment</title>
@@ -2153,7 +2153,7 @@ background-color: null;
 font-style: inherit;">-</span> start_time)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.7028379 secs</code></pre>
+<pre><code>Time difference of 0.7473469 secs</code></pre>
 </div>
 </div>
 </div>
@@ -2221,7 +2221,7 @@ background-color: null;
 font-style: inherit;">-</span> start_time)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 1.435254 secs</code></pre>
+<pre><code>Time difference of 1.482411 secs</code></pre>
 </div>
 </div>
 </div>
@@ -2305,7 +2305,7 @@ background-color: null;
 font-style: inherit;">-</span> start_time)</span></code></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>Time difference of 0.03045011 secs</code></pre>
+<pre><code>Time difference of 0.03046703 secs</code></pre>
 </div>
 </div>
 </div>
@@ -3941,7 +3941,7 @@ Experiment.”</span> May 10, 2022. <a href="https://ddimmery.com/posts/softbloc
   <category>demo</category>
   <guid>https://ddimmery.com/posts/softblock-demo/</guid>
   <pubDate>Mon, 09 May 2022 22:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/softblock-demo/three-designs.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/softblock-demo/main-image.png" medium="image" type="image/png" height="76" width="144"/>
 </item>
 </channel>
 </rss>

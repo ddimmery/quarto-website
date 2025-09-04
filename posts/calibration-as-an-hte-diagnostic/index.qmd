@@ -5,7 +5,7 @@ date: "2024-01-16"
 categories:
   - methodology
   - experiments
-image: image_1.png
+image: main-image.png
 ---
 
 In [an earlier post](https://open.substack.com/pub/drewdimmery/p/stop-looking-for-the-next-twitter?r=bjnt&utm_campaign=post&utm_medium=web), I promised that rather than writing threads about papers, I’d talk about them here. That’s what this post is!

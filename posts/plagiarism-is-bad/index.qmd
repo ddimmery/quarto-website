@@ -4,7 +4,7 @@ description: "Papers are what we do: we should try to do them well"
 date: "2024-01-04"
 categories:
   - metascience
-image: main-image.jpeg
+image: main-image.png
 ---
 
 I think it’s important to make the simple point that **plagiarism is bad^[Yes, this is also surprising to me.]**. I won’t be drawn into specifics of current events which have precipitated this discussion, but there are a lot of academics saying absurd things that I want to publicly disagree with in order to uphold worthwhile norms. This post is less about questions of academic integrity than straightforward questions of what the academic enterprise is.

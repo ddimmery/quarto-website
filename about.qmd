@@ -11,33 +11,6 @@ I am the [Professor of Data Science for the Common Good](https://www.hertie-scho
 - Data Science
 - Experimental Design
 
-### Education
-
-::: {.d-flex .justify-content-between}
-::: {}
-**New York University**  
-PhD in Political Methodology  
-Advisors: Cyrus Samii, Neal Beck, Josh Tucker
-:::
-::: {.text-end}
-New York, NY  
-Granted May 2016
-:::
-:::
-- Dissertation: *Essays on Causal Inference and Machine Learning with Application to Nonprofits*
-- Winner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology
-
-::: {.d-flex .justify-content-between}
-::: {}
-**UNC Chapel Hill**  
-B.A. in International and Area Studies with distinction
-:::
-::: {.text-end}
-Chapel Hill, NC  
-Granted June 2010
-:::
-:::
-
 ### Experience
 
 ::: {.d-flex .justify-content-between}
@@ -60,7 +33,7 @@ April 2021 - December 2023
 :::
 *Scientific Coordinator*
 
-- Supervisor: Philipp Grohs
+- Supervisor: Philipp Grohs / Torsten Möller
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -102,6 +75,33 @@ Summer 2015
 
 - Statistical and Decision Science Team
 - Supervised by Eytan Bakshy
+
+### Education
+
+::: {.d-flex .justify-content-between}
+::: {}
+**New York University**  
+PhD in Political Methodology  
+Advisors: Cyrus Samii, Neal Beck, Josh Tucker
+:::
+::: {.text-end}
+New York, NY  
+Granted May 2016
+:::
+:::
+- Dissertation: *Essays on Causal Inference and Machine Learning with Application to Nonprofits*
+- Winner of 2015 Williams Award for Best Dissertation Proposal in Political Methodology from the Society of Political Methodology
+
+::: {.d-flex .justify-content-between}
+::: {}
+**UNC Chapel Hill**  
+B.A. in International and Area Studies with distinction
+:::
+::: {.text-end}
+Chapel Hill, NC  
+Granted June 2010
+:::
+:::
 
 ### Teaching
 

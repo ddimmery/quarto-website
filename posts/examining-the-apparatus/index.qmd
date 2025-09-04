@@ -5,7 +5,7 @@ date: "2024-01-30"
 categories:
   - social-media
   - technology
-image: main-image.jpeg
+image: main-image.png
 ---
 
 Kevin Munger has [a great article out problematizing the idea of “The Algorithm”](https://www.motherjones.com/politics/2024/01/the-algorithm-social-media-facebook-technology-the-apparatus/). You should read the Mother Jones article and then you should read [his Substack](https://kevinmunger.substack.com/p/the-algorithm-is-the-only-critique)^[This editorial line of this blog is generally pro-Munger.]. They’re both great! And they touch on an important theme I’ll return to a lot, which is about the right ways to conceive of and examine complex systems.
