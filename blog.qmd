@@ -12,5 +12,20 @@ listing:
 ## Subscription
 Subscribe to the [RSS feed](blog.xml) for updates.
 
-If you'd prefer to receive the blog as a newsletter, [Feedrabbit](https://feedrabbit.com/) is a good and simple choice (until I make something better).
+<form method="post" action="https://list.ddimmery.com/subscription/form" class="listmonk-form">
+  <div>
+    <h3>Subscribe</h3>
+    <input type="hidden" name="nonce" />
+
+    <p><input type="email" name="email" required placeholder="E-mail" /></p>
+    <p><input type="text" name="name" placeholder="Name (optional)" /></p>
+
+    <p>
+      <input id="89c07" type="checkbox" name="l" checked value="89c07d2c-6ca5-4fda-a95c-7089d8844c05" />
+      <label for="89c07">Drew's News</label>
+    </p>
+
+    <input type="submit" value="Subscribe " />
+  </div>
+</form>
 :::
