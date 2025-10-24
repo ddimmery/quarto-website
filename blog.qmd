@@ -12,6 +12,7 @@ listing:
 ## Subscription
 Subscribe to the [RSS feed](blog.xml) for updates.
 
+```{=html}
 <form method="post" action="https://list.ddimmery.com/subscription/form" class="listmonk-form">
   <div>
     <h3>Subscribe</h3>
@@ -28,4 +29,5 @@ Subscribe to the [RSS feed](blog.xml) for updates.
     <input type="submit" value="Subscribe " />
   </div>
 </form>
+```
 :::
