@@ -67,9 +67,6 @@ jobs:
         id: parse_time
         if: ${{ github.event.inputs.send_at != '' }}
         run: |
-          # Install dateparser for flexible date parsing
-          poetry add python-dateparser
-
           SEND_AT_ISO=$(poetry run python -c "
           from dateparser import parse
           from datetime import datetime
@@ -180,9 +177,6 @@ jobs:
           # Save to file to avoid issues with special characters
           echo "$BODY_HTML" > /tmp/email_body.html
           echo "body_file=/tmp/email_body.html" >> $GITHUB_OUTPUT
-
-      - name: Install BeautifulSoup4 for HTML parsing
-        run: poetry add beautifulsoup4
 
       - name: Create Listmonk campaign
         id: create_campaign
