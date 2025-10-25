@@ -8,13 +8,19 @@ on:
         required: true
         type: string
       send_at:
-        description: 'Schedule send time (YYYY-MM-DDTHH:MM:SSZ format, e.g., "2025-10-25T14:00:00Z"). Leave empty to send immediately.'
+        description: 'Schedule send time (e.g., "2025-10-25 14:00", "tomorrow 2pm", "Oct 25 2pm"). Leave empty to send immediately.'
         required: false
         type: string
+      timezone:
+        description: 'Timezone for send_at (e.g., "America/New_York", "UTC", "Europe/London")'
+        required: false
+        type: string
+        default: 'Europe/Berlin'
       list_ids:
         description: 'Comma-separated Listmonk list IDs to send to (uses default list if not provided)'
         required: false
         type: string
+        default: '3'
       campaign_name_suffix:
         description: 'Optional suffix for campaign name (default: auto-generated from date)'
         required: false
@@ -56,6 +62,37 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Parse and convert send time
+        id: parse_time
+        if: ${{ github.event.inputs.send_at != '' }}
+        run: |
+          # Install dateparser for flexible date parsing
+          poetry add python-dateparser
+
+          SEND_AT_ISO=$(poetry run python -c "
+          from dateparser import parse
+          from datetime import datetime
+          import pytz
+
+          input_time = '''${{ github.event.inputs.send_at }}'''
+          timezone = '''${{ github.event.inputs.timezone }}'''
+
+          # Parse the input time
+          parsed = parse(input_time, settings={'TIMEZONE': timezone, 'RETURN_AS_TIMEZONE_AWARE': True})
+
+          if parsed is None:
+              print(f'Error: Could not parse time: {input_time}', file=sys.stderr)
+              exit(1)
+
+          # Convert to UTC and format as ISO 8601
+          utc_time = parsed.astimezone(pytz.UTC)
+          iso_format = utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+          print(iso_format)
+          ")
+
+          echo "send_at_iso=$SEND_AT_ISO" >> $GITHUB_OUTPUT
+          echo "Parsed send time: $SEND_AT_ISO"
 
       - name: Verify post exists and extract metadata
         id: extract_metadata
@@ -191,8 +228,8 @@ jobs:
           if '''${{ github.event.inputs.from_email }}''':
               data['from_email'] = '''${{ github.event.inputs.from_email }}'''
 
-          if '''${{ github.event.inputs.send_at }}''':
-              data['send_at'] = '''${{ github.event.inputs.send_at }}'''
+          if '''${{ steps.parse_time.outputs.send_at_iso }}''':
+              data['send_at'] = '''${{ steps.parse_time.outputs.send_at_iso }}'''
 
           # Add alt body with description if available
           if '''${{ steps.extract_metadata.outputs.description }}''':
@@ -266,9 +303,9 @@ jobs:
           # We just need to change status to 'scheduled'
           # Otherwise, start it immediately with 'running'
 
-          if [ -n "${{ github.event.inputs.send_at }}" ]; then
+          if [ -n "${{ steps.parse_time.outputs.send_at_iso }}" ]; then
             STATUS="scheduled"
-            echo "Scheduling campaign for ${{ github.event.inputs.send_at }}"
+            echo "Scheduling campaign for ${{ steps.parse_time.outputs.send_at_iso }}"
           else
             STATUS="running"
             echo "Starting campaign immediately"
@@ -296,8 +333,9 @@ jobs:
             echo "**Lists:** $LIST_IDS_INPUT" >> $GITHUB_STEP_SUMMARY
           fi
 
-          if [ -n "${{ github.event.inputs.send_at }}" ]; then
-            echo "**Scheduled for:** ${{ github.event.inputs.send_at }}" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ steps.parse_time.outputs.send_at_iso }}" ]; then
+            echo "**Scheduled for (UTC):** ${{ steps.parse_time.outputs.send_at_iso }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Original input:** ${{ github.event.inputs.send_at }} (${{ github.event.inputs.timezone }})" >> $GITHUB_STEP_SUMMARY
           else
             echo "**Status:** Sending immediately" >> $GITHUB_STEP_SUMMARY
           fi
