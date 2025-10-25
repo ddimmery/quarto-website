@@ -12,7 +12,7 @@ dependencies = [
     "pyyaml (>=6.0.2,<7.0.0)",
     "six (>=1.17.0,<2.0.0)",
     "requests (>=2.25.0,<3.0.0)",
-    "python-dateparser (>=1.2.0,<2.0.0)",
+    "dateparser (>=1.2.0,<2.0.0)",
     "beautifulsoup4 (>=4.12.0,<5.0.0)"
 ]
 
