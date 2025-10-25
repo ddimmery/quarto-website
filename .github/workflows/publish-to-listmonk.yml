@@ -68,27 +68,9 @@ jobs:
         id: parse_time
         if: ${{ github.event.inputs.send_at != '' }}
         run: |
-          SEND_AT_ISO=$(poetry run python -c "
-          from dateparser import parse
-          from datetime import datetime
-          import pytz
-          import sys
-
-          input_time = '''${{ github.event.inputs.send_at }}'''
-          timezone = '''${{ github.event.inputs.timezone }}'''
-
-          # Parse the input time
-          parsed = parse(input_time, settings={'TIMEZONE': timezone, 'RETURN_AS_TIMEZONE_AWARE': True})
-
-          if parsed is None:
-              print(f'Error: Could not parse time: {input_time}', file=sys.stderr)
-              exit(1)
-
-          # Convert to UTC and format as ISO 8601
-          utc_time = parsed.astimezone(pytz.UTC)
-          iso_format = utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
-          print(iso_format)
-          ")
+          SEND_AT_ISO=$(poetry run python scripts/listmonk/parse_send_time.py \
+            "${{ github.event.inputs.send_at }}" \
+            "${{ github.event.inputs.timezone }}")
 
           echo "send_at_iso=$SEND_AT_ISO" >> $GITHUB_OUTPUT
           echo "Parsed send time: $SEND_AT_ISO"
@@ -104,34 +86,15 @@ jobs:
           fi
 
           # Extract metadata from YAML frontmatter
-          TITLE=$(poetry run python -c "
-          import yaml
-          with open('$POST_PATH', 'r') as f:
-              content = f.read()
-              # Extract YAML frontmatter between --- delimiters
-              parts = content.split('---')
-              if len(parts) >= 3:
-                  metadata = yaml.safe_load(parts[1])
-                  print(metadata.get('title', 'Untitled'))
-              else:
-                  print('Untitled')
-          ")
+          METADATA=$(poetry run python scripts/listmonk/extract_post_metadata.py "$POST_PATH")
 
-          DESCRIPTION=$(poetry run python -c "
-          import yaml
-          with open('$POST_PATH', 'r') as f:
-              content = f.read()
-              parts = content.split('---')
-              if len(parts) >= 3:
-                  metadata = yaml.safe_load(parts[1])
-                  print(metadata.get('description', ''))
-              else:
-                  print('')
-          ")
+          TITLE=$(echo "$METADATA" | jq -r '.title')
+          DESCRIPTION=$(echo "$METADATA" | jq -r '.description')
 
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
           echo "post_path=$POST_PATH" >> $GITHUB_OUTPUT
+          echo "post_url=https://ddimmery.com/posts/${{ github.event.inputs.post_slug }}/" >> $GITHUB_OUTPUT
 
           # Generate campaign name
           if [ -n "${{ github.event.inputs.campaign_name_suffix }}" ]; then
@@ -146,7 +109,7 @@ jobs:
           export QUARTO_PYTHON=$(poetry run which python)
           poetry run quarto render "${{ steps.extract_metadata.outputs.post_path }}" --to html
 
-      - name: Extract rendered HTML content
+      - name: Prepare email HTML content
         id: extract_html
         run: |
           HTML_PATH="_site/posts/${{ github.event.inputs.post_slug }}/index.html"
@@ -156,28 +119,13 @@ jobs:
             exit 1
           fi
 
-          # Extract the article content from the rendered HTML
-          # This removes the Quarto wrapper and extracts just the content
-          BODY_HTML=$(poetry run python -c "
-          from bs4 import BeautifulSoup
-          import sys
+          # Extract content and add header/reading note
+          poetry run python scripts/listmonk/prepare_email_html.py \
+            "$HTML_PATH" \
+            "${{ steps.extract_metadata.outputs.title }}" \
+            "${{ steps.extract_metadata.outputs.post_url }}" \
+            > /tmp/email_body.html
 
-          with open('$HTML_PATH', 'r', encoding='utf-8') as f:
-              soup = BeautifulSoup(f, 'html.parser')
-
-              # Try to find the main content area
-              content = soup.find('main') or soup.find('article') or soup.find('div', class_='content')
-
-              if content:
-                  print(str(content))
-              else:
-                  # Fallback to body if no main content found
-                  body = soup.find('body')
-                  print(str(body) if body else str(soup))
-          ")
-
-          # Save to file to avoid issues with special characters
-          echo "$BODY_HTML" > /tmp/email_body.html
           echo "body_file=/tmp/email_body.html" >> $GITHUB_OUTPUT
 
       - name: Create Listmonk campaign
@@ -195,44 +143,17 @@ jobs:
           fi
 
           # Convert comma-separated list IDs to JSON array
-          LIST_IDS=$(echo "$LIST_IDS_INPUT" | poetry run python -c "
-          import sys
-          import json
-          ids = [int(x.strip()) for x in input().split(',')]
-          print(json.dumps(ids))
-          ")
-
-          # Read HTML body from file
-          BODY_HTML=$(cat /tmp/email_body.html)
+          LIST_IDS=$(echo "$LIST_IDS_INPUT" | poetry run python scripts/listmonk/convert_to_json_array.py)
 
           # Build JSON payload
-          PAYLOAD=$(poetry run python -c "
-          import json
-          import sys
-
-          data = {
-              'name': '''${{ steps.extract_metadata.outputs.campaign_name }}''',
-              'subject': '''${{ steps.extract_metadata.outputs.title }}''',
-              'lists': $LIST_IDS,
-              'type': 'regular',
-              'content_type': 'html',
-              'body': open('/tmp/email_body.html', 'r', encoding='utf-8').read(),
-              'messenger': 'email'
-          }
-
-          # Add optional fields
-          if '''${{ github.event.inputs.from_email }}''':
-              data['from_email'] = '''${{ github.event.inputs.from_email }}'''
-
-          if '''${{ steps.parse_time.outputs.send_at_iso }}''':
-              data['send_at'] = '''${{ steps.parse_time.outputs.send_at_iso }}'''
-
-          # Add alt body with description if available
-          if '''${{ steps.extract_metadata.outputs.description }}''':
-              data['altbody'] = '''${{ steps.extract_metadata.outputs.description }}'''
-
-          print(json.dumps(data))
-          ")
+          PAYLOAD=$(poetry run python scripts/listmonk/build_campaign_payload.py \
+            "${{ steps.extract_metadata.outputs.campaign_name }}" \
+            "${{ steps.extract_metadata.outputs.title }}" \
+            "$LIST_IDS" \
+            "/tmp/email_body.html" \
+            "${{ github.event.inputs.from_email }}" \
+            "${{ steps.parse_time.outputs.send_at_iso }}" \
+            "${{ steps.extract_metadata.outputs.description }}")
 
           # Create campaign via API
           RESPONSE=$(curl -s -u "$LISTMONK_USER:$LISTMONK_PASSWORD" \
@@ -243,21 +164,7 @@ jobs:
           echo "API Response: $RESPONSE"
 
           # Extract campaign ID
-          CAMPAIGN_ID=$(echo "$RESPONSE" | poetry run python -c "
-          import json
-          import sys
-          try:
-              data = json.load(sys.stdin)
-              if 'data' in data and 'id' in data['data']:
-                  print(data['data']['id'])
-              else:
-                  print('Error: Invalid response format', file=sys.stderr)
-                  print(data, file=sys.stderr)
-                  sys.exit(1)
-          except Exception as e:
-              print(f'Error parsing response: {e}', file=sys.stderr)
-              sys.exit(1)
-          ")
+          CAMPAIGN_ID=$(echo "$RESPONSE" | poetry run python scripts/listmonk/parse_api_response.py)
 
           echo "campaign_id=$CAMPAIGN_ID" >> $GITHUB_OUTPUT
           echo "Created campaign with ID: $CAMPAIGN_ID"
@@ -275,12 +182,7 @@ jobs:
           fi
 
           # Convert comma-separated emails to JSON array
-          TEST_SUBSCRIBERS=$(echo "${{ github.event.inputs.test_emails }}" | poetry run python -c "
-          import sys
-          import json
-          emails = [x.strip() for x in input().split(',')]
-          print(json.dumps(emails))
-          ")
+          TEST_SUBSCRIBERS=$(echo "${{ github.event.inputs.test_emails }}" | poetry run python scripts/listmonk/convert_to_json_array.py)
 
           curl -u "$LISTMONK_USER:$LISTMONK_PASSWORD" \
             -X POST "$LISTMONK_URL/api/campaigns/${{ steps.create_campaign.outputs.campaign_id }}/test" \
