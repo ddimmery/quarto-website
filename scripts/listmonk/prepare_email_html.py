@@ -3,6 +3,41 @@
 
 import sys
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
+
+
+def convert_relative_urls(content, base_url):
+    """Convert all relative URLs in the content to absolute URLs."""
+    # Get the base domain from the post URL
+    parsed_base = urlparse(base_url)
+    site_base = f"{parsed_base.scheme}://{parsed_base.netloc}"
+
+    # Convert image src attributes
+    for img in content.find_all('img'):
+        if img.get('src'):
+            img['src'] = urljoin(site_base, img['src'])
+
+    # Convert link href attributes (but not anchors starting with #)
+    for link in content.find_all('a'):
+        if link.get('href') and not link['href'].startswith('#'):
+            # Only convert relative URLs, leave absolute URLs as-is
+            if not urlparse(link['href']).netloc:
+                link['href'] = urljoin(site_base, link['href'])
+
+    # Convert CSS background images in style attributes
+    for elem in content.find_all(style=True):
+        style = elem['style']
+        if 'url(' in style:
+            # Simple regex-free approach for common cases
+            import re
+            def replace_url(match):
+                url = match.group(1).strip('\'"')
+                if not urlparse(url).netloc:
+                    return f'url({urljoin(site_base, url)})'
+                return match.group(0)
+            elem['style'] = re.sub(r'url\(([^)]+)\)', replace_url, style)
+
+    return content
 
 
 def main():
@@ -28,6 +63,9 @@ def main():
         content = soup.find('body')
         if not content:
             content = soup
+
+    # Convert all relative URLs to absolute URLs
+    content = convert_relative_urls(content, post_url)
 
     # Create header with link to post
     header = soup.new_tag('div', style='margin-bottom: 2em;')
