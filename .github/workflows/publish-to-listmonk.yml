@@ -1,0 +1,310 @@
+name: Publish Post to Listmonk
+
+on:
+  workflow_dispatch:
+    inputs:
+      post_slug:
+        description: 'Post slug (e.g., "back-to-basics" for posts/back-to-basics/)'
+        required: true
+        type: string
+      send_at:
+        description: 'Schedule send time (YYYY-MM-DDTHH:MM:SSZ format, e.g., "2025-10-25T14:00:00Z"). Leave empty to send immediately.'
+        required: false
+        type: string
+      list_ids:
+        description: 'Comma-separated Listmonk list IDs to send to (uses default list if not provided)'
+        required: false
+        type: string
+      campaign_name_suffix:
+        description: 'Optional suffix for campaign name (default: auto-generated from date)'
+        required: false
+        type: string
+      from_email:
+        description: 'From email address (optional, uses Listmonk default if not set)'
+        required: false
+        type: string
+      send_test:
+        description: 'Send test email first?'
+        required: false
+        type: boolean
+        default: false
+      test_emails:
+        description: 'Comma-separated test email addresses (required if send_test is true)'
+        required: false
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          cache: 'poetry'
+
+      - name: Install dependencies
+        run: |
+          poetry env use 3.12
+          poetry install --no-root
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Verify post exists and extract metadata
+        id: extract_metadata
+        run: |
+          POST_PATH="posts/${{ github.event.inputs.post_slug }}/index.qmd"
+
+          if [ ! -f "$POST_PATH" ]; then
+            echo "Error: Post not found at $POST_PATH"
+            exit 1
+          fi
+
+          # Extract metadata from YAML frontmatter
+          TITLE=$(poetry run python -c "
+          import yaml
+          with open('$POST_PATH', 'r') as f:
+              content = f.read()
+              # Extract YAML frontmatter between --- delimiters
+              parts = content.split('---')
+              if len(parts) >= 3:
+                  metadata = yaml.safe_load(parts[1])
+                  print(metadata.get('title', 'Untitled'))
+              else:
+                  print('Untitled')
+          ")
+
+          DESCRIPTION=$(poetry run python -c "
+          import yaml
+          with open('$POST_PATH', 'r') as f:
+              content = f.read()
+              parts = content.split('---')
+              if len(parts) >= 3:
+                  metadata = yaml.safe_load(parts[1])
+                  print(metadata.get('description', ''))
+              else:
+                  print('')
+          ")
+
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "post_path=$POST_PATH" >> $GITHUB_OUTPUT
+
+          # Generate campaign name
+          if [ -n "${{ github.event.inputs.campaign_name_suffix }}" ]; then
+            CAMPAIGN_NAME="$TITLE - ${{ github.event.inputs.campaign_name_suffix }}"
+          else
+            CAMPAIGN_NAME="$TITLE - $(date +%Y-%m-%d)"
+          fi
+          echo "campaign_name=$CAMPAIGN_NAME" >> $GITHUB_OUTPUT
+
+      - name: Render post to HTML
+        run: |
+          export QUARTO_PYTHON=$(poetry run which python)
+          poetry run quarto render "${{ steps.extract_metadata.outputs.post_path }}" --to html
+
+      - name: Extract rendered HTML content
+        id: extract_html
+        run: |
+          HTML_PATH="posts/${{ github.event.inputs.post_slug }}/index.html"
+
+          if [ ! -f "$HTML_PATH" ]; then
+            echo "Error: Rendered HTML not found at $HTML_PATH"
+            exit 1
+          fi
+
+          # Extract the article content from the rendered HTML
+          # This removes the Quarto wrapper and extracts just the content
+          BODY_HTML=$(poetry run python -c "
+          from bs4 import BeautifulSoup
+          import sys
+
+          with open('$HTML_PATH', 'r', encoding='utf-8') as f:
+              soup = BeautifulSoup(f, 'html.parser')
+
+              # Try to find the main content area
+              content = soup.find('main') or soup.find('article') or soup.find('div', class_='content')
+
+              if content:
+                  print(str(content))
+              else:
+                  # Fallback to body if no main content found
+                  body = soup.find('body')
+                  print(str(body) if body else str(soup))
+          ")
+
+          # Save to file to avoid issues with special characters
+          echo "$BODY_HTML" > /tmp/email_body.html
+          echo "body_file=/tmp/email_body.html" >> $GITHUB_OUTPUT
+
+      - name: Install BeautifulSoup4 for HTML parsing
+        run: poetry add beautifulsoup4
+
+      - name: Create Listmonk campaign
+        id: create_campaign
+        env:
+          LISTMONK_URL: ${{ secrets.LISTMONK_URL }}
+          LISTMONK_USER: ${{ secrets.LISTMONK_API_USER }}
+          LISTMONK_PASSWORD: ${{ secrets.LISTMONK_API_PASSWORD }}
+          LISTMONK_DEFAULT_LIST_ID: ${{ secrets.LISTMONK_DEFAULT_LIST_ID }}
+        run: |
+          # Use provided list IDs or fall back to default
+          LIST_IDS_INPUT="${{ github.event.inputs.list_ids }}"
+          if [ -z "$LIST_IDS_INPUT" ]; then
+            LIST_IDS_INPUT="$LISTMONK_DEFAULT_LIST_ID"
+          fi
+
+          # Convert comma-separated list IDs to JSON array
+          LIST_IDS=$(echo "$LIST_IDS_INPUT" | poetry run python -c "
+          import sys
+          import json
+          ids = [int(x.strip()) for x in input().split(',')]
+          print(json.dumps(ids))
+          ")
+
+          # Read HTML body from file
+          BODY_HTML=$(cat /tmp/email_body.html)
+
+          # Build JSON payload
+          PAYLOAD=$(poetry run python -c "
+          import json
+          import sys
+
+          data = {
+              'name': '''${{ steps.extract_metadata.outputs.campaign_name }}''',
+              'subject': '''${{ steps.extract_metadata.outputs.title }}''',
+              'lists': $LIST_IDS,
+              'type': 'regular',
+              'content_type': 'html',
+              'body': open('/tmp/email_body.html', 'r', encoding='utf-8').read(),
+              'messenger': 'email'
+          }
+
+          # Add optional fields
+          if '''${{ github.event.inputs.from_email }}''':
+              data['from_email'] = '''${{ github.event.inputs.from_email }}'''
+
+          if '''${{ github.event.inputs.send_at }}''':
+              data['send_at'] = '''${{ github.event.inputs.send_at }}'''
+
+          # Add alt body with description if available
+          if '''${{ steps.extract_metadata.outputs.description }}''':
+              data['altbody'] = '''${{ steps.extract_metadata.outputs.description }}'''
+
+          print(json.dumps(data))
+          ")
+
+          # Create campaign via API
+          RESPONSE=$(curl -s -u "$LISTMONK_USER:$LISTMONK_PASSWORD" \
+            -X POST "$LISTMONK_URL/api/campaigns" \
+            -H 'Content-Type: application/json' \
+            --data "$PAYLOAD")
+
+          echo "API Response: $RESPONSE"
+
+          # Extract campaign ID
+          CAMPAIGN_ID=$(echo "$RESPONSE" | poetry run python -c "
+          import json
+          import sys
+          try:
+              data = json.load(sys.stdin)
+              if 'data' in data and 'id' in data['data']:
+                  print(data['data']['id'])
+              else:
+                  print('Error: Invalid response format', file=sys.stderr)
+                  print(data, file=sys.stderr)
+                  sys.exit(1)
+          except Exception as e:
+              print(f'Error parsing response: {e}', file=sys.stderr)
+              sys.exit(1)
+          ")
+
+          echo "campaign_id=$CAMPAIGN_ID" >> $GITHUB_OUTPUT
+          echo "Created campaign with ID: $CAMPAIGN_ID"
+
+      - name: Send test email (optional)
+        if: ${{ github.event.inputs.send_test == 'true' }}
+        env:
+          LISTMONK_URL: ${{ secrets.LISTMONK_URL }}
+          LISTMONK_USER: ${{ secrets.LISTMONK_API_USER }}
+          LISTMONK_PASSWORD: ${{ secrets.LISTMONK_API_PASSWORD }}
+        run: |
+          if [ -z "${{ github.event.inputs.test_emails }}" ]; then
+            echo "Error: test_emails must be provided when send_test is true"
+            exit 1
+          fi
+
+          # Convert comma-separated emails to JSON array
+          TEST_SUBSCRIBERS=$(echo "${{ github.event.inputs.test_emails }}" | poetry run python -c "
+          import sys
+          import json
+          emails = [x.strip() for x in input().split(',')]
+          print(json.dumps(emails))
+          ")
+
+          curl -u "$LISTMONK_USER:$LISTMONK_PASSWORD" \
+            -X POST "$LISTMONK_URL/api/campaigns/${{ steps.create_campaign.outputs.campaign_id }}/test" \
+            -H 'Content-Type: application/json' \
+            --data "{\"subscribers\": $TEST_SUBSCRIBERS}"
+
+          echo "Test email sent to: ${{ github.event.inputs.test_emails }}"
+
+      - name: Schedule or start campaign
+        env:
+          LISTMONK_URL: ${{ secrets.LISTMONK_URL }}
+          LISTMONK_USER: ${{ secrets.LISTMONK_API_USER }}
+          LISTMONK_PASSWORD: ${{ secrets.LISTMONK_API_PASSWORD }}
+        run: |
+          # If send_at was provided, the campaign is already scheduled
+          # We just need to change status to 'scheduled'
+          # Otherwise, start it immediately with 'running'
+
+          if [ -n "${{ github.event.inputs.send_at }}" ]; then
+            STATUS="scheduled"
+            echo "Scheduling campaign for ${{ github.event.inputs.send_at }}"
+          else
+            STATUS="running"
+            echo "Starting campaign immediately"
+          fi
+
+          curl -u "$LISTMONK_USER:$LISTMONK_PASSWORD" \
+            -X PUT "$LISTMONK_URL/api/campaigns/${{ steps.create_campaign.outputs.campaign_id }}/status" \
+            -H 'Content-Type: application/json' \
+            --data "{\"status\": \"$STATUS\"}"
+
+          echo "Campaign status set to: $STATUS"
+
+      - name: Output summary
+        run: |
+          echo "## Campaign Published Successfully! 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Post:** ${{ steps.extract_metadata.outputs.title }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Campaign ID:** ${{ steps.create_campaign.outputs.campaign_id }}" >> $GITHUB_STEP_SUMMARY
+
+          # Show which lists were used
+          LIST_IDS_INPUT="${{ github.event.inputs.list_ids }}"
+          if [ -z "$LIST_IDS_INPUT" ]; then
+            echo "**Lists:** Default list (${{ secrets.LISTMONK_DEFAULT_LIST_ID }})" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Lists:** $LIST_IDS_INPUT" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ -n "${{ github.event.inputs.send_at }}" ]; then
+            echo "**Scheduled for:** ${{ github.event.inputs.send_at }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Status:** Sending immediately" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          if [ "${{ github.event.inputs.send_test }}" = "true" ]; then
+            echo "**Test sent to:** ${{ github.event.inputs.test_emails }}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "View campaign in Listmonk: ${{ secrets.LISTMONK_URL }}/campaigns/${{ steps.create_campaign.outputs.campaign_id }}" >> $GITHUB_STEP_SUMMARY
