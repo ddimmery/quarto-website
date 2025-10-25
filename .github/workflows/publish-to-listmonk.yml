@@ -148,7 +148,7 @@ jobs:
       - name: Extract rendered HTML content
         id: extract_html
         run: |
-          HTML_PATH="posts/${{ github.event.inputs.post_slug }}/index.html"
+          HTML_PATH="_site/posts/${{ github.event.inputs.post_slug }}/index.html"
 
           if [ ! -f "$HTML_PATH" ]; then
             echo "Error: Rendered HTML not found at $HTML_PATH"
