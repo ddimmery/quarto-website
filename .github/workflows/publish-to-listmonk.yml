@@ -59,6 +59,7 @@ jobs:
         run: |
           poetry env use 3.12
           poetry install --no-root
+          poetry run python -m ipykernel install --user --name quarto-env --display-name "Quarto Environment"
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
