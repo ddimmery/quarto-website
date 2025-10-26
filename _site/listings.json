@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/back-to-basics/index.html",
       "/posts/whats-the-point-of-rcts/index.html",
       "/posts/what-was-us2020/index.html",
       "/posts/is-bluesky-convivial/index.html",
