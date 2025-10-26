@@ -36,7 +36,7 @@ The main way that Substack appears to be aiming at constructing a moat is in the
 
 Even if you feel well-served by a platform now, this is no guarantee that the platform will continue to serve you well in the future once you're stuck there.
 
-## Technology provides alternatives
+## AI coding provides an alternative
 
 Platforms work by making a particular workflow easy enough that we accept lock-in. An alternative path exists, however, which is to build our own tools to support that workflow. A critical fact of contemporary society is that this is becoming increasingly easy. I think a lot of people have, thus far, only interacted with LLM systems through the lens of the chat interface. While this is impressive technology,  I think it blinds a lot of people to what is now possible. Let me briefly detail an example.
 
