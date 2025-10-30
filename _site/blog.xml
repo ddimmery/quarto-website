@@ -10,7 +10,87 @@
 <atom:link href="https://ddimmery.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website of Drew Dimmery</description>
 <generator>quarto-1.5.42</generator>
-<lastBuildDate>Wed, 12 Feb 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 26 Oct 2025 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Back to Basics</title>
+  <dc:creator>Drew Dimmery</dc:creator>
+  <link>https://ddimmery.com/posts/back-to-basics/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>I started a Substack not that long ago, because I wanted to get back into blogging. I think blogging is great and <a href="https://ddimmery.com/posts/stop-looking-for-the-next-twitter/">microblogs are bad</a>. I’ve had a bit of time to think over the past year about my usage of technology. I’ve come to believe that most platforms are (at best) not really for me, or (at worst) broadly <a href="https://en.wikipedia.org/wiki/Considered_harmful">considered harmful</a>. If you previously subscribed to my Substack, I’ve migrated you to a subscription service of my own. If this isn’t what you signed up for, please unsubscribe<sup>1</sup>.</p>
+<p>I think there are a few dimensions to my thinking that I’m aiming to work out in this post:</p>
+<ol type="1">
+<li>Platforms constrain freedom</li>
+<li>Platforms enshittify</li>
+<li>AI coding tools make smaller projects feasible</li>
+</ol>
+<p>I’ll then talk about why I think we should fight against the ease of platforms. Let’s get into it.</p>
+<section id="platforms-constrain-freedom" class="level2">
+<h2 class="anchored" data-anchor-id="platforms-constrain-freedom">Platforms constrain freedom</h2>
+<p>Platforms exist to make it easier to do things by creating one streamlined avenue to accomplish a goal. A canonical example is Facebook winning over other social media sites like MySpace. It might be hard to recall now, but one of the main reasons for this was that, in contrast to MySpace, Facebook provided a simple, clean, consistent user experience. On MySpace you would arrive on a page, have music randomly play at you and be barraged by weird fonts, colors and images. Facebook constrained how users could express themselves quite substantially, and this was very popular. It let people ignore all this wacky design stuff created by thirteen-year-olds and focus on what they wanted to do with social media: poke each other, write weird status updates and check out relationship statuses<sup>2</sup>.</p>
+<p>I think this is a pretty common pattern for new platforms: They do, in fact, generally make <em>something</em> that people want to do easier! Of course, given the nature of this post, I need to address the Substack in the room. Substack is generally a good platform. It makes it easy to write (certain kinds of) blogs and it makes (certain kinds of) monetization easier. The parentheticals, however, are what I find frustrating about platforms. By their nature, they constrain the user to a particular form of the thing they provide.</p>
+<p>Scale means that Substack can’t and won’t cater to all of the small, weird features that people want. If I were designing my own blog system, I would want (a) control over exactly the fonts and styles my content is displayed with, (b) easy integration of math via the great tools like MathJax, (c) the ability to have code-rich documents like Quarto in which code runs in-line and displays output in-line, (d) the ability to embed any kinds of content I want wherever I want it. Ultimately, I think this is the dream of the web: I can have a little homestead on the internet that is exactly the way I want it: <a href="https://ddimmery.com/posts/is-bluesky-convivial/">a <em>convivial</em> web</a><sup>3</sup>. Platforms cannot provide this: their <em>raison d’être</em> is reducing complexity as they make human behavior digitally legible down a particular prescribed path.</p>
+<p>I dislike this constraint: I want to use tools that work the way I choose for them to work.</p>
+</section>
+<section id="platforms-enshittify" class="level2">
+<h2 class="anchored" data-anchor-id="platforms-enshittify">Platforms enshittify</h2>
+<p>Even if you feel well-served by a platform now, this is no guarantee that the platform will continue to serve you well in the future once you’re stuck there. I won’t belabor this point, because it’s been <a href="https://www.versobooks.com/products/3341-enshittification">talked about ad nauseum</a> by others<sup>4</sup>. Platforms, as they mature, need to monetize more aggressively as well as build moats to competitors. This often leads to more constraining of user freedom. I think the real “break-glass” moment for Substack is the ability to collect and export all subscribers’ email addresses. This is, right now, a defining feature of Substack that makes it safe for people to use. This drastically reduces their moat, however. At the moment, switching to <a href="https://ghost.org/">Ghost</a> is (technically, at least) pretty trivial. Switching to a Quarto blog deployed through Github Actions and which sends a newsletter through <a href="https://listmonk.app/">Listmonk</a> (deployed via <a href="https://www.pikapods.com/">Pikapods</a>) when triggered through Github Actions is not trivial, but it also wasn’t exactly <em>hard</em> to setup<sup>5</sup>.</p>
+<p>The main way that Substack appears to be aiming at constructing a moat is in their push for discovery. That is, they want to make it easy to find <em>Substack</em> writers on Substack. They have no interest in doing this with writers hosted elsewhere. This provides an incentive for people to stick around, even if the actual writing and publishing experience is worse. I don’t think Substack is made up of evil people, quite the opposite, I think they truly wish to help writers make a living (while taking their cut). The problem is that they have few incentives to make it possible for writers to truly experiment. Why would they? Writers will want to stick around because they can get more subscribers there, not because the CMS is uniquely good or they can uniquely realize their vision there. The one exception is that many writers’ visions are simply “to be able to feed themselves through their writing”. I think this goal would be better served by increased experimentation<sup>6</sup>, but I recognize beggars feel that they can’t be choosers. I think this is a false dilemma, because:</p>
+</section>
+<section id="ai-coding-tools-make-smaller-projects-feasible" class="level2">
+<h2 class="anchored" data-anchor-id="ai-coding-tools-make-smaller-projects-feasible">AI coding tools make smaller projects feasible</h2>
+<p>Platforms work by making a particular workflow easy enough that we accept lock-in. An alternative path exists, however, which is to build our own tools to support that workflow. A critical fact of contemporary society is that this is becoming increasingly easy. I think a lot of people have, thus far, only interacted with LLM systems through the lens of the chat interface. While this is impressive technology, I think it blinds a lot of people to what is now possible. Let me briefly detail an example.</p>
+<p>For <a href="https://ddimmery.com/posts/quarto-website/">my website</a>, I decided I didn’t want to manually write out the metadata for my publications anymore. So in one afternoon, I vibecoded <a href="https://github.com/ddimmery/quarto-website/blob/main/research.qmd">a system</a> which connects to the <a href="https://www.semanticscholar.org/product/api">Semantic Scholar API</a><sup>7</sup>, checks for new papers on my profile and if it finds them, sets up the metadata in <a href="https://github.com/ddimmery/quarto-website/blob/main/papers.yaml"><code>papers.yaml</code></a>. It doesn’t display until I flip a switch from <code>visible: false</code> (the default) to <code>visible: true</code>. Thus, I’m not too worried about the system going haywire: nothing is posted without me getting the chance to review it, but it reduces tedious data entry. The technology is there to vastly reduce the time between an idea and a prototype of that idea. For this Semantic Scholar system, it took me just a few minutes to set Claude up with instructions, and I had a complete and functional prototype no more than one hour later, most of which did not require me to be thinking about the implementation (verified via <a href="https://github.com/ddimmery/quarto-website/commits/main/?since=2025-08-05&amp;until=2025-08-05">commit log</a>).</p>
+<p>It’s substantially easier to build things now. As the effort to build novel computing systems shrinks, it’s easier to build exactly the systems you want for yourself (or for yourself and a few others). We should do more of this, on the margin. Individuals’ capabilities to personalize their computing environment has literally never been higher than it now is. Choosing not to take advantage of this is a choice to let other people (who <em>do not have your best interests at heart</em>) choose your tools for you. The point of platforms is to capture you by making it easy for you to achieve particular goals (but restrict you to those goals they deem worthy), but the thing that’s different <em>now</em> is that it’s also easier than ever for you to build what you need for yourself.</p>
+</section>
+<section id="technological-vanguardism" class="level2">
+<h2 class="anchored" data-anchor-id="technological-vanguardism">Technological vanguardism</h2>
+<p>Open source software is a critical part of this story, as it serves as the backbone for building any kind of new software in the current era. This is recognized in a variety of initiatives as part of <a href="https://eurostack.eu/">EuroStack</a><sup>8</sup>. That is, the idea is that Europe can’t or shouldn’t try to compete with American and Chinese hyperscalers by trying to incubate European hyperscalers as competitors. Rather, Europe should commit to smaller alternatives based on a robust shared digital infrastructure of open-source software. AI-supported individuals able to mix-and-match together the computing systems they want to support their lives is a rare hopeful vision of the future.</p>
+<p><a href="https://www.bbc.com/news/articles/cly7n2jm5m5o">A lot of the maintainers of critical open source projects are getting older</a><sup>9</sup>. I wonder whether the next generation will have the same commitment to the principles that underlie the open source movement. In particular, we’ve all discussed how “the youths” increasingly don’t understand file-systems or whatever your preferred concern is. My worry is that they have become so used to an Internet made up entirely of platforms that they can’t even imagine anything different: an Internet where when you want to create a space to chat with friends or colleagues the only option is Discord or Slack controlled by someone else, never hosting <a href="https://en.wikipedia.org/wiki/Ventrilo">a Ventrilo server</a>, a <a href="https://en.wikipedia.org/wiki/PhpBB">phpBB forum</a>, an IRC server or, in modern terms, software like <a href="https://zulip.com/">Zulip</a> or <a href="https://matrix.org/">Matrix</a>.</p>
+<p>Extensible tools like this often have a higher entry cost than platforms do: they may require standing up servers, writing some code or doing some non-obvious configuration. This has been a major problem with Open Source Software for ages: they’re built by developers for developers. Open source developers and maintainers of open source projects are a sort of technological vanguard who accept some of these costs on themselves. They build tools, often <a href="https://archive.org/details/justforfun00linu">just for fun</a>, because they <em>can</em> and it scratches a weird itch they have in their own lives. Sometimes, these projects fit the needs of the moment and take off, but many times they remain personal or niche. It’s important that the people who can build such tools do so to pave a (code)path for others to follow, but they are not usually about making that path highly accessible.</p>
+<p>The costs of building one’s own systems are lower than they’ve ever been because of AI code assistance. This provides a critical link between the Open Source Software ecosystem (which is the fundamental infrastructure underlying modern software of all kinds) and personal use. That big open source project which was <em>almost</em> right for you? It’s not hard to make minor modifications to it now to make it <em>just right</em>.</p>
+<p>The problem, however, is that every person who accepts Platforms into their hearts does create a social cost as well. If everyone only goes to Substack to get blogs, then blogs hosted elsewhere (no matter their quality) will be read less. This is what Substack is hoping to achieve, and I think it’s important for those of us comfortable with forging a different path to try.</p>
+<p>I’m a technological determinist: I believe that the technologies we create fundamentally transform our lives and societies. I also believe strongly in the power of human agency: we can reshape the technostructure to harness these technologies the way that we want. We can <a href="https://blog.citp.princeton.edu/2024/04/29/a-syllabus-of-actions-for-building-the-society-we-want/">build the society we want</a>, but that does mean that we need to actually do the building. I, for one, am planning to become much more serious about putting in the work on this. Moving this blog back to my own website is a first step in this direction, but it is not the last.</p>
+<hr>
+<p><em>Image source</em>: <a href="Papilla Estelar: Remedios Varo">https://brooklynrail.org/2017/10/criticspage/Hidden-Figures/</a></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The link is at the bottom of the email, or let me know at <a href="mailto:blog@ddimmery.com">blog@ddimmery.com</a>↩︎</p></li>
+<li id="fn2"><p>Or “connect the world” depending on how you feel about Facebook↩︎</p></li>
+<li id="fn3"><p>Note also the importance of open-source software in what I’m looking for.↩︎</p></li>
+<li id="fn4"><p>Apoorva Lal has a nice <a href="https://apoorvalal.github.io/lalgorithms/eternalizing_septembers">formal model of this</a>↩︎</p></li>
+<li id="fn5"><p>I’ll write a rundown of how I did this in a later post.↩︎</p></li>
+<li id="fn6"><p>crypto! micropayments! easy ways to bundle or unbundle author’s writings! different models of payment beyond mere “subscriptions”!↩︎</p></li>
+<li id="fn7"><p>I am increasingly a fan of the work Semantic Scholar is doing as a more palatable alternative to Google Scholar. Unfortunately, they are probably doomed to failure because Google Scholar uses an expansive definition of citation that means their numbers are bigger. Even as a fan of Semantic Scholar, I definitely provide the Google Scholar citation count and h-index for annual reviews.↩︎</p></li>
+<li id="fn8"><p>Of course, EuroStack is a bit of a classic European idea in which everyone who talks about it means something slightly different than one another. Nevertheless!↩︎</p></li>
+<li id="fn9"><p>In some sense, we all are.↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2025,
+  author = {Dimmery, Drew},
+  title = {Back to {Basics}},
+  date = {2025-10-27},
+  url = {https://ddimmery.com/posts/back-to-basics},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2025" class="csl-entry quarto-appendix-citeas">
+Dimmery, Drew. 2025. <span>“Back to Basics.”</span> October 27, 2025. <a href="https://ddimmery.com/posts/back-to-basics">https://ddimmery.com/posts/back-to-basics</a>.
+</div></div></section></div> ]]></description>
+  <category>technology</category>
+  <category>website</category>
+  <guid>https://ddimmery.com/posts/back-to-basics/</guid>
+  <pubDate>Sun, 26 Oct 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://ddimmery.com/posts/back-to-basics/main-image.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>What’s the point of RCTs?</title>
   <dc:creator>Drew Dimmery</dc:creator>
