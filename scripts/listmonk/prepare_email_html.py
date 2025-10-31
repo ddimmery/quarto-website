@@ -70,7 +70,7 @@ def main():
     # Create header with link to post
     header = soup.new_tag('div', style='margin-bottom: 2em;')
     title_heading = soup.new_tag('h1', style='margin-bottom: 0.5em;')
-    title_link = soup.new_tag('a', href=post_url, style='color: #0066cc; text-decoration: none;')
+    title_link = soup.new_tag('a', href=post_url, style='color: #ba0020; text-decoration: none;')
     title_link.string = post_title
     title_heading.append(title_link)
     header.append(title_heading)
@@ -78,7 +78,7 @@ def main():
     # Create reading note
     reading_note = soup.new_tag('p', style='font-style: italic; color: #666; margin-top: 0.5em;')
     reading_note.string = 'For the best reading experience, '
-    read_link = soup.new_tag('a', href=post_url, style='color: #0066cc;')
+    read_link = soup.new_tag('a', href=post_url, style='color: #ba0020;')
     read_link.string = 'read this post in its original format on the web'
     reading_note.append(read_link)
     reading_note.append('.')
