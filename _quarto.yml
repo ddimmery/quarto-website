@@ -29,6 +29,7 @@ format:
   html:
     theme: dimmery.scss
     mainfont: "Palatino"
+    monofont: "Monaspace Argon"
     css: styles.css
     toc: true
     toc-depth: 4
