@@ -29,9 +29,11 @@ website:
 format:
   html:
     theme: dimmery.scss
-    mainfont: "Palatino"
+    mainfont: "Domitian"
     monofont: "Monaspace Argon"
-    css: styles.css
+    css:
+      - fonts.css
+      - styles.css
     toc: true
     toc-depth: 4
     toc-title: "Contents"
