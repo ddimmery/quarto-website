@@ -12,6 +12,7 @@ import requests
 from IPython.display import display, Markdown, HTML
 import json
 import os
+from icon_utils import button
 
 # Semantic Scholar Author ID
 AUTHOR_ID = "90810256"
@@ -22,13 +23,6 @@ def readable_list(_s):
         return ' and '.join(map(str, _s))
     *a, b = _s
     return f"{', '.join(map(str, a))}, and {b}"
-
-def button(url, str, icon):
-    icon_base = icon[:2]
-    return f"""<a class="btn btn-outline-dark btn-sm", href="{url}" target="_blank" rel="noopener noreferrer">
-        <i class="{icon_base} {icon}" role='img' aria-label='{str}'></i>
-        {str}
-    </a>"""
 
 def fetch_author_papers(author_id):
     """Fetch papers from Semantic Scholar API"""

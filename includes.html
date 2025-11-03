@@ -1,3 +1,14 @@
+<!-- Disable Bootstrap Icons CSS to reduce page load -->
+<!-- We use inline SVG icons instead via icon_utils.py -->
+<!-- Note: Academicons CSS removed entirely - no longer included -->
+<script>
+  /* Remove bootstrap-icons.css (~96KB) that Quarto automatically includes */
+  document.addEventListener('DOMContentLoaded', function() {
+    const iconLinks = document.querySelectorAll('link[href*="bootstrap-icons.css"]');
+    iconLinks.forEach(link => link.remove());
+  });
+</script>
+
 <script>
 MathJax = {
   tex: {
