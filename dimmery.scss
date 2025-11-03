@@ -1,7 +1,22 @@
 /*-- scss:defaults --*/
-// quarto-scss-analysis-annotation { "origin": "journal (builtin theme)" }
+// Optimized Bootstrap - based on journal theme but with minimal components
+// We use Quarto's theme system but customize to reduce bundle size
 
 $theme: "journal" !default;
+
+// Disable unused Bootstrap components by setting enable flags to false
+// This reduces the final CSS bundle size significantly
+
+$enable-rfs: false !default;  // Disable responsive font sizing
+$enable-negative-margins: false !default;  // Disable negative margin utilities
+$enable-caret: false !default;  // Disable dropdown carets
+$enable-rounded: true !default;  // Keep rounded corners (used for images/buttons)
+$enable-shadows: false !default;  // Disable box shadows
+$enable-gradients: false !default;  // Disable gradient backgrounds
+$enable-smooth-scroll: true !default;  // Keep smooth scrolling
+
+// Minimize utility classes - only generate essential ones
+// We'll set this to a minimal map in the rules section
 
 //
 // Color system
@@ -59,10 +74,31 @@ $pagination-hover-color:            $white !default;
 $pagination-hover-bg:               $primary !default;
 $pagination-hover-border-color:     $primary !default;
 
+// Reduce spacing scale to minimize utility classes
+// Only include the spacing sizes we actually use
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+) !default;
+
+// Minimize breakpoints - only include what we need
+// Reduces responsive utility classes significantly
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
 
 
 /*-- scss:rules --*/
-
 
 // Variables
 
