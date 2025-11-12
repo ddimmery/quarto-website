@@ -11,7 +11,7 @@ website:
   open-graph: true
   search: false
   favicon: favicon.png
-  twitter-card: 
+  twitter-card:
     creator: "@drewdim"
     site: "@drewdim"
     card-style: "summary_large_image"
@@ -32,12 +32,11 @@ format:
     mainfont: "Domitian"
     monofont: "Monaspace Argon"
     css:
-      - fonts.css
       - styles.css
     toc: true
     toc-depth: 4
     toc-title: "Contents"
-    html-math-method: 
+    html-math-method:
       method: mathjax
       url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
     include-in-header:
