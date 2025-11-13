@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  post-render: scripts/purge-css.sh
 
 website:
   title: "Drew Dimmery"

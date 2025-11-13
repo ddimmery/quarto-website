@@ -18,8 +18,8 @@ jobs:
           pipx install poetry
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
-          cache: 'poetry'
+          python-version: "3.12"
+          cache: "poetry"
 
       - name: Set Poetry environment
         run: |
@@ -34,10 +34,21 @@ jobs:
         with:
           use-public-rspm: true
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: "npm"
+
+      - name: Install purge-css dependencies
+        run: |
+          npm install purgecss
+          npm install uglify-js
+          npm install uglify-css
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          # To install LaTeX to build PDF book 
+          # To install LaTeX to build PDF book
           tinytex: true
 
       - name: Render Quarto site with quarto-env kernel

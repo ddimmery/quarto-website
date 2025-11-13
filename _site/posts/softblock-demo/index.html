@@ -98,41 +98,44 @@ gtag('js', new Date());
 gtag('config', 'G-Y7YLFF5F90', { 'anonymize_ip': true});
 </script>
 <style>html{ scroll-behavior: smooth; }</style>
-<!-- Disable Bootstrap Icons CSS to reduce page load -->
-<!-- We use inline SVG icons instead via icon_utils.py -->
-<!-- Note: Academicons CSS removed entirely - no longer included -->
-<script>
-  /* Remove bootstrap-icons.css (~96KB) that Quarto automatically includes */
-  document.addEventListener('DOMContentLoaded', function() {
-    const iconLinks = document.querySelectorAll('link[href*="bootstrap-icons.css"]');
-    iconLinks.forEach(link => link.remove());
-  });
-</script>
+<link rel="preload" as="style" href="fonts.css">
+<link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="fonts.css"></noscript>
 
 <script>
-MathJax = {
-  tex: {
-    inlineMath: {'[+]': [['$', '$']]}
-  },
-  chtml: {
-    font: 'mathjax-pagella'
-  },
-  loader: {
-    paths: {
-      font: 'https://cdn.jsdelivr.net/npm/@mathjax',
-      'mathjax-euler-extension': '[font]/mathjax-euler-font-extension',
+  MathJax = {
+    tex: {
+      inlineMath: { "[+]": [["$", "$"]] },
     },
-    load: ['input/tex-base', '[tex]/newcommand', '[tex]/action', 'output/chtml','[mathjax-euler-extension]/chtml']
-  },
-  startup: {
-    ready() {
-      MathJax.startup.defaultReady();
-      MathJax._.output.fonts.generic = {
-        chtml_ts: {GenericFont: MathJax._.output.fonts['mathjax-pagella'].chtml_ts.MathJaxPagellaFont}
-      }
-    }
-  }
-};
+    chtml: {
+      font: "mathjax-pagella",
+    },
+    loader: {
+      paths: {
+        font: "https://cdn.jsdelivr.net/npm/@mathjax",
+        "mathjax-euler-extension": "[font]/mathjax-euler-font-extension",
+      },
+      load: [
+        "input/tex-base",
+        "[tex]/newcommand",
+        "[tex]/action",
+        "output/chtml",
+        "[mathjax-euler-extension]/chtml",
+      ],
+    },
+    startup: {
+      ready() {
+        MathJax.startup.defaultReady();
+        MathJax._.output.fonts.generic = {
+          chtml_ts: {
+            GenericFont:
+              MathJax._.output.fonts["mathjax-pagella"].chtml_ts
+                .MathJaxPagellaFont,
+          },
+        };
+      },
+    },
+  };
 </script>
 <link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
 <script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
@@ -146,7 +149,6 @@ MathJax = {
 <script src="../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 
 
-<link rel="stylesheet" href="../../fonts.css">
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Drew Dimmery - Using SoftBlock to Design an Experiment">
 <meta property="og:description" content="In this demo, I’m going to walk through an example experimental design using methods from our recent paper on Balanced Design.">

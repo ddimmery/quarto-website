@@ -122,7 +122,7 @@ That's all a bit of a tangent, but its gotten me thinking about why I actually n
 
 ### Icons
 
-I in-lined many icons to embedded svgs, but, alas, I was not able to 
+I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere.
 
 ### Fonts
 
@@ -130,9 +130,12 @@ Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I
 
 - Headers in [URW Classico](). This is a font based largely on [Optima]().
 - Body text in [Domitian](). This is a font based largely on the venerable [Palatino]().
-- Code in [Monaspace Argon]().
+- Code in [Monaspace Argon](). This is part of the suite of fonts developed by Github Next. It's also the primary font I use locally in my IDE. It's a Humanist Sans font (I have tried to use Serifed fonts for coding, but it just looks utterly wrong to me).
+- Math in [Neo-Euler](). When I use math, I want it to stand out as distinct from the surrounding text. I think Neo-Euler does a good job of walking the line between being a little weird and being easy to read.
 
-These fonts are strongly humanist in orientation. Despite a brief flirtation with [Futura](), I have come around to the importance of fonts which communicate humanity. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I truly love the 
+These fonts are strongly humanist in orientation. Despite a brief flirtation with [Futura](), I have come around to the importance of fonts which communicate humanity. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance.
+
+To use the custom fonts I want without screwing with performance too much, I used [the solution detailed here](https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/) to make sure fonts can be preloaded and also that they aren't part of the critical path for rendering.
 
 ## Remaining concerns
 
