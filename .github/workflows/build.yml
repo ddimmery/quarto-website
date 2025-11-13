@@ -1,8 +1,8 @@
 on:
   push:
-    branches: main
+    branches: [main]
   pull_request:
-    branches: main
+    branches: [main]
   # to be able to trigger a manual build
   workflow_dispatch:
 
@@ -37,7 +37,6 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: "npm"
 
       - name: Install purge-css dependencies
         run: |
