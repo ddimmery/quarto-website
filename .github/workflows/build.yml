@@ -42,7 +42,7 @@ jobs:
         run: |
           npm install purgecss
           npm install uglify-js
-          npm install uglify-css
+          npm install uglifycss
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
