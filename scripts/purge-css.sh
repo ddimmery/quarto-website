@@ -1,6 +1,9 @@
 #!/bin/bash
 
 # purge_css.sh
+if [[ -z "$QUARTO_PROJECT_RENDER_ALL" ]]; then
+    exit
+fi
 
 echo "$(date +'%Y-%m-%dT%H:%M:%S') - $0 - CSS purge and minification..."
 

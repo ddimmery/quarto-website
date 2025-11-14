@@ -1,12 +1,12 @@
 ---
 title: "Website Refresh"
 description: |
-
-date: "2025-10-27"
+  I have update a few things about the website and now I'm going to tell you about them.
+date: "2025-11-13"
 categories:
   - technology
   - website
-image: main-image.jpg
+image: main-image.webp
 draft: true
 ---
 
@@ -14,7 +14,7 @@ I've made a few changes and updates to this website. I think a number of the cha
 
 1. Semantic Scholar integration for updating publication records
 2. Listmonk tools for sharing blog posts as a newsletter
-3. Miscellaneous improvements to the design and performance
+3. Improvements to the design and performance, particularly around fonts
 
 I think these changes are consistent with [the philosophy I introduced in the last post](posts/back-to-basics/).
 
@@ -95,13 +95,13 @@ The second main improvement I made was to add an email distribution list to my w
 1. Write a blog post in a Quarto document.
 2. Push it to a branch if I want to have sensitivity readers.
 3. Once I'm satisfied, push it to main, which automatically triggers a Quarto build of the website and makes the blog post "live" on the website (and RSS feed)
-4. **Manually trigger a Github Actions workflow to schedule a Listmonk email campaign.** 
+4. **Manually trigger a Github Actions workflow to schedule a Listmonk email campaign.**
 
-It's this last part that I think is particularly cool. Basically the way it works is I vibecoded an over-engineered system that pulls the necessary metadata from a given blog post (in the `.qmd` file), renders the post to an HTML version, extracts the HTML from that, and sends all of this through Listmonk's API to schedule an email campaign with nicely formatted HTML content. I'm not going to embed all of the scripts for this here, but you can take a look at them in my website's Github: [`scripts/`]().
+It's this last part that I think is particularly cool. Basically the way it works is I vibecoded an over-engineered system that pulls the necessary metadata from a given blog post (in the `.qmd` file), renders the post to an HTML version, extracts the HTML from that, and sends all of this through Listmonk's API to schedule an email campaign with nicely formatted HTML content. I'm not going to embed all of the scripts for this here, but you can take a look at them in my website's Github: [`scripts/`](https://github.com/ddimmery/quarto-website/tree/main/scripts).
 
-To actually trigger this monstrosity, I used a fun function that Github Actions provides: `workflow_dispatch` event triggers. Basically, what this means is that [you can configure a Github Action to trigger manually through the Github UI](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow). It looks something like this:
+To actually trigger this monstrosity, I used a nice feature that Github Actions provides: `workflow_dispatch` event triggers. Basically, what this means is that [you can configure a Github Action to trigger manually through the Github UI](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow). It looks something like this:
 
-![Workflow Dispatch example](workflow_dispatch.png)
+![Workflow Dispatch example](workflow-dispatch.png){width=20%}
 
 So basically all I need to do is tell the workflow what post to schedule (the `post_slug` part), when to schedule it (the `send_at`). There are also a few optional things I can plug in, such as which list to send to (Listmonk lets me manage multiple lists easily), or I can send test emails.
 
@@ -114,29 +114,31 @@ I'm overall pretty pleased with this system.
 
 ## Improvements in design and performance
 
-Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other days, I long for the ability to have nicely reactive and responsive design elements that require richer web frameworks. On some personal projects over the last few months, I've learned a bit more about modern webdev tools. One thing I'm particularly taken by is the way that modern webdev tools like vite manage javascript dependencies.
+Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other days, I long for the ability to have nicely reactive and responsive design elements that require richer web frameworks. On some personal projects over the last few months, I've learned a bit more about modern webdev tools. One thing I'm particularly taken by is the way that modern webdev tools like [Vite](https://vitejs.dev/) manage javascript dependencies.
 
-In short, the problem with a lot of these big web frameworks is that they're really big! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is send down to the website viewer. We don't need to do that: we can be smarter. That's basically what tools like vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can avoid loading these libraries until they're actually needed.
+In short, the problem with a lot of these big web frameworks is that they're really big! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is send down to the website viewer. We don't need to do that: we can be smarter. That's basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can avoid loading these libraries until they're actually needed.
 
 That's all a bit of a tangent, but its gotten me thinking about why I actually need to load all of the Javascript packages that are being loaded with my website? Well, Quarto ultimately doesn't seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it's easy to throw something together with Quarto that has a lot of the bells and whistled a data scientist craves, but that doesn't mean it's going to be super efficient. There's a [really nice post by Emil Hvitfeldt discussing performance considerations in Quarto](https://emilhvitfeldt.com/post/quarto-performance/).
 
-### Icons
+### Purge unused resources
 
-I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere.
+I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere. The solution to this was described in [a discussion about Quarto performance by Charles Nepote](https://github.com/orgs/quarto-dev/discussions/9330). Quarto makes it possible to add a post-rendering step to Quarto builds which purges unused CSS and minifies JS and CSS. I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, [the critical path is currently loading `quarto.js`](https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile). I think this is probably about as good as it gets^[It seems like there are also some other problems, as Firefox and Chrome both show several seconds to establish a SSL connection to the website (i.e. before any resources are actually loaded). Unclear what's going on with this...]. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.
 
 ### Fonts
 
-Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I read like 3 books about fonts that I marked up more than almost anything else I've read. Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations:
+Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I read like 3 books about fonts that I marked up more than almost anything else I've read. Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations^[The ease of writing Markdown documents which are rendered into [reveal.js](https://revealjs.com/) HTML presentations is really nice, and yet another way that I'm aiming at convergence between these media. I ask myself whether I should also move away from directly writing LaTeX, too. Ensuring visual consistency by using literally identical styling directives is very appealing.]:
 
-- Headers in [URW Classico](). This is a font based largely on [Optima]().
-- Body text in [Domitian](). This is a font based largely on the venerable [Palatino]().
-- Code in [Monaspace Argon](). This is part of the suite of fonts developed by Github Next. It's also the primary font I use locally in my IDE. It's a Humanist Sans font (I have tried to use Serifed fonts for coding, but it just looks utterly wrong to me).
-- Math in [Neo-Euler](). When I use math, I want it to stand out as distinct from the surrounding text. I think Neo-Euler does a good job of walking the line between being a little weird and being easy to read.
+- Headers in [[URW Classico]{.sans}](https://en.wikipedia.org/wiki/Optima#Clones_and_derivatives). This is a font based largely on [Optima](https://en.wikipedia.org/wiki/Optima).
+- Body text in [Domitian](https://en.wikipedia.org/wiki/Palatino#Derivatives). This is a font based largely on the venerable [Palatino](https://en.wikipedia.org/wiki/Palatino).
+- Code in [`Monaspace Argon`](https://monaspace.githubnext.com/). This is part of the suite of fonts developed by Github Next. It's also the primary font I use locally in my IDE. It's a Humanist Sans font (I have tried to use Serifed fonts for coding, but it just looks utterly wrong to me).
+- Math in [$\text{Neo-Euler}$](https://en.wikipedia.org/wiki/AMS_Euler). When I use math, I want it to stand out as distinct from the surrounding text. I think Neo-Euler does a good job of walking the line between being a little weird and being easy to read.
 
-These fonts are strongly humanist in orientation. Despite a brief flirtation with [Futura](), I have come around to the importance of fonts which communicate humanity. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance.
+These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than this. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really place for *reading*. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
 
-To use the custom fonts I want without screwing with performance too much, I used [the solution detailed here](https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/) to make sure fonts can be preloaded and also that they aren't part of the critical path for rendering.
+To use these custom fonts on the web without screwing with performance too much, I used [the solution detailed here](https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/) to make sure fonts can be preloaded and also that they aren't part of the critical path for rendering. When you load a page here, you might see a replacement background font for a split-second before the font faces are loaded into the CSS.
 
 ## Remaining concerns
 
-I'm happy with a lot of what has come together.
+I'm happy with a lot of what has come together. There are a few issues that I think can be improved. I'm considering whether it might make sense to switch to a hybrid system which would use Quarto to build minimal HTML or Markdown documents which are then knit together using a modern web development framework like [Astro](https://docs.astro.build/en/tutorial/0-introduction/). This would allow much more granular control over the website and how it loads resources, but could still get the benefits of Quarto where it is most useful (for blogposts). This is probably a bigger project than I imagine it to be, so I don't intend to commit to it soon.
+
+I'm also considering whether it would make more sense to switch to a different hosting solution. I'm not particularly pleased with the quality of Netlify's CDN, which seems to be a bit slow in Europe (I suspect they just have fewer edge locations). I'm considering whether it might make sense to switch to a system which is self-hosted in a VPS like DigitalOcean/Hetzner (possibly with a tool like Coolify to manage deployment) and then add a CDN like Cloudflare over the top. The benefit to this is that it would combine control (from the self-hosted VPS) with the performance benefits of a reliable CDN through Cloudflare, but it would remain very cheap (albeit not free).

@@ -7,13 +7,13 @@ $theme: "journal" !default;
 // Disable unused Bootstrap components by setting enable flags to false
 // This reduces the final CSS bundle size significantly
 
-$enable-rfs: false !default;  // Disable responsive font sizing
-$enable-negative-margins: false !default;  // Disable negative margin utilities
-$enable-caret: false !default;  // Disable dropdown carets
-$enable-rounded: true !default;  // Keep rounded corners (used for images/buttons)
-$enable-shadows: false !default;  // Disable box shadows
-$enable-gradients: false !default;  // Disable gradient backgrounds
-$enable-smooth-scroll: true !default;  // Keep smooth scrolling
+$enable-rfs: false !default; // Disable responsive font sizing
+$enable-negative-margins: false !default; // Disable negative margin utilities
+$enable-caret: false !default; // Disable dropdown carets
+$enable-rounded: true !default; // Keep rounded corners (used for images/buttons)
+$enable-shadows: false !default; // Disable box shadows
+$enable-gradients: false !default; // Disable gradient backgrounds
+$enable-smooth-scroll: true !default; // Keep smooth scrolling
 
 // Minimize utility classes - only generate essential ones
 // We'll set this to a minimal map in the rules section
@@ -22,7 +22,7 @@ $enable-smooth-scroll: true !default;  // Keep smooth scrolling
 // Color system
 //
 
-$white:    #fff !default;
+$white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #eee !default;
 $gray-300: #dee2e6 !default;
@@ -32,55 +32,55 @@ $gray-600: #777 !default;
 $gray-700: #495057 !default;
 $gray-800: #333 !default;
 $gray-900: #222 !default;
-$black:    #000 !default;
+$black: #000 !default;
 
-$hertie-red:    #ba0020 !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #f57a00 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #f5e625 !default;
-$green:   #22b24c !default;
-$teal:    #20c997 !default;
-$cyan:    #369 !default;
+$hertie-red: #ba0020 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #f57a00 !default;
+$orange: #fd7e14 !default;
+$yellow: #f5e625 !default;
+$green: #22b24c !default;
+$teal: #20c997 !default;
+$cyan: #369 !default;
 
-$primary:       $hertie-red !default;
-$secondary:     $gray-500 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$primary: $hertie-red !default;
+$secondary: $gray-500 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-900 !default;
 
-$min-contrast-ratio:   1.28 !default;
+$min-contrast-ratio: 1.28 !default;
 
 // Fonts (self-hosted via fonts.css)
 
-$headings-font-family:   "Libertinus Sans", sans-serif !default;
-$headings-font-weight:    700 !default;
-$headings-line-height:    1.1 !default;
+$headings-font-family: "URW Classico", "Libertinus Sans", sans-serif !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.1 !default;
 
 // Buttons
 
-$input-btn-padding-x:         1rem !default;
+$input-btn-padding-x: 1rem !default;
 
 // Navbar
 
 // Pagination
 
-$pagination-hover-color:            $white !default;
-$pagination-hover-bg:               $primary !default;
-$pagination-hover-border-color:     $primary !default;
+$pagination-hover-color: $white !default;
+$pagination-hover-bg: $primary !default;
+$pagination-hover-border-color: $primary !default;
 
 // Reduce spacing scale to minimize utility classes
 // Only include the spacing sizes we actually use
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
   3: $spacer,
   4: $spacer * 1.5,
   5: $spacer * 3,
@@ -93,10 +93,8 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1200px,
 ) !default;
-
-
 
 /*-- scss:rules --*/
 
@@ -116,7 +114,7 @@ $grid-breakpoints: (
 }
 
 .navbar-brand {
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   font-size: 24px;
   font-weight: $headings-font-weight;
   //text-transform: uppercase;
@@ -142,5 +140,14 @@ $grid-breakpoints: (
   }
 }
 
+.sans {
+  font-family: $headings-font-family;
+}
+
+// Code
+
+code {
+  color: $cyan;
+}
 
 // quarto-scss-analysis-annotation { "origin": null }
