@@ -87,7 +87,7 @@ def create_yaml_entry_from_ss_paper(paper):
 
 Critically, this is all pretty trivial, but it's also *boring*, so I'm glad I didn't need to think particularly hard about it. It also means I didn't need to personally dig through the Semantic Scholar API documentation. The code quality is not great, but neither was my own code before!
 
-So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them add flip the `visible` flag to show them once I'm satisfied they're right.
+So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them and flip the `visible` flag to show them once I'm satisfied they're right.
 
 ## Listmonk tools
 
@@ -119,7 +119,7 @@ Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other
 
 In short, the problem with a lot of these big web frameworks is that they're really big (duh)! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is sent down to the website viewer. We don't need to do that: we can be smarter. That's basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can help with lazy loading (so they're only loaded when needed).
 
-That's all a bit of a tangent, but its gotten me thinking about why I actually need to load so many Javascript libraries? Well, Quarto ultimately doesn't seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it's easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn't mean it's going to be super efficient. There's a [really nice post by Emil Hvitfeldt discussing performance considerations in Quarto](https://emilhvitfeldt.com/post/quarto-performance/).
+That's all a bit of a tangent, but it's gotten me thinking about why I actually need to load so many Javascript libraries. Quarto ultimately doesn't seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it's easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn't mean it's going to be super efficient. There's a [really nice post by Emil Hvitfeldt discussing performance considerations in Quarto](https://emilhvitfeldt.com/post/quarto-performance/).
 
 ### Purge unused resources
 
@@ -140,7 +140,7 @@ Long story short, I've currently landed on the following font styling that I int
 
 #### Why humanist fonts matter
 
-These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than these geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really place for *reading*. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
+These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than such geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really a place for *reading*. The medium corresponding to sans-serifs is the microblog, not the book. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
 
 #### Loading fonts performantly
 
