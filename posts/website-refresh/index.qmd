@@ -1,22 +1,23 @@
 ---
 title: "Website Refresh"
 description: |
-  I have update a few things about the website and now I'm going to tell you about them.
-date: "2025-11-13"
+  Automating publication updates with Semantic Scholar, setting up email newsletters with Listmonk, and optimizing fonts and performance. Tending my corner of the web, one small improvement at a time.
+date: "2025-11-19"
 categories:
   - technology
   - website
 image: main-image.webp
-draft: true
 ---
 
-I've made a few changes and updates to this website. I think a number of the changes will be interesting and useful to others, so I'm going to introduce them briefly and discuss how they work.
+I've made a few changes and updates to this website. None of them are particularly earth-shattering, but I think building one's own tools—rather than accepting the constraints of platforms—is worth the effort.
+
+Here's what I've been working on:
 
 1. Semantic Scholar integration for updating publication records
 2. Listmonk tools for sharing blog posts as a newsletter
 3. Improvements to the design and performance, particularly around fonts
 
-I think these changes are consistent with [the philosophy I introduced in the last post](posts/back-to-basics/).
+I think these changes are consistent with [the philosophy I introduced in the last post](posts/back-to-basics/). I'll introduce each briefly and discuss how they work—perhaps they'll be useful to others building their own corners of the web.
 
 ## Semantic Scholar integration
 
@@ -86,7 +87,7 @@ def create_yaml_entry_from_ss_paper(paper):
 
 Critically, this is all pretty trivial, but it's also *boring*, so I'm glad I didn't need to think particularly hard about it. It also means I didn't need to personally dig through the Semantic Scholar API documentation. The code quality is not great, but neither was my own code before!
 
-So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them add flip the `hidden` flag to show them once I'm satisfied they're right.
+So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them add flip the `visible` flag to show them once I'm satisfied they're right.
 
 ## Listmonk tools
 
@@ -110,35 +111,51 @@ This is a solution I'm mostly happy with. I think there's still a bit of tweakin
 1. Whether I should maintain separate lists for different categories of post. It wouldn't be hard to maintain category-specific lists so that people could easily opt-out of posts about (e.g.) how I built things on my website.
 2. How exactly to manage the sending of emails. When I sent out the last email, it only sent to like two-thirds of my subscribers because my email provider is Protonmail setup with a custom `blog@` email address for sending/receiving. Unfortunately, there were some rate limits that I didn't adequately respect the first time.
 
-I'm overall pretty pleased with this system.
+I'm overall pretty pleased with this system. You're welcome to [subscribe here!](https://list.ddimmery.com/subscription/form)
 
 ## Improvements in design and performance
 
 Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other days, I long for the ability to have nicely reactive and responsive design elements that require richer web frameworks. On some personal projects over the last few months, I've learned a bit more about modern webdev tools. One thing I'm particularly taken by is the way that modern webdev tools like [Vite](https://vitejs.dev/) manage javascript dependencies.
 
-In short, the problem with a lot of these big web frameworks is that they're really big! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is send down to the website viewer. We don't need to do that: we can be smarter. That's basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can avoid loading these libraries until they're actually needed.
+In short, the problem with a lot of these big web frameworks is that they're really big (duh)! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is sent down to the website viewer. We don't need to do that: we can be smarter. That's basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can help with lazy loading (so they're only loaded when needed).
 
-That's all a bit of a tangent, but its gotten me thinking about why I actually need to load all of the Javascript packages that are being loaded with my website? Well, Quarto ultimately doesn't seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it's easy to throw something together with Quarto that has a lot of the bells and whistled a data scientist craves, but that doesn't mean it's going to be super efficient. There's a [really nice post by Emil Hvitfeldt discussing performance considerations in Quarto](https://emilhvitfeldt.com/post/quarto-performance/).
+That's all a bit of a tangent, but its gotten me thinking about why I actually need to load so many Javascript libraries? Well, Quarto ultimately doesn't seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it's easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn't mean it's going to be super efficient. There's a [really nice post by Emil Hvitfeldt discussing performance considerations in Quarto](https://emilhvitfeldt.com/post/quarto-performance/).
 
 ### Purge unused resources
 
-I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere. The solution to this was described in [a discussion about Quarto performance by Charles Nepote](https://github.com/orgs/quarto-dev/discussions/9330). Quarto makes it possible to add a post-rendering step to Quarto builds which purges unused CSS and minifies JS and CSS. I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, [the critical path is currently loading `quarto.js`](https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile). I think this is probably about as good as it gets^[It seems like there are also some other problems, as Firefox and Chrome both show several seconds to establish a SSL connection to the website (i.e. before any resources are actually loaded). Unclear what's going on with this...]. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.
+I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere. The solution to this was described in [a discussion about Quarto performance by Charles Nepote](https://github.com/orgs/quarto-dev/discussions/9330). Quarto makes it possible to add a post-rendering step to builds which purges unused CSS and minifies JS and CSS ([see here](https://github.com/ddimmery/quarto-website/blob/main/scripts/purge-css.sh)). I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, [the critical path is currently loading `quarto.js`](https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile). I think this is probably about as good as it gets^[It seems like there are also some other problems, as Firefox and Chrome both intermittently show several seconds to establish a SSL connection to the website (i.e. before any resources are actually loaded). Unclear what's going on with this...]. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.
 
 ### Fonts
 
-Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I read like 3 books about fonts that I marked up more than almost anything else I've read. Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations^[The ease of writing Markdown documents which are rendered into [reveal.js](https://revealjs.com/) HTML presentations is really nice, and yet another way that I'm aiming at convergence between these media. I ask myself whether I should also move away from directly writing LaTeX, too. Ensuring visual consistency by using literally identical styling directives is very appealing.]:
+Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I read like 3 books about fonts that I marked up more than almost anything else I've read.
+
+#### My font choices
+
+Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations^[The ease of writing Markdown documents which are rendered into [reveal.js](https://revealjs.com/) HTML presentations is really nice, and yet another way that I'm aiming at convergence between these media. I ask myself whether I should also move away from directly writing LaTeX, too. Ensuring visual consistency by using literally identical styling directives is very appealing.]:
 
 - Headers in [[URW Classico]{.sans}](https://en.wikipedia.org/wiki/Optima#Clones_and_derivatives). This is a font based largely on [Optima](https://en.wikipedia.org/wiki/Optima).
 - Body text in [Domitian](https://en.wikipedia.org/wiki/Palatino#Derivatives). This is a font based largely on the venerable [Palatino](https://en.wikipedia.org/wiki/Palatino).
 - Code in [`Monaspace Argon`](https://monaspace.githubnext.com/). This is part of the suite of fonts developed by Github Next. It's also the primary font I use locally in my IDE. It's a Humanist Sans font (I have tried to use Serifed fonts for coding, but it just looks utterly wrong to me).
-- Math in [$\text{Neo-Euler}$](https://en.wikipedia.org/wiki/AMS_Euler). When I use math, I want it to stand out as distinct from the surrounding text. I think Neo-Euler does a good job of walking the line between being a little weird and being easy to read.
+- Math in [$\text{Neo-Euler}$](https://en.wikipedia.org/wiki/AMS_Euler). When I use math, I want it to stand out as distinct from the surrounding text. I think Neo-Euler does a good job of walking the line between being a little weird while remaining easy to read.
 
-These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than this. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really place for *reading*. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
+#### Why humanist fonts matter
+
+These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than these geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really place for *reading*. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
+
+#### Loading fonts performantly
 
 To use these custom fonts on the web without screwing with performance too much, I used [the solution detailed here](https://css-tricks.com/how-to-load-fonts-in-a-way-that-fights-fout-and-makes-lighthouse-happy/) to make sure fonts can be preloaded and also that they aren't part of the critical path for rendering. When you load a page here, you might see a replacement background font for a split-second before the font faces are loaded into the CSS.
 
 ## Remaining concerns
 
-I'm happy with a lot of what has come together. There are a few issues that I think can be improved. I'm considering whether it might make sense to switch to a hybrid system which would use Quarto to build minimal HTML or Markdown documents which are then knit together using a modern web development framework like [Astro](https://docs.astro.build/en/tutorial/0-introduction/). This would allow much more granular control over the website and how it loads resources, but could still get the benefits of Quarto where it is most useful (for blogposts). This is probably a bigger project than I imagine it to be, so I don't intend to commit to it soon.
+I'm happy with a lot of what has come together. There are a few issues that I think can be improved. I'm considering whether it might make sense to switch to a hybrid system which would use Quarto to build minimal HTML or Markdown documents which are then knit together using a modern web development framework like [Astro](https://docs.astro.build/en/tutorial/0-introduction/). This would allow much more granular control over the website and how it loads resources, but could still get the benefits of Quarto where it is most useful (for pre-rendering rich documents full of Python and R code). This is probably a bigger project than I imagine it to be, so I don't intend to commit to it soon^[Truly famous last words.].
 
-I'm also considering whether it would make more sense to switch to a different hosting solution. I'm not particularly pleased with the quality of Netlify's CDN, which seems to be a bit slow in Europe (I suspect they just have fewer edge locations). I'm considering whether it might make sense to switch to a system which is self-hosted in a VPS like DigitalOcean/Hetzner (possibly with a tool like Coolify to manage deployment) and then add a CDN like Cloudflare over the top. The benefit to this is that it would combine control (from the self-hosted VPS) with the performance benefits of a reliable CDN through Cloudflare, but it would remain very cheap (albeit not free).
+I'm also considering whether it would make more sense to switch to a different hosting solution. I'm not particularly pleased with the quality of Netlify's CDN, which seems to be a bit slow in Europe (I suspect they just have fewer edge locations)^[Making a connection via HTTPS occasionally takes 3s or more, which is just absurd and is by far the slowest part of page-load, although it is also intermittent which makes me suspect something with CDNs.]. I'm considering whether it might make sense to switch to a system which is self-hosted in a VPS like DigitalOcean/Hetzner (possibly with a tool like Coolify to manage deployment) and then add a CDN like Cloudflare over the top. The benefit to this is that it would combine control (from the self-hosted VPS) with the performance benefits of a reliable CDN through Cloudflare, but it would remain quite cheap (albeit not free).
+
+## Tending the garden
+
+There's something satisfying about all of this tinkering that I find hard to articulate. It's not that any individual piece is particularly impressive or novel. Rather, it's the act of construction itself—of shaping raw materials into something that reflects intention and care. McLuhan observed that we shape our tools, and thereafter our tools shape us. The platforms we've ceded our digital lives to have shaped us into consumers of content, optimized for something outside of our control. Building my own corner of the web is a small act of resistance against this.
+
+I don't think everyone needs to hand-roll their entire tech-stack or obsess over font choices (I will tell you fonts are a huge net-negative on my measurable productivity). But I do think there's value in the process of understanding and improving the systems we inhabit, even if only to understand what we've given up by outsourcing them. The web was supposed to be a place where anyone could plant a flag and build something. Somewhere along the way, we traded that for the convenience of renting space in someone else's domain.
+
+These updates—the automation, the newsletters, the performance tweaks, the typography—are all just ways of making this place more my own. The work is never finished. There's always another edge to smooth, another inefficiency to address. But that's the point, isn't it?
