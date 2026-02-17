@@ -10,7 +10,167 @@
 <atom:link href="https://ddimmery.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website of Drew Dimmery</description>
 <generator>quarto-1.5.42</generator>
-<lastBuildDate>Tue, 18 Nov 2025 23:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 15 Feb 2026 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>Causal ML (the class)</title>
+  <dc:creator>Drew Dimmery</dc:creator>
+  <link>https://ddimmery.com/posts/causal-ml-class/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="teaching-causalml" class="level2">
+<h2 class="anchored" data-anchor-id="teaching-causalml">Teaching CausalML</h2>
+<p>The most important paper I’ve ever read was David Freedman’s <a href="https://doi.org/10.2307/270939">Statistical Models and Shoe Leather</a>. As always, when I mention this paper, I must provide the following quote:</p>
+<blockquote class="blockquote">
+<p>Given the limits to present knowledge, I doubt that models can be rescued by technical fixes. Arguments about the theoretical merit of regression or the asymptotic behavior of specification tests for picking one version of a model over another seem like arguments about how to build desalination plants with cold fusion as the energy source. The concept may be admirable, the technical details may be fascinating, but thirsty people should look elsewhere.</p>
+</blockquote>
+<p>I find this to be a critically important lens through which to view the field of Causal Machine Learning, a class I just taught in the Fall at Hertie about a field that forms the core of a lot of my research. In many ways, this class is about me trying to square my love for design-based causal inference with the realities of modern Causal Machine Learning which is maddeningly focused on cold-fusion-powered desalination. A large amount of the literature in this field is beset by strong super-population assumptions, asymptotic theory and, thanks to the fundamental problem of causal inference, little way to determine what will actually be effective on the data that one has in front of them.</p>
+<p>As such, my overriding goal for the course was to make students skeptical and informed consumers and producers of CML. I tried to get them to think about actual experiments whenever possible, and to think about the conditions under which methods work and do not work (and how you might be able to know)<sup>1</sup>. Then I expected everyone to get their hands dirty by actually implementing these methods and testing them through simulation studies. They did this both as part of in-class demos as well as a final project meant to extend and flesh out the demo (and fix any issues surfaced during the demo).</p>
+<p>I expected a lot from students. Of the nearly two-hour class, I lectured for only around 30 minutes, while students led discussion for the remainder. They gave presentations about papers (with my intervention when I wanted to add additional color / complaints) and performed high quality simulation studies set up so their colleagues could tweak things about the setting or the method to see the results.</p>
+<p>The course, therefore, operated on a few operating principles:</p>
+<ul>
+<li><strong>Read papers</strong>: If you can’t read new work, the field will leave you behind.</li>
+<li><strong>Present main ideas</strong>: Nothing forces you to understand a paper like presenting its main ideas to your classmates.</li>
+<li><strong>Write code</strong>: Implementing and stress testing methods is a powerful way to get a deep understanding of how they work.</li>
+<li><strong>Don’t fight AI</strong>: Focus on in-class performance. If students just let AI create a slide deck/demo and don’t understand it, this will be very obvious when they get up to talk about their work. In practice, there were very few moments when students had offloaded too much of their preparation to AI. I think the incentives here are good. Students can use AI however helps them, but they cannot avoid learning enough of what they need to know to feel comfortable standing in front of the room to talk about it.</li>
+</ul>
+<p>The nagging problem is this: we spent the semester stress-testing methods through simulation to see how they work and where they break. This is genuinely useful. But it only tells us how methods perform in worlds we can imagine (and the world is much more complicated than that). The whole point of causal inference is that we never observe the counterfactual, so we can never confirm on our <em>actual</em> dataset that a method did what it promised. I don’t think the course resolves this—I don’t think anything really can. What I think it does is produce people who understand the machinery well enough to know exactly where the leap of faith is, and who can be honest about when they’re making it. I think that matters, even if it’s not enough. There’s still a lot of work to be done on understanding what we can actually learn from these methods and what we can’t—and frankly, a lot of the field doesn’t always seem particularly interested in that question.</p>
+<p>With that, check out the syllabus I landed on:</p>
+</section>
+<section id="syllabus" class="level1">
+<h1>Syllabus</h1>
+<section id="course-overview" class="level2">
+<h2 class="anchored" data-anchor-id="course-overview">Course overview</h2>
+<p>The syllabus begins with the building blocks—design-based inference, covariate adjustment, and propensity scores—before moving to the doubly robust and semiparametric methods that form the core of modern CML. From there it turns to heterogeneous treatment effects (first with forests and meta-learners, then neural networks), policy learning, and experimental design. The final weeks cover topics where the standard assumptions start to break down: panel data, partial identification, adaptive experimentation, and interference. Students wrote a referee report on one paper, presented another, gave a live code demonstration of one week’s methods, and produced a final expository project extending the demonstration. All readings are papers; there is no textbook.</p>
+</section>
+<section id="session-by-session" class="level2">
+<h2 class="anchored" data-anchor-id="session-by-session">Session-by-session</h2>
+<section id="session-1-design-based-causal-inference-and-monte-carlo-simulation" class="level3">
+<h3 class="anchored" data-anchor-id="session-1-design-based-causal-inference-and-monte-carlo-simulation">Session 1: Design-based Causal Inference and Monte Carlo Simulation</h3>
+<p>The potential outcomes framework, what randomization buys you, and the <a href="https://doi.org/10.1002/sim.8086">ADEMP framework</a> for simulation studies that students use to stress-test every method in the course.</p>
+<p><a href="https://conjugateprior.org/">Will Lowe</a> teaches a fantastic Causal course at Hertie that focuses more on DAG-world, so laying out some strong arguments around manipulability and the implied metaphysics of potential outcomes. This comes early to set the stage for the rest of the course. My computational demo aimed at understanding the difference between inference on the SATE and the PATE as a way to get them thinking about sources of randomization (and better prepare them for the many superpopulations to come).</p>
+</section>
+<section id="session-2-covariate-adjustment" class="level3">
+<h3 class="anchored" data-anchor-id="session-2-covariate-adjustment">Session 2: Covariate Adjustment</h3>
+<p>If randomization already gives you unbiased estimates, should you adjust for covariates at all? If not, is there any role for ML? I think there are actually pretty good answers in this setting! So we talked about the <a href="https://doi.org/10.1214/12-AOAS583">Lin-style regression</a> and AIPW as ways to be both safe <em>and</em> efficient.</p>
+</section>
+<section id="session-3-balancing-weights" class="level3">
+<h3 class="anchored" data-anchor-id="session-3-balancing-weights">Session 3: Balancing Weights</h3>
+<p>Only in this session are we really getting to the observational world at all. What is “balance”? Why might we want it? How should we define it? We went through a variety of modern approaches to this including <a href="https://proceedings.mlr.press/v139/arbour21a.html">permutation weighting</a>, which holds a special place in my heart as it reframes the problem as classification.</p>
+</section>
+<section id="session-4-doubly-robust-methods-double-ml-and-tmle" class="level3">
+<h3 class="anchored" data-anchor-id="session-4-doubly-robust-methods-double-ml-and-tmle">Session 4: Doubly Robust Methods, Double ML, and TMLE</h3>
+<p>Sessions 2 and 3 each model one side of the problem; doubly robust methods combine both, giving you two chances to get it right. Is it actually useful to get two chances at this? We work through the error decompositions that show why it might be helpful even when you get <em>neither</em> right. We hammer back on this many times throughout the course, too.</p>
+<p>A recent paper we read was <a href="https://arxiv.org/abs/2203.06469">Kennedy (2022)</a>.</p>
+</section>
+<section id="session-5-heterogeneous-treatment-effects-i" class="level3">
+<h3 class="anchored" data-anchor-id="session-5-heterogeneous-treatment-effects-i">Session 5: Heterogeneous Treatment Effects I</h3>
+<p>How do effects vary across individuals? This is categorically harder than estimating averages—there is no observed target, no natural loss function, and no straightforward way to validate predictions, which is why my lecture focuses on the <a href="https://doi.org/10.1080/01621459.1986.10478354">Fundamental Problem of Causal Inference</a>. I’m just categorically unable to let people have fun.</p>
+</section>
+<section id="session-6-heterogeneous-treatment-effects-ii-neural-networks" class="level3">
+<h3 class="anchored" data-anchor-id="session-6-heterogeneous-treatment-effects-ii-neural-networks">Session 6: Heterogeneous Treatment Effects II — Neural Networks</h3>
+<p>This session focuses on using neural networks. My lecture focused on representation learning and why this is actually really tricky in the causal setting: what do you mean we require an invertible representation? In <strong>this</strong> economy?</p>
+<p>Some recent papers we read were <a href="https://doi.org/10.1093/biomet/asaa068">Nie &amp; Wager (2021)</a> and <a href="https://arxiv.org/abs/2506.10914">Ma et al.&nbsp;(2025)</a>.</p>
+</section>
+<section id="session-7-off-policy-evaluation-and-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="session-7-off-policy-evaluation-and-optimization">Session 7: Off-Policy Evaluation and Optimization</h3>
+<p>A pivot from “how large is the effect?” to “who should we treat?” I pull in the discussion over causal decision making (i.e.&nbsp;ignore causal effects, <a href="https://doi.org/10.1287/ijds.2021.0006">Learning the Sign is All You Need</a>), as I think it’s worth problematizing what the actual task is. Is there actually an important role for understanding HTEs for decision-making? For many reasons, I still think the answer is yes.</p>
+<p>Some recent papers we read were <a href="https://doi.org/10.3982/ECTA15732">Athey &amp; Wager (2021)</a> and <a href="https://doi.org/10.1038/s43588-025-00814-9">Kern et al.&nbsp;(2025)</a>.</p>
+</section>
+<section id="session-8-experimental-design" class="level3">
+<h3 class="anchored" data-anchor-id="session-8-experimental-design">Session 8: Experimental Design</h3>
+<p>Probably the session most near and dear to my heart. Always take the opportunity to give ’em the Fisher quote:</p>
+<blockquote class="blockquote">
+<p>To consult the statistician after an experiment is finished is often merely to ask him to conduct a post mortem examination. He can perhaps say what the experiment died of.</p>
+</blockquote>
+<p>Some recent papers we read were <a href="https://arxiv.org/abs/1911.03071">Harshaw et al.&nbsp;(2019)</a> and <a href="https://proceedings.mlr.press/v162/arbour22a.html">Arbour et al.&nbsp;(2022)</a>.</p>
+</section>
+<section id="session-9-panel-data-and-modern-difference-in-differences" class="level3">
+<h3 class="anchored" data-anchor-id="session-9-panel-data-and-modern-difference-in-differences">Session 9: Panel Data and Modern Difference-in-Differences</h3>
+<p>The course turns to settings without randomization (but, of course, problematizes this framing). We go over the “New Diff-in-diff” and pivot quickly to <a href="https://doi.org/10.1198/jasa.2009.ap08746">synthetic control</a>, because I want to keep as much attention on the actual <em>identification</em> problems of the setting (which I think are often elided because they do not admit simple technical fixes: they require thinking about the actual problem setting).</p>
+<p>Some recent papers we read were <a href="https://doi.org/10.1080/01621459.2021.1929245">Ben-Michael et al.&nbsp;(2021)</a> and <a href="https://doi.org/10.1214/22-AOAS1654">Ben-Michael et al.&nbsp;(2023)</a>.</p>
+</section>
+<section id="session-10-partial-identification" class="level3">
+<h3 class="anchored" data-anchor-id="session-10-partial-identification">Session 10: Partial Identification</h3>
+<p>We cover <a href="https://www.jstor.org/stable/2006592">Manski’s no-assumptions bounds</a> and look at a variety of ways that ML can be used to support tighter intervals. I find this really important as a w ay to tie together the class, but I find that students don’t get that excited by the idea of estimating an interval rather than getting a single holy point estimate.</p>
+<p>Some recent papers we read were <a href="https://proceedings.mlr.press/v235/khan24b.html">Khan, Saveski &amp; Ugander (2024)</a> and <a href="https://arxiv.org/abs/2309.08985">Samii, Wang &amp; Zhou (2023)</a>.</p>
+</section>
+<section id="session-11-adaptive-experimentation-and-reinforcement-learning" class="level3">
+<h3 class="anchored" data-anchor-id="session-11-adaptive-experimentation-and-reinforcement-learning">Session 11: Adaptive Experimentation and Reinforcement Learning</h3>
+<p>I always tell students that explore-exploit is a natural framework that can be helpful to them generally as they live their lives (do we go to the same sushi spot as always or try somewhere new?). I spend a lot of time talking about how simple effect estimators fail. We don’t get much into the solutions for this, unfortunately (I am not fully happy with how this has been solved thus far in the literature).</p>
+<p>Some recent papers we read were <a href="https://arxiv.org/abs/2203.02155">Ouyang et al.&nbsp;(2022)</a> and <a href="https://doi.org/10.1073/pnas.2014602118">Hadad et al.&nbsp;(2021)</a>.</p>
+</section>
+<section id="session-12-interference" class="level3">
+<h3 class="anchored" data-anchor-id="session-12-interference">Session 12: Interference</h3>
+<p>We end by blowing up the possibility of causal inference via exponential explosion of potential outcomes under interference. Is it possible to do anything about it? I throw in a lot of attention to <a href="https://doi.org/10.1145/2487575.2487695">design-based solutions</a> which (alas, don’t they always?) require understanding things about the world.</p>
+<p>A recent paper we read was <a href="https://doi.org/10.1073/pnas.2322232121">Shirani &amp; Bayati (2024)</a>.</p>
+</section>
+</section>
+<section id="closing-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="closing-thoughts">Closing thoughts</h2>
+<p>That was my attempt to square the circle. I think it went pretty well all things considered. There’s such a huge amount to cover (jamming DR + DML + TMLE into one session is crazy, as is combining CB + RL into one session). Alas, there was a lot I wanted to cover. I think more than half the classes had some kind of important design-based connection, which I think is good. The machinery is all genuinely useful and extremely interesting, but it doesn’t replace knowing where your identification comes from. I would much rather send students out the door a little paranoid than too comfortable that technical fixes will solve their problems.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>One of many frustrations I have is with the term “testing assumptions”. If you can test it, then it isn’t an assumption!↩︎</p></li>
+</ol>
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2026,
+  author = {Dimmery, Drew},
+  title = {Causal {ML} (the Class)},
+  date = {2026-02-16},
+  url = {https://ddimmery.com/posts/causal-ml-class},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2026" class="csl-entry quarto-appendix-citeas">
+Dimmery, Drew. 2026. <span>“Causal ML (the Class).”</span> February 16,
+2026. <a href="https://ddimmery.com/posts/causal-ml-class">https://ddimmery.com/posts/causal-ml-class</a>.
+</div></div></section></div> ]]></description>
+  <category>methodology</category>
+  <category>teaching</category>
+  <guid>https://ddimmery.com/posts/causal-ml-class/</guid>
+  <pubDate>Sun, 15 Feb 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://ddimmery.com/posts/causal-ml-class/main-image.png" medium="image" type="image/png" height="78" width="144"/>
+</item>
+<item>
+  <title>stochpw</title>
+  <dc:creator>Drew Dimmery</dc:creator>
+  <link>https://ddimmery.com/posts/stochpw/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Quite a while ago, I published a paper called Permutation Weighting. The idea is that we can combine two ideas together to get a better weighting model in observational causal inference. These two ideas are (1) classifier-based density ratio estimation and (2) permutations to simulate a randomized experiment consistent with the marginal distributions of treatment and covariates.</p>
+<p>An important property of this approach is that it makes essentially no assumptions about the cardinality or complexity of the treatment variable. It works naturally for continuous treatments (with no parametric assumptions on an assumed assignment mechanism) as well as for higher dimensional treatments. No matter what, the permutation weighting model just requires solving a straightforward binary classificaiton problem.</p>
+<p>The problem with this model was that to get a really good set of weights, you’d need to solve very similar classification problems many times. In our simulations for the paper, we were performing minimum 100 replicates. This is a pretty bad problem if your data is at all larger than</p>
+
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{dimmery2025,
+  author = {Dimmery, Drew},
+  title = {Stochpw},
+  date = {2025-11-19},
+  url = {https://ddimmery.com/posts/stochpw},
+  langid = {en}
+}
+</code></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-dimmery2025" class="csl-entry quarto-appendix-citeas">
+Dimmery, Drew. 2025. <span>“Stochpw.”</span> November 19, 2025. <a href="https://ddimmery.com/posts/stochpw">https://ddimmery.com/posts/stochpw</a>.
+</div></div></section></div> ]]></description>
+  <category>technology</category>
+  <guid>https://ddimmery.com/posts/stochpw/</guid>
+  <pubDate>Tue, 18 Nov 2025 23:00:00 GMT</pubDate>
+  <media:content url="https://ddimmery.com/posts/stochpw/main-image.webp" medium="image" type="image/webp"/>
+</item>
 <item>
   <title>Website Refresh</title>
   <dc:creator>Drew Dimmery</dc:creator>
@@ -28,16 +188,16 @@
 <li>Listmonk tools for sharing blog posts as a newsletter</li>
 <li>Improvements to the design and performance, particularly around fonts</li>
 </ol>
-<p>I think these changes are consistent with <a href="posts/back-to-basics/">the philosophy I introduced in the last post</a>. I’ll introduce each briefly and discuss how they work—perhaps they’ll be useful to others building their own corners of the web.</p>
+<p>I think these changes are consistent with <a href="../../posts/back-to-basics/">the philosophy I introduced in the last post</a>. I’ll introduce each briefly and discuss how they work—perhaps they’ll be useful to others building their own corners of the web.</p>
 <section id="semantic-scholar-integration" class="level2">
 <h2 class="anchored" data-anchor-id="semantic-scholar-integration">Semantic Scholar integration</h2>
-<p>I’ve had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I <a href="posts/quarto-website">moved it to Quarto in the first place</a>: Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the <a href="https://api.semanticscholar.org/api-docs/">Semantic Scholar API</a> to fetch the latest information about my publications and then used <a href="https://quarto.org/docs/websites/">Quarto’s templating capabilities</a> to generate the updated publication list.</p>
+<p>I’ve had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I <a href="../../posts/quarto-website/">moved it to Quarto in the first place</a>: Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the <a href="https://api.semanticscholar.org/api-docs/">Semantic Scholar API</a> to fetch the latest information about my publications and then used <a href="https://quarto.org/docs/websites/">Quarto’s templating capabilities</a> to generate the updated publication list.</p>
 <p>Most of the work of this system is in two functions which, because I vibe-coded it, I’ve never really even looked at.</p>
 <details>
 <summary>
 See the code
 </summary>
-<div id="18d415f6" class="cell" data-execution_count="1">
+<div id="83c49da4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -312,7 +472,7 @@ font-style: inherit;">return</span> entry</span></code></pre></div>
 </div>
 </details>
 <p>Critically, this is all pretty trivial, but it’s also <em>boring</em>, so I’m glad I didn’t need to think particularly hard about it. It also means I didn’t need to personally dig through the Semantic Scholar API documentation. The code quality is not great, but neither was my own code before!</p>
-<p>So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them add flip the <code>visible</code> flag to show them once I’m satisfied they’re right.</p>
+<p>So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them and flip the <code>visible</code> flag to show them once I’m satisfied they’re right.</p>
 </section>
 <section id="listmonk-tools" class="level2">
 <h2 class="anchored" data-anchor-id="listmonk-tools">Listmonk tools</h2>
@@ -343,7 +503,7 @@ font-style: inherit;">return</span> entry</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="improvements-in-design-and-performance">Improvements in design and performance</h2>
 <p>Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other days, I long for the ability to have nicely reactive and responsive design elements that require richer web frameworks. On some personal projects over the last few months, I’ve learned a bit more about modern webdev tools. One thing I’m particularly taken by is the way that modern webdev tools like <a href="https://vitejs.dev/">Vite</a> manage javascript dependencies.</p>
 <p>In short, the problem with a lot of these big web frameworks is that they’re really big (duh)! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is sent down to the website viewer. We don’t need to do that: we can be smarter. That’s basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can help with lazy loading (so they’re only loaded when needed).</p>
-<p>That’s all a bit of a tangent, but its gotten me thinking about why I actually need to load so many Javascript libraries? Well, Quarto ultimately doesn’t seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it’s easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn’t mean it’s going to be super efficient. There’s a <a href="https://emilhvitfeldt.com/post/quarto-performance/">really nice post by Emil Hvitfeldt discussing performance considerations in Quarto</a>.</p>
+<p>That’s all a bit of a tangent, but it’s gotten me thinking about why I actually need to load so many Javascript libraries. Quarto ultimately doesn’t seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it’s easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn’t mean it’s going to be super efficient. There’s a <a href="https://emilhvitfeldt.com/post/quarto-performance/">really nice post by Emil Hvitfeldt discussing performance considerations in Quarto</a>.</p>
 <section id="purge-unused-resources" class="level3">
 <h3 class="anchored" data-anchor-id="purge-unused-resources">Purge unused resources</h3>
 <p>I in-lined many icons to embedded svgs, but, alas, Quarto still loads the <code>bootstrap-icons.css</code> that it does not, as far as I can tell, use anywhere. The solution to this was described in <a href="https://github.com/orgs/quarto-dev/discussions/9330">a discussion about Quarto performance by Charles Nepote</a>. Quarto makes it possible to add a post-rendering step to builds which purges unused CSS and minifies JS and CSS (<a href="https://github.com/ddimmery/quarto-website/blob/main/scripts/purge-css.sh">see here</a>). I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, <a href="https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile">the critical path is currently loading <code>quarto.js</code></a>. I think this is probably about as good as it gets<sup>1</sup>. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.</p>
@@ -363,7 +523,7 @@ font-style: inherit;">return</span> entry</span></code></pre></div>
 </section>
 <section id="why-humanist-fonts-matter" class="level4">
 <h4 class="anchored" data-anchor-id="why-humanist-fonts-matter">Why humanist fonts matter</h4>
-<p>These fonts are all strongly humanist in orientation and <a href="https://www.gnu.org/philosophy/free-sw.en.html">free</a><sup>3</sup>. Despite a brief flirtation with <a href="https://en.wikipedia.org/wiki/Futura_(typeface)">Futura</a>, I have come around to the importance of fonts which embrace more complexity than these geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn’t really place for <em>reading</em>. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.</p>
+<p>These fonts are all strongly humanist in orientation and <a href="https://www.gnu.org/philosophy/free-sw.en.html">free</a><sup>3</sup>. Despite a brief flirtation with <a href="https://en.wikipedia.org/wiki/Futura_(typeface)">Futura</a>, I have come around to the importance of fonts which embrace more complexity than such geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn’t really a place for <em>reading</em>. The medium corresponding to sans-serifs is the microblog, not the book. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.</p>
 </section>
 <section id="loading-fonts-performantly" class="level4">
 <h4 class="anchored" data-anchor-id="loading-fonts-performantly">Loading fonts performantly</h4>
@@ -410,7 +570,7 @@ Dimmery, Drew. 2025. <span>“Website Refresh.”</span> November 19, 2025.
   <category>website</category>
   <guid>https://ddimmery.com/posts/website-refresh/</guid>
   <pubDate>Tue, 18 Nov 2025 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/website-refresh/main-image.webp" medium="image" type="image/webp"/>
+  <media:content url="https://ddimmery.com/posts/website-refresh/main-image.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>Back to Basics</title>
@@ -490,7 +650,7 @@ Dimmery, Drew. 2025. <span>“Back to Basics.”</span> October 27, 2025. <a hre
   <category>website</category>
   <guid>https://ddimmery.com/posts/back-to-basics/</guid>
   <pubDate>Sun, 26 Oct 2025 23:00:00 GMT</pubDate>
-  <media:content url="https://ddimmery.com/posts/back-to-basics/main-image.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://ddimmery.com/posts/back-to-basics/main-image.png" medium="image" type="image/png" height="144" width="144"/>
 </item>
 <item>
   <title>What’s the point of RCTs?</title>

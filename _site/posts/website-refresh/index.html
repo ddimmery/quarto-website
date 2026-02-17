@@ -171,14 +171,18 @@ window.Quarto = {
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Drew Dimmery - Website Refresh">
 <meta property="og:description" content="Automating publication updates with Semantic Scholar, setting up email newsletters with Listmonk, and optimizing fonts and performance. Tending my corner of the web, one small improvement at a time.">
-<meta property="og:image" content="https://ddimmery.com/posts/website-refresh/main-image.webp">
+<meta property="og:image" content="https://ddimmery.com/posts/website-refresh/main-image.png">
 <meta property="og:site_name" content="Drew Dimmery">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:width" content="1200">
 <meta name="twitter:title" content="Drew Dimmery - Website Refresh">
 <meta name="twitter:description" content="Automating publication updates with Semantic Scholar, setting up email newsletters with Listmonk, and optimizing fonts and performance. Tending my corner of the web, one small improvement at a time.">
-<meta name="twitter:image" content="https://ddimmery.com/posts/website-refresh/main-image.webp">
+<meta name="twitter:image" content="https://ddimmery.com/posts/website-refresh/main-image.png">
 <meta name="twitter:creator" content="@drewdim">
 <meta name="twitter:site" content="@drewdim">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-width" content="1200">
 </head>
 
 <body class="nav-fixed">
@@ -310,16 +314,16 @@ window.Quarto = {
 <li>Listmonk tools for sharing blog posts as a newsletter</li>
 <li>Improvements to the design and performance, particularly around fonts</li>
 </ol>
-<p>I think these changes are consistent with <a href="posts/back-to-basics/">the philosophy I introduced in the last post</a>. I’ll introduce each briefly and discuss how they work—perhaps they’ll be useful to others building their own corners of the web.</p>
+<p>I think these changes are consistent with <a href="../../posts/back-to-basics/">the philosophy I introduced in the last post</a>. I’ll introduce each briefly and discuss how they work—perhaps they’ll be useful to others building their own corners of the web.</p>
 <section id="semantic-scholar-integration" class="level2">
 <h2 class="anchored" data-anchor-id="semantic-scholar-integration">Semantic Scholar integration</h2>
-<p>I’ve had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I <a href="posts/quarto-website">moved it to Quarto in the first place</a>: Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the <a href="https://api.semanticscholar.org/api-docs/">Semantic Scholar API</a> to fetch the latest information about my publications and then used <a href="https://quarto.org/docs/websites/">Quarto’s templating capabilities</a> to generate the updated publication list.</p>
+<p>I’ve had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I <a href="../../posts/quarto-website/">moved it to Quarto in the first place</a>: Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the <a href="https://api.semanticscholar.org/api-docs/">Semantic Scholar API</a> to fetch the latest information about my publications and then used <a href="https://quarto.org/docs/websites/">Quarto’s templating capabilities</a> to generate the updated publication list.</p>
 <p>Most of the work of this system is in two functions which, because I vibe-coded it, I’ve never really even looked at.</p>
 <details>
 <summary>
 See the code
 </summary>
-<div id="18d415f6" class="cell" data-execution_count="1">
+<div id="83c49da4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch_author_papers(author_id):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch papers from Semantic Scholar API"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    base_url <span class="op">=</span> <span class="st">"https://api.semanticscholar.org/graph/v1"</span></span>
@@ -378,7 +382,7 @@ See the code
 </div>
 </details>
 <p>Critically, this is all pretty trivial, but it’s also <em>boring</em>, so I’m glad I didn’t need to think particularly hard about it. It also means I didn’t need to personally dig through the Semantic Scholar API documentation. The code quality is not great, but neither was my own code before!</p>
-<p>So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them add flip the <code>visible</code> flag to show them once I’m satisfied they’re right.</p>
+<p>So now when I build the site, it automatically updates the YAML with my latest papers. I can just browse through them and flip the <code>visible</code> flag to show them once I’m satisfied they’re right.</p>
 </section>
 <section id="listmonk-tools" class="level2">
 <h2 class="anchored" data-anchor-id="listmonk-tools">Listmonk tools</h2>
@@ -409,7 +413,7 @@ See the code
 <h2 class="anchored" data-anchor-id="improvements-in-design-and-performance">Improvements in design and performance</h2>
 <p>Within me are two wolves: Sometimes I miss the days of HTML-only websites. Other days, I long for the ability to have nicely reactive and responsive design elements that require richer web frameworks. On some personal projects over the last few months, I’ve learned a bit more about modern webdev tools. One thing I’m particularly taken by is the way that modern webdev tools like <a href="https://vitejs.dev/">Vite</a> manage javascript dependencies.</p>
 <p>In short, the problem with a lot of these big web frameworks is that they’re really big (duh)! They have a lot of stuff that you never use in a small personal website like mine, but they still get bundled into the library that is sent down to the website viewer. We don’t need to do that: we can be smarter. That’s basically what tools like Vite do. They only bundle together the parts of code that are necessary for the particular site being built. They also can help with lazy loading (so they’re only loaded when needed).</p>
-<p>That’s all a bit of a tangent, but its gotten me thinking about why I actually need to load so many Javascript libraries? Well, Quarto ultimately doesn’t seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it’s easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn’t mean it’s going to be super efficient. There’s a <a href="https://emilhvitfeldt.com/post/quarto-performance/">really nice post by Emil Hvitfeldt discussing performance considerations in Quarto</a>.</p>
+<p>That’s all a bit of a tangent, but it’s gotten me thinking about why I actually need to load so many Javascript libraries. Quarto ultimately doesn’t seem to be particularly optimized on this front. This is kind of the tradeoff you get: sure, it’s easy to throw something together with Quarto that has a lot of the bells and whistles a data scientist craves, but that doesn’t mean it’s going to be super efficient. There’s a <a href="https://emilhvitfeldt.com/post/quarto-performance/">really nice post by Emil Hvitfeldt discussing performance considerations in Quarto</a>.</p>
 <section id="purge-unused-resources" class="level3">
 <h3 class="anchored" data-anchor-id="purge-unused-resources">Purge unused resources</h3>
 <p>I in-lined many icons to embedded svgs, but, alas, Quarto still loads the <code>bootstrap-icons.css</code> that it does not, as far as I can tell, use anywhere. The solution to this was described in <a href="https://github.com/orgs/quarto-dev/discussions/9330">a discussion about Quarto performance by Charles Nepote</a>. Quarto makes it possible to add a post-rendering step to builds which purges unused CSS and minifies JS and CSS (<a href="https://github.com/ddimmery/quarto-website/blob/main/scripts/purge-css.sh">see here</a>). I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, <a href="https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile">the critical path is currently loading <code>quarto.js</code></a>. I think this is probably about as good as it gets<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.</p>
@@ -429,7 +433,7 @@ See the code
 </section>
 <section id="why-humanist-fonts-matter" class="level4">
 <h4 class="anchored" data-anchor-id="why-humanist-fonts-matter">Why humanist fonts matter</h4>
-<p>These fonts are all strongly humanist in orientation and <a href="https://www.gnu.org/philosophy/free-sw.en.html">free</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Despite a brief flirtation with <a href="https://en.wikipedia.org/wiki/Futura_(typeface)">Futura</a>, I have come around to the importance of fonts which embrace more complexity than these geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn’t really place for <em>reading</em>. The medium corresponding to sans-serifs are microblogs, not books. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.</p>
+<p>These fonts are all strongly humanist in orientation and <a href="https://www.gnu.org/philosophy/free-sw.en.html">free</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Despite a brief flirtation with <a href="https://en.wikipedia.org/wiki/Futura_(typeface)">Futura</a>, I have come around to the importance of fonts which embrace more complexity than such geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn’t really a place for <em>reading</em>. The medium corresponding to sans-serifs is the microblog, not the book. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.</p>
 </section>
 <section id="loading-fonts-performantly" class="level4">
 <h4 class="anchored" data-anchor-id="loading-fonts-performantly">Loading fonts performantly</h4>

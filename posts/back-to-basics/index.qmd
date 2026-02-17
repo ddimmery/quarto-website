@@ -6,7 +6,7 @@ date: "2025-10-27"
 categories:
   - technology
   - website
-image: main-image.jpg
+image: main-image.png
 ---
 
 I started a Substack not that long ago, because I wanted to get back into blogging. I think blogging is great and [microblogs are bad](https://ddimmery.com/posts/stop-looking-for-the-next-twitter/). I've had a bit of time to think over the past year about my usage of technology. I've come to believe that most platforms are (at best) not really for me, or (at worst) broadly [considered harmful](https://en.wikipedia.org/wiki/Considered_harmful). If you previously subscribed to my Substack, I've migrated you to a subscription service of my own. If this isn't what you signed up for, please unsubscribe^[The link is at the bottom of the email, or let me know at [blog@ddimmery.com](mailto:blog@ddimmery.com)].

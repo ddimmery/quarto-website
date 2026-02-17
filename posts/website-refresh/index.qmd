@@ -6,7 +6,7 @@ date: "2025-11-19"
 categories:
   - technology
   - website
-image: main-image.webp
+image: main-image.png
 ---
 
 I've made a few changes and updates to this website. None of them are particularly earth-shattering, but I think building one's own tools—rather than accepting the constraints of platforms—is worth the effort.
@@ -17,11 +17,11 @@ Here's what I've been working on:
 2. Listmonk tools for sharing blog posts as a newsletter
 3. Improvements to the design and performance, particularly around fonts
 
-I think these changes are consistent with [the philosophy I introduced in the last post](posts/back-to-basics/). I'll introduce each briefly and discuss how they work—perhaps they'll be useful to others building their own corners of the web.
+I think these changes are consistent with [the philosophy I introduced in the last post](/posts/back-to-basics/). I'll introduce each briefly and discuss how they work—perhaps they'll be useful to others building their own corners of the web.
 
 ## Semantic Scholar integration
 
-I've had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I [moved it to Quarto in the first place](posts/quarto-website): Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the [Semantic Scholar API](https://api.semanticscholar.org/api-docs/) to fetch the latest information about my publications and then used [Quarto's templating capabilities](https://quarto.org/docs/websites/) to generate the updated publication list.
+I've had a consistent desire to avoid tedious data entry in updating my website. This was part of my intention when I [moved it to Quarto in the first place](/posts/quarto-website/): Quarto gives great opportunity to programmatically generate a static website. I can easily mix in rich documents that combine code (R and Python in particular) and easily formatted Markdown text. This is all great. It let me hack together a nice way to display my publications in a consistent format based on data stored in a hand-curated YAML file. The next step was to automate the process of updating the publication records. I used the [Semantic Scholar API](https://api.semanticscholar.org/api-docs/) to fetch the latest information about my publications and then used [Quarto's templating capabilities](https://quarto.org/docs/websites/) to generate the updated publication list.
 
 Most of the work of this system is in two functions which, because I vibe-coded it, I've never really even looked at.
 

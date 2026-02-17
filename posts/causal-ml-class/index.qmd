@@ -1,0 +1,114 @@
+---
+title: "Causal ML (the class)"
+description: |
+  Notes on teaching causal machine learning at Hertie---the course philosophy, the syllabus, and my continuing effort to find synthesis between the design-based paradigm and CML.
+date: "2026-02-16"
+categories:
+  - methodology
+  - teaching
+image: main-image.png
+---
+
+## Teaching CausalML
+
+The most important paper I've ever read was David Freedman's [Statistical Models and Shoe Leather](https://doi.org/10.2307/270939). As always, when I mention this paper, I must provide the following quote:
+
+> Given the limits to present knowledge, I doubt that models can be rescued by technical fixes. Arguments about the theoretical merit of regression or the asymptotic behavior of specification tests for picking one version of a model over another seem like arguments about how to build desalination plants with cold fusion as the energy source. The concept may be admirable, the technical details may be fascinating, but thirsty people should look elsewhere.
+
+I find this to be a critically important lens through which to view the field of Causal Machine Learning, a class I just taught in the Fall at Hertie about a field that forms the core of a lot of my research. In many ways, this class is about me trying to square my love for design-based causal inference with the realities of modern Causal Machine Learning which is maddeningly focused on cold-fusion-powered desalination. A large amount of the literature in this field is beset by strong super-population assumptions, asymptotic theory and, thanks to the fundamental problem of causal inference, little way to determine what will actually be effective on the data that one has in front of them.
+
+As such, my overriding goal for the course was to make students skeptical and informed consumers and producers of CML. I tried to get them to think about actual experiments whenever possible, and to think about the conditions under which methods work and do not work (and how you might be able to know)^[One of many frustrations I have is with the term "testing assumptions". If you can test it, then it isn't an assumption!]. Then I expected everyone to get their hands dirty by actually implementing these methods and testing them through simulation studies. They did this both as part of in-class demos as well as a final project meant to extend and flesh out the demo (and fix any issues surfaced during the demo).
+
+I expected a lot from students. Of the nearly two-hour class, I lectured for only around 30 minutes, while students led discussion for the remainder. They gave presentations about papers (with my intervention when I wanted to add additional color / complaints) and performed high quality simulation studies set up so their colleagues could tweak things about the setting or the method to see the results.
+
+The course, therefore, operated on a few operating principles:
+
+- **Read papers**: If you can't read new work, the field will leave you behind.
+- **Present main ideas**: Nothing forces you to understand a paper like presenting its main ideas to your classmates.
+- **Write code**: Implementing and stress testing methods is a powerful way to get a deep understanding of how they work.
+- **Don't fight AI**: Focus on in-class performance. If students just let AI create a slide deck/demo and don't understand it, this will be very obvious when they get up to talk about their work. In practice, there were very few moments when students had offloaded too much of their preparation to AI. I think the incentives here are good. Students can use AI however helps them, but they cannot avoid learning enough of what they need to know to feel comfortable standing in front of the room to talk about it.
+
+The nagging problem is this: we spent the semester stress-testing methods through simulation to see how they work and where they break. This is genuinely useful. But it only tells us how methods perform in worlds we can imagine (and the world is much more complicated than that). The whole point of causal inference is that we never observe the counterfactual, so we can never confirm on our *actual* dataset that a method did what it promised. I don't think the course resolves this---I don't think anything really can. What I think it does is produce people who understand the machinery well enough to know exactly where the leap of faith is, and who can be honest about when they're making it. I think that matters, even if it's not enough. There's still a lot of work to be done on understanding what we can actually learn from these methods and what we can't---and frankly, a lot of the field doesn't always seem particularly interested in that question.
+
+With that, check out the syllabus I landed on:
+
+# Syllabus
+
+## Course overview
+
+The syllabus begins with the building blocks---design-based inference, covariate adjustment, and propensity scores---before moving to the doubly robust and semiparametric methods that form the core of modern CML. From there it turns to heterogeneous treatment effects (first with forests and meta-learners, then neural networks), policy learning, and experimental design. The final weeks cover topics where the standard assumptions start to break down: panel data, partial identification, adaptive experimentation, and interference. Students wrote a referee report on one paper, presented another, gave a live code demonstration of one week's methods, and produced a final expository project extending the demonstration. All readings are papers; there is no textbook.
+
+## Session-by-session
+
+### Session 1: Design-based Causal Inference and Monte Carlo Simulation
+
+The potential outcomes framework, what randomization buys you, and the [ADEMP framework](https://doi.org/10.1002/sim.8086) for simulation studies that students use to stress-test every method in the course.
+
+[Will Lowe](https://conjugateprior.org/) teaches a fantastic Causal course at Hertie that focuses more on DAG-world, so laying out some strong arguments around manipulability and the implied metaphysics of potential outcomes. This comes early to set the stage for the rest of the course. My computational demo aimed at understanding the difference between inference on the SATE and the PATE as a way to get them thinking about sources of randomization (and better prepare them for the many superpopulations to come).
+
+### Session 2: Covariate Adjustment
+
+If randomization already gives you unbiased estimates, should you adjust for covariates at all? If not, is there any role for ML? I think there are actually pretty good answers in this setting! So we talked about the [Lin-style regression](https://doi.org/10.1214/12-AOAS583) and AIPW as ways to be both safe *and* efficient.
+
+### Session 3: Balancing Weights
+
+Only in this session are we really getting to the observational world at all. What is "balance"? Why might we want it? How should we define it? We went through a variety of modern approaches to this including [permutation weighting](https://proceedings.mlr.press/v139/arbour21a.html), which holds a special place in my heart as it reframes the problem as classification.
+
+### Session 4: Doubly Robust Methods, Double ML, and TMLE
+
+Sessions 2 and 3 each model one side of the problem; doubly robust methods combine both, giving you two chances to get it right. Is it actually useful to get two chances at this? We work through the error decompositions that show why it might be helpful even when you get *neither* right. We hammer back on this many times throughout the course, too.
+
+A recent paper we read was [Kennedy (2022)](https://arxiv.org/abs/2203.06469).
+
+### Session 5: Heterogeneous Treatment Effects I
+
+How do effects vary across individuals? This is categorically harder than estimating averages---there is no observed target, no natural loss function, and no straightforward way to validate predictions, which is why my lecture focuses on the [Fundamental Problem of Causal Inference](https://doi.org/10.1080/01621459.1986.10478354). I'm just categorically unable to let people have fun.
+
+### Session 6: Heterogeneous Treatment Effects II --- Neural Networks
+
+This session focuses on using neural networks. My lecture focused on representation learning and why this is actually really tricky in the causal setting: what do you mean we require an invertible representation? In **this** economy?
+
+Some recent papers we read were [Nie & Wager (2021)](https://doi.org/10.1093/biomet/asaa068) and [Ma et al. (2025)](https://arxiv.org/abs/2506.10914).
+
+### Session 7: Off-Policy Evaluation and Optimization
+
+A pivot from "how large is the effect?" to "who should we treat?" I pull in the discussion over causal decision making (i.e. ignore causal effects, [Learning the Sign is All You Need](https://doi.org/10.1287/ijds.2021.0006)), as I think it's worth problematizing what the actual task is. Is there actually an important role for understanding HTEs for decision-making? For many reasons, I still think the answer is yes.
+
+Some recent papers we read were [Athey & Wager (2021)](https://doi.org/10.3982/ECTA15732) and [Kern et al. (2025)](https://doi.org/10.1038/s43588-025-00814-9).
+
+### Session 8: Experimental Design
+
+Probably the session most near and dear to my heart. Always take the opportunity to give 'em the Fisher quote:
+
+> To consult the statistician after an experiment is finished is often merely to ask him to conduct a post mortem examination. He can perhaps say what the experiment died of.
+
+Some recent papers we read were [Harshaw et al. (2019)](https://arxiv.org/abs/1911.03071) and [Arbour et al. (2022)](https://proceedings.mlr.press/v162/arbour22a.html).
+
+### Session 9: Panel Data and Modern Difference-in-Differences
+
+The course turns to settings without randomization (but, of course, problematizes this framing). We go over the "New Diff-in-diff" and pivot quickly to [synthetic control](https://doi.org/10.1198/jasa.2009.ap08746), because I want to keep as much attention on the actual *identification* problems of the setting (which I think are often elided because they do not admit simple technical fixes: they require thinking about the actual problem setting).
+
+Some recent papers we read were [Ben-Michael et al. (2021)](https://doi.org/10.1080/01621459.2021.1929245) and [Ben-Michael et al. (2023)](https://doi.org/10.1214/22-AOAS1654).
+
+### Session 10: Partial Identification
+
+We cover [Manski's no-assumptions bounds](https://www.jstor.org/stable/2006592) and look at a variety of ways that ML can be used to support tighter intervals. I find this really important as a w
+ay to tie together the class, but I find that students don't get that excited by the idea of estimating an interval rather than getting a single holy point estimate.
+
+Some recent papers we read were [Khan, Saveski & Ugander (2024)](https://proceedings.mlr.press/v235/khan24b.html) and [Samii, Wang & Zhou (2023)](https://arxiv.org/abs/2309.08985).
+
+### Session 11: Adaptive Experimentation and Reinforcement Learning
+
+I always tell students that explore-exploit is a natural framework that can be helpful to them generally as they live their lives (do we go to the same sushi spot as always or try somewhere new?). I spend a lot of time talking about how simple effect estimators fail. We don't get much into the solutions for this, unfortunately (I am not fully happy with how this has been solved thus far in the literature).
+
+Some recent papers we read were [Ouyang et al. (2022)](https://arxiv.org/abs/2203.02155) and [Hadad et al. (2021)](https://doi.org/10.1073/pnas.2014602118).
+
+### Session 12: Interference
+
+We end by blowing up the possibility of causal inference via exponential explosion of potential outcomes under interference. Is it possible to do anything about it? I throw in a lot of attention to [design-based solutions](https://doi.org/10.1145/2487575.2487695) which (alas, don't they always?) require understanding things about the world.
+
+A recent paper we read was [Shirani & Bayati (2024)](https://doi.org/10.1073/pnas.2322232121).
+
+## Closing thoughts
+
+That was my attempt to square the circle. I think it went pretty well all things considered. There's such a huge amount to cover (jamming DR + DML + TMLE into one session is crazy, as is combining CB + RL into one session). Alas, there was a lot I wanted to cover. I think more than half the classes had some kind of important design-based connection, which I think is good. The machinery is all genuinely useful and extremely interesting, but it doesn't replace knowing where your identification comes from. I would much rather send students out the door a little paranoid than too comfortable that technical fixes will solve their problems.
