@@ -123,7 +123,9 @@ That's all a bit of a tangent, but it's gotten me thinking about why I actually 
 
 ### Purge unused resources
 
-I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere. The solution to this was described in [a discussion about Quarto performance by Charles Nepote](https://github.com/orgs/quarto-dev/discussions/9330). Quarto makes it possible to add a post-rendering step to builds which purges unused CSS and minifies JS and CSS ([see here](https://github.com/ddimmery/quarto-website/blob/main/scripts/purge-css.sh)). I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, [the critical path is currently loading `quarto.js`](https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile). I think this is probably about as good as it gets^[It seems like there are also some other problems, as Firefox and Chrome both intermittently show several seconds to establish a SSL connection to the website (i.e. before any resources are actually loaded). Unclear what's going on with this...]. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.
+I in-lined many icons to embedded svgs, but, alas, Quarto still loads the `bootstrap-icons.css` that it does not, as far as I can tell, use anywhere. The solution to this was described in [a discussion about Quarto performance by Charles Nepote](https://github.com/orgs/quarto-dev/discussions/9330). Quarto makes it possible to add a post-rendering step to builds which purges unused CSS and minifies JS and CSS ([see here](https://github.com/ddimmery/quarto-website/blob/main/scripts/purge-css.sh)). I found that this did a really nice job of reducing the size of resources that needed to be fetched from my site. This helped, and brought the critical path latency down a good bit. After reducing as much of these resources as I could, [the critical path is currently loading `quarto.js`](https://pagespeed.web.dev/analysis/https-ddimmery-com/2zf25s9mbr?form_factor=mobile). I think this is probably about as good as it gets[^fn1]. Or, at least, as good as it gets without me just basically giving up on letting Quarto manage this at all.
+
+[^fn1]: It seems like there are also some other problems, as Firefox and Chrome both intermittently show several seconds to establish a SSL connection to the website (i.e. before any resources are actually loaded). Unclear what's going on with this...
 
 ### Fonts
 
@@ -131,7 +133,9 @@ Here's some fun Drew-lore: I'm weirdly into fonts. In the summer before my PhD I
 
 #### My font choices
 
-Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations^[The ease of writing Markdown documents which are rendered into [reveal.js](https://revealjs.com/) HTML presentations is really nice, and yet another way that I'm aiming at convergence between these media. I ask myself whether I should also move away from directly writing LaTeX, too. Ensuring visual consistency by using literally identical styling directives is very appealing.]:
+Long story short, I've currently landed on the following font styling that I intend to use pretty generally across the web, in documents and on presentations[^fn2]:
+
+[^fn2]: The ease of writing Markdown documents which are rendered into [reveal.js](https://revealjs.com/) HTML presentations is really nice, and yet another way that I'm aiming at convergence between these media. I ask myself whether I should also move away from directly writing LaTeX, too. Ensuring visual consistency by using literally identical styling directives is very appealing.
 
 - Headers in [[URW Classico]{.sans}](https://en.wikipedia.org/wiki/Optima#Clones_and_derivatives). This is a font based largely on [Optima](https://en.wikipedia.org/wiki/Optima).
 - Body text in [Domitian](https://en.wikipedia.org/wiki/Palatino#Derivatives). This is a font based largely on the venerable [Palatino](https://en.wikipedia.org/wiki/Palatino).
@@ -140,7 +144,9 @@ Long story short, I've currently landed on the following font styling that I int
 
 #### Why humanist fonts matter
 
-These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)^[We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than such geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really a place for *reading*. The medium corresponding to sans-serifs is the microblog, not the book. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
+These fonts are all strongly humanist in orientation and [free](https://www.gnu.org/philosophy/free-sw.en.html)[^fn3]. Despite a brief flirtation with [Futura](https://en.wikipedia.org/wiki/Futura_(typeface)), I have come around to the importance of fonts which embrace more complexity than such geometric renderings. Ultimately, I think the omni-presence of sans-serifed fonts on the web is a reflection of its inhumanity. Good text should have character in style as well as in substance. I think the ubiquity of sans-serifs on the web is indicative of the fact that it isn't really a place for *reading*. The medium corresponding to sans-serifs is the microblog, not the book. Bringing back subtle variations in stroke width, text-oriented serifs and other organic qualities of humanist fonts is a (very) small step towards reclaiming the web.
+
+[^fn3]: We're [Hermann Zapf](https://en.wikipedia.org/wiki/Hermann_Zapf) fans over here if you couldn't tell.
 
 #### Loading fonts performantly
 
@@ -148,9 +154,13 @@ To use these custom fonts on the web without screwing with performance too much,
 
 ## Remaining concerns
 
-I'm happy with a lot of what has come together. There are a few issues that I think can be improved. I'm considering whether it might make sense to switch to a hybrid system which would use Quarto to build minimal HTML or Markdown documents which are then knit together using a modern web development framework like [Astro](https://docs.astro.build/en/tutorial/0-introduction/). This would allow much more granular control over the website and how it loads resources, but could still get the benefits of Quarto where it is most useful (for pre-rendering rich documents full of Python and R code). This is probably a bigger project than I imagine it to be, so I don't intend to commit to it soon^[Truly famous last words.].
+I'm happy with a lot of what has come together. There are a few issues that I think can be improved. I'm considering whether it might make sense to switch to a hybrid system which would use Quarto to build minimal HTML or Markdown documents which are then knit together using a modern web development framework like [Astro](https://docs.astro.build/en/tutorial/0-introduction/). This would allow much more granular control over the website and how it loads resources, but could still get the benefits of Quarto where it is most useful (for pre-rendering rich documents full of Python and R code). This is probably a bigger project than I imagine it to be, so I don't intend to commit to it soon[^fn4].
 
-I'm also considering whether it would make more sense to switch to a different hosting solution. I'm not particularly pleased with the quality of Netlify's CDN, which seems to be a bit slow in Europe (I suspect they just have fewer edge locations)^[Making a connection via HTTPS occasionally takes 3s or more, which is just absurd and is by far the slowest part of page-load, although it is also intermittent which makes me suspect something with CDNs.]. I'm considering whether it might make sense to switch to a system which is self-hosted in a VPS like DigitalOcean/Hetzner (possibly with a tool like Coolify to manage deployment) and then add a CDN like Cloudflare over the top. The benefit to this is that it would combine control (from the self-hosted VPS) with the performance benefits of a reliable CDN through Cloudflare, but it would remain quite cheap (albeit not free).
+[^fn4]: Truly famous last words.
+
+I'm also considering whether it would make more sense to switch to a different hosting solution. I'm not particularly pleased with the quality of Netlify's CDN, which seems to be a bit slow in Europe (I suspect they just have fewer edge locations)[^fn5]. I'm considering whether it might make sense to switch to a system which is self-hosted in a VPS like DigitalOcean/Hetzner (possibly with a tool like Coolify to manage deployment) and then add a CDN like Cloudflare over the top. The benefit to this is that it would combine control (from the self-hosted VPS) with the performance benefits of a reliable CDN through Cloudflare, but it would remain quite cheap (albeit not free).
+
+[^fn5]: Making a connection via HTTPS occasionally takes 3s or more, which is just absurd and is by far the slowest part of page-load, although it is also intermittent which makes me suspect something with CDNs.
 
 ## Tending the garden
 

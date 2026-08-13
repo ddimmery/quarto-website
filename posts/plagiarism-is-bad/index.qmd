@@ -7,13 +7,17 @@ categories:
 image: main-image.png
 ---
 
-I think it’s important to make the simple point that **plagiarism is bad^[Yes, this is also surprising to me.]**. I won’t be drawn into specifics of current events which have precipitated this discussion, but there are a lot of academics saying absurd things that I want to publicly disagree with in order to uphold worthwhile norms. This post is less about questions of academic integrity than straightforward questions of what the academic enterprise is.
+I think it’s important to make the simple point that **plagiarism is bad[^fn1]**. I won’t be drawn into specifics of current events which have precipitated this discussion, but there are a lot of academics saying absurd things that I want to publicly disagree with in order to uphold worthwhile norms. This post is less about questions of academic integrity than straightforward questions of what the academic enterprise is.
+
+[^fn1]: Yes, this is also surprising to me.
 
 ---
 
 ## What are we doing?
 
-First, a digression. Latour and Woolgar (1979) is often credited with the idea that the main thing academics do is publish papers. Our incentive systems are fundamentally built around this idea: if you publish more papers that appear in good journals, you will be more successful. It will cause you to be paid more, have more prestige and, generally, wield more power. I used to think that this meant that what many academics were aiming to do was to simply *write more papers*. I am increasingly feeling that this is incorrect. Academics want to *produce* more papers, but they have no interest whatsoever in writing them^[I’m very consciously not talking about GPT here, but, like, also that.].
+First, a digression. Latour and Woolgar (1979) is often credited with the idea that the main thing academics do is publish papers. Our incentive systems are fundamentally built around this idea: if you publish more papers that appear in good journals, you will be more successful. It will cause you to be paid more, have more prestige and, generally, wield more power. I used to think that this meant that what many academics were aiming to do was to simply *write more papers*. I am increasingly feeling that this is incorrect. Academics want to *produce* more papers, but they have no interest whatsoever in writing them[^fn2].
+
+[^fn2]: I’m very consciously not talking about GPT here, but, like, also that.
 
 In the course of events, a major perspective has arisen, probably expressed most forcefully like this: 
 
@@ -25,24 +29,34 @@ To be clear, I think this is a heinous misrepresentation of what we should think
 
 ## Ok, but what *are* we doing?
 
-The work of quantitative social science is to take an irreducibly complex system and reduce some aspect of it down to a 20 page pdf. If we have even the slightest amount of humility, we should instantly understand that this is an impossible task. It is an even more impossible task to reduce that same complex system down to a few quantitative estimates: <20 bits of information^[A single number with 4 decimal precision is equal to log₂(10^4) = 13.3 bits, assume there are a couple of estimates.]. The reason we have 19.9 pages of text around those numbers is for a few reasons: 
+The work of quantitative social science is to take an irreducibly complex system and reduce some aspect of it down to a 20 page pdf. If we have even the slightest amount of humility, we should instantly understand that this is an impossible task. It is an even more impossible task to reduce that same complex system down to a few quantitative estimates: <20 bits of information[^fn3]. The reason we have 19.9 pages of text around those numbers is for a few reasons: 
+
+[^fn3]: A single number with 4 decimal precision is equal to log₂(10^4) = 13.3 bits, assume there are a couple of estimates.
 
 - because we’re trying to be humble by acknowledging all of the uncertainty and context around this impossible task
-- because we’re trying to acknowledge all of the other human effort that has been put into understanding this aspect of the world before (“standing on the shoulders of giants”)^[Citation also lets us bypass the hard limits of page limits, too — citations let us gesture at much more complicated ideas than we would be able to fully explain in our particular pdf.]
+- because we’re trying to acknowledge all of the other human effort that has been put into understanding this aspect of the world before (“standing on the shoulders of giants”)[^fn4]
+
+[^fn4]: Citation also lets us bypass the hard limits of page limits, too — citations let us gesture at much more complicated ideas than we would be able to fully explain in our particular pdf.
 
 The idea that either objective is well served by copying from the abstract of another person’s work is starkly offensive. It brings to mind a conversation I was having about Ian Hacking the other day. One of the truly remarkable things he does in his writing is create fluent and meaningful reviews of complex work by other people. That it is so easy to read is because he takes the time and effort to translate that other work to the specific questions and topics he’s aiming to consider. This is a monumental effort! It requires a detailed understanding of both the task he has set before himself (e.g. “what do we know about what science is?”) and each of the distinct efforts before that touch on this question — including all the myriad ways that those prior efforts failed to answer the fundamental question, answered a slightly different question or otherwise went astray.
 
-Is what we’re doing different than this? Fundamentally, I argue it is not. Unless we are completely faithfully replicating an analysis that has been done before^[Even in this case, we are different people than the authors of the replicated work and probably have different opinions about how it relates to the world. At the very least, time has passed and the literature is in a different place!], we ought to have some fresh perspective we are bringing to the table: the relationship between the current work being performed and what has been done in the past will not be the same as pre-existing work. I think the discussion about copying summaries of papers back and forth completely misses the task. A much better term than “literature review” is, I think, “related work”. It highlights that what is being done in the section is highlighting *connections* between works. Why on earth would you just provide a *generic* summary of someone else’s work in your paper? A good summary of related work should be opinionated and it should deal in comparisons: it should be providing a contribution in its own right as a way of synthesizing existing work to come to conclusions about what is known, what isn’t known, and what the strengths and weaknesses are of the existing body of work.
+Is what we’re doing different than this? Fundamentally, I argue it is not. Unless we are completely faithfully replicating an analysis that has been done before[^fn5], we ought to have some fresh perspective we are bringing to the table: the relationship between the current work being performed and what has been done in the past will not be the same as pre-existing work. I think the discussion about copying summaries of papers back and forth completely misses the task. A much better term than “literature review” is, I think, “related work”. It highlights that what is being done in the section is highlighting *connections* between works. Why on earth would you just provide a *generic* summary of someone else’s work in your paper? A good summary of related work should be opinionated and it should deal in comparisons: it should be providing a contribution in its own right as a way of synthesizing existing work to come to conclusions about what is known, what isn’t known, and what the strengths and weaknesses are of the existing body of work.
+
+[^fn5]: Even in this case, we are different people than the authors of the replicated work and probably have different opinions about how it relates to the world. At the very least, time has passed and the literature is in a different place!
 
 This is obviously not easy, and for shape-rotators like myself, this isn’t exactly work that is always *pleasant*. But, like, it’s part of the job, man.
 
-I suppose the counter-argument is that time spent working on related work is time *not* spent working on the quantitative estimates. That’s true, but there are two major counterarguments: (i) the thing we’re producing is the *paper*, and the related work section is a meaningful fraction of that: Spend the time to make it better. (ii) Specialization means not everyone has to spread their time among all sections in the paper. If you’re doing a shitty job on one part of a paper, add a coauthor that can do a better job on that part^[Harder to do this on a dissertation which may not be able to be coauthored. But honestly, to a first approximation I’ve only cared about one person’s dissertation ([Ferenc Huszár’s](https://github.com/fhuszar/thesis/blob/master/submitted/thesis.pdf)).].
+I suppose the counter-argument is that time spent working on related work is time *not* spent working on the quantitative estimates. That’s true, but there are two major counterarguments: (i) the thing we’re producing is the *paper*, and the related work section is a meaningful fraction of that: Spend the time to make it better. (ii) Specialization means not everyone has to spread their time among all sections in the paper. If you’re doing a shitty job on one part of a paper, add a coauthor that can do a better job on that part[^fn6].
+
+[^fn6]: Harder to do this on a dissertation which may not be able to be coauthored. But honestly, to a first approximation I’ve only cared about one person’s dissertation ([Ferenc Huszár’s](https://github.com/fhuszar/thesis/blob/master/submitted/thesis.pdf)).
 
 ## In defense of thinking
 
 My point is simple. For historically contingent reasons (not necessarily *good* reasons), academia has chosen that the primary way that we should communicate is through the medium of the academic paper. Given this choice, I think it’s pretty important that we actually care about what we can communicate through this medium, which has the capacity to share much more than a few quantitative estimates.
 
-An example given by Matt Blackwell^[I’m taking this example as a jumping off point, I don’t think it’s like, “academic misconduct” to use boilerplate language, and I think his example is a very good one, because tons of people have copied that kind of language.] is illustrative: 
+An example given by Matt Blackwell[^fn7] is illustrative: 
+
+[^fn7]: I’m taking this example as a jumping off point, I don’t think it’s like, “academic misconduct” to use boilerplate language, and I think his example is a very good one, because tons of people have copied that kind of language.
 
 ![Image](image_2.png)
 

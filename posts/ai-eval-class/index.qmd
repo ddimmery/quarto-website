@@ -1,0 +1,116 @@
+---
+title: "AI Evaluations for conviviality"
+description: "A new class at Hertie on the human use of AI systems"
+date: "2026-08-05"
+categories:
+  - technology
+  - teaching
+  - experiments
+  - ai
+image: main-image.png
+---
+
+This fall, I’m teaching a brand-new course at Hertie on AI evaluation.
+I think it's going to be a lot of fun.
+
+We aren’t going to spend the semester running standard model benchmarks or debating sci-fi capabilities.
+Instead, the angle is to carefully develop experiments to tie these complex systems into the real human lives they affect.
+This post will dive into how I think about the class, how I've designed it and what I'm hoping to get out of it.
+
+## Why AI evaluation needs this class
+
+One of my big frustrations with AI evaluation is the way that so much of it is completely stuck in a category error.
+Put simply, I don't particularly care about abstract "model capabilities".
+I'm a humanist in the sense that I believe the only evaluations of tools that really matter are the ones that measure *how they improve the ability of humans to achieve their aims*.
+Far too few AI evaluations focus on this component, as they're too busy working in a science-fiction world of creating new sentient life and trying to measure... whatever they mean by that.
+Consider a benchmark like ["Humanity's Last Exam"](https://lastexam.ai/): the name alone tells you it's measuring performance on frontier-of-human-knowledge trivia, with no theory at all of which humans are helped by a model answering such questions[^hle].
+To me, models are useful when they help me accomplish *my* goals.
+This class is about helping me work out more clearly what that should look like in terms of evaluation methodologies.
+
+[^hle]: Indeed, it feels much more like the opposite: measuring whether models are ready to kill us all in our sleep, making it truly our *last* exam.
+
+To take an example of how even AI skeptics miss the mark on this: I respect a lot of Arvind Narayanan's work on AI and its role in society.
+The work he's been doing with Sayash Kapoor on ["open world" AI evals](https://www.normaltech.ai/p/open-world-evaluations-for-measuring) is very interesting, but I find that it retains the original sin of AI evaluation, which treats the AI system as largely distinct from the social system in which it operates.
+The same spirit animates another recent AI evaluation: it's _interesting_ whether a given model + harness can [rewrite a working SQLite clone from the manual](https://cursor.com/blog/agent-swarm-model-economics), but this doesn't ultimately tell us much about whether a non-techie home gardener can use an agentic AI system to put together a coherent way of managing their irrigation.
+"The most important elements of people's quality of life are plural and qualitatively distinct"[^fn1] and, in the modern world, increasingly play out in digital spaces.
+The promise of agentic tools is that they make people better able to personally manipulate these spaces and bend them to their whims.
+The relevant manipulations we should be testing are not whether Joe Schmoe D.D.S. can rewrite SQLite from scratch (how would he even ask for this? why does he need it?), but whether his office can set up an appointment system exactly tailored to their working style without any technical knowledge.
+Realism of environment (a la open world evals) is good, but realism of *purpose* is what I'm looking to engender through this class.
+
+The kind of evaluation I have in mind does exist.
+[METR's randomized trial](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) of experienced open-source developers is one example[^fn0].
+Whatever you make of the result, it is fundamentally a study of the *joint* human-AI system doing real work.
+The gap between perceived and actual benefit is exactly the kind of thing capability benchmarks struggle to surface.
+
+[^fn0]: Alas, there were some issues with this trial. [Recht has written](https://www.argmin.net/p/are-developers-finally-out-of-a-job) about them, and I won't recapitulate that here. The overall idea of measuring this is, in my view, much better than their [more famous chart of time horizons](https://metr.org/time-horizons/) insomuch as it focuses on a human reference.
+[^fn1]: Martha Nussbaum, [*Creating Capabilities: The Human Development Approach*](https://www.hup.harvard.edu/books/9780674072350)
+
+## Where the course comes from
+
+In general, the course comes from a place of thinking about AI via experimentation.
+It started with me deciding I wanted to teach a class on experimentation.
+Cyrus Samii designed an amazing class called "[Quant Field Methods](https://web.archive.org/web/20240803003606/https://cyrussamii.com/?page_id=3566)" (note: this is the old version of the course I pivoted off of, but [Cyrus has since updated it](https://cyrussamii.com/?page_id=3787)).
+The idea was that students would leave the course with a complete pre-analysis plan ready to take into the field: actually _multiple_ plans, as groups of students would _repeatedly_ go through the process of identifying a societal problem, designing an intervention around it, and then working through the design issues to prepare the experiment for the field.
+I wrote a syllabus roughly based on this idea, which I've had in my back pocket for a while.
+One of the main differences is that Cyrus believes in mechanisms in a way that I don't.
+His version emphasized those mechanisms, while I wanted to dig into methods more explicitly.
+I slowed it down relative to his planned three-cycle class to a two-cycle version that left more room for lectures on methodological problems specifically geared towards experimentation.
+
+I've had this syllabus since around 2023, but as I prepared for this fall, I decided that I wanted to target it more directly around a particular problem (rather than leaving it fully generic).
+Thus, I've decided to focus on AI evaluation.
+It's very hot right now!
+[Andy Hall recently wrote an argument for why AI evaluation is so important](https://www.ft.com/content/ac15aa4a-960f-4957-90c6-ff1b4a390fa4?syn-25a6b1a6=1).
+I think what he's talking about is important, but it also fails to see exactly what "AI" is: it isn't just a model, it's a harness and a large socio-technical *system*.
+Things like his [dictatorship eval](https://www.dictatoreval.org/) are great, but when I worry about the [conviviality](https://en.wikipedia.org/wiki/Tools_for_Conviviality) of AI systems, I really do think one has to consider the system as a whole, not just "what is emitted by a model".
+I'm hoping to push on this through the class, and I think the framing of experimentation is critical to this turn.
+As Kevin and I write, [experiments are ontological tools which create new states of the world](https://muse.jhu.edu/article/956838).
+This class is about tracing out and evaluating the ontological interventions in human action that AI systems are making and measuring their performance relative to human goals.
+
+## Design decisions
+
+I've made a variety of changes to try and bring this together. The main one is that students will work on just a single project, but they will actually field it, too.
+This was one of the major decisions I agonized over, because while it's extremely difficult to successfully get an experiment into the field during a one-semester course, I think there are a few reasons to do this anyway:
+
+1. AI evaluation moves extremely quickly. If you don't actually do your evaluation quickly, your design will get stale. There isn't a lot of value in just leaving a plan around for a long time. Students should also learn how to deploy data science skills in the nimble way this requires: it's how things work in "the real world" of applied data science.
+2. Running the actual experiment is a massive learning opportunity. Almost everyone's first experiment goes off the rails in some way, and the best way to get past this is *through* it.
+3. I want to see actual results! Getting a PAP is great, but the feeling of satisfaction from seeing how the experiment actually turns out is beyond compare.
+4. Coding assistants make it easier than ever to do it. I think ramping up expectations is a good way to preserve the value of higher education in the face of AI.
+
+Roughly, my plan is to devote the first two-thirds of the class to developing a really complete pre-analysis plan, and then the last third will be devoted to fielding the experiment, analyzing the results and writing them up.
+
+## What's in the class
+
+Each meeting (we have 12 at Hertie, of ~1h50m each) is split roughly in half: a workshop where students share their work-in-progress (and get feedback), and then a lecture at the end preparing for the next week's milestone.
+Topics are reinforced a few times: first in lecture, then in the reading, then in execution and the workshop.
+The arc runs from a survey of the evaluation landscape (benchmarks versus human experiments) and student pitches, through measurement theory and construct validity, defining the interventional system (a model plus a prompt plus a scaffold plus ...), outcome measurement and scorer validation, randomization and threats to validity, and the analysis plan.
+At this point the pre-analysis plan is registered and the class flips to execution: pilot results, troubleshooting and documented deviations, draft findings, and final presentations.
+Teams of four carry one project across the whole term and produce four deliverables: an ethics and responsible-evaluation self-assessment, a registered pre-analysis plan, two deliberately informal work-in-progress code demos, and a final report with reproducible code and data.
+Each of these is coordinated by a different member of the team to ensure shared accountability.
+There are some other, smaller assignments to make sure students read and reflect on the material as well.
+All of it happens in the open on GitHub: pull requests, issues, and a project board, so that I can actually see how the work got done and not just what landed at the end[^ai].
+
+[^ai]: I have a set of scripts that provide a full dashboard of how students worked on projects together, which makes it easy to see how work was distributed. I think this is really important for group projects, especially in an age of AI, so that I can actually grade on progress and process rather than just the final product.
+
+## What counts as a project
+
+The original template assumed human-subjects field experiments, but for a class on AI evaluation, that seemed too prescriptive.
+I will allow students to focus on developing a well-defined benchmark, a clear annotation task, or a human-subjects experiment.
+I'm the most skeptical of the first of these, for all the reasons above, but I'd rather leave the option open than rule it out by fiat.
+The critical thing for each of these is that they must be focused on understanding something about a *joint human-AI* task, and a benchmark doesn't get a pass on this.
+Whatever form a project takes, students will have to justify it on the same human-focused grounds, repeatedly, at every stage of the design.
+The turn I have in mind here is to focus not just on whether AI can write good code, but on whether it helps a particular population of people better perform whatever they see as their tasks.
+I suspect a large part of the class will be spent discussing exactly who the audience is, what their goals are and exactly what must be measured about how well they can accomplish them.
+
+## Summing up
+
+To bring this back to my big picture, I think the metaphor of tending a garden from [a previous post](https://ddimmery.com/posts/back-to-basics/) is useful.
+Suppose we're enrolled in a quantitative horticulture program.
+There's a lot of stuff we can measure about plants: how tall they grow, how much input (water, fertilizer, and so on) they need, how much they yield.
+These may be cool to measure, and you might be able to optimize any of them, but at some point you have to be really specific about what you're looking for from the garden.
+If you grow the largest eggplants in the world, but what you really cared about was how the flowers made you feel, then your highly optimized garden is still useless.
+Cyrus's initial framing of the class is ultimately right that theory is critically important, but I think he was wrong about what *kind* of theory was needed.
+In contrast to his original pitch, which focused on theoretical mechanisms, I think it might be more important to focus on *normative* theory[^problem].
+This is roughly the bet behind ["Building the Society We Want"](https://kmunger.github.io/pdfs/syllabus_citp.pdf), a syllabus I helped Kevin put together a few years back, which organizes everything around *Values* first and analytical *Tools* second.
+That's the direction I'm pushing this class in, at least; I'm excited to see how it goes!
+
+[^problem]: You might even call this the ["Problem Solving"](https://doi.org/10.1093/oxfordhb/9780192868282.013.35) approach to AI evaluation.

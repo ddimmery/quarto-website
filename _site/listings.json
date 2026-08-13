@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/ai-eval-class/index.html",
       "/posts/pytest-stochastic/index.html",
       "/posts/causal-ml-class/index.html",
       "/posts/website-refresh/index.html",
