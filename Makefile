@@ -1,6 +1,10 @@
-.PHONY: help build preview clean images new-post categories
+.PHONY: help build preview clean images new-post categories papers
 
 .DEFAULT_GOAL := help
+
+# The `quarto-env` Jupyter kernel used by research.qmd is registered against
+# the project venv, so Quarto has to be pointed at that interpreter.
+PYTHON := $(CURDIR)/.venv/bin/python
 
 # Slug given as a bare argument (make new-post my-slug) or via SLUG=my-slug
 SLUG ?= $(filter-out new-post,$(MAKECMDGOALS))
@@ -29,6 +33,17 @@ categories: ## List post categories with counts
 		incat && !/^  / { incat = 0 } \
 	END { for (c in counts) printf "%d\t%s\n", counts[c], c }' posts/*/index.qmd | \
 	sort -rn | awk -F'\t' '{printf "  \033[32m%-15s\033[0m %d\n", $$2, $$1}'
+
+papers: ## Sync publications from Semantic Scholar into papers.yaml
+	@if [ ! -x "$(PYTHON)" ]; then \
+		echo "Error: $(PYTHON) not found. Run 'poetry install' first."; exit 1; \
+	fi
+	@# research.qmd fetches from Semantic Scholar when it executes; `freeze: auto`
+	@# would otherwise serve the cached output and skip the API call entirely.
+	rm -rf _freeze/research
+	QUARTO_PYTHON=$(PYTHON) quarto render research.qmd
+	@echo
+	@$(PYTHON) scripts/new_papers.py
 
 new-post: ## Scaffold a new draft post: make new-post <post-slug>
 	@if [ -z "$(SLUG)" ]; then \
